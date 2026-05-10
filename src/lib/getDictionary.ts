@@ -13,10 +13,27 @@ const dictionaries = { en, es, pt, fr, de, tr };
 
 export type Dictionary = typeof en;
 
-export function getDictionary(locale: string): Dictionary {
-  if (!locales.includes(locale as Locale)) {
-    return dictionaries.en;
+function deepMerge(target: any, source: any): any {
+  const output = { ...target };
+
+  for (const key in source) {
+    if (
+      source[key] instanceof Object &&
+      key in target
+    ) {
+      output[key] = deepMerge(target[key], source[key]);
+    } else {
+      output[key] = source[key];
+    }
   }
 
-  return dictionaries[locale as Locale];
+  return output;
+}
+
+export function getDictionary(locale: string): Dictionary {
+  const selectedLocale = locales.includes(locale as Locale)
+    ? (locale as Locale)
+    : "en";
+
+  return deepMerge(dictionaries.en, dictionaries[selectedLocale]);
 }
