@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: t.seo.marketCap.title,
       description: t.seo.marketCap.description,
       url,
-      siteName: "Cryptonal",
+      siteName: "Kryptonal",
       type: "website",
       locale,
       images: [
@@ -78,6 +78,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function MarketCapPage({ params }: PageProps) {
   const { locale } = await params;
   const t = getDictionary(locale);
+  const marketCapFaqs = Array.isArray(t.marketCap.faqs)
+  ? t.marketCap.faqs
+  : [];
+  const marketCapAnalysisTags = Array.isArray(t.marketCap.analysisTags)
+  ? t.marketCap.analysisTags
+  : [];
+  
   const pageUrl = `${siteUrl}/${locale}/market-cap`;
 
   const jsonLd = {
@@ -92,13 +99,13 @@ export default async function MarketCapPage({ params }: PageProps) {
         inLanguage: locale,
         isPartOf: {
           "@type": "WebSite",
-          name: "Cryptonal",
+          name: "Kryptonal",
           url: siteUrl,
         },
       },
       {
         "@type": "FAQPage",
-        mainEntity: t.marketCap.faqs.map((faq) => ({
+        mainEntity: marketCapFaqs.map((faq) => ({
           "@type": "Question",
           name: faq.question,
           acceptedAnswer: {
@@ -178,7 +185,7 @@ export default async function MarketCapPage({ params }: PageProps) {
 
     <div className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.06] p-5 shadow-2xl sm:p-6 md:p-8">
       <div className="mb-5 flex flex-wrap gap-2">
-        {t.marketCap.analysisTags.map((tag) => (
+        {marketCapAnalysisTags.map((tag) => (
           <span
             key={tag}
             className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-bold text-emerald-300"
@@ -222,7 +229,7 @@ export default async function MarketCapPage({ params }: PageProps) {
             <h2 className="text-3xl font-black md:text-4xl">{t.marketCap.faqTitle}</h2>
 
             <div className="mt-8 grid gap-5">
-              {t.marketCap.faqs.map((faq) => (
+              {marketCapFaqs.map((faq) => (
                 <div key={faq.question} className="rounded-2xl border border-white/10 bg-slate-950 p-6">
                   <h3 className="text-xl font-bold">{faq.question}</h3>
                   <p className="mt-4 leading-7 text-slate-300">{faq.answer}</p>

@@ -1,379 +1,368 @@
 {
   "brand": "KRYPTONAL",
   "common": {
-  "loading": "Loading..."
-},
+    "loading": "Yükleniyor..."
+  },
   "nav": {
-    "marketCap": "Market Cap",
-    "analysis": "Analysis",
+    "marketCap": "Piyasa Değeri",
+    "analysis": "Analiz",
     "blog": "Blog",
-    "gamingCrypto": "Gaming Crypto",
-    "start": "Start Analysis"
+    "gamingCrypto": "Gaming Kripto",
+    "start": "Analizi Başlat"
   },
   "home": {
-    "badge": "Crypto Market Intelligence",
-    "title": "Compare crypto market cap across cycles and understand where the market stands today.",
-    "description": "Kryptonal helps you analyze total crypto market capitalization, compare different years, study Bitcoin cycle behavior, and generate clear market summaries you can copy, download, and use for crypto content.",
-    "primaryCta": "Analyze Market Cap",
-    "secondaryCta": "Read Crypto Guides",
-    "chartLabel": "Total Market Cap",
-    "marketSignal": "Neutral",
-    "chartNote": "Example chart. Live API data will be connected later.",
+    "intelligenceCard": {
+      "badge": "Kryptonal Nasıl Çalışır",
+      "title": "Ham kripto verilerinden basit piyasa zekasına.",
+      "status": "Eğitsel Yapay Zeka",
+      "description": "Kryptonal; piyasa değeri, Bitcoin dominansı, zincir gücü, stablecoin likiditesi ve sektör rotasyonunu birleştirerek kullanıcıların neler olduğunu ve neden önemli olduğunu anlamasına yardımcı olan net açıklamalar sunar.",
+      "steps": [
+        {
+          "title": "Piyasa döngüsünü takip edin",
+          "text": "Canlı piyasa sinyallerini kullanarak kriptonun birikim, genişleme, geç döngü veya daralma aşamasında olup olmadığını anlayın."
+        },
+        {
+          "title": "Likiditeyi ve smart money hareketlerini takip edin",
+          "text": "Stablecoinlerin, TVL’nin ve ekosistem aktivitesinin büyük blockchain ağlarında nerede yoğunlaştığını görün."
+        },
+        {
+          "title": "Veriyi sade dile dönüştürün",
+          "text": "Risk bağlamı, yeni başlayan dostu açıklamalar ve net eğitsel çıkarımlarla okunabilir analizler oluşturun."
+        }
+      ],
+      "disclaimer": "Kryptonal yalnızca eğitim ve araştırma amacıyla geliştirilmiştir. Finansal tavsiye veya garanti edilmiş piyasa tahmini sunmaz."
+    },
+    "badge": "Kripto Piyasa Zekası",
+    "title": "Kripto piyasa değerini döngüler arasında karşılaştırın ve piyasanın bugün nerede olduğunu anlayın.",
+    "description": "Kryptonal, toplam kripto piyasa değerini analiz etmenize, farklı yılları karşılaştırmanıza, Bitcoin döngü davranışlarını incelemenize ve kopyalayabileceğiniz, indirebileceğiniz ve kripto içerikleri için kullanabileceğiniz net piyasa özetleri oluşturmanıza yardımcı olur.",
+    "primaryCta": "Piyasa Değerini Analiz Et",
+    "secondaryCta": "Kripto Rehberlerini Oku",
+    "chartLabel": "Toplam Piyasa Değeri",
+    "marketSignal": "Nötr",
+    "chartNote": "Örnek grafik. Canlı API verileri daha sonra bağlanacaktır.",
     "stats": [
-      { "value": "2017", "label": "Cycle comparison" },
-      { "value": "2021", "label": "Bull market reference" },
-      { "value": "2024+", "label": "Current cycle tracking" },
-      { "value": "AI", "label": "Readable summaries" }
+      { "value": "2017", "label": "Döngü karşılaştırması" },
+      { "value": "2021", "label": "Boğa piyasası referansı" },
+      { "value": "2024+", "label": "Mevcut döngü takibi" },
+      { "value": "AI", "label": "Okunabilir özetler" }
     ],
-    "contentTitle": "Built for market research, SEO content, and crypto education.",
-    "contentDescription": "The platform starts with general crypto market cap analysis, then expands into individual coins, Bitcoin cycles, altcoin trends, blockchain education, Web3 opportunities, and gaming crypto.",
+    "contentTitle": "Piyasa araştırması, içerik ve kripto eğitimi için geliştirildi.",
+    "contentDescription": "Platform, genel kripto piyasa değeri analiziyle başlar, ardından bireysel coinler, Bitcoin döngüleri, altcoin trendleri, blockchain eğitimi, Web3 fırsatları ve gaming kripto alanına genişler.",
     "features": [
       {
-        "title": "Market Cap Comparison",
-        "text": "Compare total crypto market cap across different years, cycle highs, cycle lows, and historical turning points."
+        "title": "Piyasa Değeri Karşılaştırması",
+        "text": "Toplam kripto piyasa değerini farklı yıllar, döngü zirveleri, döngü dipleri ve tarihsel dönüm noktaları arasında karşılaştırın."
       },
       {
-        "title": "Downloadable Analysis",
-        "text": "Generate clear market summaries that can be copied, downloaded, and used for crypto content publishing."
+        "title": "İndirilebilir Analiz",
+        "text": "Kopyalanabilen, indirilebilen ve kripto içerik yayıncılığında kullanılabilen net piyasa özetleri oluşturun."
       },
       {
-        "title": "Crypto Learning Hub",
-        "text": "Publish high-quality guides about blockchain, Web3, Bitcoin, altcoins, DeFi, NFTs, and gaming crypto."
+        "title": "Kripto Öğrenme Merkezi",
+        "text": "Blockchain, Web3, Bitcoin, altcoinler, DeFi, NFT’ler ve gaming kripto hakkında yüksek kaliteli rehberler yayınlayın."
       }
     ],
-    "questionsTitle": "What the analysis will answer",
+    "questionsTitle": "Analizin cevaplayacağı sorular",
     "questions": [
-      "Is today’s crypto market cap higher or lower than previous cycle peaks?",
-      "How did Bitcoin behave when the market was at a similar valuation?",
-      "Is the market recovering, overheating, or still below long-term trend?",
-      "Can this data be turned into readable content for Binance, blogs, or social platforms?"
+      "Bugünkü kripto piyasa değeri önceki döngü zirvelerinden daha mı yüksek yoksa daha mı düşük?",
+      "Bitcoin, benzer bir değerleme seviyesinde piyasadayken nasıl davrandı?",
+      "Piyasa toparlanıyor mu, aşırı mı ısınıyor yoksa hâlâ uzun vadeli trendin altında mı?",
+      "Bu veriler Binance, bloglar veya sosyal platformlar için okunabilir içeriklere dönüştürülebilir mi?"
     ]
   },
   "marketCap": {
-    "back": "← Back to Home",
-    "badge": "Global Crypto Market Intelligence",
-    "title": "Crypto Market Cap Analysis",
-    "description": "Analyze total cryptocurrency market capitalization, compare current market value with previous crypto cycles, and understand Bitcoin dominance, market phases, and long-term crypto trends.",
-    "primaryCta": "Analyze Market",
-    "secondaryCta": "View Historical Data",
-    "chartLabel": "Total Crypto Market Cap",
-    "marketSignal": "Expansion Phase",
-    "chartNote": "Example market cap chart. Live crypto API data will be connected later.",
-    "liveLabel": "Live Total Crypto Market Cap",
-"change24h": "24h",
-"btcDominance": "BTC Dominance",
-"ethDominance": "ETH Dominance", 
-"totalMarketCap": "Total Market Cap",
-"marketPhase": "Market Phase",
-"updated": "Updated",
-    "metrics": [
-      {
-        "label": "Total Market Cap",
-        "value": "$2.84T",
-        "change": "+4.7% 24h"
-      },
-      {
-        "label": "24h Change",
-        "value": "+2.18%",
-        "change": "Bullish momentum"
-      },
-      {
-        "label": "BTC Dominance",
-        "value": "53.6%",
-        "change": "Bitcoin leading"
-      },
-      {
-        "label": "Market Phase",
-        "value": "Expansion",
-        "change": "Moderate risk"
-      }
-    ],
-    "chartTitle": "Global Crypto Market Cap Over Time",
-    "chartDescription": "Track how total crypto market capitalization changes across bull markets, bear markets, recovery phases, and long-term Bitcoin cycles.",
-    "ranges": ["1Y", "3Y", "5Y", "ALL"],
-    "comparisonTitle": "Crypto Market Cycle Comparison",
-    "comparisons": [
-      {
-        "year": "2017",
-        "value": "$830B",
-        "note": "Previous early cycle peak"
-      },
-      {
-        "year": "2021",
-        "value": "$3.0T",
-        "note": "Previous all-time high"
-      },
-      {
-        "year": "Current",
-        "value": "$2.84T",
-        "note": "Near previous cycle highs"
-      }
-    ],
-    "analysisTitle": "AI Market Analysis",
-    "analysisText": "The crypto market cap is approaching previous cycle highs, which may indicate an expansion phase. Bitcoin dominance remains elevated, suggesting capital is still concentrated in major assets before a broader altcoin rotation. Risk remains moderate because crypto markets are volatile and highly sensitive to macroeconomic conditions.",
-    "analysisTags": ["Moderate Risk", "Expansion Phase", "Bitcoin Dominance"],
-    "content": {
-      "whatTitle": "What is crypto market cap?",
-      "whatText": "Crypto market cap is the total value of cryptocurrency assets in circulation. It is commonly used to measure the size of the crypto market and compare current market conditions with previous cycles.",
-      "whyTitle": "Why market cap matters",
-      "whyText": "Market cap helps investors and researchers understand market size, capital inflows, valuation trends, and whether the crypto market is expanding, cooling down, or entering a speculative phase.",
-      "cyclesTitle": "Crypto market cycles explained",
-      "cyclesText": "Crypto market cycles usually move through accumulation, expansion, distribution, and contraction. Studying total market capitalization helps identify where the broader market may be in the cycle."
-    },
-    "faqTitle": "Frequently Asked Questions",
-    "faqs": [
-      {
-        "question": "What is total crypto market cap?",
-        "answer": "Total crypto market cap is the combined value of all cryptocurrencies. It helps measure the overall size and direction of the digital asset market."
-      },
-      {
-        "question": "Can market cap predict crypto prices?",
-        "answer": "Market cap cannot predict prices with certainty. It is useful for understanding market scale and trend direction, but price also depends on liquidity, demand, supply, sentiment, and macroeconomic conditions."
-      },
-      {
-        "question": "How does Bitcoin dominance affect the crypto market?",
-        "answer": "Bitcoin dominance shows Bitcoin’s share of the total crypto market. When dominance rises, capital is usually concentrated in Bitcoin. When dominance falls, altcoins may receive more market attention."
-      }
-    ]
+  "back": "← Ana Sayfaya Dön",
+  "badge": "Küresel Kripto Piyasa Zekası",
+  "title": "Kripto Piyasa Değeri Analizi",
+  "description": "Toplam kripto para piyasa değerini analiz edin, mevcut piyasa değerini önceki kripto döngüleriyle karşılaştırın ve Bitcoin dominansı, piyasa aşamaları ve uzun vadeli kripto trendlerini anlayın.",
+  "primaryCta": "Piyasayı Analiz Et",
+  "secondaryCta": "Geçmiş Verileri Görüntüle",
+  "chartLabel": "Toplam Kripto Piyasa Değeri",
+  "marketSignal": "Genişleme Aşaması",
+  "chartNote": "Örnek piyasa değeri grafiği. Canlı kripto API verileri daha sonra bağlanacaktır.",
+  "liveLabel": "Canlı Toplam Kripto Piyasa Değeri",
+  "change24h": "24s",
+  "btcDominance": "BTC Dominansı",
+  "ethDominance": "ETH Dominansı",
+  "totalMarketCap": "Toplam Piyasa Değeri",
+  "marketPhase": "Piyasa Aşaması",
+  "updated": "Güncellendi",
+  "metrics": [
+    { "label": "Toplam Piyasa Değeri", "value": "$2.84T", "change": "+4.7% 24s" },
+    { "label": "24s Değişim", "value": "+2.18%", "change": "Boğa momentumu" },
+    { "label": "BTC Dominansı", "value": "53.6%", "change": "Bitcoin liderliği" },
+    { "label": "Piyasa Aşaması", "value": "Genişleme", "change": "Orta risk" }
+  ],
+  "chartTitle": "Zaman İçinde Küresel Kripto Piyasa Değeri",
+  "chartDescription": "Toplam kripto piyasa değerinin boğa piyasaları, ayı piyasaları, toparlanma aşamaları ve uzun vadeli Bitcoin döngüleri boyunca nasıl değiştiğini takip edin.",
+  "ranges": ["1Y", "3Y", "5Y", "TÜMÜ"],
+  "comparisonTitle": "Kripto Piyasa Döngüsü Karşılaştırması",
+  "comparisons": [
+    { "year": "2017", "value": "$830B", "note": "Önceki erken döngü zirvesi" },
+    { "year": "2021", "value": "$3.0T", "note": "Önceki tüm zamanların zirvesi" },
+    { "year": "Güncel", "value": "$2.84T", "note": "Önceki döngü zirvelerine yakın" }
+  ],
+  "analysisTitle": "Yapay Zeka Piyasa Analizi",
+  "analysisText": "Kripto piyasa değeri önceki döngü zirvelerine yaklaşıyor, bu da bir genişleme aşamasına işaret edebilir. Bitcoin dominansı yüksek kalmaya devam ediyor, bu da sermayenin daha geniş bir altcoin rotasyonundan önce hâlâ büyük varlıklarda yoğunlaştığını gösteriyor. Kripto piyasaları oynak ve makroekonomik koşullara oldukça duyarlı olduğu için risk orta seviyede kalıyor.",
+  "analysisTags": ["Orta Risk", "Genişleme Aşaması", "Bitcoin Dominansı"],
+  "content": {
+    "whatTitle": "Kripto piyasa değeri nedir?",
+    "whatText": "Kripto piyasa değeri, dolaşımdaki kripto para varlıklarının toplam değeridir.",
+    "whyTitle": "Piyasa değeri neden önemlidir?",
+    "whyText": "Piyasa değeri, yatırımcıların ve araştırmacıların piyasa büyüklüğünü, sermaye girişlerini, değerleme trendlerini ve kripto piyasasının büyüyüp büyümediğini veya yavaşlayıp yavaşlamadığını anlamasına yardımcı olur.",
+    "cyclesTitle": "Kripto piyasa döngüleri açıklaması",
+    "cyclesText": "Kripto piyasa döngüleri genellikle birikim, genişleme, dağıtım ve daralma aşamalarından geçer."
   },
-  "footer": {
-    "description": "Crypto market cap analysis, Bitcoin cycle research, blockchain education, Web3 opportunities, and gaming crypto insights for long-term market learners.",
-    "platform": "Platform",
-    "important": "Important",
-    "marketCap": "Market Cap",
-    "analysis": "Analysis",
-    "blog": "Crypto Blog",
-    "gamingCrypto": "Gaming Crypto",
-    "educationOnly": "Educational content only",
-    "notFinancialAdvice": "Not financial advice",
-    "highRisk": "Crypto is high risk",
-    "translationNote": "Translations are generated by AI and may contain mistakes or misinformation. Always verify important financial information independently."
-  },
-  "seo": {
-    "home": {
-      "title": "Cryptonal | Crypto Market Cap Analysis, Bitcoin Cycles & Web3 Research",
-      "description": "Analyze total crypto market cap, compare historical crypto cycles, study Bitcoin market behavior, and learn about blockchain, Web3, and gaming crypto."
+  "faqTitle": "Sık Sorulan Sorular",
+  "faqs": [
+    {
+      "question": "Toplam kripto piyasa değeri nedir?",
+      "answer": "Toplam kripto piyasa değeri, tüm kripto paraların birleşik değeridir."
     },
-    "marketCap": {
-      "title": "Crypto Market Cap Analysis | Bitcoin Dominance, Market Cycles & Trends",
-      "description": "Analyze total crypto market cap, Bitcoin dominance, market cycles, historical crypto trends, and global cryptocurrency market capitalization with Kryptonal.",
-      "keywords": [
-        "crypto market cap",
-        "cryptocurrency market capitalization",
-        "total crypto market cap",
-        "bitcoin dominance",
-        "crypto market cycles",
-        "crypto market analysis",
-        "global crypto market cap",
-        "bitcoin cycle analysis",
-        "crypto trends"
-      ]
+    {
+      "question": "Piyasa değeri kripto fiyatlarını tahmin edebilir mi?",
+      "answer": "Piyasa değeri fiyatları kesin olarak tahmin edemez."
     },
-    "analysis": {
-"title": "Crypto Market Analysis | Bitcoin Cycles, Market Cap & Risk Signals",
-"description": "Analyze crypto market cap, Bitcoin cycles, trend strength, and risk levels. Generate clear crypto market insights with Kryptonal.",
-"keywords": [
-"crypto market analysis",
-"bitcoin cycle analysis",
-"crypto market cap analysis",
-"crypto risk analysis",
-"crypto trends",
-"bitcoin dominance",
-"crypto market signals"
-]
-}
-  },
-  "analysis": {
-"badge": "Crypto Intelligence Engine",
-"title": "Crypto Market Analysis",
-"description": "Understand total crypto market cap, Bitcoin cycle behavior, market risk, and trend strength with clear, readable insights.",
-
-"primaryCta": "Start Analysis",
-"secondaryCta": "Read Methodology",
-
-"heroCard": {
-  "label": "Market Summary",
-  "value": "Expansion Phase",
-  "signal": "Moderate Risk",
-  "points": [
-    "Market cap approaching previous highs",
-    "Bitcoin dominance elevated",
-    "Altcoins lagging behind BTC",
-    "Momentum building slowly"
+    {
+      "question": "Bitcoin dominansı kripto piyasasını nasıl etkiler?",
+      "answer": "Bitcoin dominansı, Bitcoin’in toplam kripto piyasasındaki payını gösterir."
+    }
   ]
 },
-
-"signals": [
-  { "label": "Market Phase", "value": "Expansion", "note": "Mid-cycle" },
-  { "label": "Trend Strength", "value": "Strong", "note": "Uptrend intact" },
-  { "label": "Risk Level", "value": "Moderate", "note": "Watch volatility" },
-  { "label": "BTC Dominance", "value": "53.6%", "note": "Bitcoin leading" },
-  { "label": "Total Market Cap", "value": "$2.84T", "note": "Near ATH" },
-  { "label": "24h Change", "value": "+2.1%", "note": "Positive momentum" }
-],
-
-"engineTitle": "Market Analysis Engine",
-"engineDescription": "Select time ranges, compare cycles, and generate a structured crypto market analysis based on historical data.",
-
-"timeRangeLabel": "Select Time Range",
-"timeRanges": ["1Y", "3Y", "5Y", "ALL"],
-
-"compareLabel": "Compare Market Cycles",
-"compareYears": ["2017", "2021", "2024", "Current"],
-
-"options": [
-  "Include Bitcoin overlay",
-  "Include altcoin signal"
-],
-
-"generated": {
-  "title": "Generated Market Analysis",
-  "text": "The crypto market cap is approaching previous cycle highs, indicating a potential expansion phase. Bitcoin dominance remains strong, suggesting capital concentration before altcoin rotation. Market structure shows moderate risk with continued bullish momentum.",
-  "tags": ["Expansion Phase", "Moderate Risk", "BTC Dominance"],
-  "buttons": ["Copy Analysis", "Download TXT", "Download PDF"]
-},
-
-"disclaimer": "This analysis is for educational purposes only and does not constitute financial advice. Cryptocurrency markets are highly volatile and carry significant risk.",
-
-"chartTitle": "Crypto Market Cap Chart",
-"chartDescription": "Visualize total crypto market capitalization across cycles, including peaks, drawdowns, and trend strength.",
-"chartLegend": [
-  "Total Market Cap",
-  "Previous Cycle Peaks",
-  "Bitcoin Overlay",
-  "Drawdown from ATH"
-],
-
-"content": {
-  "howTitle": "How crypto market analysis works",
-  "howText": "Crypto market analysis combines total market capitalization, Bitcoin cycles, and trend indicators to evaluate the overall direction of the digital asset market.",
-
-  "marketCapTitle": "Why total market cap matters",
-  "marketCapText": "Total market cap reflects the size of the crypto market. It helps compare different time periods and identify whether the market is expanding or contracting.",
-
-  "bitcoinTitle": "How Bitcoin cycles affect altcoins",
-  "bitcoinText": "Bitcoin typically leads market cycles. When Bitcoin dominance rises, capital flows into BTC first before moving into altcoins.",
-
-  "riskTitle": "How to interpret market risk",
-  "riskText": "Market risk depends on volatility, valuation, and macro conditions. Higher market cap levels often come with increased risk and potential corrections.",
-
-  "historyTitle": "Why historical data matters",
-  "historyText": "Historical data helps identify repeating patterns, but it does not guarantee future performance. Always combine data with risk management."
-},
-
-"internalLinksTitle": "Explore More Crypto Tools",
-"internalLinks": [
-  {
-    "title": "Market Cap Analysis",
-    "text": "Compare total crypto market cap across cycles.",
-    "href": "/market-cap"
+"analysis": {
+  "badge": "Kripto Zekâ Motoru",
+  "title": "Kripto Piyasa Analizi",
+  "description": "Toplam kripto piyasa değerini, Bitcoin döngü davranışlarını, piyasa riskini ve trend gücünü net ve okunabilir içgörülerle anlayın.",
+  "primaryCta": "Analizi Başlat",
+  "secondaryCta": "Metodolojiyi Oku",
+  "heroCard": {
+    "label": "Piyasa Özeti",
+    "value": "Genişleme Aşaması",
+    "signal": "Orta Risk",
+    "points": [
+      "Piyasa değeri önceki zirvelere yaklaşıyor",
+      "Bitcoin dominansı yüksek",
+      "Altcoinler BTC’nin gerisinde kalıyor",
+      "Momentum yavaşça güçleniyor"
+    ]
   },
-  {
-    "title": "Crypto Blog",
-    "text": "Learn about blockchain, Web3, and crypto trends.",
-    "href": "/blog"
+  "deepEngine": {
+    "badge": "Zekâ Motoru",
+    "title": "Derin Kripto Analiz Motoru",
+    "description": "Döngüler, Bitcoin dominansı, risk yönetimi, altcoin rotasyonu ve sade bir “Peki ne anlama geliyor?” sonucu içeren daha derin bir piyasa analizi oluşturun.",
+    "focusLabel": "Analiz Odağı",
+    "generate": "Derin Analiz Oluştur",
+    "generating": "Oluşturuluyor...",
+    "outputTitle": "Oluşturulan Zekâ Özeti",
+    "placeholder": "Bir analiz odağı seçin ve daha derin bir Kryptonal piyasa özeti oluşturun.",
+    "copied": "Kopyalandı",
+    "copy": "Analizi Kopyala",
+    "download": "TXT İndir",
+    "copyFailed": "Kopyalama başarısız oldu. Lütfen metni manuel olarak seçin.",
+    "disclaimer": "Yalnızca eğitsel içerik. Finansal tavsiye değildir. Önemli finansal bilgileri her zaman bağımsız olarak doğrulayın.",
+    "modes": {
+      "full": "Tam",
+      "cycle": "Döngü",
+      "risk": "Risk",
+      "altcoins": "Altcoinler"
+    },
+    "checklist": [
+      "Piyasa döngüsü bağlamı",
+      "Bitcoin dominansı analizi",
+      "Risk yönetimi özeti",
+      "“Peki ne anlama geliyor?” açıklaması"
+    ],
+    "tags": [
+      "Derin Piyasa Analizi",
+      "“Peki Ne?” Dahil",
+      "Risk Odaklı"
+    ]
   },
-  {
-    "title": "Gaming Crypto",
-    "text": "Discover blockchain gaming and Web3 opportunities.",
-    "href": "/gaming-crypto"
-  },
-  {
-    "title": "Bitcoin Cycles",
-    "text": "Understand Bitcoin market behavior across cycles.",
-    "href": "/bitcoin-cycles"
-  }
-],
-
-"faqTitle": "Frequently Asked Questions",
-"faqs": [
-  {
-    "question": "What is crypto market analysis?",
-    "answer": "Crypto market analysis evaluates the overall market using metrics like market cap, Bitcoin dominance, and trend indicators."
-  },
-  {
-    "question": "Can crypto market cap predict price?",
-    "answer": "No, market cap does not predict prices directly. It helps understand market size and trends but not exact future price movements."
-  },
-  {
-    "question": "Why compare Bitcoin with total market cap?",
-    "answer": "Comparing Bitcoin with total market cap shows how capital flows between BTC and altcoins during different phases."
-  },
-  {
-    "question": "Is this financial advice?",
-    "answer": "No. This platform provides educational insights only and does not offer financial advice."
-  },
-  {
-    "question": "How often is the data updated?",
-    "answer": "Data updates depend on connected APIs and will be refreshed regularly once live data integration is active."
-  }
+  "signals": [
+    { "label": "Piyasa Aşaması", "value": "Genişleme", "note": "Orta döngü" },
+    { "label": "Trend Gücü", "value": "Güçlü", "note": "Yükseliş trendi devam ediyor" },
+    { "label": "Risk Seviyesi", "value": "Orta", "note": "Volatiliteyi izleyin" },
+    { "label": "BTC Dominansı", "value": "53.6%", "note": "Bitcoin liderliği" },
+    { "label": "Toplam Piyasa Değeri", "value": "$2.84T", "note": "ATH’ye yakın" },
+    { "label": "24s Değişim", "value": "+2.1%", "note": "Pozitif momentum" }
   ],
-  "stablecoins": {
-  "badge": "Smart Money Signal",
-  "title": "Stablecoin Liquidity Tracker",
-  "description": "Track where stablecoin liquidity is concentrated across crypto ecosystems. Stablecoins are the cash layer of crypto, so they help show where capital is sitting before it moves.",
-  "totalLabel": "Total Stablecoins Tracked",
-  "newbieTitle": "Simple explanation",
-  "newbieText": "Stablecoins are like digital dollars in crypto. When more stablecoins sit on a chain, it means there is more cash available to trade, lend, borrow, or buy crypto assets.",
-  "increaseTitle": "When stablecoins increase",
-  "increaseText": "It can mean users sold volatile assets into stablecoins, or new cash entered the ecosystem. This often shows more dry powder waiting to buy.",
-  "decreaseTitle": "When stablecoins decrease",
-  "decreaseText": "It can mean users are buying crypto assets, moving funds to another chain, or withdrawing liquidity. A decrease is not always bearish; it depends where the money goes.",
-  "stablecoinsLabel": "Stablecoins",
-  "ofTrackedLiquidity": "of tracked liquidity",
-  "soWhat": "So what?",
-  "chainExplanation": "Higher stablecoin concentration can indicate stronger liquidity conditions and more active capital flow.",
-  "veryStrong": "Very Strong Liquidity",
-  "healthy": "Healthy Liquidity",
-  "moderate": "Moderate Liquidity",
-  "lower": "Lower Liquidity",
+  "engineTitle": "Piyasa Analiz Motoru",
+  "engineDescription": "Zaman aralıkları seçin, döngüleri karşılaştırın ve geçmiş verilere dayalı yapılandırılmış bir kripto piyasa analizi oluşturun.",
+  "timeRangeLabel": "Zaman Aralığı Seç",
+  "timeRanges": ["1Y", "3Y", "5Y", "TÜMÜ"],
+  "compareLabel": "Piyasa Döngülerini Karşılaştır",
+  "compareYears": ["2017", "2021", "2024", "Güncel"],
+  "options": ["Bitcoin overlay ekle", "Altcoin sinyali ekle"],
+  "generated": {
+    "title": "Oluşturulan Piyasa Analizi",
+    "text": "Kripto piyasa değeri önceki döngü zirvelerine yaklaşıyor ve bu olası bir genişleme aşamasına işaret ediyor. Bitcoin dominansı güçlü kalmaya devam ediyor, bu da altcoin rotasyonundan önce sermaye yoğunlaşmasını gösteriyor. Piyasa yapısı, devam eden yükseliş momentumu ile orta seviyede risk gösteriyor.",
+    "tags": ["Genişleme Aşaması", "Orta Risk", "BTC Dominansı"],
+    "buttons": ["Analizi Kopyala", "TXT İndir", "PDF İndir"]
+  },
+  "disclaimer": "Bu analiz yalnızca eğitim amaçlıdır ve finansal tavsiye niteliği taşımaz.",
+  "chartTitle": "Kripto Piyasa Değeri Grafiği",
+  "chartDescription": "Toplam kripto piyasa değerini döngüler boyunca, zirveler, düşüşler ve trend gücü dahil olmak üzere görselleştirin.",
+  "chartLegend": ["Toplam Piyasa Değeri", "Önceki Döngü Zirveleri", "Bitcoin Overlay", "ATH’den Düşüş"],
+  "content": {
+    "howTitle": "Kripto piyasa analizi nasıl çalışır?",
+    "howText": "Kripto piyasa analizi, toplam piyasa değeri, Bitcoin döngüleri ve trend göstergelerini birleştirir.",
+    "marketCapTitle": "Toplam piyasa değeri neden önemlidir?",
+    "marketCapText": "Toplam piyasa değeri, kripto piyasasının büyüklüğünü yansıtır.",
+    "bitcoinTitle": "Bitcoin döngüleri altcoinleri nasıl etkiler?",
+    "bitcoinText": "Bitcoin genellikle piyasa döngülerine liderlik eder.",
+    "riskTitle": "Piyasa riski nasıl yorumlanır?",
+    "riskText": "Piyasa riski volatiliteye, değerlemeye ve makroekonomik koşullara bağlıdır.",
+    "historyTitle": "Tarihsel veriler neden önemlidir?",
+    "historyText": "Tarihsel veriler tekrar eden kalıpları belirlemeye yardımcı olur, ancak gelecekteki performansı garanti etmez."
+  },
+  "internalLinksTitle": "Daha Fazla Kripto Aracı Keşfet",
+  "internalLinks": [
+    { "title": "Piyasa Değeri Analizi", "text": "Toplam kripto piyasa değerini döngüler arasında karşılaştırın.", "href": "/market-cap" },
+    { "title": "Kripto Blogu", "text": "Blockchain, Web3 ve kripto trendleri hakkında bilgi edinin.", "href": "/blog" },
+    { "title": "Gaming Kripto", "text": "Blockchain oyunlarını ve Web3 fırsatlarını keşfedin.", "href": "/gaming-crypto" },
+    { "title": "Bitcoin Döngüleri", "text": "Bitcoin piyasa davranışını döngüler boyunca anlayın.", "href": "/bitcoin-cycles" }
+  ],
+  "faqTitle": "Sık Sorulan Sorular",
+  "faqs": [
+    {
+      "question": "Kripto piyasa analizi nedir?",
+      "answer": "Kripto piyasa analizi, piyasa değeri, Bitcoin dominansı ve trend göstergeleri gibi metrikleri kullanarak genel piyasayı değerlendirir."
+    },
+    {
+      "question": "Kripto piyasa değeri fiyat tahmini yapabilir mi?",
+      "answer": "Hayır, piyasa değeri fiyatları doğrudan tahmin etmez."
+    },
+    {
+      "question": "Bu finansal tavsiye midir?",
+      "answer": "Hayır. Bu platform yalnızca eğitsel içgörüler sağlar."
+    }
+  ],
+  "smartMoney": {
+    "badge": "Smart Money Uyarıları",
+    "title": "Smart Money Uyarı Paneli",
+    "description": "Likidite, TVL ve haftalık büyümenin daha güçlü sermaye hareketlerini işaret ettiği zincirleri takip edin.",
+    "score": "Sinyal Skoru",
+    "tvl": "TVL",
+    "stablecoins": "Stablecoinler",
+    "weeklyChange": "7G Değişim",
+    "protocols": "Protokoller",
+    "soWhat": "Peki ne anlama geliyor?",
+    "disclaimer": "Smart money uyarıları yalnızca eğitsel sinyallerdir. Fiyat hareketlerini garanti etmez ve finansal tavsiye değildir.",
+    "loading": "Uyarılar yükleniyor..."
+  }
+},
+"stablecoins": {
+  "badge": "Smart Money Sinyali",
+  "title": "Stablecoin Likidite Takibi",
+  "description": "Stablecoin likiditesinin kripto ekosistemlerinde nerede yoğunlaştığını takip edin.",
+  "totalLabel": "Takip Edilen Toplam Stablecoin",
+  "newbieTitle": "Basit açıklama",
+  "newbieText": "Stablecoinler, kripto dünyasındaki dijital dolarlar gibidir.",
+  "increaseTitle": "Stablecoinler arttığında",
+  "increaseText": "Bu, kullanıcıların volatil varlıkları stablecoinlere sattığını veya ekosisteme yeni para girişinin olduğunu gösterebilir.",
+  "decreaseTitle": "Stablecoinler azaldığında",
+  "decreaseText": "Bu, kullanıcıların kripto varlıklar satın aldığını, fonlarını başka bir zincire taşıdığını veya likidite çektiğini gösterebilir.",
+  "stablecoinsLabel": "Stablecoinler",
+  "ofTrackedLiquidity": "takip edilen likiditenin",
+  "soWhat": "Peki ne anlama geliyor?",
+  "chainExplanation": "Daha yüksek stablecoin yoğunluğu, daha güçlü likidite koşullarını ve daha aktif sermaye akışını gösterebilir.",
+  "veryStrong": "Çok Güçlü Likidite",
+  "healthy": "Sağlıklı Likidite",
+  "moderate": "Orta Likidite",
+  "lower": "Daha Düşük Likidite",
   "meaning": {
-    "high": "Stablecoin liquidity is very large across the tracked chains. This suggests deep crypto liquidity and strong capital availability.",
-    "medium": "Stablecoin liquidity is healthy across the tracked chains. There is meaningful capital available, but flows should still be compared with trend and risk conditions.",
-    "low": "Stablecoin liquidity is relatively low across the tracked chains. This may suggest weaker activity or less capital available for market rotation."
+    "high": "Takip edilen zincirlerde stablecoin likiditesi çok yüksek.",
+    "medium": "Takip edilen zincirlerde stablecoin likiditesi sağlıklı seviyede.",
+    "low": "Takip edilen zincirlerde stablecoin likiditesi nispeten düşük."
   },
   "narratives": {
-    "ethereum": "Ethereum usually holds deep DeFi and institutional liquidity.",
-    "tron": "Tron is heavily used for USDT transfers because fees are low and transfers are fast.",
-    "solana": "Solana liquidity can reflect retail activity, meme trading, and fast-moving speculative demand.",
-    "base": "Base liquidity can show growing Layer 2 ecosystem activity and Coinbase-linked adoption.",
-    "arbitrum": "Arbitrum liquidity is often linked to DeFi activity and Ethereum scaling demand.",
-    "bsc": "BSC liquidity often reflects retail trading and lower-fee activity.",
-    "default": "This chain shows stablecoin activity inside its ecosystem."
+    "ethereum": "Ethereum genellikle derin DeFi ve kurumsal likiditeye sahiptir.",
+    "tron": "Tron, düşük ücretler ve hızlı transferler nedeniyle yoğun şekilde USDT transferleri için kullanılır.",
+    "solana": "Solana likiditesi, bireysel yatırımcı aktivitesini, meme coin işlemlerini ve hızlı spekülatif talebi yansıtabilir.",
+    "base": "Base likiditesi, büyüyen Layer 2 ekosistem aktivitesini ve Coinbase bağlantılı benimsenmeyi gösterebilir.",
+    "arbitrum": "Arbitrum likiditesi genellikle DeFi aktivitesi ve Ethereum ölçeklendirme talebiyle bağlantılıdır.",
+    "bsc": "BSC likiditesi genellikle bireysel yatırımcı işlemlerini ve düşük ücretli aktiviteleri yansıtır.",
+    "default": "Bu zincir, kendi ekosistemindeki stablecoin aktivitesini gösterir."
   },
-  "disclaimer": "Stablecoin data does not guarantee market direction. It is best used as liquidity context alongside broader market analysis."
+  "disclaimer": "Stablecoin verileri piyasa yönünü garanti etmez."
 },
 "chainStrength": {
-  "badge": "Ecosystem Health",
-  "title": "Chain Strength Tracker",
-  "description": "Compare blockchain ecosystems by TVL, growth, protocol count, and momentum. This helps users see which chains have real DeFi activity, not just hype.",
-  "protocols": "protocols",
-  "score": "Strength Score",
-  "soWhat": "So what?",
-  "disclaimer": "Chain strength does not guarantee token price performance. Use this as ecosystem health context, not financial advice."
+  "badge": "Ekosistem Sağlığı",
+  "title": "Zincir Gücü Takibi",
+  "description": "Blockchain ekosistemlerini TVL, büyüme, protokol sayısı ve momentum açısından karşılaştırın.",
+  "protocols": "protokoller",
+  "score": "Güç Skoru",
+  "soWhat": "Peki ne anlama geliyor?",
+  "disclaimer": "Zincir gücü, token fiyat performansını garanti etmez."
 },
 "sectorRotation": {
-  "badge": "Narrative Momentum",
-  "title": "Sector Rotation Heatmap",
-  "description": "Track which crypto sectors are gaining or losing momentum by comparing TVL, weekly change, and protocol activity. This helps users understand where narratives may be heating up.",
-  "protocols": "protocols",
-  "score": "Rotation Score",
-  "soWhat": "So what?",
-  "disclaimer": "Sector rotation is not a direct buy or sell signal. Use it to understand market attention and liquidity trends."
-}
+  "badge": "Anlatı Momentumu",
+  "title": "Sektör Rotasyonu Isı Haritası",
+  "description": "Hangi kripto sektörlerinin momentum kazandığını veya kaybettiğini takip edin.",
+  "protocols": "protokoller",
+  "score": "Rotasyon Skoru",
+  "soWhat": "Peki ne anlama geliyor?",
+  "disclaimer": "Sektör rotasyonu doğrudan bir alım veya satım sinyali değildir."
 },
 "analysisTool": {
-  "badge": "Live Analysis Engine",
-  "title": "Generate Crypto Market Analysis",
-  "description": "Compare the current crypto market with previous cycles and generate a clean market summary you can copy or download.",
-  "compareLabel": "Compare with cycle year",
-  "current": "Current",
-  "generate": "Generate Analysis",
-  "generating": "Generating...",
-  "placeholder": "Choose a cycle year and generate a market analysis.",
-  "copy": "Copy Analysis",
-  "copied": "Copied",
-  "download": "Download TXT",
-  "disclaimer": "This content is for educational purposes only and is not financial advice. Always verify important financial information independently."
+  "badge": "Canlı Analiz Motoru",
+  "title": "Kripto Piyasa Analizi Oluştur",
+  "description": "Mevcut kripto piyasasını önceki döngülerle karşılaştırın ve kopyalayabileceğiniz veya indirebileceğiniz temiz bir piyasa özeti oluşturun.",
+  "compareLabel": "Döngü yılıyla karşılaştır",
+  "current": "Güncel",
+  "generate": "Analiz Oluştur",
+  "generating": "Oluşturuluyor...",
+  "placeholder": "Bir döngü yılı seçin ve piyasa analizi oluşturun.",
+  "copy": "Analizi Kopyala",
+  "copied": "Kopyalandı",
+  "download": "TXT İndir",
+  "disclaimer": "Bu içerik yalnızca eğitim amaçlıdır ve finansal tavsiye değildir."
+},
+"footer": {
+  "description": "Uzun vadeli piyasa öğrenicileri için kripto piyasa değeri analizi, Bitcoin döngü araştırmaları, blockchain eğitimi, Web3 fırsatları ve gaming crypto içgörüleri.",
+  "platform": "Platform",
+  "important": "Önemli",
+  "marketCap": "Piyasa Değeri",
+  "analysis": "Analiz",
+  "blog": "Kripto Blogu",
+  "gamingCrypto": "Gaming Crypto",
+  "educationOnly": "Yalnızca eğitsel içerik",
+  "notFinancialAdvice": "Finansal tavsiye değildir",
+  "highRisk": "Kripto yüksek risklidir",
+  "translationNote": "Çeviriler yapay zekâ tarafından oluşturulmuştur ve hata veya yanlış bilgi içerebilir. Önemli finansal bilgileri her zaman bağımsız olarak doğrulayın."
+},
+"seo": {
+  "home": {
+    "title": "Kryptonal | Kripto Piyasa Değeri Analizi, Bitcoin Döngüleri ve Web3 Araştırması",
+    "description": "Toplam kripto piyasa değerini analiz edin, geçmiş kripto döngülerini karşılaştırın, Bitcoin piyasa davranışını inceleyin ve blockchain, Web3 ve gaming crypto hakkında bilgi edinin."
+  },
+  "marketCap": {
+    "title": "Kripto Piyasa Değeri Analizi | Bitcoin Dominansı, Piyasa Döngüleri ve Trendler",
+    "description": "Kryptonal ile toplam kripto piyasa değerini, Bitcoin dominansını, piyasa döngülerini, tarihsel kripto trendlerini ve küresel kripto para piyasa kapitalizasyonunu analiz edin.",
+    "keywords": [
+      "kripto piyasa değeri",
+      "kripto para piyasa kapitalizasyonu",
+      "toplam kripto piyasa değeri",
+      "bitcoin dominansı",
+      "kripto piyasa döngüleri",
+      "kripto piyasa analizi",
+      "küresel kripto piyasa değeri",
+      "bitcoin döngü analizi",
+      "kripto trendleri"
+    ]
+  },
+  "analysis": {
+    "title": "Kripto Piyasa Analizi | Bitcoin Döngüleri, Piyasa Değeri ve Risk Sinyalleri",
+    "description": "Kripto piyasa değerini, Bitcoin döngülerini, trend gücünü ve risk seviyelerini analiz edin. Kryptonal ile net kripto piyasa içgörüleri oluşturun.",
+    "keywords": [
+      "kripto piyasa analizi",
+      "bitcoin döngü analizi",
+      "kripto piyasa değeri analizi",
+      "kripto risk analizi",
+      "kripto trendleri",
+      "bitcoin dominansı",
+      "kripto piyasa sinyalleri"
+    ]
+  }
 }
 }

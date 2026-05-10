@@ -77,15 +77,15 @@ export default function ChainStrengthTracker({ t }: any) {
       <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-4 shadow-2xl backdrop-blur sm:p-6">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-emerald-400 sm:text-sm">
-            {t.analysis.chainStrength.badge}
+            {t.chainStrength.badge}
           </p>
 
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-            {t.analysis.chainStrength.title}
+            {t.chainStrength.title}
           </h2>
 
           <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
-            {t.analysis.chainStrength.description}
+            {t.chainStrength.description}
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export default function ChainStrengthTracker({ t }: any) {
                 <div>
                   <h3 className="text-2xl font-black">{chain.name}</h3>
                   <p className="mt-2 text-sm text-slate-400">
-                    {chain.protocols} {t.analysis.chainStrength.protocols}
+                    {chain.protocols} {t.chainStrength.protocols}
                   </p>
                 </div>
 
@@ -142,7 +142,7 @@ export default function ChainStrengthTracker({ t }: any) {
               <div className="mt-6">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-slate-400">
-                    {t.analysis.chainStrength.score}
+                    {t.chainStrength.score}
                   </span>
                   <span className="font-black text-white">{chain.score}/100</span>
                 </div>
@@ -157,7 +157,7 @@ export default function ChainStrengthTracker({ t }: any) {
 
               <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                 <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
-                  {t.analysis.chainStrength.soWhat}
+                  {t.chainStrength.soWhat}
                 </p>
 
                 <p className="mt-3 text-sm leading-7 text-slate-300">
@@ -169,7 +169,7 @@ export default function ChainStrengthTracker({ t }: any) {
         </div>
 
         <div className="mt-8 rounded-2xl border border-amber-400/20 bg-amber-400/10 p-4 text-sm leading-7 text-amber-200">
-          {t.analysis.chainStrength.disclaimer}
+          {t.chainStrength.disclaimer}
         </div>
       </div>
     </section>

@@ -9,6 +9,7 @@ import DeepAnalysisEngine from "@/components/analysis/DeepAnalysisEngine";
 import StablecoinFlows from "@/components/analysis/StablecoinFlows";
 import ChainStrengthTracker from "@/components/analysis/ChainStrengthTracker";
 import SectorRotationHeatmap from "@/components/analysis/SectorRotationHeatmap";
+import SmartMoneyAlerts from "@/components/analysis/SmartMoneyAlerts";
 
 const siteUrl = "https://kryptonal.com";
 
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: t.seo.analysis.title,
       description: t.seo.analysis.description,
       url,
-      siteName: "Cryptonal",
+      siteName: "Kryptonal",
       type: "website",
       locale,
       images: [
@@ -79,6 +80,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function AnalysisPage({ params }: PageProps) {
   const { locale } = await params;
   const t = getDictionary(locale);
+  const analysisFaqs = Array.isArray(t.analysis.faqs) ? t.analysis.faqs : [];
+  const analysisInternalLinks = Array.isArray(t.analysis.internalLinks)
+  ? t.analysis.internalLinks
+  : [];
   const pageUrl = `${siteUrl}/${locale}/analysis`;
 
   const jsonLd = {
@@ -93,13 +98,13 @@ export default async function AnalysisPage({ params }: PageProps) {
         inLanguage: locale,
         isPartOf: {
           "@type": "WebSite",
-          name: "Cryptonal",
+          name: "Kryptonal",
           url: siteUrl,
         },
       },
       {
         "@type": "FAQPage",
-        mainEntity: t.analysis.faqs.map((faq) => ({
+        mainEntity: analysisFaqs.map((faq) => ({
           "@type": "Question",
           name: faq.question,
           acceptedAnswer: {
@@ -166,6 +171,7 @@ export default async function AnalysisPage({ params }: PageProps) {
         <StablecoinFlows t={t} />
         <ChainStrengthTracker t={t} />
         <SectorRotationHeatmap t={t} />
+        <SmartMoneyAlerts t={t} />
 
         
 
@@ -192,7 +198,7 @@ export default async function AnalysisPage({ params }: PageProps) {
           <div className="mx-auto max-w-7xl">
             <h2 className="text-3xl font-black md:text-4xl">{t.analysis.internalLinksTitle}</h2>
             <div className="mt-8 grid gap-5 md:grid-cols-4">
-              {t.analysis.internalLinks.map((item) => (
+              {analysisInternalLinks.map((item) => (
                 <Link key={item.href} href={`/${locale}${item.href}`} className="rounded-2xl border border-white/10 bg-slate-950 p-6 transition hover:border-emerald-400/40">
                   <h3 className="text-xl font-bold">{item.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-400">{item.text}</p>
@@ -205,7 +211,7 @@ export default async function AnalysisPage({ params }: PageProps) {
         <section className="mx-auto max-w-4xl px-4 py-20 sm:px-5">
           <h2 className="text-3xl font-black md:text-4xl">{t.analysis.faqTitle}</h2>
           <div className="mt-8 grid gap-5">
-            {t.analysis.faqs.map((faq) => (
+            {analysisFaqs.map((faq) => (
               <div key={faq.question} className="rounded-2xl border border-white/10 bg-white/5 p-6">
                 <h3 className="text-xl font-bold">{faq.question}</h3>
                 <p className="mt-4 leading-7 text-slate-300">{faq.answer}</p>

@@ -125,6 +125,12 @@ export default function LiveMarketPhaseCard({ t }: any) {
 
   const card = data ? getPhase(data) : null;
 
+  const fallbackPoints = Array.isArray(t.analysis.heroCard.points)
+  ? t.analysis.heroCard.points
+  : [];
+
+const points = card?.points || fallbackPoints;
+
   return (
     <div className="rounded-3xl border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur sm:p-5">
       <div className="rounded-2xl bg-slate-900 p-5 sm:p-6">
@@ -159,7 +165,7 @@ export default function LiveMarketPhaseCard({ t }: any) {
         )}
 
         <div className="grid gap-3 sm:grid-cols-2">
-          {(card?.points || t.analysis.heroCard.points).map((point: string) => (
+          {points.map((point: string) => (
             <div
               key={point}
               className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-slate-300"

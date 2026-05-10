@@ -14,11 +14,18 @@ const dictionaries = { en, es, pt, fr, de, tr };
 export type Dictionary = typeof en;
 
 function deepMerge(target: any, source: any): any {
+  // arrays should completely replace
+  if (Array.isArray(target) || Array.isArray(source)) {
+    return source;
+  }
+
   const output = { ...target };
 
   for (const key in source) {
     if (
-      source[key] instanceof Object &&
+      source[key] &&
+      typeof source[key] === "object" &&
+      !Array.isArray(source[key]) &&
       key in target
     ) {
       output[key] = deepMerge(target[key], source[key]);

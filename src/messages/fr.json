@@ -1,379 +1,388 @@
-{
-  "brand": "KRYPTONAL",
-  "common": {
-  "loading": "Loading..."
-},
-  "nav": {
-    "marketCap": "Market Cap",
-    "analysis": "Analysis",
-    "blog": "Blog",
-    "gamingCrypto": "Gaming Crypto",
-    "start": "Start Analysis"
+{"home": {
+  "intelligenceCard": {
+    "badge": "Comment fonctionne Kryptonal",
+    "title": "Des données crypto brutes à une intelligence de marché simple.",
+    "status": "IA Éducative",
+    "description": "Kryptonal combine la capitalisation du marché, la domination du Bitcoin, la force des blockchains, la liquidité des stablecoins et la rotation des secteurs dans des explications claires qui aident les utilisateurs à comprendre ce qui se passe et pourquoi cela compte.",
+    "steps": [
+      {
+        "title": "Suivre le cycle du marché",
+        "text": "Comprenez si le marché crypto ressemble à une phase d’accumulation, d’expansion, de fin de cycle ou de contraction grâce aux signaux de marché en direct."
+      },
+      {
+        "title": "Suivre la liquidité et le smart money",
+        "text": "Voyez où les stablecoins, le TVL et l’activité des écosystèmes sont concentrés à travers les principaux réseaux blockchain."
+      },
+      {
+        "title": "Transformer les données en langage clair",
+        "text": "Générez des analyses lisibles avec un contexte de risque, des explications adaptées aux débutants et des conclusions éducatives claires."
+      }
+    ],
+    "disclaimer": "Kryptonal est conçu uniquement pour l’éducation et la recherche. Il ne fournit pas de conseils financiers ni de prédictions garanties du marché."
   },
-  "home": {
-    "badge": "Crypto Market Intelligence",
-    "title": "Compare crypto market cap across cycles and understand where the market stands today.",
-    "description": "Kryptonal helps you analyze total crypto market capitalization, compare different years, study Bitcoin cycle behavior, and generate clear market summaries you can copy, download, and use for crypto content.",
-    "primaryCta": "Analyze Market Cap",
-    "secondaryCta": "Read Crypto Guides",
-    "chartLabel": "Total Market Cap",
-    "marketSignal": "Neutral",
-    "chartNote": "Example chart. Live API data will be connected later.",
-    "stats": [
-      { "value": "2017", "label": "Cycle comparison" },
-      { "value": "2021", "label": "Bull market reference" },
-      { "value": "2024+", "label": "Current cycle tracking" },
-      { "value": "AI", "label": "Readable summaries" }
-    ],
-    "contentTitle": "Built for market research, SEO content, and crypto education.",
-    "contentDescription": "The platform starts with general crypto market cap analysis, then expands into individual coins, Bitcoin cycles, altcoin trends, blockchain education, Web3 opportunities, and gaming crypto.",
-    "features": [
-      {
-        "title": "Market Cap Comparison",
-        "text": "Compare total crypto market cap across different years, cycle highs, cycle lows, and historical turning points."
-      },
-      {
-        "title": "Downloadable Analysis",
-        "text": "Generate clear market summaries that can be copied, downloaded, and used for crypto content publishing."
-      },
-      {
-        "title": "Crypto Learning Hub",
-        "text": "Publish high-quality guides about blockchain, Web3, Bitcoin, altcoins, DeFi, NFTs, and gaming crypto."
-      }
-    ],
-    "questionsTitle": "What the analysis will answer",
-    "questions": [
-      "Is today’s crypto market cap higher or lower than previous cycle peaks?",
-      "How did Bitcoin behave when the market was at a similar valuation?",
-      "Is the market recovering, overheating, or still below long-term trend?",
-      "Can this data be turned into readable content for Binance, blogs, or social platforms?"
-    ]
-  },
-  "marketCap": {
-    "back": "← Back to Home",
-    "badge": "Global Crypto Market Intelligence",
-    "title": "Crypto Market Cap Analysis",
-    "description": "Analyze total cryptocurrency market capitalization, compare current market value with previous crypto cycles, and understand Bitcoin dominance, market phases, and long-term crypto trends.",
-    "primaryCta": "Analyze Market",
-    "secondaryCta": "View Historical Data",
-    "chartLabel": "Total Crypto Market Cap",
-    "marketSignal": "Expansion Phase",
-    "chartNote": "Example market cap chart. Live crypto API data will be connected later.",
-    "liveLabel": "Live Total Crypto Market Cap",
-"change24h": "24h",
-"btcDominance": "BTC Dominance",
-"ethDominance": "ETH Dominance", 
-"totalMarketCap": "Total Market Cap",
-"marketPhase": "Market Phase",
-"updated": "Updated",
-    "metrics": [
-      {
-        "label": "Total Market Cap",
-        "value": "$2.84T",
-        "change": "+4.7% 24h"
-      },
-      {
-        "label": "24h Change",
-        "value": "+2.18%",
-        "change": "Bullish momentum"
-      },
-      {
-        "label": "BTC Dominance",
-        "value": "53.6%",
-        "change": "Bitcoin leading"
-      },
-      {
-        "label": "Market Phase",
-        "value": "Expansion",
-        "change": "Moderate risk"
-      }
-    ],
-    "chartTitle": "Global Crypto Market Cap Over Time",
-    "chartDescription": "Track how total crypto market capitalization changes across bull markets, bear markets, recovery phases, and long-term Bitcoin cycles.",
-    "ranges": ["1Y", "3Y", "5Y", "ALL"],
-    "comparisonTitle": "Crypto Market Cycle Comparison",
-    "comparisons": [
-      {
-        "year": "2017",
-        "value": "$830B",
-        "note": "Previous early cycle peak"
-      },
-      {
-        "year": "2021",
-        "value": "$3.0T",
-        "note": "Previous all-time high"
-      },
-      {
-        "year": "Current",
-        "value": "$2.84T",
-        "note": "Near previous cycle highs"
-      }
-    ],
-    "analysisTitle": "AI Market Analysis",
-    "analysisText": "The crypto market cap is approaching previous cycle highs, which may indicate an expansion phase. Bitcoin dominance remains elevated, suggesting capital is still concentrated in major assets before a broader altcoin rotation. Risk remains moderate because crypto markets are volatile and highly sensitive to macroeconomic conditions.",
-    "analysisTags": ["Moderate Risk", "Expansion Phase", "Bitcoin Dominance"],
-    "content": {
-      "whatTitle": "What is crypto market cap?",
-      "whatText": "Crypto market cap is the total value of cryptocurrency assets in circulation. It is commonly used to measure the size of the crypto market and compare current market conditions with previous cycles.",
-      "whyTitle": "Why market cap matters",
-      "whyText": "Market cap helps investors and researchers understand market size, capital inflows, valuation trends, and whether the crypto market is expanding, cooling down, or entering a speculative phase.",
-      "cyclesTitle": "Crypto market cycles explained",
-      "cyclesText": "Crypto market cycles usually move through accumulation, expansion, distribution, and contraction. Studying total market capitalization helps identify where the broader market may be in the cycle."
+  "badge": "Intelligence du Marché Crypto",
+  "title": "Comparez la capitalisation du marché crypto à travers les cycles et comprenez où se situe le marché aujourd’hui.",
+  "description": "Kryptonal vous aide à analyser la capitalisation totale du marché crypto, comparer différentes années, étudier le comportement des cycles du Bitcoin et générer des résumés de marché clairs que vous pouvez copier, télécharger et utiliser pour du contenu crypto.",
+  "primaryCta": "Analyser la Capitalisation",
+  "secondaryCta": "Lire les Guides Crypto",
+  "chartLabel": "Capitalisation Totale du Marché",
+  "marketSignal": "Neutre",
+  "chartNote": "Exemple de graphique. Les données API en direct seront connectées plus tard.",
+  "stats": [
+    { "value": "2017", "label": "Comparaison de cycles" },
+    { "value": "2021", "label": "Référence du bull market" },
+    { "value": "2024+", "label": "Suivi du cycle actuel" },
+    { "value": "IA", "label": "Résumés lisibles" }
+  ],
+  "contentTitle": "Conçu pour la recherche de marché, le contenu et l’éducation crypto.",
+  "contentDescription": "La plateforme commence par une analyse générale de la capitalisation du marché crypto, puis s’étend aux cryptomonnaies individuelles, aux cycles du Bitcoin, aux tendances des altcoins, à l’éducation blockchain, aux opportunités Web3 et au gaming crypto.",
+  "features": [
+    {
+      "title": "Comparaison de Capitalisation",
+      "text": "Comparez la capitalisation totale du marché crypto à travers différentes années, sommets de cycle, creux de cycle et points de retournement historiques."
     },
-    "faqTitle": "Frequently Asked Questions",
-    "faqs": [
-      {
-        "question": "What is total crypto market cap?",
-        "answer": "Total crypto market cap is the combined value of all cryptocurrencies. It helps measure the overall size and direction of the digital asset market."
-      },
-      {
-        "question": "Can market cap predict crypto prices?",
-        "answer": "Market cap cannot predict prices with certainty. It is useful for understanding market scale and trend direction, but price also depends on liquidity, demand, supply, sentiment, and macroeconomic conditions."
-      },
-      {
-        "question": "How does Bitcoin dominance affect the crypto market?",
-        "answer": "Bitcoin dominance shows Bitcoin’s share of the total crypto market. When dominance rises, capital is usually concentrated in Bitcoin. When dominance falls, altcoins may receive more market attention."
-      }
-    ]
-  },
-  "footer": {
-    "description": "Crypto market cap analysis, Bitcoin cycle research, blockchain education, Web3 opportunities, and gaming crypto insights for long-term market learners.",
-    "platform": "Platform",
-    "important": "Important",
-    "marketCap": "Market Cap",
-    "analysis": "Analysis",
-    "blog": "Crypto Blog",
-    "gamingCrypto": "Gaming Crypto",
-    "educationOnly": "Educational content only",
-    "notFinancialAdvice": "Not financial advice",
-    "highRisk": "Crypto is high risk",
-    "translationNote": "Translations are generated by AI and may contain mistakes or misinformation. Always verify important financial information independently."
-  },
-  "seo": {
-    "home": {
-      "title": "Cryptonal | Crypto Market Cap Analysis, Bitcoin Cycles & Web3 Research",
-      "description": "Analyze total crypto market cap, compare historical crypto cycles, study Bitcoin market behavior, and learn about blockchain, Web3, and gaming crypto."
+    {
+      "title": "Analyse Téléchargeable",
+      "text": "Générez des résumés de marché clairs qui peuvent être copiés, téléchargés et utilisés pour publier du contenu crypto."
     },
-    "marketCap": {
-      "title": "Crypto Market Cap Analysis | Bitcoin Dominance, Market Cycles & Trends",
-      "description": "Analyze total crypto market cap, Bitcoin dominance, market cycles, historical crypto trends, and global cryptocurrency market capitalization with Kryptonal.",
-      "keywords": [
-        "crypto market cap",
-        "cryptocurrency market capitalization",
-        "total crypto market cap",
-        "bitcoin dominance",
-        "crypto market cycles",
-        "crypto market analysis",
-        "global crypto market cap",
-        "bitcoin cycle analysis",
-        "crypto trends"
-      ]
-    },
-    "analysis": {
-"title": "Crypto Market Analysis | Bitcoin Cycles, Market Cap & Risk Signals",
-"description": "Analyze crypto market cap, Bitcoin cycles, trend strength, and risk levels. Generate clear crypto market insights with Kryptonal.",
-"keywords": [
-"crypto market analysis",
-"bitcoin cycle analysis",
-"crypto market cap analysis",
-"crypto risk analysis",
-"crypto trends",
-"bitcoin dominance",
-"crypto market signals"
-]
-}
-  },
-  "analysis": {
-"badge": "Crypto Intelligence Engine",
-"title": "Crypto Market Analysis",
-"description": "Understand total crypto market cap, Bitcoin cycle behavior, market risk, and trend strength with clear, readable insights.",
-
-"primaryCta": "Start Analysis",
-"secondaryCta": "Read Methodology",
-
-"heroCard": {
-  "label": "Market Summary",
-  "value": "Expansion Phase",
-  "signal": "Moderate Risk",
-  "points": [
-    "Market cap approaching previous highs",
-    "Bitcoin dominance elevated",
-    "Altcoins lagging behind BTC",
-    "Momentum building slowly"
+    {
+      "title": "Hub d’Apprentissage Crypto",
+      "text": "Publiez des guides de haute qualité sur la blockchain, le Web3, le Bitcoin, les altcoins, la DeFi, les NFT et le gaming crypto."
+    }
+  ],
+  "questionsTitle": "Ce à quoi l’analyse répondra",
+  "questions": [
+    "La capitalisation du marché crypto actuelle est-elle supérieure ou inférieure aux précédents sommets de cycle ?",
+    "Comment le Bitcoin s’est-il comporté lorsque le marché avait une valorisation similaire ?",
+    "Le marché est-il en reprise, en surchauffe ou toujours sous la tendance à long terme ?",
+    "Ces données peuvent-elles être transformées en contenu lisible pour Binance, des blogs ou les réseaux sociaux ?"
   ]
 },
-
-"signals": [
-  { "label": "Market Phase", "value": "Expansion", "note": "Mid-cycle" },
-  { "label": "Trend Strength", "value": "Strong", "note": "Uptrend intact" },
-  { "label": "Risk Level", "value": "Moderate", "note": "Watch volatility" },
-  { "label": "BTC Dominance", "value": "53.6%", "note": "Bitcoin leading" },
-  { "label": "Total Market Cap", "value": "$2.84T", "note": "Near ATH" },
-  { "label": "24h Change", "value": "+2.1%", "note": "Positive momentum" }
-],
-
-"engineTitle": "Market Analysis Engine",
-"engineDescription": "Select time ranges, compare cycles, and generate a structured crypto market analysis based on historical data.",
-
-"timeRangeLabel": "Select Time Range",
-"timeRanges": ["1Y", "3Y", "5Y", "ALL"],
-
-"compareLabel": "Compare Market Cycles",
-"compareYears": ["2017", "2021", "2024", "Current"],
-
-"options": [
-  "Include Bitcoin overlay",
-  "Include altcoin signal"
-],
-
-"generated": {
-  "title": "Generated Market Analysis",
-  "text": "The crypto market cap is approaching previous cycle highs, indicating a potential expansion phase. Bitcoin dominance remains strong, suggesting capital concentration before altcoin rotation. Market structure shows moderate risk with continued bullish momentum.",
-  "tags": ["Expansion Phase", "Moderate Risk", "BTC Dominance"],
-  "buttons": ["Copy Analysis", "Download TXT", "Download PDF"]
-},
-
-"disclaimer": "This analysis is for educational purposes only and does not constitute financial advice. Cryptocurrency markets are highly volatile and carry significant risk.",
-
-"chartTitle": "Crypto Market Cap Chart",
-"chartDescription": "Visualize total crypto market capitalization across cycles, including peaks, drawdowns, and trend strength.",
-"chartLegend": [
-  "Total Market Cap",
-  "Previous Cycle Peaks",
-  "Bitcoin Overlay",
-  "Drawdown from ATH"
-],
-
-"content": {
-  "howTitle": "How crypto market analysis works",
-  "howText": "Crypto market analysis combines total market capitalization, Bitcoin cycles, and trend indicators to evaluate the overall direction of the digital asset market.",
-
-  "marketCapTitle": "Why total market cap matters",
-  "marketCapText": "Total market cap reflects the size of the crypto market. It helps compare different time periods and identify whether the market is expanding or contracting.",
-
-  "bitcoinTitle": "How Bitcoin cycles affect altcoins",
-  "bitcoinText": "Bitcoin typically leads market cycles. When Bitcoin dominance rises, capital flows into BTC first before moving into altcoins.",
-
-  "riskTitle": "How to interpret market risk",
-  "riskText": "Market risk depends on volatility, valuation, and macro conditions. Higher market cap levels often come with increased risk and potential corrections.",
-
-  "historyTitle": "Why historical data matters",
-  "historyText": "Historical data helps identify repeating patterns, but it does not guarantee future performance. Always combine data with risk management."
-},
-
-"internalLinksTitle": "Explore More Crypto Tools",
-"internalLinks": [
-  {
-    "title": "Market Cap Analysis",
-    "text": "Compare total crypto market cap across cycles.",
-    "href": "/market-cap"
-  },
-  {
-    "title": "Crypto Blog",
-    "text": "Learn about blockchain, Web3, and crypto trends.",
-    "href": "/blog"
-  },
-  {
-    "title": "Gaming Crypto",
-    "text": "Discover blockchain gaming and Web3 opportunities.",
-    "href": "/gaming-crypto"
-  },
-  {
-    "title": "Bitcoin Cycles",
-    "text": "Understand Bitcoin market behavior across cycles.",
-    "href": "/bitcoin-cycles"
-  }
-],
-
-"faqTitle": "Frequently Asked Questions",
-"faqs": [
-  {
-    "question": "What is crypto market analysis?",
-    "answer": "Crypto market analysis evaluates the overall market using metrics like market cap, Bitcoin dominance, and trend indicators."
-  },
-  {
-    "question": "Can crypto market cap predict price?",
-    "answer": "No, market cap does not predict prices directly. It helps understand market size and trends but not exact future price movements."
-  },
-  {
-    "question": "Why compare Bitcoin with total market cap?",
-    "answer": "Comparing Bitcoin with total market cap shows how capital flows between BTC and altcoins during different phases."
-  },
-  {
-    "question": "Is this financial advice?",
-    "answer": "No. This platform provides educational insights only and does not offer financial advice."
-  },
-  {
-    "question": "How often is the data updated?",
-    "answer": "Data updates depend on connected APIs and will be refreshed regularly once live data integration is active."
-  }
+"marketCap": {
+  "back": "← Retour à l’Accueil",
+  "badge": "Intelligence Globale du Marché Crypto",
+  "title": "Analyse de la Capitalisation du Marché Crypto",
+  "description": "Analysez la capitalisation totale du marché des cryptomonnaies, comparez la valeur actuelle du marché avec les précédents cycles crypto et comprenez la domination du Bitcoin, les phases du marché et les tendances crypto à long terme.",
+  "primaryCta": "Analyser le Marché",
+  "secondaryCta": "Voir les Données Historiques",
+  "chartLabel": "Capitalisation Totale du Marché Crypto",
+  "marketSignal": "Phase d’Expansion",
+  "chartNote": "Exemple de graphique de capitalisation du marché. Les données API en direct seront connectées plus tard.",
+  "liveLabel": "Capitalisation Totale du Marché Crypto en Direct",
+  "change24h": "24h",
+  "btcDominance": "Dominance BTC",
+  "ethDominance": "Dominance ETH",
+  "totalMarketCap": "Capitalisation Totale du Marché",
+  "marketPhase": "Phase du Marché",
+  "updated": "Mis à jour",
+  "metrics": [
+    { "label": "Capitalisation Totale du Marché", "value": "$2.84T", "change": "+4.7% 24h" },
+    { "label": "Variation 24h", "value": "+2.18%", "change": "Momentum haussier" },
+    { "label": "Dominance BTC", "value": "53.6%", "change": "Bitcoin domine" },
+    { "label": "Phase du Marché", "value": "Expansion", "change": "Risque modéré" }
   ],
-  "stablecoins": {
-  "badge": "Smart Money Signal",
-  "title": "Stablecoin Liquidity Tracker",
-  "description": "Track where stablecoin liquidity is concentrated across crypto ecosystems. Stablecoins are the cash layer of crypto, so they help show where capital is sitting before it moves.",
-  "totalLabel": "Total Stablecoins Tracked",
-  "newbieTitle": "Simple explanation",
-  "newbieText": "Stablecoins are like digital dollars in crypto. When more stablecoins sit on a chain, it means there is more cash available to trade, lend, borrow, or buy crypto assets.",
-  "increaseTitle": "When stablecoins increase",
-  "increaseText": "It can mean users sold volatile assets into stablecoins, or new cash entered the ecosystem. This often shows more dry powder waiting to buy.",
-  "decreaseTitle": "When stablecoins decrease",
-  "decreaseText": "It can mean users are buying crypto assets, moving funds to another chain, or withdrawing liquidity. A decrease is not always bearish; it depends where the money goes.",
+  "chartTitle": "Capitalisation Globale du Marché Crypto au Fil du Temps",
+  "chartDescription": "Suivez l’évolution de la capitalisation totale du marché crypto à travers les marchés haussiers, baissiers, les phases de reprise et les cycles Bitcoin à long terme.",
+  "ranges": ["1Y", "3Y", "5Y", "TOUT"],
+  "comparisonTitle": "Comparaison des Cycles du Marché Crypto",
+  "comparisons": [
+    { "year": "2017", "value": "$830B", "note": "Ancien sommet de début de cycle" },
+    { "year": "2021", "value": "$3.0T", "note": "Ancien sommet historique" },
+    { "year": "Actuel", "value": "$2.84T", "note": "Proche des sommets du cycle précédent" }
+  ],
+  "analysisTitle": "Analyse de Marché par IA",
+  "analysisText": "La capitalisation du marché crypto approche les sommets des cycles précédents, ce qui peut indiquer une phase d’expansion. La domination du Bitcoin reste élevée, suggérant que le capital est encore concentré dans les principaux actifs avant une rotation plus large vers les altcoins. Le risque reste modéré car les marchés crypto sont volatils et très sensibles aux conditions macroéconomiques.",
+  "analysisTags": ["Risque Modéré", "Phase d’Expansion", "Dominance Bitcoin"],
+  "content": {
+    "whatTitle": "Qu’est-ce que la capitalisation du marché crypto ?",
+    "whatText": "La capitalisation du marché crypto représente la valeur totale des actifs cryptographiques en circulation.",
+    "whyTitle": "Pourquoi la capitalisation du marché est importante",
+    "whyText": "La capitalisation aide les investisseurs et chercheurs à comprendre la taille du marché, les flux de capitaux, les tendances de valorisation et si le marché crypto est en expansion ou en ralentissement.",
+    "cyclesTitle": "Explication des cycles du marché crypto",
+    "cyclesText": "Les cycles du marché crypto passent généralement par des phases d’accumulation, d’expansion, de distribution et de contraction."
+  },
+  "faqTitle": "Questions Fréquemment Posées",
+  "faqs": [
+    {
+      "question": "Qu’est-ce que la capitalisation totale du marché crypto ?",
+      "answer": "La capitalisation totale du marché crypto est la valeur combinée de toutes les cryptomonnaies."
+    },
+    {
+      "question": "La capitalisation du marché peut-elle prédire les prix crypto ?",
+      "answer": "La capitalisation du marché ne peut pas prédire les prix avec certitude."
+    },
+    {
+      "question": "Comment la domination du Bitcoin affecte-t-elle le marché crypto ?",
+      "answer": "La domination du Bitcoin montre la part du Bitcoin dans le marché crypto total."
+    }
+  ]
+},
+"analysis": {
+  "badge": "Moteur d’Intelligence Crypto",
+  "title": "Analyse du Marché Crypto",
+  "description": "Comprenez la capitalisation totale du marché crypto, le comportement des cycles Bitcoin, le risque du marché et la force des tendances grâce à des analyses claires et faciles à lire.",
+  "primaryCta": "Commencer l’Analyse",
+  "secondaryCta": "Lire la Méthodologie",
+  "heroCard": {
+    "label": "Résumé du Marché",
+    "value": "Phase d’Expansion",
+    "signal": "Risque Modéré",
+    "points": [
+      "La capitalisation du marché approche les précédents sommets",
+      "La domination du Bitcoin reste élevée",
+      "Les altcoins sont en retard par rapport au BTC",
+      "Le momentum se construit lentement"
+    ]
+  },
+  "deepEngine": {
+    "badge": "Moteur d’Intelligence",
+    "title": "Moteur d’Analyse Crypto Approfondie",
+    "description": "Générez une analyse plus approfondie du marché couvrant les cycles, la domination du Bitcoin, la gestion du risque, la rotation des altcoins et une conclusion claire de type « Alors quoi ? ».",
+    "focusLabel": "Focus de l’Analyse",
+    "generate": "Générer une Analyse Approfondie",
+    "generating": "Génération...",
+    "outputTitle": "Rapport d’Intelligence Généré",
+    "placeholder": "Choisissez un focus d’analyse et générez un rapport de marché Kryptonal plus approfondi.",
+    "copied": "Copié",
+    "copy": "Copier l’Analyse",
+    "download": "Télécharger TXT",
+    "copyFailed": "Échec de la copie. Veuillez sélectionner le texte manuellement.",
+    "disclaimer": "Contenu éducatif uniquement. Pas un conseil financier. Vérifiez toujours indépendamment les informations financières importantes.",
+    "modes": {
+      "full": "Complet",
+      "cycle": "Cycle",
+      "risk": "Risque",
+      "altcoins": "Altcoins"
+    },
+    "checklist": [
+      "Contexte du cycle du marché",
+      "Analyse de la domination du Bitcoin",
+      "Résumé de la gestion des risques",
+      "Explication « Alors quoi ? »"
+    ],
+    "tags": [
+      "Analyse Approfondie du Marché",
+      "Conclusion Incluse",
+      "Gestion du Risque"
+    ]
+  },
+  "signals": [
+    { "label": "Phase du Marché", "value": "Expansion", "note": "Milieu de cycle" },
+    { "label": "Force de la Tendance", "value": "Forte", "note": "Tendance haussière intacte" },
+    { "label": "Niveau de Risque", "value": "Modéré", "note": "Surveillez la volatilité" },
+    { "label": "Dominance BTC", "value": "53.6%", "note": "Bitcoin domine" },
+    { "label": "Capitalisation Totale du Marché", "value": "$2.84T", "note": "Proche de l’ATH" },
+    { "label": "Variation 24h", "value": "+2.1%", "note": "Momentum positif" }
+  ],
+  "engineTitle": "Moteur d’Analyse du Marché",
+  "engineDescription": "Sélectionnez des périodes, comparez les cycles et générez une analyse structurée du marché crypto basée sur les données historiques.",
+  "timeRangeLabel": "Sélectionner une Période",
+  "timeRanges": ["1Y", "3Y", "5Y", "TOUT"],
+  "compareLabel": "Comparer les Cycles du Marché",
+  "compareYears": ["2017", "2021", "2024", "Actuel"],
+  "options": [
+    "Inclure la superposition Bitcoin",
+    "Inclure le signal altcoin"
+  ],
+  "generated": {
+    "title": "Analyse de Marché Générée",
+    "text": "La capitalisation du marché crypto approche les sommets des cycles précédents, indiquant une possible phase d’expansion. La domination du Bitcoin reste forte, suggérant une concentration du capital avant une rotation vers les altcoins. La structure du marché montre un risque modéré avec un momentum haussier continu.",
+    "tags": [
+      "Phase d’Expansion",
+      "Risque Modéré",
+      "Dominance BTC"
+    ],
+    "buttons": [
+      "Copier l’Analyse",
+      "Télécharger TXT",
+      "Télécharger PDF"
+    ]
+  },
+  "disclaimer": "Cette analyse est fournie à des fins éducatives uniquement et ne constitue pas un conseil financier.",
+  "chartTitle": "Graphique de la Capitalisation du Marché Crypto",
+  "chartDescription": "Visualisez la capitalisation totale du marché crypto à travers les cycles, y compris les sommets, les baisses et la force des tendances.",
+  "chartLegend": [
+    "Capitalisation Totale du Marché",
+    "Sommets des Cycles Précédents",
+    "Superposition Bitcoin",
+    "Baisse depuis l’ATH"
+  ],
+  "content": {
+    "howTitle": "Comment fonctionne l’analyse du marché crypto",
+    "howText": "L’analyse du marché crypto combine la capitalisation totale du marché, les cycles Bitcoin et les indicateurs de tendance.",
+    "marketCapTitle": "Pourquoi la capitalisation totale du marché est importante",
+    "marketCapText": "La capitalisation totale du marché reflète la taille du marché crypto.",
+    "bitcoinTitle": "Comment les cycles Bitcoin affectent les altcoins",
+    "bitcoinText": "Le Bitcoin mène généralement les cycles du marché.",
+    "riskTitle": "Comment interpréter le risque du marché",
+    "riskText": "Le risque du marché dépend de la volatilité, de la valorisation et des conditions macroéconomiques.",
+    "historyTitle": "Pourquoi les données historiques sont importantes",
+    "historyText": "Les données historiques aident à identifier des modèles récurrents, mais elles ne garantissent pas les performances futures."
+  },
+  "internalLinksTitle": "Explorer Plus d’Outils Crypto",
+  "internalLinks": [
+    {
+      "title": "Analyse de la Capitalisation du Marché",
+      "text": "Comparez la capitalisation totale du marché crypto à travers les cycles.",
+      "href": "/market-cap"
+    },
+    {
+      "title": "Blog Crypto",
+      "text": "Apprenez-en plus sur la blockchain, le Web3 et les tendances crypto.",
+      "href": "/blog"
+    },
+    {
+      "title": "Gaming Crypto",
+      "text": "Découvrez le gaming blockchain et les opportunités Web3.",
+      "href": "/gaming-crypto"
+    },
+    {
+      "title": "Cycles Bitcoin",
+      "text": "Comprenez le comportement du marché Bitcoin à travers les cycles.",
+      "href": "/bitcoin-cycles"
+    }
+  ],
+  "faqTitle": "Questions Fréquemment Posées",
+  "faqs": [
+    {
+      "question": "Qu’est-ce que l’analyse du marché crypto ?",
+      "answer": "L’analyse du marché crypto évalue le marché global à l’aide de métriques comme la capitalisation du marché, la domination du Bitcoin et les indicateurs de tendance."
+    },
+    {
+      "question": "La capitalisation du marché crypto peut-elle prédire le prix ?",
+      "answer": "Non, la capitalisation du marché ne prédit pas directement les prix."
+    },
+    {
+      "question": "S’agit-il d’un conseil financier ?",
+      "answer": "Non. Cette plateforme fournit uniquement des analyses éducatives."
+    }
+  ],
+  "smartMoney": {
+    "badge": "Alertes Smart Money",
+    "title": "Tableau des Alertes Smart Money",
+    "description": "Suivez les blockchains où la liquidité, la TVL et la croissance hebdomadaire suggèrent une activité de capital plus forte.",
+    "score": "Score du Signal",
+    "tvl": "TVL",
+    "stablecoins": "Stablecoins",
+    "weeklyChange": "Variation 7J",
+    "protocols": "Protocoles",
+    "soWhat": "Alors quoi ?",
+    "disclaimer": "Les alertes smart money sont uniquement des signaux éducatifs. Elles ne garantissent pas les mouvements de prix et ne constituent pas un conseil financier.",
+    "loading": "Chargement des alertes..."
+  }
+},
+"stablecoins": {
+  "badge": "Signal Smart Money",
+  "title": "Suivi de la Liquidité des Stablecoins",
+  "description": "Suivez où la liquidité des stablecoins est concentrée à travers les écosystèmes crypto.",
+  "totalLabel": "Total des Stablecoins Suivis",
+  "newbieTitle": "Explication simple",
+  "newbieText": "Les stablecoins sont comme des dollars numériques dans la crypto.",
+  "increaseTitle": "Quand les stablecoins augmentent",
+  "increaseText": "Cela peut signifier que les utilisateurs ont vendu des actifs volatils contre des stablecoins, ou que de nouveaux capitaux sont entrés dans l’écosystème.",
+  "decreaseTitle": "Quand les stablecoins diminuent",
+  "decreaseText": "Cela peut signifier que les utilisateurs achètent des actifs crypto, déplacent des fonds vers une autre blockchain ou retirent de la liquidité.",
   "stablecoinsLabel": "Stablecoins",
-  "ofTrackedLiquidity": "of tracked liquidity",
-  "soWhat": "So what?",
-  "chainExplanation": "Higher stablecoin concentration can indicate stronger liquidity conditions and more active capital flow.",
-  "veryStrong": "Very Strong Liquidity",
-  "healthy": "Healthy Liquidity",
-  "moderate": "Moderate Liquidity",
-  "lower": "Lower Liquidity",
+  "ofTrackedLiquidity": "de la liquidité suivie",
+  "soWhat": "Alors quoi ?",
+  "chainExplanation": "Une concentration plus élevée de stablecoins peut indiquer de meilleures conditions de liquidité et des flux de capitaux plus actifs.",
+  "veryStrong": "Liquidité Très Forte",
+  "healthy": "Liquidité Saine",
+  "moderate": "Liquidité Modérée",
+  "lower": "Liquidité Plus Faible",
   "meaning": {
-    "high": "Stablecoin liquidity is very large across the tracked chains. This suggests deep crypto liquidity and strong capital availability.",
-    "medium": "Stablecoin liquidity is healthy across the tracked chains. There is meaningful capital available, but flows should still be compared with trend and risk conditions.",
-    "low": "Stablecoin liquidity is relatively low across the tracked chains. This may suggest weaker activity or less capital available for market rotation."
+    "high": "La liquidité des stablecoins est très importante sur les blockchains suivies.",
+    "medium": "La liquidité des stablecoins est saine sur les blockchains suivies.",
+    "low": "La liquidité des stablecoins est relativement faible sur les blockchains suivies."
   },
   "narratives": {
-    "ethereum": "Ethereum usually holds deep DeFi and institutional liquidity.",
-    "tron": "Tron is heavily used for USDT transfers because fees are low and transfers are fast.",
-    "solana": "Solana liquidity can reflect retail activity, meme trading, and fast-moving speculative demand.",
-    "base": "Base liquidity can show growing Layer 2 ecosystem activity and Coinbase-linked adoption.",
-    "arbitrum": "Arbitrum liquidity is often linked to DeFi activity and Ethereum scaling demand.",
-    "bsc": "BSC liquidity often reflects retail trading and lower-fee activity.",
-    "default": "This chain shows stablecoin activity inside its ecosystem."
+    "ethereum": "Ethereum possède généralement une forte liquidité DeFi et institutionnelle.",
+    "tron": "Tron est largement utilisé pour les transferts USDT grâce à ses frais faibles et ses transferts rapides.",
+    "solana": "La liquidité sur Solana peut refléter l’activité retail, le trading de memecoins et une demande spéculative rapide.",
+    "base": "La liquidité sur Base peut montrer la croissance de l’écosystème Layer 2 et l’adoption liée à Coinbase.",
+    "arbitrum": "La liquidité sur Arbitrum est souvent liée à l’activité DeFi et à la demande de scalabilité Ethereum.",
+    "bsc": "La liquidité sur BSC reflète souvent le trading retail et les activités à faibles frais.",
+    "default": "Cette blockchain montre une activité de stablecoins dans son écosystème."
   },
-  "disclaimer": "Stablecoin data does not guarantee market direction. It is best used as liquidity context alongside broader market analysis."
+  "disclaimer": "Les données des stablecoins ne garantissent pas la direction du marché."
 },
 "chainStrength": {
-  "badge": "Ecosystem Health",
-  "title": "Chain Strength Tracker",
-  "description": "Compare blockchain ecosystems by TVL, growth, protocol count, and momentum. This helps users see which chains have real DeFi activity, not just hype.",
-  "protocols": "protocols",
-  "score": "Strength Score",
-  "soWhat": "So what?",
-  "disclaimer": "Chain strength does not guarantee token price performance. Use this as ecosystem health context, not financial advice."
+  "badge": "Santé de l’Écosystème",
+  "title": "Suivi de la Force des Blockchains",
+  "description": "Comparez les écosystèmes blockchain selon la TVL, la croissance, le nombre de protocoles et le momentum.",
+  "protocols": "protocoles",
+  "score": "Score de Force",
+  "soWhat": "Alors quoi ?",
+  "disclaimer": "La force d’une blockchain ne garantit pas la performance du token."
 },
 "sectorRotation": {
-  "badge": "Narrative Momentum",
-  "title": "Sector Rotation Heatmap",
-  "description": "Track which crypto sectors are gaining or losing momentum by comparing TVL, weekly change, and protocol activity. This helps users understand where narratives may be heating up.",
-  "protocols": "protocols",
-  "score": "Rotation Score",
-  "soWhat": "So what?",
-  "disclaimer": "Sector rotation is not a direct buy or sell signal. Use it to understand market attention and liquidity trends."
-}
+  "badge": "Momentum des Narratifs",
+  "title": "Carte Thermique de Rotation des Secteurs",
+  "description": "Suivez quels secteurs crypto gagnent ou perdent du momentum.",
+  "protocols": "protocoles",
+  "score": "Score de Rotation",
+  "soWhat": "Alors quoi ?",
+  "disclaimer": "La rotation des secteurs n’est pas un signal direct d’achat ou de vente."
 },
 "analysisTool": {
-  "badge": "Live Analysis Engine",
-  "title": "Generate Crypto Market Analysis",
-  "description": "Compare the current crypto market with previous cycles and generate a clean market summary you can copy or download.",
-  "compareLabel": "Compare with cycle year",
-  "current": "Current",
-  "generate": "Generate Analysis",
-  "generating": "Generating...",
-  "placeholder": "Choose a cycle year and generate a market analysis.",
-  "copy": "Copy Analysis",
-  "copied": "Copied",
-  "download": "Download TXT",
-  "disclaimer": "This content is for educational purposes only and is not financial advice. Always verify important financial information independently."
+  "badge": "Moteur d’Analyse en Direct",
+  "title": "Générer une Analyse du Marché Crypto",
+  "description": "Comparez le marché crypto actuel avec les cycles précédents et générez un résumé clair du marché que vous pouvez copier ou télécharger.",
+  "compareLabel": "Comparer avec l’année du cycle",
+  "current": "Actuel",
+  "generate": "Générer l’Analyse",
+  "generating": "Génération...",
+  "placeholder": "Choisissez une année de cycle et générez une analyse du marché.",
+  "copy": "Copier l’Analyse",
+  "copied": "Copié",
+  "download": "Télécharger TXT",
+  "disclaimer": "Ce contenu est fourni à des fins éducatives uniquement et ne constitue pas un conseil financier."
+},
+"footer": {
+  "description": "Analyse de la capitalisation du marché crypto, recherche sur les cycles Bitcoin, éducation blockchain, opportunités Web3 et analyses gaming crypto pour les apprenants du marché à long terme.",
+  "platform": "Plateforme",
+  "important": "Important",
+  "marketCap": "Capitalisation du Marché",
+  "analysis": "Analyse",
+  "blog": "Blog Crypto",
+  "gamingCrypto": "Gaming Crypto",
+  "educationOnly": "Contenu éducatif uniquement",
+  "notFinancialAdvice": "Pas un conseil financier",
+  "highRisk": "La crypto comporte des risques élevés",
+  "translationNote": "Les traductions sont générées par IA et peuvent contenir des erreurs ou des informations incorrectes. Vérifiez toujours indépendamment les informations financières importantes."
+},
+"seo": {
+  "home": {
+    "title": "Kryptonal | Analyse de la Capitalisation Crypto, Cycles Bitcoin & Recherche Web3",
+    "description": "Analysez la capitalisation totale du marché crypto, comparez les cycles historiques, étudiez le comportement du marché Bitcoin et découvrez la blockchain, le Web3 et le gaming crypto."
+  },
+  "marketCap": {
+    "title": "Analyse de la Capitalisation Crypto | Dominance Bitcoin, Cycles & Tendances",
+    "description": "Analysez la capitalisation totale du marché crypto, la dominance Bitcoin, les cycles du marché, les tendances historiques crypto et la capitalisation mondiale des cryptomonnaies avec Kryptonal.",
+    "keywords": [
+      "capitalisation crypto",
+      "capitalisation des cryptomonnaies",
+      "capitalisation totale crypto",
+      "dominance bitcoin",
+      "cycles du marché crypto",
+      "analyse du marché crypto",
+      "capitalisation mondiale crypto",
+      "analyse des cycles bitcoin",
+      "tendances crypto"
+    ]
+  },
+  "analysis": {
+    "title": "Analyse du Marché Crypto | Cycles Bitcoin, Capitalisation & Signaux de Risque",
+    "description": "Analysez la capitalisation crypto, les cycles Bitcoin, la force des tendances et les niveaux de risque. Générez des analyses crypto claires avec Kryptonal.",
+    "keywords": [
+      "analyse du marché crypto",
+      "analyse des cycles bitcoin",
+      "analyse de la capitalisation crypto",
+      "analyse des risques crypto",
+      "tendances crypto",
+      "dominance bitcoin",
+      "signaux du marché crypto"
+    ]
+  }
 }
 }

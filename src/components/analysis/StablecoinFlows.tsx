@@ -26,35 +26,35 @@ function getPercent(value: number, total: number) {
 }
 
 function getSignal(value: number, t: any) {
-  if (value > 40_000_000_000) return t.analysis.stablecoins.veryStrong;
-  if (value > 15_000_000_000) return t.analysis.stablecoins.healthy;
-  if (value > 5_000_000_000) return t.analysis.stablecoins.moderate;
-  return t.analysis.stablecoins.lower;
+  if (value > 40_000_000_000) return t.stablecoins.veryStrong;
+  if (value > 15_000_000_000) return t.stablecoins.healthy;
+  if (value > 5_000_000_000) return t.stablecoins.moderate;
+  return t.stablecoins.lower;
 }
 
 function getNarrative(chain: string, t: any) {
   const narratives: Record<string, string> = {
-    Ethereum: t.analysis.stablecoins.narratives.ethereum,
-    Tron: t.analysis.stablecoins.narratives.tron,
-    Solana: t.analysis.stablecoins.narratives.solana,
-    Base: t.analysis.stablecoins.narratives.base,
-    Arbitrum: t.analysis.stablecoins.narratives.arbitrum,
-    BSC: t.analysis.stablecoins.narratives.bsc,
+    Ethereum: t.stablecoins.narratives.ethereum,
+    Tron: t.stablecoins.narratives.tron,
+    Solana: t.stablecoins.narratives.solana,
+    Base: t.stablecoins.narratives.base,
+    Arbitrum: t.stablecoins.narratives.arbitrum,
+    BSC: t.stablecoins.narratives.bsc,
   };
 
-  return narratives[chain] || t.analysis.stablecoins.narratives.default;
+  return narratives[chain] || t.stablecoins.narratives.default;
 }
 
 function getSimpleMeaning(total: number, t: any) {
   if (total > 250_000_000_000) {
-    return t.analysis.stablecoins.meaning.high;
+    return t.stablecoins.meaning.high;
   }
 
   if (total > 100_000_000_000) {
-    return t.analysis.stablecoins.meaning.medium;
+    return t.stablecoins.meaning.medium;
   }
 
-  return t.analysis.stablecoins.meaning.low;
+  return t.stablecoins.meaning.low;
 }
 
 export default function StablecoinFlows({ t }: Props) {
@@ -92,15 +92,15 @@ export default function StablecoinFlows({ t }: Props) {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-emerald-400 sm:text-sm">
-              {t.analysis.stablecoins.badge}
+              {t.stablecoins.badge}
             </p>
 
             <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-              {t.analysis.stablecoins.title}
+              {t.stablecoins.title}
             </h2>
 
             <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
-              {t.analysis.stablecoins.description}
+              {t.stablecoins.description}
             </p>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function StablecoinFlows({ t }: Props) {
         <div className="mt-8 grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.07] p-5 sm:p-6">
             <p className="text-sm font-bold uppercase tracking-widest text-emerald-300">
-              {t.analysis.stablecoins.totalLabel}
+              {t.stablecoins.totalLabel}
             </p>
 
             <p className="mt-4 break-words text-4xl font-black text-white sm:text-5xl">
@@ -121,11 +121,11 @@ export default function StablecoinFlows({ t }: Props) {
 
             <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/60 p-4">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
-                {t.analysis.stablecoins.newbieTitle}
+                {t.stablecoins.newbieTitle}
               </p>
 
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                {t.analysis.stablecoins.newbieText}
+                {t.stablecoins.newbieText}
               </p>
             </div>
           </div>
@@ -133,21 +133,21 @@ export default function StablecoinFlows({ t }: Props) {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-3xl border border-white/10 bg-slate-950 p-5">
               <p className="text-sm font-bold text-slate-400">
-                {t.analysis.stablecoins.increaseTitle}
+                {t.stablecoins.increaseTitle}
               </p>
 
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                {t.analysis.stablecoins.increaseText}
+                {t.stablecoins.increaseText}
               </p>
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-slate-950 p-5">
               <p className="text-sm font-bold text-slate-400">
-                {t.analysis.stablecoins.decreaseTitle}
+                {t.stablecoins.decreaseTitle}
               </p>
 
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                {t.analysis.stablecoins.decreaseText}
+                {t.stablecoins.decreaseText}
               </p>
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function StablecoinFlows({ t }: Props) {
                 <h3 className="text-2xl font-black">{item.chain}</h3>
 
                 <span className="w-fit rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-bold text-emerald-300">
-                  {t.analysis.stablecoins.stablecoinsLabel}
+                  {t.stablecoins.stablecoinsLabel}
                 </span>
               </div>
 
@@ -186,7 +186,7 @@ export default function StablecoinFlows({ t }: Props) {
 
                 <p className="mt-2 text-xs font-semibold text-slate-400">
                   {getPercent(item.value, totalStablecoins)}{" "}
-                  {t.analysis.stablecoins.ofTrackedLiquidity}
+                  {t.stablecoins.ofTrackedLiquidity}
                 </p>
               </div>
 
@@ -196,12 +196,12 @@ export default function StablecoinFlows({ t }: Props) {
 
               <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                 <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
-                  {t.analysis.stablecoins.soWhat}
+                  {t.stablecoins.soWhat}
                 </p>
 
                 <p className="mt-3 text-sm leading-7 text-slate-300">
                   {getNarrative(item.chain, t)}{" "}
-                  {t.analysis.stablecoins.chainExplanation}
+                  {t.stablecoins.chainExplanation}
                 </p>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function StablecoinFlows({ t }: Props) {
         </div>
 
         <div className="mt-8 rounded-2xl border border-amber-400/20 bg-amber-400/10 p-4 text-sm leading-7 text-amber-200">
-          {t.analysis.stablecoins.disclaimer}
+          {t.stablecoins.disclaimer}
         </div>
       </div>
     </section>
