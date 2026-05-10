@@ -48,7 +48,7 @@ export default function Header({ locale, t }: HeaderProps) {
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageSwitcher locale={locale} />
           <Link
-            href={`/${locale}/market-cap`}
+            href={`/${locale}/analysis`}
             className="rounded-xl bg-emerald-400 px-5 py-2 text-sm font-bold text-slate-950"
           >
             {t.nav.start}
@@ -83,7 +83,7 @@ export default function Header({ locale, t }: HeaderProps) {
             </div>
 
             <Link
-              href={`/${locale}/market-cap`}
+              href={`/${locale}/analysis`}
               onClick={() => setOpen(false)}
               className="rounded-xl bg-emerald-400 px-5 py-3 text-center font-bold text-slate-950"
             >
