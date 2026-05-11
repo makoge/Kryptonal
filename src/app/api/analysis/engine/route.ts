@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
       minute: "2-digit",
     });
 
-    const analysis = `Cryptonal Deep Market Intelligence
+    const analysis = `kryptonal Deep Market Intelligence
 Generated: ${generatedAt}
 
 1. Market Cycle Read
@@ -118,10 +118,10 @@ In the ${phase} phase, users often:
 7. Final Takeaway
 The market is not only about price. The important question is: why is capital moving, where is it concentrated, and what happens next?
 
-Cryptonal View:
+kryptonal View:
 This looks like a ${phase.toLowerCase()} environment with ${risk.toLowerCase()} risk. The smartest approach is patience, position sizing, and watching whether liquidity expands beyond Bitcoin.
 
-Source: Cryptonal
+Source: kryptonal
 Disclaimer: Educational content only. Not financial advice. Crypto markets are highly volatile.`;
 
     return NextResponse.json({

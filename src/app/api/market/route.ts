@@ -82,7 +82,7 @@ function buildAnalysis({
         : `${Math.abs(diff).toFixed(2)}% below`;
 
   const templates: Record<Locale, string> = {
-    en: `Cryptonal AI Market Brief
+    en: `kryptonal  Market Brief
 Generated: ${generatedDate}
 
 Total crypto market cap is currently ${formatTrillion(marketCap)}, which is ${direction} ${comparison}.
