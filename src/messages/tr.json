@@ -11,6 +11,245 @@
     "start": "Analizi Başlat"
   },
   "home": {
+    "hero": {
+    "badge": "Basitleştirilmiş kripto piyasa zekası",
+    "title": "Kripto piyasasını herkesten önce anlayın",
+    "description": "Kryptonal; kripto piyasa değeri, Bitcoin döngüleri, piyasa trendleri ve geçmiş verileri basit bir dille analiz ederek piyasanın nereye gidebileceğini anlamanıza yardımcı olur.",
+    "primaryCta": "Piyasa döngülerini karşılaştır",
+    "secondaryCta": "Analizi başlat",
+    "panelTitle": "Canlı piyasa zekası",
+    "panelNote": "Kryptonal karmaşık kripto verilerini net döngü sinyallerine, risk bağlamına ve anlaşılır piyasa açıklamalarına dönüştürür."
+  },
+  "marketBar": {
+    "items": [
+      { "label": "BTC", "value": "$104,000" },
+      { "label": "ETH", "value": "$5,200" },
+      { "label": "Piyasa Değeri", "value": "$3.4T" },
+      { "label": "BTC Dominansı", "value": "54%" },
+      { "label": "Fear & Greed", "value": "71" }
+    ]
+  },
+  "summary": {
+    "badge": "Güncel piyasa özeti",
+    "title": "Piyasa şu anda gerçekten ne anlatıyor?",
+    "text": "Kripto piyasası şu anda önceki döngü zirvesinin üzerinde işlem görüyor. Bitcoin dominansı yüksek kalmaya devam ediyor, bu da altcoinlerin henüz tam genişleme aşamasına geçmediğini gösterebilir.",
+    "metrics": [
+      { "label": "Piyasa aşaması", "value": "Genişleme" },
+      { "label": "Risk seviyesi", "value": "Orta" },
+      { "label": "Trend gücü", "value": "Güçlü" }
+    ]
+  },
+  "cycles": {
+    "title": "Kripto piyasa döngülerini karşılaştır",
+    "text": "Mevcut piyasanın önceki döngü zirveleriyle nasıl karşılaştırıldığını görün.",
+    "items": [
+      {
+        "year": "2017",
+        "insight": "2017 döngüsü ICO spekülasyonu ve erken perakende benimsenmesiyle güçlendi.",
+        "metrics": [
+          { "label": "Piyasa değeri zirvesi", "value": "$830B" },
+          { "label": "BTC fiyatı", "value": "$19.7K" },
+          { "label": "Döngü hissiyatı", "value": "Perakende çılgınlığı" },
+          { "label": "Güncel fark", "value": "+309%" }
+        ]
+      },
+      {
+        "year": "2021",
+        "insight": "2021 döngüsü daha güçlü kurumlar, DeFi, NFT’ler ve yüksek likidite getirdi.",
+        "metrics": [
+          { "label": "Piyasa değeri zirvesi", "value": "$2.9T" },
+          { "label": "BTC fiyatı", "value": "$69K" },
+          { "label": "Döngü hissiyatı", "value": "Kurumsal büyüme" },
+          { "label": "Güncel fark", "value": "+17%" }
+        ]
+      },
+      {
+        "year": "2024",
+        "insight": "2024 döngüsü ETF akışları, Bitcoin halving beklentileri ve yeniden gelen likiditeyle şekillendi.",
+        "metrics": [
+          { "label": "Piyasa değeri", "value": "$2.7T" },
+          { "label": "BTC fiyatı", "value": "$73K" },
+          { "label": "Döngü hissiyatı", "value": "ETF birikimi" },
+          { "label": "Güncel fark", "value": "+25%" }
+        ]
+      },
+      {
+        "year": "Güncel",
+        "insight": "Mevcut piyasa önceki zirvelerden daha güçlü görünüyor ancak dominans ve risk hâlâ önem taşıyor.",
+        "metrics": [
+          { "label": "Piyasa değeri", "value": "$3.4T" },
+          { "label": "BTC fiyatı", "value": "$104K" },
+          { "label": "Döngü hissiyatı", "value": "Genişleme" },
+          { "label": "Risk görünümü", "value": "Dominansı izle" }
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Kripto verileri basit şekilde açıklandı",
+    "text": "Kryptonal sayıların arkasındaki anlamı anlamanıza yardımcı olur.",
+    "items": [
+      {
+        "title": "Piyasa değeri",
+        "text": "Piyasa değeri kripto piyasasının toplam değerini gösterir ve döngü boyutlarını karşılaştırmaya yardımcı olur."
+      },
+      {
+        "title": "Bitcoin dominansı",
+        "text": "Bitcoin dominansı paranın Bitcoin’de mi kaldığını yoksa altcoinlere mi geçtiğini gösterir."
+      },
+      {
+        "title": "Kripto döngüleri",
+        "text": "Kripto piyasaları genellikle birikim, genişleme, coşku ve düzeltme döngülerinden geçer."
+      },
+      {
+        "title": "Geçmiş veriler",
+        "text": "Geçmiş döngüler geleceği garanti etmez ancak piyasa bağlamını anlamaya yardımcı olur."
+      }
+    ]
+  },
+  "features": {
+    "title": "Kripto zekâ paneli gibi tasarlandı",
+    "items": [
+      {
+        "icon": "🧠",
+        "title": "Yapay zekâ piyasa analizi",
+        "text": "Karmaşık kripto verilerinden basit piyasa açıklamaları oluşturun."
+      },
+      {
+        "icon": "📈",
+        "title": "Bitcoin döngü katmanları",
+        "text": "Bitcoin ve toplam kripto piyasasının farklı döngülerdeki davranışını karşılaştırın."
+      },
+      {
+        "icon": "🔁",
+        "title": "Döngü karşılaştırma motoru",
+        "text": "Mevcut piyasa koşullarını 2017, 2021 ve 2024 ile karşılaştırın."
+      },
+      {
+        "icon": "📄",
+        "title": "İndirilebilir raporlar",
+        "text": "Araştırma ve içerik için net piyasa özetleri oluşturun."
+      },
+      {
+        "icon": "🛰️",
+        "title": "Piyasa zekası",
+        "text": "Dominans, risk, trend gücü ve önemli döngü sinyallerini takip edin."
+      },
+      {
+        "icon": "🎮",
+        "title": "Gaming crypto araştırması",
+        "text": "Web3 oyunları, blockchain ekosistemleri ve gelecekteki anlatıları keşfedin."
+      }
+    ]
+  },
+  "trust": {
+    "title": "Kripto yatırımcıları, araştırmacılar ve Web3 analistleri için geliştirildi.",
+    "text": "Kryptonal şeffaf piyasa eğitimi ve döngü odaklı basit analizlere odaklanır.",
+    "disclaimer": "Yalnızca eğitim amaçlıdır. Finansal tavsiye değildir. Önemli finansal bilgileri her zaman bağımsız olarak doğrulayın."
+  },
+  "blog": {
+    "title": "İşlem yapmadan önce piyasayı öğrenin",
+    "items": [
+      {
+        "category": "Bitcoin",
+        "title": "Bitcoin döngüleri açıklandı",
+        "text": "Bitcoin’in önceki piyasa döngülerinde nasıl hareket ettiğini anlayın."
+      },
+      {
+        "category": "Web3",
+        "title": "Web3 fırsatları",
+        "text": "Bir sonraki kripto benimsenme dalgasını şekillendiren anlatıları keşfedin."
+      },
+      {
+        "category": "Gaming",
+        "title": "Gaming crypto araştırması",
+        "text": "Blockchain oyunlarını ve gaming token ekosistemlerini takip edin."
+      },
+      {
+        "category": "Eğitim",
+        "title": "Blockchain temelleri",
+        "text": "Kripto paraları ve ağları anlamak için basit rehberler."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Kripto piyasa SSS",
+    "items": [
+      {
+        "q": "Kripto piyasa değeri nedir?",
+        "a": "Kripto piyasa değeri, piyasadaki tüm kripto paraların toplam tahmini değeridir."
+      },
+      {
+        "q": "Piyasa değeri fiyat tahmini yapabilir mi?",
+        "a": "Hayır. Piyasa değeri bağlam sağlar ancak gelecekteki fiyat hareketlerini garanti etmez."
+      },
+      {
+        "q": "Bitcoin dominansı nedir?",
+        "a": "Bitcoin dominansı, Bitcoin’in toplam kripto piyasa değerindeki payını gösterir."
+      },
+      {
+        "q": "Kripto döngüleri nasıl çalışır?",
+        "a": "Kripto piyasaları genellikle birikim, genişleme, coşku ve düzeltme aşamalarından geçer."
+      },
+      {
+        "q": "Bu finansal tavsiye mi?",
+        "a": "Hayır. Kryptonal yalnızca eğitim amaçlıdır."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Kripto döngüsünde hangi aşamada olduğumuzu görün.",
+    "text": "Karmaşık kripto verilerini kolay anlaşılır piyasa zekasına dönüştürün.",
+    "primary": "Piyasayı analiz et",
+    "secondary": "Piyasa değerini keşfet"
+  },
+  "toolsSection": {
+  "badge": "Daha akıllı kararlar için kripto araçları",
+  "title": "Getirileri keşfedin, yatırım senaryolarını test edin ve coinleri gizli şekilde takip edin.",
+  "description": "Kryptonal araçlarını kullanarak DeFi fırsatlarını keşfedin, geçmiş bir yatırımın bugün ne kadar edeceğini hesaplayın, gelecekteki fiyat hedeflerini test edin ve hesap oluşturmadan özel bir watchlist oluşturun.",
+  "disclaimer": "Araçlar yalnızca eğitim amaçlıdır. Getiri, ROI ve watchlist verileri finansal tavsiye değildir.",
+  "tools": [
+    {
+      "badge": "Canlı DeFi Getirileri",
+      "title": "High-Yield Finder",
+      "text": "Canlı APY verileriyle DeFi havuzlarını ve stablecoin getiri fırsatlarını keşfedin. Daha derin araştırma yapmadan önce protokolleri, ağları, tokenleri ve getirileri karşılaştırın.",
+      "href": "/tools/high-yield-finder",
+      "cta": "Getiri bul",
+      "accent": "emerald",
+      "stats": [
+        "Stablecoin filtresi",
+        "Canlı APY verileri",
+        "Protokol karşılaştırması"
+      ]
+    },
+    {
+      "badge": "ROI Simülatörü",
+      "title": "Crypto ROI Vision",
+      "text": "Geçmiş bir kripto yatırımının bugün ne kadar edeceğini görün ve gelecekteki fiyat hedeflerini test ederek coin hedefinize ulaşırsa yatırımınızın ne kadar büyüyebileceğini keşfedin.",
+      "href": "/tools/roi-calculator",
+      "cta": "ROI hesapla",
+      "accent": "cyan",
+      "stats": [
+        "Geçmiş yatırım değeri",
+        "Gelecek fiyat hedefi",
+        "Paylaşılabilir sonuç"
+      ]
+    },
+    {
+      "badge": "Gizli Takip",
+      "title": "Privacy-First Watchlist",
+      "text": "Kayıt olmadan ilgilendiğiniz coinleri takip edin. Watchlist’iniz tarayıcınızda saklanır, böylece istediğiniz zaman geri dönüp favori varlıklarınızı izlemeye devam edebilirsiniz.",
+      "href": "/tools/watchlist",
+      "cta": "Watchlist oluştur",
+      "accent": "amber",
+      "stats": [
+        "Giriş gerekmez",
+        "Canlı fiyat takibi",
+        "Cihazınızda saklanır"
+      ]
+    }
+  ]
+},
     "intelligenceCard": {
       "badge": "Kryptonal Nasıl Çalışır",
       "title": "Ham kripto verilerinden basit piyasa zekasına.",
@@ -48,20 +287,7 @@
     ],
     "contentTitle": "Piyasa araştırması, içerik ve kripto eğitimi için geliştirildi.",
     "contentDescription": "Platform, genel kripto piyasa değeri analiziyle başlar, ardından bireysel coinler, Bitcoin döngüleri, altcoin trendleri, blockchain eğitimi, Web3 fırsatları ve gaming kripto alanına genişler.",
-    "features": [
-      {
-        "title": "Piyasa Değeri Karşılaştırması",
-        "text": "Toplam kripto piyasa değerini farklı yıllar, döngü zirveleri, döngü dipleri ve tarihsel dönüm noktaları arasında karşılaştırın."
-      },
-      {
-        "title": "İndirilebilir Analiz",
-        "text": "Kopyalanabilen, indirilebilen ve kripto içerik yayıncılığında kullanılabilen net piyasa özetleri oluşturun."
-      },
-      {
-        "title": "Kripto Öğrenme Merkezi",
-        "text": "Blockchain, Web3, Bitcoin, altcoinler, DeFi, NFT’ler ve gaming kripto hakkında yüksek kaliteli rehberler yayınlayın."
-      }
-    ],
+    
     "questionsTitle": "Analizin cevaplayacağı sorular",
     "questions": [
       "Bugünkü kripto piyasa değeri önceki döngü zirvelerinden daha mı yüksek yoksa daha mı düşük?",
@@ -70,6 +296,47 @@
       "Bu veriler Binance, bloglar veya sosyal platformlar için okunabilir içeriklere dönüştürülebilir mi?"
     ]
   },
+  "tools": {
+  "highYieldFinder": {
+    "badge": "Canlı DeFi Getirileri",
+    "title": "High-Yield Finder",
+    "description": "DeFi havuzlarını keşfedin, APY getirilerini karşılaştırın, stablecoin fırsatlarını filtreleyin ve en yüksek getirilerin hangi blockchain ekosistemlerinde bulunduğunu görün.",
+    "searchPlaceholder": "Token ara, örn: USDC, ETH, SOL...",
+    "stableOnly": "Yalnızca stablecoinler",
+    "on": "Açık",
+    "off": "Kapalı",
+    "loading": "Canlı getiri verileri yükleniyor...",
+    "error": "Canlı getiri verileri şu anda yüklenemiyor.",
+    "empty": "Getiri havuzu bulunamadı. Başka bir token deneyin.",
+    "table": {
+      "protocol": "Protokol",
+      "chain": "Blockchain",
+      "token": "Token",
+      "tvl": "TVL",
+      "apy": "APY"
+    },
+    "disclaimer": "Yalnızca eğitim amaçlıdır. Yüksek APY fırsatları akıllı kontrat riski, likidite riski, token teşvikleri, impermanent loss veya istikrarsız getiriler içerebilir."
+  },
+  "cryptoRoiVision": {
+    "badge": "Yatırım Simülatörü",
+    "title": "Crypto ROI Vision",
+    "description": "Geçmiş bir kripto yatırımının bugün ne kadar edeceğini görün ve gelecekte hedef fiyatınıza ulaşırsa yatırımınızın ne kadar büyüyebileceğini keşfedin.",
+    "coin": "Coin",
+    "investment": "Yatırım Miktarı",
+    "date": "Yatırım Tarihi",
+    "futurePrice": "Gelecek Fiyat Hedefi",
+    "currentValue": "Güncel Değer",
+    "currentProfit": "Güncel Kâr",
+    "futureValue": "Gelecek Değeri",
+    "multiplier": "Çarpan",
+    "percentageGain": "Yüzde Kazanç",
+    "share": "Sonucu Paylaş",
+    "copied": "Sonuç kopyalandı",
+    "copyFailed": "Sonuç kopyalanamadı",
+    "loading": "Yatırım büyümesi hesaplanıyor...",
+    "disclaimer": "Yalnızca eğitim amaçlıdır. Gelecek fiyatlar ve getiriler spekülatiftir ve finansal tavsiye değildir."
+  }
+},
   "marketCap": {
   "back": "← Ana Sayfaya Dön",
   "badge": "Küresel Kripto Piyasa Zekası",
@@ -336,6 +603,10 @@
     "title": "Kryptonal | Kripto Piyasa Değeri Analizi, Bitcoin Döngüleri ve Web3 Araştırması",
     "description": "Toplam kripto piyasa değerini analiz edin, geçmiş kripto döngülerini karşılaştırın, Bitcoin piyasa davranışını inceleyin ve blockchain, Web3 ve gaming crypto hakkında bilgi edinin."
   },
+  "cryptoRoiVision": {
+    "title": "Crypto ROI Vision | Kryptonal",
+    "description": "Geçmiş kripto ROI hesaplamaları yapın, gelecekteki fiyat hedeflerini simüle edin ve yatırımların nasıl büyüyebileceğini Kryptonal ile keşfedin."
+  },
   "marketCap": {
     "title": "Kripto Piyasa Değeri Analizi | Bitcoin Dominansı, Piyasa Döngüleri ve Trendler",
     "description": "Kryptonal ile toplam kripto piyasa değerini, Bitcoin dominansını, piyasa döngülerini, tarihsel kripto trendlerini ve küresel kripto para piyasa kapitalizasyonunu analiz edin.",
@@ -350,6 +621,10 @@
       "bitcoin döngü analizi",
       "kripto trendleri"
     ]
+  },
+  "highYieldFinder": {
+    "title": "High-Yield Finder | Kryptonal",
+    "description": "DeFi getiri havuzlarını bulun, APY getirilerini karşılaştırın, stablecoin fırsatlarını filtreleyin ve canlı getiri verilerini Kryptonal ile analiz edin."
   },
   "analysis": {
     "title": "Kripto Piyasa Analizi | Bitcoin Döngüleri, Piyasa Değeri ve Risk Sinyalleri",

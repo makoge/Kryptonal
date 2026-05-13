@@ -11,7 +11,168 @@
     "start": "Start Analysis"
   },
   "home": {
-    "intelligenceCard": {
+    "hero": {
+    "badge": "Crypto intelligence made simple",
+    "title": "Understand the Crypto Market Before Everyone Else",
+    "description": "Kryptonal analyzes crypto market cap, Bitcoin cycles, market trends and historical data in simple language so you can understand where the market may be heading.",
+    "primaryCta": "Compare Market Cycles",
+    "secondaryCta": "Start Analysis",
+    "panelTitle": "Live Market Intelligence",
+    "panelNote": "Kryptonal turns raw crypto data into clear cycle signals, risk context and market explanations."
+  },
+  "marketBar": {
+    "items": [
+      { "label": "BTC", "value": "$104,000" },
+      { "label": "ETH", "value": "$5,200" },
+      { "label": "Market Cap", "value": "$3.4T" },
+      { "label": "BTC Dominance", "value": "54%" },
+      { "label": "Fear & Greed", "value": "71" }
+    ]
+  },
+  "summary": {
+    "badge": "Current Market Summary",
+    "title": "What does the market actually mean right now?",
+    "text": "The crypto market is trading above the previous cycle high. Bitcoin dominance remains elevated, which suggests altcoins may not have fully entered expansion yet.",
+    "metrics": [
+      { "label": "Market Phase", "value": "Expansion" },
+      { "label": "Risk Level", "value": "Medium" },
+      { "label": "Trend Strength", "value": "Strong" }
+    ]
+  },
+  "cycles": {
+    "title": "Compare Crypto Market Cycles",
+    "text": "See how the current market compares with previous cycle peaks.",
+    "items": [
+      {
+        "year": "2017",
+        "insight": "The 2017 cycle was driven by ICO speculation and early retail adoption.",
+        "metrics": [
+          { "label": "Peak Market Cap", "value": "$830B" },
+          { "label": "BTC Price", "value": "$19.7K" },
+          { "label": "Cycle Mood", "value": "Retail Mania" },
+          { "label": "Current Difference", "value": "+309%" }
+        ]
+      },
+      {
+        "year": "2021",
+        "insight": "The 2021 cycle introduced stronger institutions, DeFi, NFTs and larger market liquidity.",
+        "metrics": [
+          { "label": "Peak Market Cap", "value": "$2.9T" },
+          { "label": "BTC Price", "value": "$69K" },
+          { "label": "Cycle Mood", "value": "Institutional Growth" },
+          { "label": "Current Difference", "value": "+17%" }
+        ]
+      },
+      {
+        "year": "2024",
+        "insight": "The 2024 cycle was shaped by ETF flows, Bitcoin halving expectations and renewed liquidity.",
+        "metrics": [
+          { "label": "Market Cap", "value": "$2.7T" },
+          { "label": "BTC Price", "value": "$73K" },
+          { "label": "Cycle Mood", "value": "ETF Accumulation" },
+          { "label": "Current Difference", "value": "+25%" }
+        ]
+      },
+      {
+        "year": "Current",
+        "insight": "The current market appears stronger than past cycle highs, but dominance and risk still matter.",
+        "metrics": [
+          { "label": "Market Cap", "value": "$3.4T" },
+          { "label": "BTC Price", "value": "$104K" },
+          { "label": "Cycle Mood", "value": "Expansion" },
+          { "label": "Risk View", "value": "Watch Dominance" }
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Crypto Data Explained Simply",
+    "text": "Kryptonal helps you understand the meaning behind the numbers.",
+    "items": [
+      { "title": "Market Cap", "text": "Market cap shows the total value of the crypto market and helps compare cycle size." },
+      { "title": "Bitcoin Dominance", "text": "Bitcoin dominance shows whether money is staying in Bitcoin or rotating into altcoins." },
+      { "title": "Crypto Cycles", "text": "Crypto often moves in emotional cycles of accumulation, expansion, euphoria and correction." },
+      { "title": "Historical Data", "text": "Past cycles do not predict the future, but they help investors understand market context." }
+    ]
+  },
+  "features": {
+    "title": "Built Like a Crypto Intelligence Dashboard",
+    "items": [
+      { "icon": "🧠", "title": "AI Market Analysis", "text": "Generate simple market explanations from complex crypto data." },
+      { "icon": "📈", "title": "Bitcoin Cycle Overlays", "text": "Compare Bitcoin and total crypto market behavior across cycles." },
+      { "icon": "🔁", "title": "Cycle Comparison Engine", "text": "Measure current market conditions against 2017, 2021 and 2024." },
+      { "icon": "📄", "title": "Downloadable Reports", "text": "Create clean market summaries for research and content." },
+      { "icon": "🛰️", "title": "Market Intelligence", "text": "Track dominance, risk, trend strength and major cycle signals." },
+      { "icon": "🎮", "title": "Gaming Crypto Research", "text": "Explore Web3 gaming, blockchain ecosystems and future narratives." }
+    ]
+  },
+  "trust": {
+    "title": "Built for crypto investors, researchers and Web3 analysts.",
+    "text": "Kryptonal focuses on transparent market education, simple explanations and cycle-aware analysis.",
+    "disclaimer": "Educational only. This is not financial advice. Always verify important financial information independently."
+  },
+  "blog": {
+    "title": "Learn the Market Before You Trade It",
+    "items": [
+      { "category": "Bitcoin", "title": "Bitcoin Cycles Explained", "text": "Understand how Bitcoin has moved through previous market cycles." },
+      { "category": "Web3", "title": "Web3 Opportunities", "text": "Explore the narratives shaping the next crypto adoption wave." },
+      { "category": "Gaming", "title": "Gaming Crypto Research", "text": "Track blockchain gaming and gaming token ecosystems." },
+      { "category": "Education", "title": "Blockchain Basics", "text": "Simple guides for understanding crypto, tokens and networks." }
+    ]
+  },
+  "faq": {
+    "title": "Crypto Market FAQ",
+    "items": [
+      { "q": "What is crypto market cap?", "a": "Crypto market cap is the total estimated value of cryptocurrencies in the market." },
+      { "q": "Can market cap predict price?", "a": "No. Market cap gives context, but it cannot guarantee future price movement." },
+      { "q": "What is Bitcoin dominance?", "a": "Bitcoin dominance shows Bitcoin’s share of the total crypto market value." },
+      { "q": "How do crypto cycles work?", "a": "Crypto cycles usually move through accumulation, expansion, euphoria and correction." },
+      { "q": "Is this financial advice?", "a": "No. Kryptonal is educational and should not be treated as financial advice." }
+    ]
+  },
+  "cta": {
+    "title": "See where we are in the crypto cycle.",
+    "text": "Turn confusing crypto data into simple market intelligence.",
+    "primary": "Analyze Market",
+    "secondary": "Explore Market Cap"
+  },
+   "toolsSection": {
+  "badge": "Crypto tools for smarter decisions",
+  "title": "Explore yields, test investment scenarios, and track coins privately.",
+  "description": "Use Kryptonal tools to find DeFi yield opportunities, calculate what a past investment could be worth today, test future price targets, and build a private watchlist without creating an account.",
+  "disclaimer": "Educational tools only. Yield, ROI, and watchlist data should not be treated as financial advice.",
+  "tools": [
+    {
+      "badge": "Live DeFi Yields",
+      "title": "High-Yield Finder",
+      "text": "Discover DeFi pools and stablecoin yield opportunities using live APY data. Compare protocols, chains, tokens, and yield rates before doing deeper research.",
+      "href": "/tools/high-yield-finder",
+      "cta": "Find Yields",
+      "accent": "emerald",
+      "stats": ["Stablecoin filter", "Live APY data", "Protocol comparison"]
+       
+    },
+    {
+      "badge": "ROI Simulator",
+      "title": "Crypto ROI Vision",
+      "text": "Check what a past crypto investment would be worth today, then test future price targets to see how much your position could grow if the coin reaches your goal.",
+      "href": "/tools/roi-calculator",
+      "cta": "Calculate ROI",
+      "accent": "cyan",
+      "stats": ["Past investment value", "Future price target", "Shareable result"]
+    },
+    {
+      "badge": "Private Tracking",
+      "title": "Privacy-First Watchlist",
+      "text": "Track the coins you care about without signing up. Your watchlist stays in your browser, so you can return anytime and continue monitoring your favorite assets.",
+      "href": "/tools/watchlist",
+      "cta": "Build Watchlist",
+      "accent": "amber",
+      "stats": ["No login required", "Live price tracking", "Saved on your device"]
+    }
+  ]
+},
+  "intelligenceCard": {
   "badge": "How Kryptonal Works",
   "title": "From raw crypto data to simple market intelligence.",
   "status": "Educational AI",
@@ -48,20 +209,8 @@
     ],
     "contentTitle": "Built for market research, content, and crypto education.",
     "contentDescription": "The platform starts with general crypto market cap analysis, then expands into individual coins, Bitcoin cycles, altcoin trends, blockchain education, Web3 opportunities, and gaming crypto.",
-    "features": [
-      {
-        "title": "Market Cap Comparison",
-        "text": "Compare total crypto market cap across different years, cycle highs, cycle lows, and historical turning points."
-      },
-      {
-        "title": "Downloadable Analysis",
-        "text": "Generate clear market summaries that can be copied, downloaded, and used for crypto content publishing."
-      },
-      {
-        "title": "Crypto Learning Hub",
-        "text": "Publish high-quality guides about blockchain, Web3, Bitcoin, altcoins, DeFi, NFTs, and gaming crypto."
-      }
-    ],
+    
+      
     "questionsTitle": "What the analysis will answer",
     "questions": [
       "Is today’s crypto market cap higher or lower than previous cycle peaks?",
@@ -70,6 +219,53 @@
       "Can this data be turned into readable content for Binance, blogs, or social platforms?"
     ]
   },
+  "tools": {
+  "highYieldFinder": {
+    "badge": "Live DeFi Yields",
+    "title": "High-Yield Finder",
+    "description": "Discover DeFi pools, compare APY yields, filter stablecoin opportunities, and explore where yield is available across major blockchain ecosystems.",
+    "searchPlaceholder": "Search token, e.g. USDC, ETH, SOL...",
+    "stableOnly": "Stablecoins only",
+    "on": "On",
+    "off": "Off",
+    "loading": "Loading live yield data...",
+    "error": "Unable to load live yield data right now.",
+    "empty": "No yield pools found. Try another token.",
+    "table": {
+      "protocol": "Protocol",
+      "chain": "Chain",
+      "token": "Token",
+      "tvl": "TVL",
+      "apy": "APY"
+    },
+    "disclaimer": "Educational only. High APY opportunities can involve smart contract risk, liquidity risk, token incentives, impermanent loss, or unstable yield rates."
+  },
+  "cryptoRoiVision": {
+    "badge": "Investment Simulator",
+    "title": "Crypto ROI Vision",
+    "description": "See what a past crypto investment would be worth today and explore how much it could grow if your target price is reached in the future.",
+    "coin": "Coin",
+    "coinAmount": "Coin Amount",
+"originalValue": "Value on Investment Date",
+"currentValue": "Current Value",
+"currentProfit": "Profit Today",
+"futureValue": "Value If Target Price Hits",
+"historicalPrice": "Price on Investment Date",
+"currentPrice": "Current Coin Price",
+    "investment": "Investment Amount",
+    "date": "Investment Date",
+    "futurePrice": "Future Price Target",
+    
+    "percentageGain": "Percentage Gain",
+    "share": "Share Result",
+    "copied": "Result copied",
+    "copyFailed": "Unable to copy result",
+    "loading": "Calculating investment growth...",
+    "disclaimer": "Educational only. Future prices and returns are speculative and not financial advice."
+  }
+
+},
+ 
   "marketCap": {
     "back": "← Back to Home",
     "badge": "Global Crypto Market Intelligence",
@@ -327,6 +523,10 @@
       "title": "Kryptonal | Crypto Market Cap Analysis, Bitcoin Cycles & Web3 Research",
       "description": "Analyze total crypto market cap, compare historical crypto cycles, study Bitcoin market behavior, and learn about blockchain, Web3, and gaming crypto."
     },
+    "highYieldFinder": {
+    "title": "High-Yield Finder | Kryptonal",
+    "description": "Find DeFi yield pools, compare APY returns, filter stablecoin opportunities, and research live yield data with Kryptonal."
+  },
     "marketCap": {
       "title": "Crypto Market Cap Analysis | Bitcoin Dominance, Market Cycles & Trends",
       "description": "Analyze total crypto market cap, Bitcoin dominance, market cycles, historical crypto trends, and global cryptocurrency market capitalization with Kryptonal.",
@@ -342,6 +542,7 @@
         "crypto trends"
       ]
     },
+     
     "analysis": {
       "title": "Crypto Market Analysis | Bitcoin Cycles, Market Cap & Risk Signals",
       "description": "Analyze crypto market cap, Bitcoin cycles, trend strength, and risk levels. Generate clear crypto market insights with Kryptonal.",
@@ -354,6 +555,11 @@
         "bitcoin dominance",
         "crypto market signals"
       ]
-    }
+    },
+    "cryptoRoiVision": {
+    "title": "Crypto ROI Vision | Kryptonal",
+    "description": "Calculate historical crypto ROI, simulate future price targets, and explore how investments could grow with Kryptonal."
+  }
+
   }
 }

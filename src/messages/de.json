@@ -11,6 +11,245 @@
     "start": "Analyse starten"
   },
   "home": {
+    "hero": {
+    "badge": "Krypto-Marktintelligenz vereinfacht",
+    "title": "Verstehe den Kryptomarkt vor allen anderen",
+    "description": "Kryptonal analysiert die Krypto-Marktkapitalisierung, Bitcoin-Zyklen, Markttrends und historische Daten in einfacher Sprache, damit du verstehst, wohin sich der Markt entwickeln könnte.",
+    "primaryCta": "Marktzyklen vergleichen",
+    "secondaryCta": "Analyse starten",
+    "panelTitle": "Live-Marktintelligenz",
+    "panelNote": "Kryptonal verwandelt komplexe Kryptodaten in klare Zyklussignale, Risikokontext und verständliche Markterklärungen."
+  },
+  "marketBar": {
+    "items": [
+      { "label": "BTC", "value": "$104,000" },
+      { "label": "ETH", "value": "$5,200" },
+      { "label": "Marktkapitalisierung", "value": "$3.4T" },
+      { "label": "BTC-Dominanz", "value": "54%" },
+      { "label": "Fear & Greed", "value": "71" }
+    ]
+  },
+  "summary": {
+    "badge": "Aktuelle Marktübersicht",
+    "title": "Was bedeutet der Markt aktuell wirklich?",
+    "text": "Der Kryptomarkt handelt derzeit über dem Hoch des vorherigen Zyklus. Die Bitcoin-Dominanz bleibt erhöht, was darauf hindeutet, dass Altcoins noch nicht vollständig in die Expansionsphase eingetreten sind.",
+    "metrics": [
+      { "label": "Marktphase", "value": "Expansion" },
+      { "label": "Risikoniveau", "value": "Moderat" },
+      { "label": "Trendstärke", "value": "Stark" }
+    ]
+  },
+  "cycles": {
+    "title": "Krypto-Marktzyklen vergleichen",
+    "text": "Sieh, wie sich der aktuelle Markt mit früheren Zyklus-Hochs vergleicht.",
+    "items": [
+      {
+        "year": "2017",
+        "insight": "Der Zyklus 2017 wurde durch ICO-Spekulationen und frühe Retail-Adoption angetrieben.",
+        "metrics": [
+          { "label": "Marktkapitalisierungs-Hoch", "value": "$830B" },
+          { "label": "BTC-Preis", "value": "$19.7K" },
+          { "label": "Zyklusstimmung", "value": "Retail-Manie" },
+          { "label": "Aktuelle Differenz", "value": "+309%" }
+        ]
+      },
+      {
+        "year": "2021",
+        "insight": "Der Zyklus 2021 brachte stärkere Institutionen, DeFi, NFTs und höhere Liquidität.",
+        "metrics": [
+          { "label": "Marktkapitalisierungs-Hoch", "value": "$2.9T" },
+          { "label": "BTC-Preis", "value": "$69K" },
+          { "label": "Zyklusstimmung", "value": "Institutionelles Wachstum" },
+          { "label": "Aktuelle Differenz", "value": "+17%" }
+        ]
+      },
+      {
+        "year": "2024",
+        "insight": "Der Zyklus 2024 wurde durch ETFs, das Bitcoin-Halving und neue Liquidität geprägt.",
+        "metrics": [
+          { "label": "Marktkapitalisierung", "value": "$2.7T" },
+          { "label": "BTC-Preis", "value": "$73K" },
+          { "label": "Zyklusstimmung", "value": "ETF-Akkumulation" },
+          { "label": "Aktuelle Differenz", "value": "+25%" }
+        ]
+      },
+      {
+        "year": "Aktuell",
+        "insight": "Der aktuelle Markt wirkt stärker als frühere Zyklus-Hochs, dennoch bleiben Dominanz und Risiko entscheidend.",
+        "metrics": [
+          { "label": "Marktkapitalisierung", "value": "$3.4T" },
+          { "label": "BTC-Preis", "value": "$104K" },
+          { "label": "Zyklusstimmung", "value": "Expansion" },
+          { "label": "Risikoansicht", "value": "Dominanz beobachten" }
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Kryptodaten einfach erklärt",
+    "text": "Kryptonal hilft dir, die Bedeutung hinter den Zahlen zu verstehen.",
+    "items": [
+      {
+        "title": "Marktkapitalisierung",
+        "text": "Die Marktkapitalisierung zeigt den Gesamtwert des Kryptomarktes und hilft beim Vergleich von Marktzyklen."
+      },
+      {
+        "title": "Bitcoin-Dominanz",
+        "text": "Die Bitcoin-Dominanz zeigt, ob Kapital in Bitcoin bleibt oder in Altcoins fließt."
+      },
+      {
+        "title": "Krypto-Zyklen",
+        "text": "Kryptomärkte bewegen sich oft in emotionalen Zyklen aus Akkumulation, Expansion, Euphorie und Korrektur."
+      },
+      {
+        "title": "Historische Daten",
+        "text": "Vergangene Zyklen garantieren keine Zukunft, helfen aber beim Verständnis des Marktumfelds."
+      }
+    ]
+  },
+  "features": {
+    "title": "Entwickelt wie ein Krypto-Intelligence-Dashboard",
+    "items": [
+      {
+        "icon": "🧠",
+        "title": "KI-Marktanalysen",
+        "text": "Erstelle einfache Marktanalysen aus komplexen Kryptodaten."
+      },
+      {
+        "icon": "📈",
+        "title": "Bitcoin-Zyklus-Overlays",
+        "text": "Vergleiche Bitcoin- und Gesamtmarktverhalten über verschiedene Zyklen hinweg."
+      },
+      {
+        "icon": "🔁",
+        "title": "Zyklusvergleichs-Engine",
+        "text": "Vergleiche aktuelle Marktbedingungen mit 2017, 2021 und 2024."
+      },
+      {
+        "icon": "📄",
+        "title": "Downloadbare Berichte",
+        "text": "Erstelle klare Marktübersichten für Forschung und Inhalte."
+      },
+      {
+        "icon": "🛰️",
+        "title": "Marktintelligenz",
+        "text": "Verfolge Dominanz, Risiko, Trendstärke und wichtige Zyklussignale."
+      },
+      {
+        "icon": "🎮",
+        "title": "Gaming-Krypto-Forschung",
+        "text": "Entdecke Web3-Gaming, Blockchain-Ökosysteme und zukünftige Narrative."
+      }
+    ]
+  },
+  "trust": {
+    "title": "Entwickelt für Krypto-Investoren, Forscher und Web3-Analysten.",
+    "text": "Kryptonal konzentriert sich auf transparente Marktbildung und leicht verständliche zyklusbasierte Analysen.",
+    "disclaimer": "Nur zu Bildungszwecken. Keine Finanzberatung. Wichtige Finanzinformationen sollten immer unabhängig überprüft werden."
+  },
+  "blog": {
+    "title": "Lerne den Markt kennen, bevor du handelst",
+    "items": [
+      {
+        "category": "Bitcoin",
+        "title": "Bitcoin-Zyklen erklärt",
+        "text": "Verstehe, wie sich Bitcoin in früheren Marktzyklen bewegt hat."
+      },
+      {
+        "category": "Web3",
+        "title": "Web3-Möglichkeiten",
+        "text": "Entdecke die Narrative hinter der nächsten Krypto-Adoptionswelle."
+      },
+      {
+        "category": "Gaming",
+        "title": "Gaming-Krypto-Forschung",
+        "text": "Verfolge Blockchain-Gaming und Gaming-Token-Ökosysteme."
+      },
+      {
+        "category": "Bildung",
+        "title": "Blockchain-Grundlagen",
+        "text": "Einfache Anleitungen zum Verständnis von Kryptowährungen und Netzwerken."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen zum Kryptomarkt",
+    "items": [
+      {
+        "q": "Was ist die Krypto-Marktkapitalisierung?",
+        "a": "Die Krypto-Marktkapitalisierung ist der geschätzte Gesamtwert aller Kryptowährungen."
+      },
+      {
+        "q": "Kann die Marktkapitalisierung Preise vorhersagen?",
+        "a": "Nein. Die Marktkapitalisierung liefert Kontext, garantiert aber keine zukünftigen Preisbewegungen."
+      },
+      {
+        "q": "Was ist Bitcoin-Dominanz?",
+        "a": "Die Bitcoin-Dominanz zeigt den Anteil von Bitcoin am gesamten Kryptomarktwert."
+      },
+      {
+        "q": "Wie funktionieren Krypto-Zyklen?",
+        "a": "Kryptomärkte durchlaufen oft Akkumulation, Expansion, Euphorie und Korrektur."
+      },
+      {
+        "q": "Ist das Finanzberatung?",
+        "a": "Nein. Kryptonal dient ausschließlich Bildungszwecken."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Sieh, wo wir uns im Krypto-Zyklus befinden.",
+    "text": "Verwandle komplexe Kryptodaten in leicht verständliche Marktintelligenz.",
+    "primary": "Markt analysieren",
+    "secondary": "Marktkapitalisierung erkunden"
+  },
+  "toolsSection": {
+  "badge": "Krypto-Tools für intelligentere Entscheidungen",
+  "title": "Entdecke Renditen, teste Investmentszenarien und verfolge Coins privat.",
+  "description": "Nutze die Kryptonal-Tools, um DeFi-Renditechancen zu finden, zu berechnen, wie viel eine frühere Investition heute wert wäre, zukünftige Kursziele zu testen und eine private Watchlist ohne Konto zu erstellen.",
+  "disclaimer": "Nur zu Bildungszwecken. Rendite-, ROI- und Watchlist-Daten stellen keine Finanzberatung dar.",
+  "tools": [
+    {
+      "badge": "Live DeFi Renditen",
+      "title": "High-Yield Finder",
+      "text": "Entdecke DeFi-Pools und Stablecoin-Renditechancen mit Live-APY-Daten. Vergleiche Protokolle, Chains, Tokens und Renditen, bevor du weitere Recherchen durchführst.",
+      "href": "/tools/high-yield-finder",
+      "cta": "Renditen finden",
+      "accent": "emerald",
+      "stats": [
+        "Stablecoin-Filter",
+        "Live-APY-Daten",
+        "Protokollvergleich"
+      ]
+    },
+    {
+      "badge": "ROI Simulator",
+      "title": "Crypto ROI Vision",
+      "text": "Prüfe, wie viel eine frühere Krypto-Investition heute wert wäre, und teste zukünftige Kursziele, um zu sehen, wie stark dein Investment wachsen könnte.",
+      "href": "/tools/roi-calculator",
+      "cta": "ROI berechnen",
+      "accent": "cyan",
+      "stats": [
+        "Vergangener Investmentwert",
+        "Zukünftiges Kursziel",
+        "Teilbares Ergebnis"
+      ]
+    },
+    {
+      "badge": "Privates Tracking",
+      "title": "Privacy-First Watchlist",
+      "text": "Verfolge deine Lieblings-Coins ohne Registrierung. Deine Watchlist bleibt lokal im Browser gespeichert, damit du jederzeit zurückkehren und deine Assets weiter beobachten kannst.",
+      "href": "/tools/watchlist",
+      "cta": "Watchlist erstellen",
+      "accent": "amber",
+      "stats": [
+        "Kein Login erforderlich",
+        "Live-Preisverfolgung",
+        "Lokal auf deinem Gerät gespeichert"
+      ]
+    }
+  ]
+},
     "intelligenceCard": {
       "badge": "So funktioniert Kryptonal",
       "title": "Von rohen Kryptodaten zu verständlicher Marktintelligenz.",
@@ -48,20 +287,7 @@
     ],
     "contentTitle": "Entwickelt für Marktforschung, Content und Krypto-Bildung.",
     "contentDescription": "Die Plattform beginnt mit allgemeiner Analyse der Krypto-Marktkapitalisierung und erweitert sich dann auf einzelne Coins, Bitcoin-Zyklen, Altcoin-Trends, Blockchain-Bildung, Web3-Möglichkeiten und Gaming-Krypto.",
-    "features": [
-      {
-        "title": "Vergleich der Marktkapitalisierung",
-        "text": "Vergleichen Sie die gesamte Krypto-Marktkapitalisierung über verschiedene Jahre, Zyklushochs, Zyklustiefs und historische Wendepunkte hinweg."
-      },
-      {
-        "title": "Herunterladbare Analysen",
-        "text": "Erstellen Sie klare Marktzusammenfassungen, die kopiert, heruntergeladen und für die Veröffentlichung von Krypto-Content verwendet werden können."
-      },
-      {
-        "title": "Krypto-Lernzentrum",
-        "text": "Veröffentlichen Sie hochwertige Guides über Blockchain, Web3, Bitcoin, Altcoins, DeFi, NFTs und Gaming-Krypto."
-      }
-    ],
+    
     "questionsTitle": "Welche Fragen die Analyse beantwortet",
     "questions": [
       "Ist die heutige Krypto-Marktkapitalisierung höher oder niedriger als frühere Zyklus-Höchststände?",
@@ -69,6 +295,47 @@
       "Erholt sich der Markt, überhitzt er oder liegt er noch unter dem langfristigen Trend?",
       "Kann diese Datenanalyse in verständlichen Content für Binance, Blogs oder soziale Plattformen umgewandelt werden?"
     ]
+  },
+  "tools": {
+   "highYieldFinder": {
+    "badge": "Live DeFi Renditen",
+    "title": "High-Yield Finder",
+    "description": "Entdecke DeFi-Pools, vergleiche APY-Renditen, filtere Stablecoin-Möglichkeiten und finde attraktive Renditen über große Blockchains hinweg.",
+    "searchPlaceholder": "Token suchen, z. B. USDC, ETH, SOL...",
+    "stableOnly": "Nur Stablecoins",
+    "on": "Ein",
+    "off": "Aus",
+    "loading": "Live-Renditedaten werden geladen...",
+    "error": "Live-Renditedaten konnten momentan nicht geladen werden.",
+    "empty": "Keine Rendite-Pools gefunden. Versuche einen anderen Token.",
+    "table": {
+      "protocol": "Protokoll",
+      "chain": "Blockchain",
+      "token": "Token",
+      "tvl": "TVL",
+      "apy": "APY"
+    },
+    "disclaimer": "Nur zu Bildungszwecken. Hohe APY-Renditen können Smart-Contract-Risiken, Liquiditätsrisiken, Token-Belohnungen, Impermanent Loss oder instabile Renditen beinhalten."
+    },
+    "cryptoRoiVision": {
+    "badge": "Investment-Simulator",
+    "title": "Crypto ROI Vision",
+    "description": "Entdecke, wie viel eine frühere Krypto-Investition heute wert wäre und wie stark sie wachsen könnte, wenn dein zukünftiges Kursziel erreicht wird.",
+    "coin": "Coin",
+    "investment": "Investitionsbetrag",
+    "date": "Investitionsdatum",
+    "futurePrice": "Zukünftiges Kursziel",
+    "currentValue": "Aktueller Wert",
+    "currentProfit": "Aktueller Gewinn",
+    "futureValue": "Zukünftiger Wert",
+    "multiplier": "Multiplikator",
+    "percentageGain": "Prozentualer Gewinn",
+    "share": "Ergebnis teilen",
+    "copied": "Ergebnis kopiert",
+    "copyFailed": "Ergebnis konnte nicht kopiert werden",
+    "loading": "Wachstum der Investition wird berechnet...",
+    "disclaimer": "Nur zu Bildungszwecken. Zukünftige Preise und Renditen sind spekulativ und keine Finanzberatung."
+  }
   },
   "marketCap": {
   "back": "← Zurück zur Startseite",
@@ -352,6 +619,10 @@
     "title": "Kryptonal | Analyse der Krypto-Marktkapitalisierung, Bitcoin-Zyklen & Web3-Forschung",
     "description": "Analysieren Sie die gesamte Krypto-Marktkapitalisierung, vergleichen Sie historische Krypto-Zyklen, untersuchen Sie das Marktverhalten von Bitcoin und lernen Sie mehr über Blockchain, Web3 und Gaming-Krypto."
   },
+  "highYieldFinder": {
+    "title": "High-Yield Finder | Kryptonal",
+    "description": "Finde DeFi-Renditepools, vergleiche APY-Renditen, filtere Stablecoin-Möglichkeiten und analysiere Live-Renditedaten mit Kryptonal."
+  },
   "marketCap": {
     "title": "Analyse der Krypto-Marktkapitalisierung | Bitcoin-Dominanz, Marktzyklen & Trends",
     "description": "Analysieren Sie die gesamte Krypto-Marktkapitalisierung, Bitcoin-Dominanz, Marktzyklen, historische Krypto-Trends und die globale Kryptowährungs-Marktkapitalisierung mit Kryptonal.",
@@ -379,6 +650,10 @@
       "Bitcoin-Dominanz",
       "Krypto-Marktsignale"
     ]
+  },
+  "cryptoRoiVision": {
+    "title": "Crypto ROI Vision | Kryptonal",
+    "description": "Berechne historische Krypto-ROI, simuliere zukünftige Kursziele und entdecke, wie Investitionen mit Kryptonal wachsen könnten."
   }
 }
 }

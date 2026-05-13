@@ -1,4 +1,255 @@
-{"home": {
+{
+  "brand": "KRYPTONAL",
+"common": {
+  "loading": "Carregando..."
+},
+"nav": {
+  "marketCap": "Capitalização",
+  "analysis": "Análise",
+  "blog": "Blog",
+  "gamingCrypto": "Gaming Crypto",
+  "start": "Iniciar análise"
+},
+  "home": {
+   "hero": {
+    "badge": "Inteligência do mercado cripto simplificada",
+    "title": "Entenda o mercado cripto antes de todos",
+    "description": "O Kryptonal analisa capitalização do mercado cripto, ciclos do Bitcoin, tendências do mercado e dados históricos em linguagem simples para ajudar você a entender para onde o mercado pode estar indo.",
+    "primaryCta": "Comparar ciclos do mercado",
+    "secondaryCta": "Iniciar análise",
+    "panelTitle": "Inteligência de mercado ao vivo",
+    "panelNote": "O Kryptonal transforma dados cripto complexos em sinais claros de ciclo, contexto de risco e explicações fáceis de entender."
+  },
+  "marketBar": {
+    "items": [
+      { "label": "BTC", "value": "$104,000" },
+      { "label": "ETH", "value": "$5,200" },
+      { "label": "Capitalização", "value": "$3.4T" },
+      { "label": "Dominância BTC", "value": "54%" },
+      { "label": "Fear & Greed", "value": "71" }
+    ]
+  },
+  "summary": {
+    "badge": "Resumo atual do mercado",
+    "title": "O que o mercado realmente significa neste momento?",
+    "text": "O mercado cripto está sendo negociado acima do topo do ciclo anterior. A dominância do Bitcoin permanece elevada, sugerindo que as altcoins ainda não entraram totalmente em expansão.",
+    "metrics": [
+      { "label": "Fase do mercado", "value": "Expansão" },
+      { "label": "Nível de risco", "value": "Moderado" },
+      { "label": "Força da tendência", "value": "Forte" }
+    ]
+  },
+  "cycles": {
+    "title": "Comparar ciclos do mercado cripto",
+    "text": "Veja como o mercado atual se compara aos topos dos ciclos anteriores.",
+    "items": [
+      {
+        "year": "2017",
+        "insight": "O ciclo de 2017 foi impulsionado por especulação em ICOs e adoção inicial do varejo.",
+        "metrics": [
+          { "label": "Pico de capitalização", "value": "$830B" },
+          { "label": "Preço BTC", "value": "$19.7K" },
+          { "label": "Sentimento do ciclo", "value": "Mania do varejo" },
+          { "label": "Diferença atual", "value": "+309%" }
+        ]
+      },
+      {
+        "year": "2021",
+        "insight": "O ciclo de 2021 trouxe instituições mais fortes, DeFi, NFTs e maior liquidez.",
+        "metrics": [
+          { "label": "Pico de capitalização", "value": "$2.9T" },
+          { "label": "Preço BTC", "value": "$69K" },
+          { "label": "Sentimento do ciclo", "value": "Crescimento institucional" },
+          { "label": "Diferença atual", "value": "+17%" }
+        ]
+      },
+      {
+        "year": "2024",
+        "insight": "O ciclo de 2024 foi marcado pelos ETFs, halving do Bitcoin e retorno da liquidez.",
+        "metrics": [
+          { "label": "Capitalização", "value": "$2.7T" },
+          { "label": "Preço BTC", "value": "$73K" },
+          { "label": "Sentimento do ciclo", "value": "Acumulação ETF" },
+          { "label": "Diferença atual", "value": "+25%" }
+        ]
+      },
+      {
+        "year": "Atual",
+        "insight": "O mercado atual parece mais forte que os topos anteriores, mas dominância e risco continuam importantes.",
+        "metrics": [
+          { "label": "Capitalização", "value": "$3.4T" },
+          { "label": "Preço BTC", "value": "$104K" },
+          { "label": "Sentimento do ciclo", "value": "Expansão" },
+          { "label": "Visão de risco", "value": "Monitorar dominância" }
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Dados cripto explicados de forma simples",
+    "text": "O Kryptonal ajuda você a entender o significado por trás dos números.",
+    "items": [
+      {
+        "title": "Capitalização de mercado",
+        "text": "A capitalização mostra o valor total do mercado cripto e ajuda a comparar o tamanho dos ciclos."
+      },
+      {
+        "title": "Dominância do Bitcoin",
+        "text": "A dominância do Bitcoin mostra se o dinheiro permanece no Bitcoin ou está migrando para altcoins."
+      },
+      {
+        "title": "Ciclos cripto",
+        "text": "O mercado cripto geralmente se move em ciclos emocionais de acumulação, expansão, euforia e correção."
+      },
+      {
+        "title": "Dados históricos",
+        "text": "Ciclos passados não garantem o futuro, mas ajudam a entender o contexto do mercado."
+      }
+    ]
+  },
+  "features": {
+    "title": "Construído como um painel de inteligência cripto",
+    "items": [
+      {
+        "icon": "🧠",
+        "title": "Análise de mercado com IA",
+        "text": "Gere explicações simples a partir de dados cripto complexos."
+      },
+      {
+        "icon": "📈",
+        "title": "Sobreposição de ciclos do Bitcoin",
+        "text": "Compare o comportamento do Bitcoin e do mercado cripto entre diferentes ciclos."
+      },
+      {
+        "icon": "🔁",
+        "title": "Motor de comparação de ciclos",
+        "text": "Compare as condições atuais do mercado com 2017, 2021 e 2024."
+      },
+      {
+        "icon": "📄",
+        "title": "Relatórios para download",
+        "text": "Crie resumos de mercado claros para pesquisa e conteúdo."
+      },
+      {
+        "icon": "🛰️",
+        "title": "Inteligência de mercado",
+        "text": "Acompanhe dominância, risco, força de tendência e sinais importantes."
+      },
+      {
+        "icon": "🎮",
+        "title": "Pesquisa gaming crypto",
+        "text": "Explore jogos Web3, ecossistemas blockchain e narrativas futuras."
+      }
+    ]
+  },
+  "trust": {
+    "title": "Construído para investidores cripto, pesquisadores e analistas Web3.",
+    "text": "O Kryptonal é focado em educação transparente do mercado e análises simples baseadas em ciclos.",
+    "disclaimer": "Conteúdo apenas educacional. Isto não é aconselhamento financeiro. Sempre verifique informações financeiras importantes de forma independente."
+  },
+  "blog": {
+    "title": "Aprenda o mercado antes de negociar",
+    "items": [
+      {
+        "category": "Bitcoin",
+        "title": "Ciclos do Bitcoin explicados",
+        "text": "Entenda como o Bitcoin se moveu nos ciclos anteriores."
+      },
+      {
+        "category": "Web3",
+        "title": "Oportunidades Web3",
+        "text": "Explore as narrativas que impulsionam a próxima onda de adoção cripto."
+      },
+      {
+        "category": "Gaming",
+        "title": "Pesquisa gaming crypto",
+        "text": "Acompanhe ecossistemas de blockchain gaming e tokens gaming."
+      },
+      {
+        "category": "Educação",
+        "title": "Fundamentos da blockchain",
+        "text": "Guias simples para entender criptomoedas e redes."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Perguntas frequentes do mercado cripto",
+    "items": [
+      {
+        "q": "O que é capitalização do mercado cripto?",
+        "a": "A capitalização do mercado cripto representa o valor total estimado das criptomoedas."
+      },
+      {
+        "q": "A capitalização pode prever preços?",
+        "a": "Não. A capitalização fornece contexto, mas não garante movimentos futuros."
+      },
+      {
+        "q": "O que é dominância do Bitcoin?",
+        "a": "A dominância do Bitcoin mostra a participação do Bitcoin no valor total do mercado cripto."
+      },
+      {
+        "q": "Como funcionam os ciclos cripto?",
+        "a": "Os mercados cripto normalmente passam por acumulação, expansão, euforia e correção."
+      },
+      {
+        "q": "Isto é aconselhamento financeiro?",
+        "a": "Não. O Kryptonal é apenas educacional."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Veja em que fase do ciclo cripto estamos.",
+    "text": "Transforme dados cripto complexos em inteligência de mercado fácil de entender.",
+    "primary": "Analisar mercado",
+    "secondary": "Explorar market cap"
+  },
+  "toolsSection": {
+  "badge": "Ferramentas cripto para decisões mais inteligentes",
+  "title": "Descubra rendimentos, teste cenários de investimento e acompanhe moedas de forma privada.",
+  "description": "Use as ferramentas da Kryptonal para encontrar oportunidades DeFi, calcular quanto um investimento passado valeria hoje, testar metas de preço futuras e criar uma watchlist privada sem precisar criar uma conta.",
+  "disclaimer": "Ferramentas apenas para fins educacionais. Dados de rendimento, ROI e watchlist não constituem aconselhamento financeiro.",
+  "tools": [
+    {
+      "badge": "Rendimentos DeFi ao vivo",
+      "title": "High-Yield Finder",
+      "text": "Descubra pools DeFi e oportunidades de rendimento em stablecoins usando dados APY ao vivo. Compare protocolos, blockchains, tokens e rendimentos antes de fazer pesquisas mais profundas.",
+      "href": "/tools/high-yield-finder",
+      "cta": "Encontrar rendimentos",
+      "accent": "emerald",
+      "stats": [
+        "Filtro de stablecoins",
+        "Dados APY ao vivo",
+        "Comparação de protocolos"
+      ]
+    },
+    {
+      "badge": "Simulador ROI",
+      "title": "Crypto ROI Vision",
+      "text": "Veja quanto um investimento cripto passado valeria hoje e teste metas de preço futuras para descobrir quanto sua posição poderia crescer se a moeda atingir seu objetivo.",
+      "href": "/tools/roi-calculator",
+      "cta": "Calcular ROI",
+      "accent": "cyan",
+      "stats": [
+        "Valor de investimento passado",
+        "Meta de preço futuro",
+        "Resultado compartilhável"
+      ]
+    },
+    {
+      "badge": "Monitoramento privado",
+      "title": "Privacy-First Watchlist",
+      "text": "Acompanhe as moedas que você gosta sem cadastro. Sua watchlist permanece salva no navegador para que você possa voltar a qualquer momento e continuar monitorando seus ativos favoritos.",
+      "href": "/tools/watchlist",
+      "cta": "Criar watchlist",
+      "accent": "amber",
+      "stats": [
+        "Sem login",
+        "Preços em tempo real",
+        "Salvo no seu dispositivo"
+      ]
+    }
+  ]
+},
   "intelligenceCard": {
     "badge": "Como o Kryptonal Funciona",
     "title": "De dados brutos de cripto para inteligência de mercado simples.",
@@ -36,20 +287,7 @@
   ],
   "contentTitle": "Criado para pesquisa de mercado, conteúdo e educação cripto.",
   "contentDescription": "A plataforma começa com análise geral da capitalização do mercado cripto e depois se expande para moedas individuais, ciclos do Bitcoin, tendências de altcoins, educação blockchain, oportunidades Web3 e gaming crypto.",
-  "features": [
-    {
-      "title": "Comparação de Capitalização de Mercado",
-      "text": "Compare a capitalização total do mercado cripto em diferentes anos, topos de ciclos, fundos de ciclos e pontos históricos de virada."
-    },
-    {
-      "title": "Análises para Download",
-      "text": "Gere resumos claros do mercado que podem ser copiados, baixados e usados para publicação de conteúdo cripto."
-    },
-    {
-      "title": "Hub de Aprendizado Cripto",
-      "text": "Publique guias de alta qualidade sobre blockchain, Web3, Bitcoin, altcoins, DeFi, NFTs e gaming crypto."
-    }
-  ],
+  
   "questionsTitle": "O que a análise responderá",
   "questions": [
     "A capitalização atual do mercado cripto está acima ou abaixo dos picos dos ciclos anteriores?",
@@ -57,6 +295,47 @@
     "O mercado está se recuperando, superaquecido ou ainda abaixo da tendência de longo prazo?",
     "Esses dados podem ser transformados em conteúdo fácil de ler para Binance, blogs ou plataformas sociais?"
   ]
+},
+"tools": {
+  "highYieldFinder": {
+    "badge": "Rendimentos DeFi ao vivo",
+    "title": "High-Yield Finder",
+    "description": "Descubra pools DeFi, compare rendimentos APY, filtre oportunidades com stablecoins e explore onde os maiores rendimentos estão disponíveis nos principais ecossistemas blockchain.",
+    "searchPlaceholder": "Pesquisar token, ex: USDC, ETH, SOL...",
+    "stableOnly": "Somente stablecoins",
+    "on": "Ativado",
+    "off": "Desativado",
+    "loading": "Carregando dados de rendimentos ao vivo...",
+    "error": "Não foi possível carregar os dados de rendimentos no momento.",
+    "empty": "Nenhum pool de rendimento encontrado. Tente outro token.",
+    "table": {
+      "protocol": "Protocolo",
+      "chain": "Blockchain",
+      "token": "Token",
+      "tvl": "TVL",
+      "apy": "APY"
+    },
+    "disclaimer": "Apenas para fins educacionais. Oportunidades de APY elevado podem envolver risco de smart contracts, risco de liquidez, incentivos em tokens, perda impermanente ou rendimentos instáveis."
+  },
+  "cryptoRoiVision": {
+    "badge": "Simulador de Investimento",
+    "title": "Crypto ROI Vision",
+    "description": "Veja quanto um investimento cripto do passado valeria hoje e descubra quanto ele poderia crescer caso seu preço alvo seja atingido no futuro.",
+    "coin": "Moeda",
+    "investment": "Valor do Investimento",
+    "date": "Data do Investimento",
+    "futurePrice": "Meta de Preço Futuro",
+    "currentValue": "Valor Atual",
+    "currentProfit": "Lucro Atual",
+    "futureValue": "Valor Futuro",
+    "multiplier": "Multiplicador",
+    "percentageGain": "Ganho Percentual",
+    "share": "Compartilhar Resultado",
+    "copied": "Resultado copiado",
+    "copyFailed": "Não foi possível copiar o resultado",
+    "loading": "Calculando crescimento do investimento...",
+    "disclaimer": "Apenas para fins educacionais. Preços e retornos futuros são especulativos e não constituem aconselhamento financeiro."
+  }
 },
 "marketCap": {
   "back": "← Voltar para o Início",
@@ -339,6 +618,10 @@
       "tendências cripto"
     ]
   },
+  "highYieldFinder": {
+    "title": "High-Yield Finder | Kryptonal",
+    "description": "Encontre pools DeFi, compare rendimentos APY, filtre oportunidades com stablecoins e analise dados de rendimento ao vivo com Kryptonal."
+  },
   "analysis": {
     "title": "Análise do Mercado Cripto | Ciclos do Bitcoin, Capitalização e Sinais de Risco",
     "description": "Analise a capitalização do mercado cripto, ciclos do Bitcoin, força da tendência e níveis de risco. Gere insights claros do mercado cripto com o Kryptonal.",
@@ -351,6 +634,10 @@
       "dominância do bitcoin",
       "sinais do mercado cripto"
     ]
+  },
+  "cryptoRoiVision": {
+    "title": "Crypto ROI Vision | Kryptonal",
+    "description": "Calcule ROI histórico de criptomoedas, simule metas de preço futuras e descubra como investimentos podem crescer com a Kryptonal."
   }
 }
 }
