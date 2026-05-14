@@ -8,12 +8,21 @@ const COINS: Record<string, string> = {
   bitcoin: "coingecko:bitcoin",
   ethereum: "coingecko:ethereum",
   solana: "coingecko:solana",
-  chainlink: "coingecko:chainlink",
-  dogecoin: "coingecko:dogecoin",
   binancecoin: "coingecko:binancecoin",
+  ripple: "coingecko:ripple",
+  cardano: "coingecko:cardano",
+  dogecoin: "coingecko:dogecoin",
+  litecoin: "coingecko:litecoin",
+  chainlink: "coingecko:chainlink",
+  polkadot: "coingecko:polkadot",
+  avalanche: "coingecko:avalanche-2",
+  tron: "coingecko:tron",
+  stellar: "coingecko:stellar",
+  bitcoinCash: "coingecko:bitcoin-cash",
+  monero: "coingecko:monero",
   shiba: "coingecko:shiba-inu",
   pepe: "coingecko:pepe",
-  floki: "coingecko:floki",
+  floki: "coingecko:floki"
 };
 
 function toUnix(date: string) {

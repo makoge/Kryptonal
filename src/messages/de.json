@@ -30,15 +30,38 @@
     ]
   },
   "summary": {
-    "badge": "Aktuelle Marktübersicht",
-    "title": "Was bedeutet der Markt aktuell wirklich?",
-    "text": "Der Kryptomarkt handelt derzeit über dem Hoch des vorherigen Zyklus. Die Bitcoin-Dominanz bleibt erhöht, was darauf hindeutet, dass Altcoins noch nicht vollständig in die Expansionsphase eingetreten sind.",
-    "metrics": [
-      { "label": "Marktphase", "value": "Expansion" },
-      { "label": "Risikoniveau", "value": "Moderat" },
-      { "label": "Trendstärke", "value": "Stark" }
-    ]
-  },
+  "badge": "Aktuelle Marktübersicht",
+  "title": "Was bedeutet der Markt aktuell wirklich?",
+  "text": "Der Kryptomarkt wird über dem Höchststand des vorherigen Zyklus gehandelt. Die Bitcoin-Dominanz bleibt erhöht, was darauf hindeutet, dass Altcoins möglicherweise noch nicht vollständig in die Expansionsphase eingetreten sind.",
+  "metrics": [
+    { "label": "Marktphase", "value": "Expansion" },
+    { "label": "Risikostufe", "value": "Mittel" },
+    { "label": "Trendstärke", "value": "Stark" }
+  ],
+  "dynamic": {
+    "marketPhase": "Marktphase",
+    "riskLevel": "Risikostufe",
+    "trendStrength": "Trendstärke",
+    "liveContext": "Live-DeFi-TVL",
+    "loading": "Lädt",
+    "halvingBadge": "Bitcoin-Halving-Countdown",
+    "halvingTitle": "Schätzung des nächsten Bitcoin-Halvings",
+    "currentBlock": "Aktueller Block",
+    "blocksLeft": "Verbleibende Blöcke",
+    "daysLeft": "Geschätzte verbleibende Tage",
+    "values": {
+      "expansion": "Expansion",
+      "cooling": "Abkühlung",
+      "neutral": "Neutral",
+      "high": "Hoch",
+      "medium": "Mittel",
+      "balanced": "Ausgeglichen",
+      "strong": "Stark",
+      "moderate": "Moderat",
+      "weak": "Schwach"
+    }
+  }
+},
   "cycles": {
     "title": "Krypto-Marktzyklen vergleichen",
     "text": "Sieh, wie sich der aktuelle Markt mit früheren Zyklus-Hochs vergleicht.",
@@ -322,20 +345,46 @@
     "title": "Crypto ROI Vision",
     "description": "Entdecke, wie viel eine frühere Krypto-Investition heute wert wäre und wie stark sie wachsen könnte, wenn dein zukünftiges Kursziel erreicht wird.",
     "coin": "Coin",
+    "coinAmount": "Coin-Anzahl",
+"originalValue": "Wert zum Investitionsdatum",
+"currentValue": "Aktueller Wert",
+"currentProfit": "Heutiger Gewinn",
+"futureValue": "Wert beim Erreichen des Kursziels",
+"historicalPrice": "Preis zum Investitionsdatum",
+"currentPrice": "Aktueller Coin-Preis",
     "investment": "Investitionsbetrag",
     "date": "Investitionsdatum",
     "futurePrice": "Zukünftiges Kursziel",
-    "currentValue": "Aktueller Wert",
-    "currentProfit": "Aktueller Gewinn",
-    "futureValue": "Zukünftiger Wert",
     "multiplier": "Multiplikator",
     "percentageGain": "Prozentualer Gewinn",
     "share": "Ergebnis teilen",
     "copied": "Ergebnis kopiert",
     "copyFailed": "Ergebnis konnte nicht kopiert werden",
     "loading": "Wachstum der Investition wird berechnet...",
+    "shareTemplate": "Wenn ich am {date} {amount} {coin} gehabt hätte, wäre es heute {currentValue} wert und könnte {futureValue} wert sein, falls {coin} {futurePrice} erreicht. Berechne deins auf Kryptonal.com",
     "disclaimer": "Nur zu Bildungszwecken. Zukünftige Preise und Renditen sind spekulativ und keine Finanzberatung."
-  }
+  },
+  "privacyWatchlist": {
+  "badge": "Private Coin-Verfolgung",
+  "title": "Datenschutzorientierte Watchlist",
+  "description": "Verfolge deine Lieblings-Kryptowährungen ohne Kontoerstellung. Deine Watchlist wird lokal im Browser gespeichert und die Preise werden über Kryptonal aktualisiert.",
+  "searchPlaceholder": "Coin suchen, z. B. BTC, ETH, SOL...",
+  "add": "Hinzufügen",
+  "remove": "Entfernen",
+  "loading": "Live-Preise werden geladen...",
+  "empty": "Deine Watchlist ist leer. Suche nach einem Coin, um ihn hinzuzufügen.",
+  "table": {
+    "asset": "Asset",
+    "price": "Preis",
+    "action": "Aktion"
+  },
+  "disclaimer": "Deine Watchlist wird lokal im Browser gespeichert. Das Löschen von Browserdaten kann sie entfernen. Preise dienen nur Bildungszwecken und sind keine Finanzberatung."
+}
+,
+"privacyWatchlist": {
+  "title": "Private Krypto-Watchlist | Kryptonal",
+  "description": "Erstelle eine private Krypto-Watchlist ohne Login. Verfolge Live-Preise lokal im Browser mit Kryptonal."
+}
   },
   "marketCap": {
   "back": "← Zurück zur Startseite",
@@ -654,6 +703,10 @@
   "cryptoRoiVision": {
     "title": "Crypto ROI Vision | Kryptonal",
     "description": "Berechne historische Krypto-ROI, simuliere zukünftige Kursziele und entdecke, wie Investitionen mit Kryptonal wachsen könnten."
+  },
+  "privacyWatchlist": {
+    "title": "Private Krypto-Watchlist | Kryptonal",
+    "description": "Erstelle eine private Krypto-Watchlist ohne Login. Verfolge Live-Preise lokal im Browser mit Kryptonal."
   }
 }
 }

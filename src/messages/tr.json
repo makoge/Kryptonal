@@ -30,15 +30,38 @@
     ]
   },
   "summary": {
-    "badge": "Güncel piyasa özeti",
-    "title": "Piyasa şu anda gerçekten ne anlatıyor?",
-    "text": "Kripto piyasası şu anda önceki döngü zirvesinin üzerinde işlem görüyor. Bitcoin dominansı yüksek kalmaya devam ediyor, bu da altcoinlerin henüz tam genişleme aşamasına geçmediğini gösterebilir.",
-    "metrics": [
-      { "label": "Piyasa aşaması", "value": "Genişleme" },
-      { "label": "Risk seviyesi", "value": "Orta" },
-      { "label": "Trend gücü", "value": "Güçlü" }
-    ]
-  },
+  "badge": "Güncel Piyasa Özeti",
+  "title": "Piyasa şu anda gerçekten ne anlatıyor?",
+  "text": "Kripto piyasası önceki döngü zirvesinin üzerinde işlem görüyor. Bitcoin dominansı hâlâ yüksek seviyede, bu da altcoinlerin henüz tam anlamıyla genişleme aşamasına girmemiş olabileceğini gösteriyor.",
+  "metrics": [
+    { "label": "Piyasa Aşaması", "value": "Genişleme" },
+    { "label": "Risk Seviyesi", "value": "Orta" },
+    { "label": "Trend Gücü", "value": "Güçlü" }
+  ],
+  "dynamic": {
+    "marketPhase": "Piyasa Aşaması",
+    "riskLevel": "Risk Seviyesi",
+    "trendStrength": "Trend Gücü",
+    "liveContext": "Canlı DeFi TVL",
+    "loading": "Yükleniyor",
+    "halvingBadge": "Bitcoin Halving Geri Sayımı",
+    "halvingTitle": "Sonraki Bitcoin halving tahmini",
+    "currentBlock": "Mevcut blok",
+    "blocksLeft": "Kalan blok",
+    "daysLeft": "Tahmini kalan gün",
+    "values": {
+      "expansion": "Genişleme",
+      "cooling": "Soğuma",
+      "neutral": "Nötr",
+      "high": "Yüksek",
+      "medium": "Orta",
+      "balanced": "Dengeli",
+      "strong": "Güçlü",
+      "moderate": "Orta",
+      "weak": "Zayıf"
+    }
+  }
+},
   "cycles": {
     "title": "Kripto piyasa döngülerini karşılaştır",
     "text": "Mevcut piyasanın önceki döngü zirveleriyle nasıl karşılaştırıldığını görün.",
@@ -322,19 +345,40 @@
     "title": "Crypto ROI Vision",
     "description": "Geçmiş bir kripto yatırımının bugün ne kadar edeceğini görün ve gelecekte hedef fiyatınıza ulaşırsa yatırımınızın ne kadar büyüyebileceğini keşfedin.",
     "coin": "Coin",
+    "coinAmount": "Coin Miktarı",
+"originalValue": "Yatırım Tarihindeki Değer",
+"currentValue": "Güncel Değer",
+"currentProfit": "Bugünkü Kâr",
+"futureValue": "Hedef Fiyata Ulaşırsa Değeri",
+"historicalPrice": "Yatırım Tarihindeki Fiyat",
+"currentPrice": "Güncel Coin Fiyatı",
     "investment": "Yatırım Miktarı",
     "date": "Yatırım Tarihi",
     "futurePrice": "Gelecek Fiyat Hedefi",
-    "currentValue": "Güncel Değer",
-    "currentProfit": "Güncel Kâr",
-    "futureValue": "Gelecek Değeri",
     "multiplier": "Çarpan",
     "percentageGain": "Yüzde Kazanç",
     "share": "Sonucu Paylaş",
     "copied": "Sonuç kopyalandı",
     "copyFailed": "Sonuç kopyalanamadı",
     "loading": "Yatırım büyümesi hesaplanıyor...",
+    "shareTemplate": "{date} tarihinde {amount} adet {coin} sahibi olsaydım, bugün değeri {currentValue} olurdu ve {coin} fiyatı {futurePrice} seviyesine ulaşırsa değeri {futureValue} olabilir. Kendininkini Kryptonal.com üzerinde hesapla",
     "disclaimer": "Yalnızca eğitim amaçlıdır. Gelecek fiyatlar ve getiriler spekülatiftir ve finansal tavsiye değildir."
+  },
+  "privacyWatchlist": {
+    "badge": "Özel Coin Takibi",
+    "title": "Gizlilik Odaklı Watchlist",
+    "description": "Favori kripto varlıklarını hesap oluşturmadan takip et. Watchlist’in tarayıcında yerel olarak saklanır ve fiyatlar Kryptonal üzerinden güncellenir.",
+    "searchPlaceholder": "Coin ara, örn: BTC, ETH, SOL...",
+    "add": "Ekle",
+    "remove": "Kaldır",
+    "loading": "Canlı fiyatlar yükleniyor...",
+    "empty": "Watchlist’in boş. Eklemek için bir coin ara.",
+    "table": {
+      "asset": "Varlık",
+      "price": "Fiyat",
+      "action": "İşlem"
+    },
+    "disclaimer": "Watchlist’in tarayıcında yerel olarak saklanır. Tarayıcı verilerini temizlemek watchlist’i silebilir. Fiyatlar yalnızca eğitim amaçlıdır ve finansal tavsiye değildir."
   }
 },
   "marketCap": {
@@ -638,6 +682,10 @@
       "bitcoin dominansı",
       "kripto piyasa sinyalleri"
     ]
+  },
+  "privacyWatchlist": {
+    "title": "Özel Kripto Watchlist | Kryptonal",
+    "description": "Giriş yapmadan özel bir kripto watchlist oluştur. Kryptonal ile canlı fiyatları tarayıcında yerel olarak takip et."
   }
 }
 }

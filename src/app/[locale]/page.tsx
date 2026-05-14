@@ -6,6 +6,7 @@ import { getDictionary } from "@/lib/getDictionary";
 import CycleComparison from "@/components/home/CycleComparison";
 import LiveHeroBoard from "@/components/home/LiveHeroBoard";
 import HomeToolsSection from "@/components/home/HomeToolsSection";
+import LiveMarketSummary from "@/components/home/LiveMarketSummary";
 
 const siteUrl = "https://kryptonal.com";
 const locales = ["en", "es", "pt", "fr", "de", "tr"];
@@ -130,33 +131,7 @@ export default async function Homepage({ params }: PageProps) {
        <HomeToolsSection locale={locale} t={t}/>
 
         {/* SUMMARY */}
-        <section className="px-4 py-20 sm:px-6">
-          <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 backdrop-blur-xl sm:p-8 lg:p-10">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-              <div>
-                <p className="text-sm font-black uppercase tracking-widest text-emerald-300">
-                  {h.summary.badge}
-                </p>
-                <h2 className="mt-3 text-3xl font-black md:text-5xl">
-                  {h.summary.title}
-                </h2>
-                <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">
-                  {h.summary.text}
-                </p>
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-3 lg:min-w-[420px]">
-                {h.summary.metrics.map((metric: any) => (
-                  <div key={metric.label} className="rounded-2xl bg-slate-950/70 p-4">
-                    <p className="text-xs text-slate-400">{metric.label}</p>
-                    <p className="mt-2 font-black text-emerald-300">{metric.value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <LiveMarketSummary h={h} />
         <CycleComparison locale={locale} data={h.cycles} />
 
         {/* EDUCATION */}

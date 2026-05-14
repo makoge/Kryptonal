@@ -37,7 +37,30 @@
       { "label": "Market Phase", "value": "Expansion" },
       { "label": "Risk Level", "value": "Medium" },
       { "label": "Trend Strength", "value": "Strong" }
-    ]
+    ],
+    "dynamic": {
+  "marketPhase": "Market Phase",
+  "riskLevel": "Risk Level",
+  "trendStrength": "Trend Strength",
+  "liveContext": "Live DeFi TVL",
+  "loading": "Loading",
+  "halvingBadge": "Bitcoin Halving Countdown",
+  "halvingTitle": "Next Bitcoin halving estimate",
+  "currentBlock": "Current block",
+  "blocksLeft": "Blocks left",
+  "daysLeft": "Estimated days left",
+  "values": {
+    "expansion": "Expansion",
+    "cooling": "Cooling",
+    "neutral": "Neutral",
+    "high": "High",
+    "medium": "Medium",
+    "balanced": "Balanced",
+    "strong": "Strong",
+    "moderate": "Moderate",
+    "weak": "Weak"
+  }
+}
   },
   "cycles": {
     "title": "Compare Crypto Market Cycles",
@@ -261,8 +284,25 @@
     "copied": "Result copied",
     "copyFailed": "Unable to copy result",
     "loading": "Calculating investment growth...",
+    "shareTemplate": "If I had {amount} {coin} on {date}, it would be worth {currentValue} today and could be worth {futureValue} if {coin} reaches {futurePrice}. Check yours on Kryptonal.com",
     "disclaimer": "Educational only. Future prices and returns are speculative and not financial advice."
-  }
+  },
+  "privacyWatchlist": {
+  "badge": "Private Coin Tracking",
+  "title": "Privacy-First Watchlist",
+  "description": "Track your favorite crypto assets without creating an account. Your watchlist stays saved inside your browser and prices update through Kryptonal.",
+  "searchPlaceholder": "Search coin, e.g. BTC, ETH, SOL...",
+  "add": "Add",
+  "remove": "Remove",
+  "loading": "Loading live prices...",
+  "empty": "Your watchlist is empty. Search for a coin to add one.",
+  "table": {
+    "asset": "Asset",
+    "price": "Price",
+    "action": "Action"
+  },
+  "disclaimer": "Your watchlist is stored locally in your browser. Clearing browser data may remove it. Prices are educational only and not financial advice."
+}
 
 },
  
@@ -559,7 +599,15 @@
     "cryptoRoiVision": {
     "title": "Crypto ROI Vision | Kryptonal",
     "description": "Calculate historical crypto ROI, simulate future price targets, and explore how investments could grow with Kryptonal."
-  }
+  },
+  "cryptoRoiVision": {
+  "title": "Crypto ROI Vision | Kryptonal",
+  "description": "Geçmiş kripto yatırım getirilerini hesaplayın, gelecekteki fiyat hedeflerini simüle edin ve yatırımların Kryptonal ile nasıl büyüyebileceğini keşfedin."
+},
+  "privacyWatchlist": {
+  "title": "Privacy-First Crypto Watchlist | Kryptonal",
+  "description": "Create a private crypto watchlist without login. Track live prices locally in your browser with Kryptonal."
+}
 
   }
 }

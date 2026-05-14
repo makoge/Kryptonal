@@ -8,18 +8,44 @@ const COINS = [
   { id: "ethereum", symbol: "ETH" },
   { id: "solana", symbol: "SOL" },
   { id: "binancecoin", symbol: "BNB" },
-  { id: "dogecoin", symbol: "DOGE" },
-  { id: "shiba", symbol: "SHIB" },
-  { id: "pepe", symbol: "PEPE" },
-  { id: "floki", symbol: "FLOKI" },
+  { id: "ripple", symbol: "XRP" },
+  { id: "cardano", symbol: "ADA" },
+   { id: "dogecoin", symbol: "DOGE" },
+  { id: "litecoin", symbol: "LTC" },
   { id: "chainlink", symbol: "LINK" },
+  { id: "polkadot", symbol: "DOT" },
+  { id: "avalanche", symbol: "AVAX" },
+  { id: "tron", symbol: "TRX" },
+  { id: "stellar", symbol: "XLM" },
+  { id: "bitcoinCash", symbol: "BCH" },
+  { id: "monero", symbol: "XMR" },
+   { id: "shiba", symbol: "SHIB" },
+  { id: "pepe", symbol: "PEPE" },
+  { id: "floki", symbol: "FLOKI" }
 ];
 
 function formatUsd(value: number) {
+  if (value >= 1000) {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0,
+    }).format(value);
+  }
+
+  if (value >= 1) {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 2,
+    }).format(value);
+  }
+
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-    maximumFractionDigits: 0,
+    minimumFractionDigits: 4,
+    maximumFractionDigits: 8,
   }).format(value);
 }
 
@@ -95,13 +121,13 @@ const percentageGain =
 
   const selectedCoin = COINS.find((c) => c.id === coin);
 
-  const shareText = `If I invested ${formatUsd(
-    coinAmount
-  )} in ${selectedCoin?.symbol} on ${date}, my investment could be worth ${formatUsd(
-    futureValue
-  )} if ${selectedCoin?.symbol} reaches ${formatUsd(
-    futurePrice
-  )}. Check yours on Kryptonal.com`;
+  const shareText = copy.shareTemplate
+  .replace("{amount}", String(coinAmount))
+  .replaceAll("{coin}", selectedCoin?.symbol || "")
+  .replace("{date}", date)
+  .replace("{currentValue}", formatUsd(currentValue))
+  .replace("{futureValue}", formatUsd(futureValue))
+  .replace("{futurePrice}", formatUsd(futurePrice));
 
   async function share() {
     try {
