@@ -8,6 +8,7 @@ import LiveHeroBoard from "@/components/home/LiveHeroBoard";
 import HomeToolsSection from "@/components/home/HomeToolsSection";
 import LiveMarketSummary from "@/components/home/LiveMarketSummary";
 
+
 const siteUrl = "https://kryptonal.com";
 const locales = ["en", "es", "pt", "fr", "de", "tr"];
 

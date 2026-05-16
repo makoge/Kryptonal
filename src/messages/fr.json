@@ -50,6 +50,13 @@
     "blocksLeft": "Blocs restants",
     "daysLeft": "Jours restants estimés",
     "values": {
+      "altcoinExpansion": "Expansion des Altcoins",
+"bitcoinLedRecovery": "Reprise menée par le Bitcoin",
+"defensiveBitcoinRotation": "Rotation Défensive vers le Bitcoin",
+"marketContraction": "Contraction du Marché",
+"earlyRecovery": "Reprise Précoce",
+"neutralConsolidation": "Consolidation Neutre",
+"elevated": "Élevé",
       "expansion": "Expansion",
       "cooling": "Refroidissement",
       "neutral": "Neutre",
@@ -424,6 +431,17 @@
     "cyclesTitle": "Explication des cycles du marché crypto",
     "cyclesText": "Les cycles du marché crypto passent généralement par des phases d’accumulation, d’expansion, de distribution et de contraction."
   },
+  "historical": {
+  "badge": "Carte Historique du Marché",
+  "description": "Sélectionnez une année pour comparer le pic de capitalisation du marché crypto, le sommet annuel du Bitcoin et la différence entre le marché actuel et cette période.",
+  "selectedYear": "Année sélectionnée",
+  "marketCapPeak": "Pic de capitalisation du marché crypto",
+  "btcPeak": "Sommet annuel du Bitcoin",
+  "vsNow": "Capitalisation actuelle vs cette année",
+  "chartLabel": "Pics annuels de capitalisation",
+  "greenRed": "Le vert signifie qu’aujourd’hui est plus élevé. Le rouge signifie qu’aujourd’hui est plus bas.",
+  "loading": "Chargement des données historiques du marché..."
+},
   "faqTitle": "Questions Fréquemment Posées",
   "faqs": [
     {
@@ -438,7 +456,80 @@
       "question": "Comment la domination du Bitcoin affecte-t-elle le marché crypto ?",
       "answer": "La domination du Bitcoin montre la part du Bitcoin dans le marché crypto total."
     }
-  ]
+  ],
+  "trustPills": ["Données en Direct", "Comparaison des Cycles", "Intelligence du Marché"],
+"overviewLabel": "Vue d’Ensemble du Marché",
+"overviewTitle": "Analysez le marché avant que la foule ne réagisse.",
+"overviewText": "Kryptonal transforme les données de capitalisation du marché en une vision plus claire des tendances, du risque, de la liquidité et de la position du cycle.",
+"pulseCards": [
+  {
+    "label": "Humeur du Marché",
+    "value": "Suivi du Cycle",
+    "text": "Suivez si le marché semble précoce, surchauffé ou épuisé."
+  },
+  {
+    "label": "Rotation du Capital",
+    "value": "BTC → Alts",
+    "text": "Observez comment la liquidité se déplace entre Bitcoin, Ethereum et les altcoins."
+  },
+  {
+    "label": "Signal de Risque",
+    "value": "Volatilité",
+    "text": "Utilisez la structure de la capitalisation du marché pour éviter les entrées émotionnelles."
+  },
+  {
+    "label": "Force de la Tendance",
+    "value": "Momentum",
+    "text": "Comparez les conditions actuelles avec les cycles crypto précédents."
+  }
+],
+"engineLabel": "Moteur d’Analyse Kryptonal",
+"engineTitle": "Générez une vision du marché réellement utile.",
+"engineText": "Utilisez le moteur d’analyse pour comparer la structure du marché, la position du cycle et les conditions de risque dans un résumé clair.",
+"engineChecks": [
+  "Structure du marché",
+  "Position du cycle",
+  "Comparaison historique",
+  "Signaux de risque",
+  "Conditions des altcoins"
+],
+"checkLabel": "VÉRIFIER",
+"frameworkLabel": "Cadre d’Analyse",
+"frameworkTitle": "Un processus simple pour de meilleures décisions.",
+"frameworkText": "La capitalisation du marché seule ne suffit pas. L’avantage vient de la connexion entre la valorisation actuelle, l’historique des cycles et le risque.",
+"framework": [
+  {
+    "title": "Vérifier la capitalisation actuelle",
+    "text": "Commencez par la valeur totale du marché crypto."
+  },
+  {
+    "title": "Comparer les zones de cycle",
+    "text": "Analysez comment les niveaux actuels se comparent aux cycles précédents."
+  },
+  {
+    "title": "Examiner la tendance et le risque",
+    "text": "Vérifiez si le marché est en expansion, en refroidissement ou en surchauffe."
+  },
+  {
+    "title": "Générer une analyse",
+    "text": "Utilisez Kryptonal pour transformer les données en un résumé clair du marché."
+  }
+],
+"historicalLabel": "Données Historiques",
+"comparisonLabel": "Comparaison des Cycles",
+"comparisonText": "Comparez le comportement de la capitalisation du marché à travers les cycles crypto et évitez d’analyser les chiffres actuels isolément.",
+"faqLabel": "FAQ",
+"gasTracker": "Suivi du Gas",
+"fearGreedLabel": "Indice de Peur et de Cupidité",
+"greed": "Cupidité",
+"fearGreedText": "Un aperçu émotionnel rapide du marché crypto. Utile pour vérifier si les traders deviennent craintifs, neutres ou avides.",
+"sentimentLabel": "Sentiment du Marché par IA",
+"sentimentTitle": "Sentiment des coins avec mini graphiques de tendance",
+"compareButton": "Comparer",
+"bullish": "Haussier",
+"neutral": "Neutre",
+"bullishMomentum": "Momentum haussier",
+"bearishPressure": "Pression baissière"
 },
 "analysis": {
   "badge": "Moteur d’Intelligence Crypto",

@@ -113,14 +113,18 @@ export default function MarketCapChart({ t }: Props) {
           preserveAspectRatio="none"
           className="h-full w-full"
         >
-          <path
-            d={path}
-            fill="none"
-            stroke="rgb(52 211 153)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            className="drop-shadow-[0_0_10px_rgba(52,211,153,0.8)] transition-all duration-700"
-          />
+        <path
+  d={path}
+  fill="none"
+  stroke={isPositive ? "rgb(52 211 153)" : "rgb(248 113 113)"}
+  strokeWidth="2"
+  strokeLinecap="round"
+  className={`transition-all duration-700 ${
+    isPositive
+      ? "drop-shadow-[0_0_10px_rgba(52,211,153,0.8)]"
+      : "drop-shadow-[0_0_10px_rgba(248,113,113,0.8)]"
+  }`}
+/>
         </svg>
       </div>
 

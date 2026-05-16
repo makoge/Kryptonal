@@ -50,6 +50,13 @@
     "blocksLeft": "Verbleibende Blöcke",
     "daysLeft": "Geschätzte verbleibende Tage",
     "values": {
+      "altcoinExpansion": "Altcoin-Expansion",
+"bitcoinLedRecovery": "Bitcoin-geführte Erholung",
+"defensiveBitcoinRotation": "Defensive Bitcoin-Rotation",
+"marketContraction": "Marktkontraktion",
+"earlyRecovery": "Frühe Erholung",
+"neutralConsolidation": "Neutrale Konsolidierung",
+"elevated": "Erhöht",
       "expansion": "Expansion",
       "cooling": "Abkühlung",
       "neutral": "Neutral",
@@ -380,11 +387,6 @@
   },
   "disclaimer": "Deine Watchlist wird lokal im Browser gespeichert. Das Löschen von Browserdaten kann sie entfernen. Preise dienen nur Bildungszwecken und sind keine Finanzberatung."
 }
-,
-"privacyWatchlist": {
-  "title": "Private Krypto-Watchlist | Kryptonal",
-  "description": "Erstelle eine private Krypto-Watchlist ohne Login. Verfolge Live-Preise lokal im Browser mit Kryptonal."
-}
   },
   "marketCap": {
   "back": "← Zurück zur Startseite",
@@ -429,6 +431,17 @@
     "cyclesTitle": "Krypto-Marktzyklen erklärt",
     "cyclesText": "Krypto-Marktzyklen bewegen sich normalerweise durch Akkumulation, Expansion, Distribution und Kontraktion."
   },
+  "historical": {
+  "badge": "Historische Marktübersicht",
+  "description": "Wähle ein Jahr aus, um den Höhepunkt der Krypto-Marktkapitalisierung, das jährliche Bitcoin-Hoch und den Unterschied zum heutigen Markt zu vergleichen.",
+  "selectedYear": "Ausgewähltes Jahr",
+  "marketCapPeak": "Höchststand der Krypto-Marktkapitalisierung",
+  "btcPeak": "Jährliches Bitcoin-Hoch",
+  "vsNow": "Aktuelle Marktkapitalisierung vs dieses Jahr",
+  "chartLabel": "Jährliche Marktkapitalisierungs-Hochs",
+  "greenRed": "Grün bedeutet, dass der heutige Wert höher ist. Rot bedeutet, dass der heutige Wert niedriger ist.",
+  "loading": "Historische Marktdaten werden geladen..."
+},
   "faqTitle": "Häufig gestellte Fragen",
   "faqs": [
     {
@@ -443,7 +456,80 @@
       "question": "Wie beeinflusst die Bitcoin-Dominanz den Kryptomarkt?",
       "answer": "Die Bitcoin-Dominanz zeigt den Anteil von Bitcoin am gesamten Kryptomarkt."
     }
-  ]
+  ],
+  "trustPills": ["Live-Daten", "Zyklusvergleich", "Marktintelligenz"],
+"overviewLabel": "Marktübersicht",
+"overviewTitle": "Lies den Markt, bevor die Masse reagiert.",
+"overviewText": "Kryptonal verwandelt Marktkapitalisierungsdaten in einen klareren Überblick über Trend, Risiko, Liquidität und Zyklusposition.",
+"pulseCards": [
+  {
+    "label": "Marktstimmung",
+    "value": "Zyklus-Überwachung",
+    "text": "Verfolge, ob sich der Markt früh, überhitzt oder erschöpft anfühlt."
+  },
+  {
+    "label": "Kapitalrotation",
+    "value": "BTC → Alts",
+    "text": "Beobachte, wie sich Liquidität zwischen Bitcoin, Ethereum und Altcoins bewegt."
+  },
+  {
+    "label": "Risikosignal",
+    "value": "Volatilität",
+    "text": "Nutze die Struktur der Marktkapitalisierung, um emotionale Einstiege zu vermeiden."
+  },
+  {
+    "label": "Trendstärke",
+    "value": "Momentum",
+    "text": "Vergleiche aktuelle Bedingungen mit früheren Kryptomarktzyklen."
+  }
+],
+"engineLabel": "Kryptonal Analyse-Engine",
+"engineTitle": "Erstelle eine Marktansicht, die du wirklich nutzen kannst.",
+"engineText": "Nutze die Analyse-Engine, um Marktstruktur, Zyklusposition und Risikobedingungen in einer klaren Zusammenfassung zu vergleichen.",
+"engineChecks": [
+  "Marktstruktur",
+  "Zyklusposition",
+  "Historischer Vergleich",
+  "Risikosignale",
+  "Altcoin-Bedingungen"
+],
+"checkLabel": "PRÜFEN",
+"frameworkLabel": "Analyse-Framework",
+"frameworkTitle": "Ein einfacher Prozess für bessere Entscheidungen.",
+"frameworkText": "Die Marktkapitalisierung allein reicht nicht aus. Der Vorteil entsteht durch die Verbindung von aktueller Bewertung, Zyklusgeschichte und Risiko.",
+"framework": [
+  {
+    "title": "Aktuelle Marktkapitalisierung prüfen",
+    "text": "Beginne mit dem Gesamtwert des Kryptomarktes."
+  },
+  {
+    "title": "Zykluszonen vergleichen",
+    "text": "Sieh dir an, wie aktuelle Werte im Vergleich zu früheren Zyklen stehen."
+  },
+  {
+    "title": "Trend und Risiko prüfen",
+    "text": "Überprüfe, ob sich der Markt ausweitet, abkühlt oder überhitzt ist."
+  },
+  {
+    "title": "Analyse generieren",
+    "text": "Nutze Kryptonal, um die Daten in eine klare Marktübersicht umzuwandeln."
+  }
+],
+"historicalLabel": "Historische Daten",
+"comparisonLabel": "Zyklusvergleich",
+"comparisonText": "Vergleiche das Verhalten der Marktkapitalisierung über verschiedene Kryptozyklen hinweg und vermeide es, heutige Zahlen isoliert zu betrachten.",
+"faqLabel": "FAQ",
+"gasTracker": "Gas-Tracker",
+"fearGreedLabel": "Fear & Greed Index",
+"greed": "Gier",
+"fearGreedText": "Ein schneller emotionaler Überblick über den Kryptomarkt. Nützlich, um zu prüfen, ob Trader ängstlich, neutral oder gierig werden.",
+"sentimentLabel": "KI-Marktstimmung",
+"sentimentTitle": "Coin-Stimmung mit Mini-Trenddiagrammen",
+"compareButton": "Vergleichen",
+"bullish": "Bullisch",
+"neutral": "Neutral",
+"bullishMomentum": "Bullisches Momentum",
+"bearishPressure": "Bärischer Druck"
 },
 "analysis": {
   "badge": "Krypto-Intelligenz-Engine",

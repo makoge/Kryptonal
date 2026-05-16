@@ -1,52 +1,115 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 const API_URL = "https://api.coingecko.com/api/v3";
-const DAY = 24 * 60 * 60;
 
-export async function GET(req: NextRequest) {
+export const revalidate = 3600;
+
+type YearData = {
+  year: number;
+  marketCapPeak: number | null;
+  btcPeak: number;
+};
+
+function groupPeakByYear(points: [number, number][]) {
+  const map = new Map<number, number>();
+
+  for (const [time, value] of points) {
+    const year = new Date(time).getFullYear();
+    const current = map.get(year) || 0;
+
+    if (Number(value) > current) {
+      map.set(year, Number(value));
+    }
+  }
+
+  return map;
+}
+
+export async function GET() {
   try {
-    const range = req.nextUrl.searchParams.get("range") || "1Y";
-
     const apiKey = process.env.COINGECKO_API_KEY;
 
     const headers: HeadersInit = apiKey
       ? { "x-cg-demo-api-key": apiKey }
       : {};
 
-    const now = Math.floor(Date.now() / 1000);
-
-    let from = now - 365 * DAY;
-
-    if (range === "3Y") from = now - 3 * 365 * DAY;
-    if (range === "5Y") from = now - 5 * 365 * DAY;
-    if (range === "ALL") from = now - 10 * 365 * DAY;
-
-    const res = await fetch(
-      `${API_URL}/coins/bitcoin/market_chart/range?vs_currency=usd&from=${from}&to=${now}`,
-      {
+    const [globalRes, btcRes, marketCapRes] = await Promise.all([
+      fetch(`${API_URL}/global`, {
         headers,
-        next: { revalidate: 300 },
-      }
-    );
+        next: { revalidate: 3600 },
+      }),
 
-    if (!res.ok) {
+      fetch(`${API_URL}/coins/bitcoin/market_chart?vs_currency=usd&days=3650`, {
+        headers,
+        next: { revalidate: 3600 },
+      }),
+
+      fetch(`${API_URL}/global/market_cap_chart?vs_currency=usd&days=3650`, {
+        headers,
+        next: { revalidate: 3600 },
+      }),
+    ]);
+
+    if (!globalRes.ok || !btcRes.ok) {
       return NextResponse.json(
-        { error: "Failed to fetch history data" },
+        {
+          error: "History API failed",
+          globalStatus: globalRes.status,
+          btcStatus: btcRes.status,
+          marketCapStatus: marketCapRes.status,
+        },
         { status: 502 }
       );
     }
 
-    const json = await res.json();
+    const globalJson = await globalRes.json();
+    const btcJson = await btcRes.json();
 
-    const chart = Array.isArray(json.prices)
-      ? json.prices.map(([time, value]: [number, number]) => ({
-          time,
-          value,
-        }))
-      : [];
+    const currentMarketCap = Number(
+      globalJson?.data?.total_market_cap?.usd || 0
+    );
 
-    return NextResponse.json({ chart });
+    const btcPeaks = groupPeakByYear(
+      Array.isArray(btcJson?.prices) ? btcJson.prices : []
+    );
+
+    let marketCapPeaks = new Map<number, number>();
+
+    if (marketCapRes.ok) {
+      const marketCapJson = await marketCapRes.json();
+
+      const rawMarketCap =
+        marketCapJson?.market_cap_chart?.market_cap ||
+        marketCapJson?.market_cap ||
+        [];
+
+      if (Array.isArray(rawMarketCap) && rawMarketCap.length > 0) {
+        marketCapPeaks = groupPeakByYear(rawMarketCap);
+      }
+    }
+
+    const years = Array.from(btcPeaks.keys())
+      .filter((year) => year >= 2017)
+      .sort((a, b) => b - a)
+      .map((year): YearData => ({
+        year,
+        btcPeak: btcPeaks.get(year) || 0,
+        marketCapPeak: marketCapPeaks.get(year) || null,
+      }));
+
+    return NextResponse.json({
+      currentMarketCap,
+      years,
+      updatedAt: new Date().toISOString(),
+    });
   } catch {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    return NextResponse.json(
+      {
+        currentMarketCap: 0,
+        years: [],
+        updatedAt: new Date().toISOString(),
+      },
+      { status: 200 }
+    );
   }
 }

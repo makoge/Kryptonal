@@ -50,6 +50,13 @@
     "blocksLeft": "Kalan blok",
     "daysLeft": "Tahmini kalan gün",
     "values": {
+      "altcoinExpansion": "Altcoin Genişlemesi",
+"bitcoinLedRecovery": "Bitcoin Öncülüğünde Toparlanma",
+"defensiveBitcoinRotation": "Savunmacı Bitcoin Rotasyonu",
+"marketContraction": "Piyasa Daralması",
+"earlyRecovery": "Erken Toparlanma",
+"neutralConsolidation": "Nötr Konsolidasyon",
+"elevated": "Yüksek",
       "expansion": "Genişleme",
       "cooling": "Soğuma",
       "neutral": "Nötr",
@@ -424,6 +431,17 @@
     "cyclesTitle": "Kripto piyasa döngüleri açıklaması",
     "cyclesText": "Kripto piyasa döngüleri genellikle birikim, genişleme, dağıtım ve daralma aşamalarından geçer."
   },
+  "historical": {
+  "badge": "Tarihsel Piyasa Haritası",
+  "description": "Kripto piyasa değeri zirvesini, Bitcoin yıllık zirvesini ve bugünkü piyasanın o döneme göre ne kadar farklı olduğunu görmek için bir yıl seçin.",
+  "selectedYear": "Seçilen yıl",
+  "marketCapPeak": "Kripto piyasa değeri zirvesi",
+  "btcPeak": "Bitcoin yıllık zirvesi",
+  "vsNow": "Mevcut piyasa değeri ile karşılaştırma",
+  "chartLabel": "Yıllık piyasa değeri zirveleri",
+  "greenRed": "Yeşil, bugünün daha yüksek olduğunu gösterir. Kırmızı, bugünün daha düşük olduğunu gösterir.",
+  "loading": "Tarihsel piyasa verileri yükleniyor..."
+},
   "faqTitle": "Sık Sorulan Sorular",
   "faqs": [
     {
@@ -438,7 +456,80 @@
       "question": "Bitcoin dominansı kripto piyasasını nasıl etkiler?",
       "answer": "Bitcoin dominansı, Bitcoin’in toplam kripto piyasasındaki payını gösterir."
     }
-  ]
+  ],
+  "trustPills": ["Canlı Veri", "Döngü Karşılaştırması", "Piyasa Analizi"],
+"overviewLabel": "Piyasa Genel Görünümü",
+"overviewTitle": "Kalabalık tepki vermeden önce piyasayı okuyun.",
+"overviewText": "Kryptonal, piyasa değeri verilerini trend, risk, likidite ve döngü konumu hakkında daha net bir görünüme dönüştürür.",
+"pulseCards": [
+  {
+    "label": "Piyasa Havası",
+    "value": "Döngü Takibi",
+    "text": "Piyasanın erken, aşırı ısınmış veya tükenmiş hissedip hissetmediğini takip edin."
+  },
+  {
+    "label": "Sermaye Rotasyonu",
+    "value": "BTC → Altlar",
+    "text": "Likiditenin Bitcoin, Ethereum ve altcoinler arasında nasıl hareket ettiğini izleyin."
+  },
+  {
+    "label": "Risk Sinyali",
+    "value": "Volatilite",
+    "text": "Duygusal girişlerden kaçınmak için piyasa değeri yapısını kullanın."
+  },
+  {
+    "label": "Trend Gücü",
+    "value": "Momentum",
+    "text": "Mevcut koşulları önceki kripto döngüleriyle karşılaştırın."
+  }
+],
+"engineLabel": "Kryptonal Analiz Motoru",
+"engineTitle": "Gerçekten kullanabileceğiniz bir piyasa görünümü oluşturun.",
+"engineText": "Piyasa yapısını, döngü konumunu ve risk koşullarını tek bir net özet içinde karşılaştırmak için analiz motorunu kullanın.",
+"engineChecks": [
+  "Piyasa yapısı",
+  "Döngü konumu",
+  "Tarihsel karşılaştırma",
+  "Risk sinyalleri",
+  "Altcoin koşulları"
+],
+"checkLabel": "KONTROL",
+"frameworkLabel": "Okuma Çerçevesi",
+"frameworkTitle": "Daha temiz kararlar için basit bir süreç.",
+"frameworkText": "Piyasa değeri tek başına yeterli değildir. Avantaj, mevcut değerlemeyi döngü geçmişi ve risk ile birleştirmekten gelir.",
+"framework": [
+  {
+    "title": "Mevcut piyasa değerini kontrol edin",
+    "text": "Kripto piyasasının toplam değeriyle başlayın."
+  },
+  {
+    "title": "Döngü bölgelerini karşılaştırın",
+    "text": "Mevcut seviyelerin önceki döngülerle nasıl karşılaştırıldığını inceleyin."
+  },
+  {
+    "title": "Trend ve riski inceleyin",
+    "text": "Piyasanın genişleyip genişlemediğini, soğuyup soğumadığını veya aşırı ısındığını kontrol edin."
+  },
+  {
+    "title": "Analiz oluşturun",
+    "text": "Verileri temiz bir piyasa özetine dönüştürmek için Kryptonal kullanın."
+  }
+],
+"historicalLabel": "Tarihsel Veriler",
+"comparisonLabel": "Döngü Karşılaştırması",
+"comparisonText": "Piyasa değeri davranışını kripto döngüleri boyunca karşılaştırın ve bugünün sayılarını tek başına değerlendirmekten kaçının.",
+"faqLabel": "SSS",
+"gasTracker": "Gas Takibi",
+"fearGreedLabel": "Korku ve Açgözlülük Endeksi",
+"greed": "Açgözlülük",
+"fearGreedText": "Kripto piyasasının hızlı bir duygusal görüntüsü. Yatırımcıların korkulu, nötr veya açgözlü hale gelip gelmediğini kontrol etmek için kullanışlıdır.",
+"sentimentLabel": "Yapay Zeka Piyasa Duyarlılığı",
+"sentimentTitle": "Mini trend grafiklerle coin duyarlılığı",
+"compareButton": "Karşılaştır",
+"bullish": "Yükseliş",
+"neutral": "Nötr",
+"bullishMomentum": "Yükseliş momentumu",
+"bearishPressure": "Düşüş baskısı"
 },
 "analysis": {
   "badge": "Kripto Zekâ Motoru",

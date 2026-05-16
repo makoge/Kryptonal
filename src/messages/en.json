@@ -50,6 +50,13 @@
   "blocksLeft": "Blocks left",
   "daysLeft": "Estimated days left",
   "values": {
+    "altcoinExpansion": "Altcoin Expansion",
+    "bitcoinLedRecovery": "Bitcoin-Led Recovery",
+    "defensiveBitcoinRotation": "Defensive Bitcoin Rotation",
+    "marketContraction": "Market Contraction",
+    "earlyRecovery": "Early Recovery",
+    "neutralConsolidation": "Neutral Consolidation",
+    "elevated": "Elevated",
     "expansion": "Expansion",
     "cooling": "Cooling",
     "neutral": "Neutral",
@@ -349,6 +356,17 @@
       "cyclesTitle": "Crypto market cycles explained",
       "cyclesText": "Crypto market cycles usually move through accumulation, expansion, distribution, and contraction."
     },
+    "historical": {
+  "badge": "Historical Market Map",
+  "description": "Select a year to compare its crypto market-cap peak, Bitcoin yearly peak, and how far today’s market is from that period.",
+  "selectedYear": "Selected year",
+  "marketCapPeak": "Crypto market-cap peak",
+  "btcPeak": "Bitcoin yearly peak",
+  "vsNow": "Current market cap vs that year",
+  "chartLabel": "Yearly market-cap peaks",
+  "greenRed": "Green means today is higher. Red means today is lower.",
+  "loading": "Loading historical market data..."
+},
     "faqTitle": "Frequently Asked Questions",
     "faqs": [
       {
@@ -363,7 +381,81 @@
         "question": "How does Bitcoin dominance affect the crypto market?",
         "answer": "Bitcoin dominance shows Bitcoin’s share of the total crypto market."
       }
-    ]
+    ],
+    "trustPills": ["Live Data", "Cycle Comparison", "Market Intelligence"],
+"overviewLabel": "Market Overview",
+"overviewTitle": "Read the market before the crowd reacts.",
+"overviewText": "Kryptonal turns market-cap data into a cleaner view of trend, risk, liquidity, and cycle position.",
+"pulseCards": [
+  {
+    "label": "Market Mood",
+    "value": "Cycle Watch",
+    "text": "Track whether the market feels early, heated, or exhausted."
+  },
+  {
+    "label": "Capital Rotation",
+    "value": "BTC → Alts",
+    "text": "Watch how liquidity moves between Bitcoin, Ethereum, and altcoins."
+  },
+  {
+    "label": "Risk Signal",
+    "value": "Volatility",
+    "text": "Use market cap structure to avoid emotional entries."
+  },
+  {
+    "label": "Trend Strength",
+    "value": "Momentum",
+    "text": "Compare current conditions with previous crypto cycles."
+  }
+],
+"engineLabel": "Kryptonal Analysis Engine",
+"engineTitle": "Generate a market view you can actually use.",
+"engineText": "Use the analysis engine to compare market structure, cycle position, and risk conditions in one clean summary.",
+"engineChecks": [
+  "Market structure",
+  "Cycle position",
+  "Historical comparison",
+  "Risk signals",
+  "Altcoin conditions"
+],
+"checkLabel": "CHECK",
+"frameworkLabel": "Reading Framework",
+"frameworkTitle": "A simple process for cleaner decisions.",
+"frameworkText": "Market cap alone is not enough. The edge comes from connecting current valuation with cycle history and risk.",
+"framework": [
+  {
+    "title": "Check current market cap",
+    "text": "Start with the total value of the crypto market."
+  },
+  {
+    "title": "Compare cycle zones",
+    "text": "Look at how current levels compare with previous cycles."
+  },
+  {
+    "title": "Review trend and risk",
+    "text": "Check whether the market is expanding, cooling, or overheated."
+  },
+  {
+    "title": "Generate analysis",
+    "text": "Use Kryptonal to turn the data into a clean market summary."
+  }
+],
+"historicalLabel": "Historical Data",
+"comparisonLabel": "Cycle Comparison",
+"comparisonText": "Compare market-cap behavior across crypto cycles and avoid reading today’s numbers in isolation.",
+"faqLabel": "FAQ",
+"gasTracker": "Gas Tracker",
+"fearGreedLabel": "Fear & Greed Index",
+"greed": "Greed",
+"fearGreedText": "A fast emotional snapshot of the crypto market. Useful for checking whether traders are becoming fearful, neutral, or greedy.",
+"sentimentLabel": "AI Market Sentiment",
+"sentimentTitle": "Coin sentiment with mini trend charts",
+"compareButton": "Compare",
+"bullish": "Bullish",
+"neutral": "Neutral",
+"bullishMomentum": "Bullish momentum",
+"bearishPressure": "Bearish pressure"
+
   },
   "analysis": {
     "badge": "Crypto Intelligence Engine",
