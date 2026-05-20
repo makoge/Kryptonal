@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 
-const modeKeys = ["full", "cycle", "risk", "altcoins"] as const;
-type Mode = (typeof modeKeys)[number];
+const modes = ["all", "market", "stablecoins", "chains", "sectors", "leverage"] as const;
+
+type Mode = (typeof modes)[number];
 
 type Props = {
   t: any;
@@ -26,12 +27,15 @@ const fallback = {
   copyFailed: "Copy failed. Please select the text manually.",
   disclaimer:
     "Educational content only. Not financial advice. Always verify important financial information independently.",
-  modes: {
-    full: "Full",
-    cycle: "Cycle",
-    risk: "Risk",
-    altcoins: "Altcoins",
-  },
+
+  "modes": {
+    "all": "Full Market Analysis",
+    "market": "Market",
+    "stablecoins": "Stablecoins",
+    "chains": "Chains",
+    "sectors": "Sectors",
+    "leverage": "Leverage"
+},
   checklist: [
     "Market cycle context",
     "Bitcoin dominance read",
@@ -50,7 +54,7 @@ function modeLabel(t: any, mode: Mode) {
 }
 
 export default function DeepAnalysisEngine({ t }: Props) {
-  const [mode, setMode] = useState<Mode>("full");
+  const [mode, setMode] = useState<Mode>("all");
   const [analysis, setAnalysis] = useState("");
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -68,22 +72,61 @@ export default function DeepAnalysisEngine({ t }: Props) {
       : fallback.tags;
 
   async function generate() {
-    setLoading(true);
-    setCopied(false);
+  setLoading(true);
+  setCopied(false);
 
-    try {
-      const res = await fetch("/api/analysis/engine", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mode }),
-      });
+  try {
+    const res = await fetch("/api/analysis/engine", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mode }),
+    });
 
-      const json = await res.json();
-      setAnalysis(json.analysis || "");
-    } finally {
-      setLoading(false);
+    const json = await res.json();
+
+    if (!res.ok) {
+      setAnalysis("Analysis failed. Please try again.");
+      return;
     }
+
+  const generatedAt = new Date().toLocaleString(undefined, {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+});
+
+const text = [
+  "Kryptonal Market Analysis",
+  `Generated: ${generatedAt}`,
+  "",
+      ...(json.sections || []).flatMap((section: any, index: number) => [
+        `${index + 1}. ${section.title}`,
+        section.summary,
+        "",
+        `What is happening: ${section.what}`,
+        "",
+        `Why it matters: ${section.why}`,
+        "",
+        `Possible outcome: ${section.outcomes}`,
+        "",
+        `Takeaway: ${section.takeaway}`,
+        "",
+      ]),
+      "Final View",
+      json.conclusion,
+      "",
+      t.analysisTool.disclaimer,
+    ].join("\n");
+
+    setAnalysis(text);
+  } catch {
+    setAnalysis("Analysis failed. Please try again.");
+  } finally {
+    setLoading(false);
   }
+}
 
   async function copyAnalysis() {
     if (!analysis) return;
@@ -148,7 +191,7 @@ export default function DeepAnalysisEngine({ t }: Props) {
             </h3>
 
             <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
-              {modeKeys.map((item) => (
+              {modes.map((item) => (
                 <button
                   key={item}
                   onClick={() => setMode(item)}

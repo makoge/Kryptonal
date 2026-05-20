@@ -394,7 +394,7 @@
   "title": "Analyse de la Capitalisation du Marché Crypto",
   "description": "Analysez la capitalisation totale du marché des cryptomonnaies, comparez la valeur actuelle du marché avec les précédents cycles crypto et comprenez la domination du Bitcoin, les phases du marché et les tendances crypto à long terme.",
   "primaryCta": "Analyser le Marché",
-  "secondaryCta": "Voir les Données Historiques",
+  "secondaryCta": "Indice de Saison des Altcoins",
   "chartLabel": "Capitalisation Totale du Marché Crypto",
   "marketSignal": "Phase d’Expansion",
   "chartNote": "Exemple de graphique de capitalisation du marché. Les données API en direct seront connectées plus tard.",
@@ -411,10 +411,9 @@
     { "label": "Dominance BTC", "value": "53.6%", "change": "Bitcoin domine" },
     { "label": "Phase du Marché", "value": "Expansion", "change": "Risque modéré" }
   ],
-  "chartTitle": "Capitalisation Globale du Marché Crypto au Fil du Temps",
-  "chartDescription": "Suivez l’évolution de la capitalisation totale du marché crypto à travers les marchés haussiers, baissiers, les phases de reprise et les cycles Bitcoin à long terme.",
-  "ranges": ["1Y", "3Y", "5Y", "TOUT"],
-  "comparisonTitle": "Comparaison des Cycles du Marché Crypto",
+  "historicalLabel": "Indice de Saison des Altcoins",
+"chartTitle": "Suivez Quand les Altcoins Commencent à Gagner en Force sur le Marché",
+"chartDescription": "L’Indice de Saison des Altcoins vous aide à comprendre si le capital reste sur Bitcoin ou se déplace vers les altcoins. Suivez les changements de leadership, le momentum et l’appétit pour le risque sur le marché crypto.",
   "comparisons": [
     { "year": "2017", "value": "$830B", "note": "Ancien sommet de début de cycle" },
     { "year": "2021", "value": "$3.0T", "note": "Ancien sommet historique" },
@@ -441,6 +440,21 @@
   "chartLabel": "Pics annuels de capitalisation",
   "greenRed": "Le vert signifie qu’aujourd’hui est plus élevé. Le rouge signifie qu’aujourd’hui est plus bas.",
   "loading": "Chargement des données historiques du marché..."
+},
+"altseason": {
+  "badge": "Indice Altseason",
+  "title": "Sommes-nous en saison Bitcoin ou en saison altcoins ?",
+  "loadingText": "Chargement des données Altseason en direct...",
+  "score": "Score Altseason",
+  "phase": "Phase actuelle",
+  "bitcoinSeason": "Saison Bitcoin",
+  "rotation": "Zone de rotation",
+  "altseason": "Altseason",
+  "outperforming": "Surperforme BTC",
+  "btc30d": "BTC 30J",
+  "leaders": "Altcoins devant BTC",
+  "laggards": "Altcoins majeurs les plus faibles",
+  "loading": "Chargement..."
 },
   "faqTitle": "Questions Fréquemment Posées",
   "faqs": [
@@ -515,7 +529,6 @@
     "text": "Utilisez Kryptonal pour transformer les données en un résumé clair du marché."
   }
 ],
-"historicalLabel": "Données Historiques",
 "comparisonLabel": "Comparaison des Cycles",
 "comparisonText": "Comparez le comportement de la capitalisation du marché à travers les cycles crypto et évitez d’analyser les chiffres actuels isolément.",
 "faqLabel": "FAQ",
@@ -633,6 +646,17 @@
     "historyTitle": "Pourquoi les données historiques sont importantes",
     "historyText": "Les données historiques aident à identifier des modèles récurrents, mais elles ne garantissent pas les performances futures."
   },
+  "stableLiquidity": {
+  "totalLiquidity": "Liquidité Totale des Stablecoins",
+  "liquidity_entering": "Liquidité en entrée",
+  "liquidity_leaving": "Liquidité en sortie",
+  "liquidity_neutral": "Liquidité neutre",
+  "change1d": "Variation 1J",
+  "change7d": "Variation 7J",
+  "dominance": "Dominance",
+  "topChains": "Principales Chaînes de Stablecoins",
+  "updated": "Mis à jour"
+},
   "internalLinksTitle": "Explorer Plus d’Outils Crypto",
   "internalLinks": [
     {
@@ -671,6 +695,29 @@
       "answer": "Non. Cette plateforme fournit uniquement des analyses éducatives."
     }
   ],
+  "leverageRisk": {
+  "badge": "Positionnement des Traders",
+  "title": "Suivi du Risque de Levier Crypto",
+  "description": "Suivez si les traders de contrats à terme deviennent trop exposés, surchauffés ou équilibrés grâce aux taux de funding et à l’open interest en temps réel.",
+  "riskScore": "Score de Risque de Levier",
+  "avgFunding": "Taux de Funding Moyen",
+  "avgFundingHint": "Un funding positif signifie que les positions long paient les positions short. Un funding très élevé peut signaler un positionnement haussier trop encombré.",
+  "openInterest": "Open Interest Total",
+  "openInterestShort": "Open Interest",
+  "openInterestHint": "Un open interest plus élevé signifie qu’il y a davantage de positions à effet de levier actives sur le marché.",
+  "disclaimer": "Le risque de levier est un signal éducatif et non un conseil financier.",
+  "levels": {
+    "low": "Risque Faible",
+    "normal": "Risque Normal",
+    "heated": "Marché en Surchauffe",
+    "dangerous": "Levier Dangereux"
+  },
+  "bias": {
+    "longCrowded": "Les traders long deviennent trop nombreux. Une dynamique haussière peut exister, mais le risque de liquidation est plus élevé.",
+    "shortCrowded": "Les traders short deviennent trop nombreux. Un short squeeze peut se produire si le prix évolue contre eux.",
+    "balanced": "Le positionnement semble équilibré. Le risque de levier n’est pas extrême actuellement."
+  }
+},
   "smartMoney": {
     "badge": "Alertes Smart Money",
     "title": "Tableau des Alertes Smart Money",

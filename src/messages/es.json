@@ -393,7 +393,7 @@
   "title": "Análisis de Capitalización del Mercado Cripto",
   "description": "Analiza la capitalización total del mercado de criptomonedas, compara el valor actual del mercado con ciclos cripto anteriores y comprende la dominancia de Bitcoin, las fases del mercado y las tendencias cripto a largo plazo.",
   "primaryCta": "Analizar Mercado",
-  "secondaryCta": "Ver Datos Históricos",
+  "secondaryCta": "Índice de Temporada de Altcoins",
   "chartLabel": "Capitalización Total del Mercado Cripto",
   "marketSignal": "Fase de Expansión",
   "chartNote": "Ejemplo de gráfico de capitalización de mercado. Los datos en vivo de la API se conectarán más adelante.",
@@ -410,9 +410,9 @@
     { "label": "Dominancia de BTC", "value": "53.6%", "change": "Bitcoin liderando" },
     { "label": "Fase del Mercado", "value": "Expansión", "change": "Riesgo moderado" }
   ],
-  "chartTitle": "Capitalización Global del Mercado Cripto a lo Largo del Tiempo",
-  "chartDescription": "Sigue cómo cambia la capitalización total del mercado cripto a través de mercados alcistas, bajistas, fases de recuperación y ciclos de Bitcoin a largo plazo.",
-  "ranges": ["1Y", "3Y", "5Y", "TODO"],
+  "historicalLabel": "Índice de Temporada de Altcoins",
+"chartTitle": "Sigue Cuándo las Altcoins Empiezan a Ganar Fuerza en el Mercado",
+"chartDescription": "El Índice de Temporada de Altcoins te ayuda a entender si el capital permanece en Bitcoin o rota hacia las altcoins. Supervisa cambios de liderazgo, impulso y apetito por el riesgo en el mercado cripto.",
   "comparisonTitle": "Comparación de Ciclos del Mercado Cripto",
   "comparisons": [
     { "year": "2017", "value": "$830B", "note": "Pico temprano del ciclo anterior" },
@@ -440,6 +440,21 @@
   "chartLabel": "Picos anuales de capitalización",
   "greenRed": "Verde significa que hoy es más alto. Rojo significa que hoy es más bajo.",
   "loading": "Cargando datos históricos del mercado..."
+},
+"altseason": {
+  "badge": "Índice Altseason",
+  "title": "¿Es temporada de Bitcoin o de altcoins?",
+  "loadingText": "Cargando datos en vivo de altseason...",
+  "score": "Puntuación Altseason",
+  "phase": "Fase actual",
+  "bitcoinSeason": "Temporada de Bitcoin",
+  "rotation": "Zona de Rotación",
+  "altseason": "Altseason",
+  "outperforming": "Superando a BTC",
+  "btc30d": "BTC 30D",
+  "leaders": "Altcoins liderando frente a BTC",
+  "laggards": "Altcoins grandes más débiles",
+  "loading": "Cargando..."
 },
   "faqTitle": "Preguntas Frecuentes",
   "faqs": [
@@ -514,7 +529,6 @@
     "text": "Usa Kryptonal para convertir los datos en un resumen claro del mercado."
   }
 ],
-"historicalLabel": "Datos Históricos",
 "comparisonLabel": "Comparación de Ciclos",
 "comparisonText": "Compara el comportamiento de la capitalización del mercado a través de ciclos cripto y evita analizar los números actuales de forma aislada.",
 "faqLabel": "FAQ",
@@ -621,6 +635,17 @@
     "historyTitle": "Por qué importan los datos históricos",
     "historyText": "Los datos históricos ayudan a identificar patrones repetitivos, pero no garantizan el rendimiento futuro."
   },
+  "stableLiquidity": {
+  "totalLiquidity": "Liquidez Total de Stablecoins",
+  "liquidity_entering": "Entrando liquidez",
+  "liquidity_leaving": "Saliendo liquidez",
+  "liquidity_neutral": "Liquidez neutral",
+  "change1d": "Cambio 1D",
+  "change7d": "Cambio 7D",
+  "dominance": "Dominancia",
+  "topChains": "Principales Redes de Stablecoins",
+  "updated": "Actualizado"
+},
   "internalLinksTitle": "Explora Más Herramientas Cripto",
   "internalLinks": [
     {
@@ -659,6 +684,29 @@
       "answer": "No. Esta plataforma proporciona únicamente información educativa."
     }
   ],
+  "leverageRisk": {
+  "badge": "Posicionamiento de Traders",
+  "title": "Rastreador de Riesgo de Apalancamiento Cripto",
+  "description": "Sigue si los traders de futuros están demasiado posicionados, sobrecalentados o equilibrados usando tasas de funding y open interest en tiempo real.",
+  "riskScore": "Puntuación de Riesgo de Apalancamiento",
+  "avgFunding": "Tasa Promedio de Funding",
+  "avgFundingHint": "Un funding positivo significa que las posiciones long están pagando a las posiciones short. Un funding muy alto puede indicar un posicionamiento alcista demasiado saturado.",
+  "openInterest": "Open Interest Total",
+  "openInterestShort": "Open Interest",
+  "openInterestHint": "Un mayor open interest significa que hay más posiciones apalancadas activas en el mercado.",
+  "disclaimer": "El riesgo de apalancamiento es una señal educativa y no asesoramiento financiero.",
+  "levels": {
+    "low": "Bajo Riesgo",
+    "normal": "Riesgo Normal",
+    "heated": "Mercado Sobrecalentado",
+    "dangerous": "Apalancamiento Peligroso"
+  },
+  "bias": {
+    "longCrowded": "Los traders long están demasiado saturados. Puede existir impulso alcista, pero el riesgo de liquidación es mayor.",
+    "shortCrowded": "Los traders short están demasiado saturados. Puede ocurrir un short squeeze si el precio se mueve en su contra.",
+    "balanced": "El posicionamiento parece equilibrado. El riesgo de apalancamiento no es extremo en este momento."
+  }
+},
   "smartMoney": {
     "badge": "Alertas de Dinero Inteligente",
     "title": "Panel de Alertas de Dinero Inteligente",

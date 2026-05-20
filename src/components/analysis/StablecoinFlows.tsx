@@ -8,6 +8,14 @@ type Chain = {
 };
 
 type Data = {
+  totalStablecoins: number;
+  change1d: number;
+  change7d: number;
+  change1dPct: number;
+  change7dPct: number;
+  flowSignal: string;
+  isGrowing: boolean;
+  chart: { date: number; value: number }[];
   chains: Chain[];
   updatedAt?: string;
 };
@@ -55,6 +63,36 @@ function getSimpleMeaning(total: number, t: any) {
   }
 
   return t.stablecoins.meaning.low;
+}
+
+function MiniStableGraph({ chart, growing }: { chart: any[]; growing: boolean }) {
+  if (!chart?.length) return null;
+
+  const values = chart.map((p) => p.value);
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const range = max - min || 1;
+
+  const points = chart
+    .map((p, i) => {
+      const x = (i / Math.max(chart.length - 1, 1)) * 100;
+      const y = 50 - ((p.value - min) / range) * 42;
+      return `${x},${y}`;
+    })
+    .join(" ");
+
+  return (
+    <svg viewBox="0 0 100 55" className="mt-6 h-20 w-full">
+      <polyline
+        points={points}
+        fill="none"
+        stroke={growing ? "rgb(52 211 153)" : "rgb(248 113 113)"}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 }
 
 export default function StablecoinFlows({ t }: Props) {
@@ -114,6 +152,16 @@ export default function StablecoinFlows({ t }: Props) {
             <p className="mt-4 break-words text-4xl font-black text-white sm:text-5xl">
               {data ? formatBillions(totalStablecoins) : t.common.loading}
             </p>
+
+            <MiniStableGraph chart={data?.chart || []} growing={!!data?.isGrowing} />
+
+<p
+  className={`mt-3 text-sm font-black ${
+    data?.isGrowing ? "text-emerald-400" : "text-red-400"
+  }`}
+>
+  {data?.flowSignal} · {data?.change7dPct?.toFixed(2)}% 7d
+</p>
 
             <p className="mt-4 text-sm leading-7 text-slate-300">
               {getSimpleMeaning(totalStablecoins, t)}

@@ -1,36 +1,51 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { headers } from "next/headers";
 
 type Data = {
   totalMarketCap: number;
   marketCapChange24h: number;
   btcDominance: number;
   ethDominance: number;
+  marketPhase: string;
+  riskLevel: string;
+  trendStrength: string;
+  marketHint: string;
+  riskScore?: number;
+  phaseScore?: number;
+  btcDominanceChange24h?: number;
+  ethDominanceChange24h?: number;
 };
 
 function formatCap(value: number) {
-  return `$${(value / 1_000_000_000_000).toFixed(2)}T`;
+  if (!value) return "$0";
+  if (value >= 1_000_000_000_000) {
+    return `$${(value / 1_000_000_000_000).toFixed(2)}T`;
+  }
+  return `$${(value / 1_000_000_000).toFixed(2)}B`;
 }
 
-function getTrend(change: number) {
-  if (change > 3) return "Strong";
-  if (change > 0) return "Positive";
-  if (change > -3) return "Weak";
-  return "Bearish";
+function formatPct(value = 0) {
+  return `${value >= 0 ? "+" : ""}${value.toFixed(2)}%`;
 }
 
-function getRisk(cap: number) {
-  if (cap < 1_500_000_000_000) return "Lower";
-  if (cap < 3_000_000_000_000) return "Moderate";
-  return "High";
-}
 
-function getPhase(cap: number) {
-  if (cap < 1_200_000_000_000) return "Accumulation";
-  if (cap < 2_300_000_000_000) return "Early Expansion";
-  if (cap < 3_000_000_000_000) return "Expansion";
-  return "Late Cycle";
+async function getLiveSignals(): Promise<Data | null> {
+  try {
+    const h = await headers();
+    const host = h.get("host");
+    const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
+
+    if (!host) return null;
+
+    const res = await fetch(`${protocol}://${host}/api/crypto/market-cap`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) return null;
+
+    return res.json();
+  } catch {
+    return null;
+  }
 }
 
 function MiniSparkline({ negative = false }: { negative?: boolean }) {
@@ -46,15 +61,12 @@ function MiniSparkline({ negative = false }: { negative?: boolean }) {
         stroke={negative ? "rgb(248 113 113)" : "rgb(52 211 153)"}
         strokeWidth="3"
         strokeLinecap="round"
-        className="drop-shadow-[0_0_8px_rgba(52,211,153,0.45)]"
       />
     </svg>
   );
 }
 
-function RiskBar({ risk }: { risk: string }) {
-  const score = risk === "High" ? 78 : risk === "Moderate" ? 52 : 25;
-
+function RiskBar({ score = 50 }: { score?: number }) {
   return (
     <div className="mt-5">
       <div className="flex h-2 overflow-hidden rounded-full bg-slate-800">
@@ -65,70 +77,28 @@ function RiskBar({ risk }: { risk: string }) {
       <div className="relative mt-1 h-3">
         <span
           className="absolute top-0 h-3 w-3 -translate-x-1/2 rounded-full bg-white"
-          style={{ left: `${score}%` }}
+          style={{ left: `${Math.min(Math.max(score, 5), 95)}%` }}
         />
       </div>
     </div>
   );
 }
 
-function PhaseBar({ phase }: { phase: string }) {
-  const score =
-    phase === "Accumulation"
-      ? 18
-      : phase === "Early Expansion"
-      ? 38
-      : phase === "Expansion"
-      ? 58
-      : 82;
-
+function PhaseBar({ score = 50 }: { score?: number }) {
   return (
     <div className="mt-5">
       <div className="h-2 rounded-full bg-slate-800">
         <div
           className="h-2 rounded-full bg-emerald-400"
-          style={{ width: `${score}%` }}
-        />
-      </div>
-      <div className="relative mt-1 h-3">
-        <span
-          className="absolute top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-emerald-300"
-          style={{ left: `${score}%` }}
+          style={{ width: `${Math.min(Math.max(score, 5), 95)}%` }}
         />
       </div>
     </div>
   );
 }
 
-export default function LiveSignals({ t }: any) {
-  const [data, setData] = useState<Data | null>(null);
-
-  useEffect(() => {
-    async function load() {
-      try {
-        const res = await fetch("/api/crypto/market-cap", {
-          cache: "no-store",
-        });
-
-        if (!res.ok) return;
-
-        const json = await res.json();
-
-        setData({
-          totalMarketCap: json.totalMarketCap,
-          marketCapChange24h: json.marketCapChange24h,
-          btcDominance: json.btcDominance,
-          ethDominance: json.ethDominance,
-        });
-      } catch {
-        // silent fail
-      }
-    }
-
-    load();
-    const interval = window.setInterval(load, 60000);
-    return () => window.clearInterval(interval);
-  }, []);
+export default async function LiveSignals({ t }: any) {
+  const data = await getLiveSignals();
 
   if (!data) {
     return (
@@ -140,8 +110,6 @@ export default function LiveSignals({ t }: any) {
     );
   }
 
-  const phase = getPhase(data.totalMarketCap);
-  const risk = getRisk(data.totalMarketCap);
   const changePositive = data.marketCapChange24h >= 0;
 
   const cards = [
@@ -151,17 +119,17 @@ export default function LiveSignals({ t }: any) {
       value: formatCap(data.totalMarketCap),
       note: "Live crypto valuation",
       footer: "24h Change",
-      footerValue: `${data.marketCapChange24h.toFixed(2)}%`,
+      footerValue: formatPct(data.marketCapChange24h),
       negative: !changePositive,
       type: "sparkline",
     },
     {
       icon: "〽",
       label: "24h Trend",
-      value: `${data.marketCapChange24h.toFixed(2)}%`,
+      value: formatPct(data.marketCapChange24h),
       note: "Market momentum",
       footer: "Trend Strength",
-      footerValue: getTrend(data.marketCapChange24h),
+      footerValue: data.trendStrength,
       negative: !changePositive,
       type: "sparkline",
     },
@@ -170,8 +138,8 @@ export default function LiveSignals({ t }: any) {
       label: "BTC Dominance",
       value: `${data.btcDominance.toFixed(2)}%`,
       note: "Bitcoin market influence",
-      footer: "Change (24h)",
-      footerValue: changePositive ? "+0.31%" : "-0.31%",
+      footer: "24h Change",
+      footerValue: formatPct(data.btcDominanceChange24h || 0),
       negative: false,
       type: "sparkline",
     },
@@ -180,27 +148,27 @@ export default function LiveSignals({ t }: any) {
       label: "ETH Dominance",
       value: `${data.ethDominance.toFixed(2)}%`,
       note: "Ethereum market share",
-      footer: "Change (24h)",
-      footerValue: changePositive ? "+0.12%" : "-0.12%",
+      footer: "24h Change",
+      footerValue: formatPct(data.ethDominanceChange24h || 0),
       negative: false,
       type: "sparkline",
     },
     {
       icon: "↻",
       label: "Market Phase",
-      value: phase,
-      note: "Cycle positioning",
-      footer: "Phase Strength",
-      footerValue: phase === "Expansion" ? "Moderate" : "Watch",
+      value: data.marketPhase,
+      note: data.marketHint,
+      footer: "Phase Score",
+      footerValue: `${data.phaseScore || 50}/100`,
       type: "phase",
     },
     {
       icon: "🛡",
       label: "Risk Level",
-      value: risk,
-      note: "Current market conditions",
+      value: data.riskLevel,
+      note: "Live market risk model",
       footer: "Risk Score",
-      footerValue: risk === "High" ? "78/100" : risk === "Moderate" ? "52/100" : "25/100",
+      footerValue: `${data.riskScore || 50}/100`,
       type: "risk",
     },
   ];
@@ -220,11 +188,11 @@ export default function LiveSignals({ t }: any) {
               <p className="text-sm font-semibold text-slate-300">{card.label}</p>
             </div>
 
-            <p className="mt-5 text-3xl font-black tracking-tight text-white">
+            <p className="mt-5 text-2xl font-black tracking-tight text-white">
               {card.value}
             </p>
 
-            <p className="mt-2 text-sm font-bold text-emerald-400">
+            <p className="mt-2 line-clamp-2 text-sm font-bold text-emerald-400">
               {card.note}
             </p>
 
@@ -232,24 +200,18 @@ export default function LiveSignals({ t }: any) {
               <MiniSparkline negative={card.negative} />
             )}
 
-            {card.type === "phase" && <PhaseBar phase={phase} />}
-            {card.type === "risk" && <RiskBar risk={risk} />}
+            {card.type === "phase" && <PhaseBar score={data.phaseScore} />}
+            {card.type === "risk" && <RiskBar score={data.riskScore} />}
 
-            <div className="mt-5 flex items-center justify-between text-sm">
+            <div className="mt-5 flex items-center justify-between gap-3 text-sm">
               <span className="text-slate-400">{card.footer}</span>
-              <span
-                className={`font-black ${
-                  card.negative ? "text-red-400" : "text-emerald-400"
-                }`}
-              >
+              <span className="text-right font-black text-emerald-400">
                 {card.footerValue}
               </span>
             </div>
           </div>
         ))}
       </div>
-
-      
     </section>
   );
 }

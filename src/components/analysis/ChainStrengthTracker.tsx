@@ -14,10 +14,13 @@ type Chain = {
 };
 
 type Data = {
+  updatedAt: string;
   chains: Chain[];
 };
 
 function formatTvl(value: number) {
+  if (!value) return "$0";
+
   if (value >= 1_000_000_000) {
     return `$${(value / 1_000_000_000).toFixed(2)}B`;
   }
@@ -25,27 +28,44 @@ function formatTvl(value: number) {
   return `$${(value / 1_000_000).toFixed(2)}M`;
 }
 
-function getNarrative(chain: Chain) {
-  if (chain.score >= 75) {
-    return "This ecosystem has strong liquidity and positive momentum. It may be attracting serious DeFi activity.";
-  }
-
-  if (chain.score >= 55) {
-    return "This chain looks healthy, with meaningful TVL and decent ecosystem strength.";
-  }
-
-  if (chain.score >= 35) {
-    return "This ecosystem has moderate activity. It may need stronger TVL growth before becoming a clear leader.";
-  }
-
-  return "This chain currently looks weaker compared with stronger ecosystems. Watch for TVL growth before assuming strength.";
+function getBarColor(score: number) {
+  if (score >= 80) return "bg-emerald-400";
+  if (score >= 60) return "bg-lime-400";
+  if (score >= 40) return "bg-yellow-400";
+  return "bg-red-400";
 }
 
-function getBarColor(score: number) {
-  if (score >= 75) return "bg-emerald-400";
-  if (score >= 55) return "bg-lime-400";
-  if (score >= 35) return "bg-amber-400";
-  return "bg-red-400";
+function ChangeBadge({ value }: { value: number }) {
+  const positive = value >= 0;
+
+  return (
+    <span
+      className={`inline-flex rounded-full px-3 py-1 text-sm font-black ${
+        positive
+          ? "bg-emerald-400/10 text-emerald-300"
+          : "bg-red-400/10 text-red-300"
+      }`}
+    >
+      {positive ? "+" : ""}
+      {value.toFixed(2)}%
+    </span>
+  );
+}
+
+function getNarrative(chain: Chain) {
+  if (chain.score >= 80) {
+    return `${chain.name} is showing very strong ecosystem activity with strong liquidity and momentum.`;
+  }
+
+  if (chain.score >= 60) {
+    return `${chain.name} maintains healthy growth and ecosystem participation.`;
+  }
+
+  if (chain.score >= 40) {
+    return `${chain.name} is stable but momentum remains mixed.`;
+  }
+
+  return `${chain.name} is currently showing weaker momentum compared to leading ecosystems.`;
 }
 
 export default function ChainStrengthTracker({ t }: any) {
@@ -62,13 +82,13 @@ export default function ChainStrengthTracker({ t }: any) {
 
         const json = await res.json();
         setData(json);
-      } catch {
-        // keep UI safe
-      }
+      } catch {}
     }
 
     load();
-    const interval = window.setInterval(load, 300_000);
+
+    const interval = window.setInterval(load, 300000);
+
     return () => window.clearInterval(interval);
   }, []);
 
@@ -98,6 +118,7 @@ export default function ChainStrengthTracker({ t }: any) {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <h3 className="text-2xl font-black">{chain.name}</h3>
+
                   <p className="mt-2 text-sm text-slate-400">
                     {chain.protocols} {t.chainStrength.protocols}
                   </p>
@@ -111,6 +132,7 @@ export default function ChainStrengthTracker({ t }: any) {
               <div className="mt-6 grid gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                   <p className="text-xs text-slate-500">TVL</p>
+
                   <p className="mt-2 text-xl font-black">
                     {formatTvl(chain.tvl)}
                   </p>
@@ -118,24 +140,18 @@ export default function ChainStrengthTracker({ t }: any) {
 
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                   <p className="text-xs text-slate-500">7D</p>
-                  <p
-                    className={`mt-2 text-xl font-black ${
-                      chain.change7d >= 0 ? "text-emerald-400" : "text-red-400"
-                    }`}
-                  >
-                    {chain.change7d.toFixed(2)}%
-                  </p>
+
+                  <div className="mt-3">
+                    <ChangeBadge value={chain.change7d} />
+                  </div>
                 </div>
 
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                   <p className="text-xs text-slate-500">1M</p>
-                  <p
-                    className={`mt-2 text-xl font-black ${
-                      chain.change1m >= 0 ? "text-emerald-400" : "text-red-400"
-                    }`}
-                  >
-                    {chain.change1m.toFixed(2)}%
-                  </p>
+
+                  <div className="mt-3">
+                    <ChangeBadge value={chain.change1m} />
+                  </div>
                 </div>
               </div>
 
@@ -144,7 +160,10 @@ export default function ChainStrengthTracker({ t }: any) {
                   <span className="text-slate-400">
                     {t.chainStrength.score}
                   </span>
-                  <span className="font-black text-white">{chain.score}/100</span>
+
+                  <span className="font-black text-white">
+                    {chain.score}/100
+                  </span>
                 </div>
 
                 <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-800">

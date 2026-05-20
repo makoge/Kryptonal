@@ -394,7 +394,7 @@
   "title": "Kripto Piyasa Değeri Analizi",
   "description": "Toplam kripto para piyasa değerini analiz edin, mevcut piyasa değerini önceki kripto döngüleriyle karşılaştırın ve Bitcoin dominansı, piyasa aşamaları ve uzun vadeli kripto trendlerini anlayın.",
   "primaryCta": "Piyasayı Analiz Et",
-  "secondaryCta": "Geçmiş Verileri Görüntüle",
+  "secondaryCta": "Altcoin Sezonu Endeksi",
   "chartLabel": "Toplam Kripto Piyasa Değeri",
   "marketSignal": "Genişleme Aşaması",
   "chartNote": "Örnek piyasa değeri grafiği. Canlı kripto API verileri daha sonra bağlanacaktır.",
@@ -411,8 +411,9 @@
     { "label": "BTC Dominansı", "value": "53.6%", "change": "Bitcoin liderliği" },
     { "label": "Piyasa Aşaması", "value": "Genişleme", "change": "Orta risk" }
   ],
-  "chartTitle": "Zaman İçinde Küresel Kripto Piyasa Değeri",
-  "chartDescription": "Toplam kripto piyasa değerinin boğa piyasaları, ayı piyasaları, toparlanma aşamaları ve uzun vadeli Bitcoin döngüleri boyunca nasıl değiştiğini takip edin.",
+  "historicalLabel": "Altcoin Sezonu Endeksi",
+"chartTitle": "Altcoinlerin Piyasa Gücü Kazanmaya Başladığı Zamanı Takip Edin",
+"chartDescription": "Altcoin Sezonu Endeksi, sermayenin Bitcoin’de mi kaldığını yoksa altcoinlere mi döndüğünü anlamanıza yardımcı olur. Kripto piyasasındaki liderlik değişimlerini, momentum hareketlerini ve risk iştahını takip edin.",
   "ranges": ["1Y", "3Y", "5Y", "TÜMÜ"],
   "comparisonTitle": "Kripto Piyasa Döngüsü Karşılaştırması",
   "comparisons": [
@@ -441,6 +442,21 @@
   "chartLabel": "Yıllık piyasa değeri zirveleri",
   "greenRed": "Yeşil, bugünün daha yüksek olduğunu gösterir. Kırmızı, bugünün daha düşük olduğunu gösterir.",
   "loading": "Tarihsel piyasa verileri yükleniyor..."
+},
+"altseason": {
+  "badge": "Altseason Endeksi",
+  "title": "Bitcoin sezonu mu yoksa altcoin sezonu mu?",
+  "loadingText": "Canlı altseason verileri yükleniyor...",
+  "score": "Altseason Skoru",
+  "phase": "Mevcut dönem",
+  "bitcoinSeason": "Bitcoin Sezonu",
+  "rotation": "Rotasyon Bölgesi",
+  "altseason": "Altseason",
+  "outperforming": "BTC’den iyi performans gösterenler",
+  "btc30d": "BTC 30G",
+  "leaders": "BTC’den güçlü altcoinler",
+  "laggards": "En zayıf büyük altcoinler",
+  "loading": "Yükleniyor..."
 },
   "faqTitle": "Sık Sorulan Sorular",
   "faqs": [
@@ -515,7 +531,7 @@
     "text": "Verileri temiz bir piyasa özetine dönüştürmek için Kryptonal kullanın."
   }
 ],
-"historicalLabel": "Tarihsel Veriler",
+
 "comparisonLabel": "Döngü Karşılaştırması",
 "comparisonText": "Piyasa değeri davranışını kripto döngüleri boyunca karşılaştırın ve bugünün sayılarını tek başına değerlendirmekten kaçının.",
 "faqLabel": "SSS",
@@ -617,6 +633,17 @@
     "historyTitle": "Tarihsel veriler neden önemlidir?",
     "historyText": "Tarihsel veriler tekrar eden kalıpları belirlemeye yardımcı olur, ancak gelecekteki performansı garanti etmez."
   },
+  "stableLiquidity": {
+  "totalLiquidity": "Toplam Stablecoin Likiditesi",
+  "liquidity_entering": "Likidite giriyor",
+  "liquidity_leaving": "Likidite çıkıyor",
+  "liquidity_neutral": "Likidite nötr",
+  "change1d": "1G Değişim",
+  "change7d": "7G Değişim",
+  "dominance": "Hakimiyet",
+  "topChains": "En Büyük Stablecoin Ağları",
+  "updated": "Güncellendi"
+},
   "internalLinksTitle": "Daha Fazla Kripto Aracı Keşfet",
   "internalLinks": [
     { "title": "Piyasa Değeri Analizi", "text": "Toplam kripto piyasa değerini döngüler arasında karşılaştırın.", "href": "/market-cap" },
@@ -639,6 +666,29 @@
       "answer": "Hayır. Bu platform yalnızca eğitsel içgörüler sağlar."
     }
   ],
+  "leverageRisk": {
+  "badge": "Trader Pozisyonları",
+  "title": "Kripto Kaldıraç Risk Takibi",
+  "description": "Canlı funding oranları ve açık pozisyon verileriyle vadeli işlem yatırımcılarının aşırı kalabalık, aşırı ısınmış veya dengeli olup olmadığını takip edin.",
+  "riskScore": "Kaldıraç Risk Skoru",
+  "avgFunding": "Ortalama Funding Oranı",
+  "avgFundingHint": "Pozitif funding, long pozisyonların short pozisyonlara ödeme yaptığı anlamına gelir. Çok yüksek funding, aşırı kalabalık yükseliş pozisyonlarına işaret edebilir.",
+  "openInterest": "Toplam Açık Pozisyon",
+  "openInterestShort": "Açık Pozisyon",
+  "openInterestHint": "Daha yüksek açık pozisyon, piyasada daha fazla kaldıraçlı işlemin aktif olduğunu gösterir.",
+  "disclaimer": "Kaldıraç riski eğitim amaçlı bir sinyaldir, yatırım tavsiyesi değildir.",
+  "levels": {
+    "low": "Düşük Risk",
+    "normal": "Normal Risk",
+    "heated": "Isınmış Piyasa",
+    "dangerous": "Tehlikeli Kaldıraç"
+  },
+  "bias": {
+    "longCrowded": "Long yatırımcılar aşırı kalabalıklaşıyor. Yükseliş momentumu olabilir ancak likidasyon riski daha yüksektir.",
+    "shortCrowded": "Short yatırımcılar aşırı kalabalıklaşıyor. Fiyat ters yönde hareket ederse short squeeze yaşanabilir.",
+    "balanced": "Pozisyonlanma dengeli görünüyor. Şu anda kaldıraç riski aşırı değil."
+  }
+},
   "smartMoney": {
     "badge": "Smart Money Uyarıları",
     "title": "Smart Money Uyarı Paneli",

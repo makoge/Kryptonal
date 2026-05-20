@@ -4,150 +4,89 @@ const COINGECKO_URL = "https://api.coingecko.com/api/v3";
 
 export const revalidate = 60;
 
-function buildFallbackChart(totalMarketCap: number, change24h: number) {
-  const start = totalMarketCap / (1 + change24h / 100);
-
-  return Array.from({ length: 12 }, (_, i) => {
-    const progress = i / 11;
-    const value = start + (totalMarketCap - start) * progress;
-
-    return {
-      time: Date.now() - (11 - i) * 2 * 60 * 60 * 1000,
-      value,
-    };
-  });
+function pct(now: number, prev: number) {
+  return prev > 0 ? ((now - prev) / prev) * 100 : 0;
 }
 
-function getMarketPhase({
-  marketCapChange24h,
-  btcDominance,
-  ethDominance,
-  tvlChange7d,
-  stableChange1d,
-}: {
-  marketCapChange24h: number;
-  btcDominance: number;
-  ethDominance: number;
-  tvlChange7d: number;
-  stableChange1d: number;
-}) {
-  if (marketCapChange24h > 3 && btcDominance < 54 && tvlChange7d > 1) {
-    return "Altcoin Expansion";
-  }
+function getRiskLevel(market: number, btc: number, tvl1d: number, stable1d: number) {
+  let score = 0;
 
-  if (marketCapChange24h > 1 && btcDominance >= 58) {
-    return "Bitcoin-Led Recovery";
-  }
+  if (market < -3) score += 35;
+  else if (market < -1) score += 20;
+  else if (market > 4) score += 18;
 
-  if (marketCapChange24h < 0 && btcDominance >= 58) {
-    return "Defensive Bitcoin Rotation";
-  }
+  if (tvl1d < -2) score += 25;
+  else if (tvl1d < 0) score += 10;
 
-  if (marketCapChange24h < -3 || tvlChange7d < -3) {
-    return "Market Contraction";
-  }
+  if (stable1d < -0.25) score += 20;
+  if (btc > 58 && market < 0) score += 20;
 
-  if (stableChange1d > 0.5 && marketCapChange24h >= 0) {
-    return "Early Recovery";
-  }
+  if (score >= 60) return "High";
+  if (score >= 38) return "Elevated";
+  if (score >= 20) return "Medium";
+  return "Balanced";
+}
 
-  if (ethDominance > 11 && btcDominance < 56) {
-    return "Risk-On Rotation";
-  }
+function getTrendStrength(market: number, tvl7d: number, stable1d: number) {
+  const score = market * 0.45 + tvl7d * 0.4 + stable1d * 0.15;
+
+  if (score >= 2.5) return "Strong";
+  if (score <= -1.5) return "Weak";
+  return "Moderate";
+}
+
+function getMarketPhase(market: number, btc: number, eth: number, tvl7d: number, stable1d: number) {
+  if (market <= -3 || tvl7d <= -4) return "Market Contraction";
+  if (btc >= 58 && market < 1) return "Defensive Bitcoin Rotation";
+  if (market > 2 && btc < 56 && eth > 10.5 && tvl7d > 0) return "Altcoin Expansion";
+  if (market > 1 && btc >= 56) return "Bitcoin-Led Recovery";
+  if (market >= 0 && stable1d > 0.15 && tvl7d > 0) return "Early Recovery";
+  if (market > 0 && tvl7d > 1) return "Risk-On Rotation";
 
   return "Neutral Consolidation";
 }
 
-function getRiskLevel({
-  marketCapChange24h,
-  btcDominance,
-  tvlChange1d,
-}: {
-  marketCapChange24h: number;
-  btcDominance: number;
-  tvlChange1d: number;
-}) {
-  if (marketCapChange24h < -3 || tvlChange1d < -2) return "High";
-  if (btcDominance >= 58 && marketCapChange24h < 0) return "Elevated";
-  if (marketCapChange24h > 3) return "Medium";
-  return "Balanced";
+function getMarketHint(phase: string, risk: string) {
+  if (phase === "Market Contraction") return "Protect capital and wait for stronger confirmation.";
+  if (phase === "Defensive Bitcoin Rotation") return "Bitcoin is safer than most altcoins right now.";
+  if (phase === "Altcoin Expansion") return "Altcoins may have momentum, but avoid chasing late pumps.";
+  if (phase === "Bitcoin-Led Recovery") return "Bitcoin is leading; altcoins may follow later.";
+  if (phase === "Early Recovery") return "Good time to research setups, not over-risk.";
+  if (phase === "Risk-On Rotation") return "Momentum is improving, but position sizing still matters.";
+  if (risk === "High") return "Risk is high; avoid emotional entries.";
+  return "Market is mixed; wait for clearer confirmation.";
 }
 
-function getTrendStrength({
-  marketCapChange24h,
-  tvlChange7d,
-  stableChange1d,
-}: {
-  marketCapChange24h: number;
-  tvlChange7d: number;
-  stableChange1d: number;
+function getSummary(args: {
+  phase: string;
+  risk: string;
+  trend: string;
+  market: number;
+  btc: number;
+  tvl7d: number;
+  stable1d: number;
 }) {
-  const score =
-    marketCapChange24h * 0.5 + tvlChange7d * 0.35 + stableChange1d * 0.15;
-
-  if (score > 2.5) return "Strong";
-  if (score < -1.5) return "Weak";
-  return "Moderate";
-}
-
-function getPlainSummary({
-  marketCapChange24h,
-  btcDominance,
-  ethDominance,
-  marketPhase,
-  riskLevel,
-  trendStrength,
-}: {
-  marketCapChange24h: number;
-  btcDominance: number;
-  ethDominance: number;
-  marketPhase: string;
-  riskLevel: string;
-  trendStrength: string;
-}) {
-  if (marketPhase === "Defensive Bitcoin Rotation") {
-    return `The market is down ${Math.abs(
-      marketCapChange24h
-    ).toFixed(
-      2
-    )}% while Bitcoin dominance is high at ${btcDominance.toFixed(
-      2
-    )}%. This means capital is defensive and traders are favoring Bitcoin over altcoins. Risk is ${riskLevel.toLowerCase()} and trend strength is ${trendStrength.toLowerCase()}.`;
-  }
-
-  if (marketPhase === "Altcoin Expansion") {
-    return `The market is rising while Bitcoin dominance is easing. This suggests risk appetite is improving and altcoins may be gaining strength. Risk is ${riskLevel.toLowerCase()} and trend strength is ${trendStrength.toLowerCase()}.`;
-  }
-
-  if (marketPhase === "Market Contraction") {
-    return `The broader market is contracting. Market cap and DeFi activity are weakening, so users should treat this as a higher-risk environment.`;
-  }
-
-  return `The market is mixed. Total market cap, Bitcoin dominance, Ethereum dominance, DeFi TVL, and stablecoin flows are not giving a strong one-sided signal yet.`;
+  return `${args.phase}: total crypto market cap is ${args.market.toFixed(
+    2
+  )}% over 24h, Bitcoin dominance is ${args.btc.toFixed(
+    2
+  )}%, DeFi TVL is ${args.tvl7d.toFixed(
+    2
+  )}% over 7d, and stablecoin supply is ${args.stable1d.toFixed(
+    2
+  )}% over 24h. Risk is ${args.risk.toLowerCase()} and trend strength is ${args.trend.toLowerCase()}.`;
 }
 
 export async function GET() {
   try {
     const apiKey = process.env.COINGECKO_API_KEY;
-
-    const headers: HeadersInit = apiKey
-      ? { "x-cg-demo-api-key": apiKey }
-      : {};
+    const headers: HeadersInit = apiKey ? { "x-cg-demo-api-key": apiKey } : {};
 
     const [globalRes, chainsRes, stableRes, tvlChartRes] = await Promise.all([
-      fetch(`${COINGECKO_URL}/global`, {
-        headers,
-        next: { revalidate: 60 },
-      }),
-      fetch("https://api.llama.fi/v2/chains", {
-        next: { revalidate: 300 },
-      }),
-      fetch("https://stablecoins.llama.fi/stablecoins", {
-        next: { revalidate: 300 },
-      }),
-      fetch("https://api.llama.fi/charts", {
-  next: { revalidate: 300 },
-}),
+      fetch(`${COINGECKO_URL}/global`, { headers, next: { revalidate: 60 } }),
+      fetch("https://api.llama.fi/v2/chains", { next: { revalidate: 300 } }),
+      fetch("https://stablecoins.llama.fi/stablecoins", { next: { revalidate: 300 } }),
+      fetch("https://api.llama.fi/charts", { next: { revalidate: 300 } }),
     ]);
 
     if (!globalRes.ok) {
@@ -157,121 +96,124 @@ export async function GET() {
     const globalJson = await globalRes.json();
     const chains = chainsRes.ok ? await chainsRes.json() : [];
     const stablecoins = stableRes.ok ? await stableRes.json() : null;
-     const tvlChart = tvlChartRes.ok ? await tvlChartRes.json() : [];
+    const tvlChart = tvlChartRes.ok ? await tvlChartRes.json() : [];
 
     const global = globalJson.data;
 
     const totalMarketCap = Number(global?.total_market_cap?.usd || 0);
-    const marketCapChange24h = Number(
-      global?.market_cap_change_percentage_24h_usd || 0
-    );
+    const marketCapChange24h = Number(global?.market_cap_change_percentage_24h_usd || 0);
     const btcDominance = Number(global?.market_cap_percentage?.btc || 0);
     const ethDominance = Number(global?.market_cap_percentage?.eth || 0);
 
     const validChains = Array.isArray(chains) ? chains : [];
+    const totalTvl = validChains.reduce(
+      (sum: number, chain: any) => sum + Number(chain.tvl || 0),
+      0
+    );
 
-    const topChains = validChains
-  .filter((chain: any) => Number(chain.tvl) > 100_000_000)
-  .filter((chain: any) => Number.isFinite(Number(chain.change_1d)))
-  .filter((chain: any) => Number.isFinite(Number(chain.change_7d)));
+    const history = Array.isArray(tvlChart) ? tvlChart : [];
+    const latest = Number(history.at(-1)?.totalLiquidityUSD || totalTvl);
+    const prev1d = Number(history.at(-2)?.totalLiquidityUSD || latest);
+    const prev7d = Number(history.at(-8)?.totalLiquidityUSD || latest);
 
-const totalTvl = topChains.reduce(
-  (sum: number, chain: any) => sum + Number(chain.tvl || 0),
-  0
-);
+    const tvlChange1d = pct(latest, prev1d);
+    const tvlChange7d = pct(latest, prev7d);
 
-const tvlHistory = Array.isArray(tvlChart) ? tvlChart : [];
+    const assets = Array.isArray(stablecoins?.peggedAssets)
+      ? stablecoins.peggedAssets
+      : [];
 
-const latestTvlPoint = tvlHistory[tvlHistory.length - 1];
-const oneDayAgoPoint = tvlHistory[tvlHistory.length - 2];
-const sevenDaysAgoPoint = tvlHistory[tvlHistory.length - 8];
+    const stableUsdAssets = assets.filter(
+      (asset: any) => Number(asset?.circulating?.peggedUSD) > 0
+    );
 
-const latestTvl = Number(latestTvlPoint?.totalLiquidityUSD || totalTvl);
-const oneDayAgoTvl = Number(oneDayAgoPoint?.totalLiquidityUSD || latestTvl);
-const sevenDaysAgoTvl = Number(sevenDaysAgoPoint?.totalLiquidityUSD || latestTvl);
+    const stableNow = stableUsdAssets.reduce(
+      (sum: number, asset: any) => sum + Number(asset?.circulating?.peggedUSD || 0),
+      0
+    );
 
-const tvlChange1d =
-  oneDayAgoTvl > 0 ? ((latestTvl - oneDayAgoTvl) / oneDayAgoTvl) * 100 : 0;
+    const stablePrev1d = stableUsdAssets.reduce((sum: number, asset: any) => {
+      const now = Number(asset?.circulating?.peggedUSD || 0);
+      const change = Number(asset?.change_1d?.peggedUSD || asset?.change_1d || 0);
+      const prev = Number(asset?.circulatingPrevDay?.peggedUSD) || now - change;
+      return sum + Math.max(prev, 0);
+    }, 0);
 
-const tvlChange7d =
-  sevenDaysAgoTvl > 0 ? ((latestTvl - sevenDaysAgoTvl) / sevenDaysAgoTvl) * 100 : 0;
+    const stableChange1d = pct(stableNow, stablePrev1d);
 
-const peggedAssets = Array.isArray(stablecoins?.peggedAssets)
-  ? stablecoins.peggedAssets
-  : [];
-
-const stableUsdAssets = peggedAssets.filter(
-  (asset: any) => Number(asset?.circulating?.peggedUSD) > 0
-);
-
-const stableNow = stableUsdAssets.reduce(
-  (sum: number, asset: any) =>
-    sum + Number(asset?.circulating?.peggedUSD || 0),
-  0
-);
-
-const stablePrev1d = stableUsdAssets.reduce((sum: number, asset: any) => {
-  const prev =
-    Number(asset?.circulatingPrevDay?.peggedUSD) ||
-    Number(asset?.circulatingPrevDay) ||
-    Number(asset?.circulating?.peggedUSD || 0) -
-      Number(asset?.change_1d?.peggedUSD || asset?.change_1d || 0);
-
-  return sum + Math.max(prev, 0);
-}, 0);
-
-const stableChange1d =
-  stablePrev1d > 0
-    ? ((stableNow - stablePrev1d) / stablePrev1d) * 100
-    : 0;
-
-   
-    
-    const marketPhase = getMarketPhase({
+    const marketPhase = getMarketPhase(
       marketCapChange24h,
       btcDominance,
       ethDominance,
       tvlChange7d,
-      stableChange1d,
-    });
+      stableChange1d
+    );
 
-    const riskLevel = getRiskLevel({
+    const riskLevel = getRiskLevel(
       marketCapChange24h,
       btcDominance,
       tvlChange1d,
-    });
+      stableChange1d
+    );
 
-    const trendStrength = getTrendStrength({
+    const trendStrength = getTrendStrength(
       marketCapChange24h,
       tvlChange7d,
-      stableChange1d,
+      stableChange1d
+    );
+
+    const riskScore =
+  riskLevel === "High" ? 82 :
+  riskLevel === "Elevated" ? 64 :
+  riskLevel === "Medium" ? 45 :
+  24;
+
+const phaseScore =
+  marketPhase === "Market Contraction" ? 18 :
+  marketPhase === "Defensive Bitcoin Rotation" ? 32 :
+  marketPhase === "Neutral Consolidation" ? 48 :
+  marketPhase === "Early Recovery" ? 58 :
+  marketPhase === "Bitcoin-Led Recovery" ? 68 :
+  marketPhase === "Risk-On Rotation" ? 76 :
+  marketPhase === "Altcoin Expansion" ? 86 :
+  50;
+
+    const marketHint = getMarketHint(marketPhase, riskLevel);
+
+    const summary = getSummary({
+      phase: marketPhase,
+      risk: riskLevel,
+      trend: trendStrength,
+      market: marketCapChange24h,
+      btc: btcDominance,
+      tvl7d: tvlChange7d,
+      stable1d: stableChange1d,
     });
 
-    const summary = getPlainSummary({
-      marketCapChange24h,
-      btcDominance,
-      ethDominance,
-      marketPhase,
-      riskLevel,
-      trendStrength,
-    });
+    const btcDominanceChange24h =
+  Number(global?.market_cap_percentage_24h_change?.btc || 0);
 
-    let chart = buildFallbackChart(totalMarketCap, marketCapChange24h);
+const ethDominanceChange24h =
+  Number(global?.market_cap_percentage_24h_change?.eth || 0);
 
     return NextResponse.json({
       totalMarketCap,
       marketCapChange24h,
       btcDominance,
       ethDominance,
-      totalTvl,
+      totalTvl: latest,
       tvlChange1d,
       tvlChange7d,
       stableChange1d,
       marketPhase,
       riskLevel,
       trendStrength,
+      riskScore,
+      phaseScore,
+      btcDominanceChange24h,
+      ethDominanceChange24h,
+      marketHint,
       summary,
-      chart,
       updatedAt: new Date().toISOString(),
     });
   } catch {
@@ -285,11 +227,11 @@ const stableChange1d =
         tvlChange1d: 0,
         tvlChange7d: 0,
         stableChange1d: 0,
-        marketPhase: "Neutral Consolidation",
+        marketPhase: "Data Unavailable",
         riskLevel: "Balanced",
         trendStrength: "Moderate",
+        marketHint: "Live market data is temporarily unavailable.",
         summary: "Market data is temporarily unavailable.",
-        chart: [],
         updatedAt: new Date().toISOString(),
       },
       { status: 200 }

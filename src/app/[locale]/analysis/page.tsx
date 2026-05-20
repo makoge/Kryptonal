@@ -9,7 +9,7 @@ import DeepAnalysisEngine from "@/components/analysis/DeepAnalysisEngine";
 import StablecoinFlows from "@/components/analysis/StablecoinFlows";
 import ChainStrengthTracker from "@/components/analysis/ChainStrengthTracker";
 import SectorRotationHeatmap from "@/components/analysis/SectorRotationHeatmap";
-import SmartMoneyAlerts from "@/components/analysis/SmartMoneyAlerts";
+import LeverageRiskTracker from "@/components/analysis/LeverageRiskTracker";
 
 const siteUrl = "https://kryptonal.com";
 
@@ -171,7 +171,7 @@ export default async function AnalysisPage({ params }: PageProps) {
         <StablecoinFlows t={t} />
         <ChainStrengthTracker t={t} />
         <SectorRotationHeatmap t={t} />
-        <SmartMoneyAlerts t={t} />
+        <LeverageRiskTracker t={t.analysis} />
 
         
 

@@ -1,139 +1,171 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const API_URL = "https://api.coingecko.com/api/v3";
+type Mode = "all" | "market" | "stablecoins" | "chains" | "sectors" | "leverage";
 
-const HALVING_DATE = new Date("2024-04-20T00:00:00Z").getTime();
-
-function formatCap(value: number) {
-  return `$${(value / 1_000_000_000_000).toFixed(2)}T`;
+function formatUsd(value: number) {
+  if (!value) return "$0";
+  if (value >= 1_000_000_000_000) return `$${(value / 1_000_000_000_000).toFixed(2)}T`;
+  if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(2)}B`;
+  if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(2)}M`;
+  return `$${value.toFixed(0)}`;
 }
 
-function getCyclePhase(marketCap: number) {
-  if (marketCap < 1_200_000_000_000) return "Accumulation";
-  if (marketCap < 2_300_000_000_000) return "Early Expansion";
-  if (marketCap < 3_000_000_000_000) return "Expansion";
-  return "Late Cycle";
+function formatPct(value: number) {
+  return `${value >= 0 ? "+" : ""}${value.toFixed(2)}%`;
 }
 
-function getRisk(marketCap: number, change: number) {
-  if (change < -3) return "High";
-  if (marketCap > 3_000_000_000_000) return "High";
-  if (marketCap > 2_300_000_000_000) return "Moderate";
-  return "Lower";
+async function safeFetch(origin: string, path: string) {
+  try {
+    const res = await fetch(`${origin}${path}`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
 }
 
-function getSignal(change: number) {
-  if (change > 3) return "Strong bullish momentum";
-  if (change > 0) return "Mild bullish momentum";
-  if (change > -3) return "Weak or neutral momentum";
-  return "Bearish pressure";
+function makeMarketAnalysis(market: any) {
+  if (!market) return null;
+
+  return {
+    title: "Market Overview",
+    summary: `The crypto market is currently in a ${market.marketPhase} phase with ${market.riskLevel} risk.`,
+    what: `Total market cap is ${formatUsd(market.totalMarketCap)}, with a 24h move of ${formatPct(market.marketCapChange24h)}. Bitcoin dominance is ${market.btcDominance?.toFixed(2)}% and Ethereum dominance is ${market.ethDominance?.toFixed(2)}%.`,
+    why: market.summary,
+    outcomes:
+      market.marketCapChange24h > 0
+        ? "If liquidity keeps improving, the market may continue rotating into stronger assets. If momentum fades, traders may return to Bitcoin or stablecoins."
+        : "If weakness continues, capital may become defensive. Bitcoin dominance and stablecoin flows should be watched closely.",
+    takeaway: market.marketHint,
+  };
+}
+
+function makeStableAnalysis(stable: any) {
+  if (!stable) return null;
+
+  const topChain = stable.chains?.[0];
+
+  return {
+    title: "Stablecoin Liquidity",
+    summary:
+      stable.flowSignal === "entering"
+        ? "Stablecoin liquidity is entering the market."
+        : stable.flowSignal === "leaving"
+          ? "Stablecoin liquidity is leaving the market."
+          : "Stablecoin liquidity is mostly neutral.",
+    what: `Total stablecoin liquidity is ${formatUsd(stable.totalStablecoins)}. The 7-day change is ${formatPct(stable.change7dPct)}. The largest stablecoin chain is ${topChain?.chain || "N/A"} with about ${topChain?.dominance?.toFixed(2) || "0"}% dominance.`,
+    why:
+      "Stablecoins matter because they are often the cash waiting to enter crypto trades. Rising stablecoin supply can support stronger market conditions, while falling supply can show capital leaving.",
+    outcomes:
+      stable.change7dPct > 0
+        ? "If stablecoin liquidity keeps rising, the market has more fuel for future buying pressure."
+        : "If stablecoin liquidity keeps falling, rallies may become weaker because less fresh capital is available.",
+    takeaway:
+      "This signal helps users understand whether crypto has fresh liquidity behind the move or if price is moving without strong capital support.",
+  };
+}
+
+function makeChainAnalysis(chains: any) {
+  if (!chains?.chains?.length) return null;
+
+  const strongest = chains.chains[0];
+  const weakest = chains.chains[chains.chains.length - 1];
+
+  return {
+    title: "Chain Strength",
+    summary: `${strongest.name} is currently the strongest tracked ecosystem by Kryptonal’s chain score.`,
+    what: `${strongest.name} has ${formatUsd(strongest.tvl)} TVL, ${strongest.protocols} protocols, ${formatPct(strongest.change7d)} 7D growth, and ${formatPct(strongest.change1m)} 1M growth.`,
+    why:
+      "Chain strength measures where liquidity, app activity, and ecosystem momentum are strongest. A chain with rising TVL and many protocols usually has healthier activity.",
+    outcomes:
+      strongest.change7d > 0
+        ? `${strongest.name} may continue attracting attention if TVL and protocol activity keep growing.`
+        : `Even the strongest chain needs caution if TVL momentum is slowing.`,
+    takeaway: `${weakest.name} is currently weaker compared with the top chains, so users should avoid assuming every ecosystem is moving equally.`,
+  };
+}
+
+function makeSectorAnalysis(sectors: any) {
+  if (!sectors?.sectors?.length) return null;
+
+  const top = sectors.sectors[0];
+  const hot = sectors.sectors.find((s: any) => s.signal === "Hot" || s.signal === "hot");
+
+  return {
+    title: "Sector Rotation",
+    summary: `${top.name} is currently leading the tracked crypto sectors.`,
+    what: `${top.name} has ${formatUsd(top.tvl)} TVL, ${top.protocols} protocols, and ${formatPct(top.change7d)} 7D momentum.`,
+    why:
+      "Sector rotation shows where capital is moving inside crypto. When one sector gains TVL faster than others, it can show a growing narrative.",
+    outcomes: hot
+      ? `${hot.name} looks hot right now, but users should be careful because hot sectors can cool fast after crowded moves.`
+      : "No sector looks extremely hot right now, so the market may be more selective than broad-based.",
+    takeaway:
+      "This helps users avoid chasing random coins and instead understand which crypto narratives are gaining or losing strength.",
+  };
+}
+
+function makeLeverageAnalysis(leverage: any) {
+  if (!leverage) return null;
+
+  return {
+    title: "Leverage Risk",
+    summary: `Leverage risk is currently ${leverage.riskLevel}.`,
+    what: `The leverage risk score is ${leverage.riskScore}/100. Average funding is ${formatPct(leverage.avgFundingRatePct)}, and total open interest is ${formatUsd(leverage.totalOpenInterestUsd)}.`,
+    why:
+      "Leverage matters because too many crowded futures positions can cause fast liquidations. High funding often means traders are leaning too heavily in one direction.",
+    outcomes:
+      leverage.riskLevel === "dangerous" || leverage.riskLevel === "heated"
+        ? "If price moves against crowded traders, the market could see a sharp liquidation move."
+        : "If leverage stays controlled, price moves may be healthier and less liquidation-driven.",
+    takeaway:
+      leverage.positionBias === "longCrowded"
+        ? "Long traders are crowded, so upside can continue but downside liquidation risk is higher."
+        : leverage.positionBias === "shortCrowded"
+          ? "Short traders are crowded, so a short squeeze is possible if price rises."
+          : "Positioning looks balanced, which is healthier for the market.",
+  };
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const mode = body.mode || "full";
+    const mode: Mode = body.mode || "all";
+    const origin = req.nextUrl.origin;
 
-    const apiKey = process.env.COINGECKO_API_KEY;
-    const headers: HeadersInit = apiKey
-      ? { "x-cg-demo-api-key": apiKey }
-      : {};
+    const [market, stable, chains, sectors, leverage] = await Promise.all([
+      safeFetch(origin, "/api/crypto/market-cap"),
+      safeFetch(origin, "/api/analysis/stablecoins"),
+      safeFetch(origin, "/api/analysis/chains"),
+      safeFetch(origin, "/api/analysis/sectors"),
+      safeFetch(origin, "/api/analysis/leverage-risk"),
+    ]);
 
-    const res = await fetch(`${API_URL}/global`, {
-      headers,
-      next: { revalidate: 60 },
-    });
+    const allSections = {
+      market: makeMarketAnalysis(market),
+      stablecoins: makeStableAnalysis(stable),
+      chains: makeChainAnalysis(chains),
+      sectors: makeSectorAnalysis(sectors),
+      leverage: makeLeverageAnalysis(leverage),
+    };
 
-    if (!res.ok) {
-      return NextResponse.json({ error: "Market data failed" }, { status: 502 });
-    }
+    const sections =
+      mode === "all"
+        ? Object.values(allSections).filter(Boolean)
+        : [allSections[mode]].filter(Boolean);
 
-    const json = await res.json();
-    const data = json.data;
-
-    const marketCap = data.total_market_cap.usd;
-    const change = data.market_cap_change_percentage_24h_usd;
-    const btcDominance = data.market_cap_percentage.btc;
-    const ethDominance = data.market_cap_percentage.eth;
-
-    const phase = getCyclePhase(marketCap);
-    const risk = getRisk(marketCap, change);
-    const signal = getSignal(change);
-
-    const daysPostHalving = Math.floor(
-      (Date.now() - HALVING_DATE) / (1000 * 60 * 60 * 24)
-    );
-
-    const generatedAt = new Date().toLocaleString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-
-    const analysis = `kryptonal Deep Market Intelligence
-Generated: ${generatedAt}
-
-1. Market Cycle Read
-The total crypto market cap is currently ${formatCap(marketCap)}. Based on current valuation levels, the market appears to be in the ${phase} phase.
-
-Bitcoin is approximately ${daysPostHalving} days after the 2024 halving. Historically, crypto markets often become more active after halving events, but timing can vary by cycle.
-
-2. Trend Strength
-The total crypto market cap changed ${change.toFixed(2)}% in the last 24 hours. This suggests: ${signal}.
-
-So what?
-Short-term momentum is useful, but users should avoid making decisions from one daily move alone. The bigger context is whether market cap, Bitcoin dominance, and liquidity are improving together.
-
-3. Bitcoin Dominance
-Bitcoin dominance is currently ${btcDominance.toFixed(2)}%.
-
-So what?
-When Bitcoin dominance is high, capital is usually concentrated in BTC. Altcoins may underperform until dominance starts falling and liquidity rotates into smaller assets.
-
-4. Ethereum & Altcoin Signal
-Ethereum dominance is currently ${ethDominance.toFixed(2)}%.
-
-So what?
-If ETH dominance starts rising while BTC dominance cools, it can suggest early altcoin rotation. If ETH remains weak, the market may still be Bitcoin-led.
-
-5. Risk Management
-Current risk level: ${risk}.
-
-Practical interpretation:
-- Avoid excessive leverage.
-- Do not chase green candles emotionally.
-- Scale into positions gradually.
-- Always define invalidation levels before buying.
-- Historical data gives context, not certainty.
-
-6. What People Are Likely Doing
-In the ${phase} phase, users often:
-- Hold stronger assets.
-- Watch Bitcoin dominance.
-- Compare current valuation with previous cycle highs.
-- Wait for confirmation before rotating heavily into altcoins.
-
-7. Final Takeaway
-The market is not only about price. The important question is: why is capital moving, where is it concentrated, and what happens next?
-
-kryptonal View:
-This looks like a ${phase.toLowerCase()} environment with ${risk.toLowerCase()} risk. The smartest approach is patience, position sizing, and watching whether liquidity expands beyond Bitcoin.
-
-Source: kryptonal
-Disclaimer: Educational content only. Not financial advice. Crypto markets are highly volatile.`;
+    const conclusion =
+      mode === "all"
+        ? "Overall, the best market read comes from combining price, liquidity, chain strength, sector rotation, and leverage. A healthy market usually needs improving liquidity, strong chain activity, rising sectors, and controlled leverage."
+        : "This signal should not be used alone. Strong analysis comes from comparing it with liquidity, market trend, chain strength, and leverage risk.";
 
     return NextResponse.json({
       mode,
-      marketCap,
-      change,
-      btcDominance,
-      ethDominance,
-      phase,
-      risk,
-      daysPostHalving,
-      analysis,
+      sections,
+      conclusion,
       updatedAt: new Date().toISOString(),
     });
   } catch {

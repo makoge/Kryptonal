@@ -6,7 +6,7 @@ import { getDictionary } from "@/lib/getDictionary";
 import MarketCapChart from "@/components/market/MarketCapChart";
 import MarketAnalysis from "@/components/market/MarketAnalysis";
 import MarketOverview from "@/components/market/MarketOverview";
-import HistoricalChart from "@/components/market/HistoricalChart";
+import AltseasonIndex from "@/components/market/AltseasonIndex";
 import MarketComparison from "@/components/market/MarketComparison";
 import MarketStickyTools from "@/components/market/MarketStickyTools";
 
@@ -303,7 +303,7 @@ export default async function MarketCapPage({ params }: PageProps) {
                   </Link>
 
                   <Link
-                    href="#historical-data"
+                    href="#altcoinseason index"
                     className="rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4 text-center font-bold text-white backdrop-blur transition hover:border-cyan-300/40 hover:bg-white/[0.08]"
                   >
                     {t.marketCap.secondaryCta}
@@ -510,7 +510,7 @@ export default async function MarketCapPage({ params }: PageProps) {
             </div>
 
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-2 backdrop-blur-xl sm:p-5">
-              <HistoricalChart t={t} />
+              <AltseasonIndex t={t} />
             </div>
           </div>
         </section>

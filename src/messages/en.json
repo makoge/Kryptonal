@@ -319,7 +319,7 @@
     "title": "Crypto Market Cap Analysis",
     "description": "Analyze total cryptocurrency market capitalization, compare current market value with previous crypto cycles, and understand Bitcoin dominance, market phases, and long-term crypto trends.",
     "primaryCta": "Analyze Market",
-    "secondaryCta": "View Historical Data",
+    "secondaryCta": "Altcoin Season Index",
     "chartLabel": "Total Crypto Market Cap",
     "marketSignal": "Expansion Phase",
     "chartNote": "Example market cap chart. Live crypto API data will be connected later.",
@@ -336,8 +336,9 @@
       { "label": "BTC Dominance", "value": "53.6%", "change": "Bitcoin leading" },
       { "label": "Market Phase", "value": "Expansion", "change": "Moderate risk" }
     ],
-    "chartTitle": "Global Crypto Market Cap Over Time",
-    "chartDescription": "Track how total crypto market capitalization changes across bull markets, bear markets, recovery phases, and long-term Bitcoin cycles.",
+    "historicalLabel": "Altcoin Season Index",
+"chartTitle": "Track When Altcoins Start Taking Market Strength",
+"chartDescription": "The Altcoin Season Index helps you understand whether capital is flowing into Bitcoin or rotating into altcoins. Monitor market leadership, momentum shifts, and risk appetite across the crypto market.",
     "ranges": ["1Y", "3Y", "5Y", "ALL"],
     "comparisonTitle": "Crypto Market Cycle Comparison",
     "comparisons": [
@@ -422,6 +423,21 @@
 "frameworkLabel": "Reading Framework",
 "frameworkTitle": "A simple process for cleaner decisions.",
 "frameworkText": "Market cap alone is not enough. The edge comes from connecting current valuation with cycle history and risk.",
+"altseason": {
+  "badge": "Altseason Index",
+  "title": "Is it Bitcoin season or altcoin season?",
+  "loadingText": "Loading live altseason data...",
+  "score": "Altseason Score",
+  "phase": "Current phase",
+  "bitcoinSeason": "Bitcoin Season",
+  "rotation": "Rotation Zone",
+  "altseason": "Altseason",
+  "outperforming": "Outperforming BTC",
+  "btc30d": "BTC 30D",
+  "leaders": "Altcoins leading BTC",
+  "laggards": "Weakest large altcoins",
+  "loading": "Loading..."
+},
 "framework": [
   {
     "title": "Check current market cap",
@@ -440,7 +456,6 @@
     "text": "Use Kryptonal to turn the data into a clean market summary."
   }
 ],
-"historicalLabel": "Historical Data",
 "comparisonLabel": "Cycle Comparison",
 "comparisonText": "Compare market-cap behavior across crypto cycles and avoid reading today’s numbers in isolation.",
 "faqLabel": "FAQ",
@@ -494,6 +509,7 @@
     "risk": "Risk",
     "altcoins": "Altcoins"
   },
+
   "checklist": [
     "Market cycle context",
     "Bitcoin dominance read",
@@ -543,6 +559,17 @@
       "historyTitle": "Why historical data matters",
       "historyText": "Historical data helps identify repeating patterns, but it does not guarantee future performance."
     },
+     "stableLiquidity": {
+    "totalLiquidity": "Total Stablecoin Liquidity",
+    "liquidity_entering": "Liquidity entering",
+    "liquidity_leaving": "Liquidity leaving",
+    "liquidity_neutral": "Liquidity neutral",
+    "change1d": "1D Change",
+    "change7d": "7D Change",
+    "dominance": "Dominance",
+    "topChains": "Top Stablecoin Chains",
+    "updated": "Updated"
+  },
     "internalLinksTitle": "Explore More Crypto Tools",
     "internalLinks": [
       { "title": "Market Cap Analysis", "text": "Compare total crypto market cap across cycles.", "href": "/market-cap" },
@@ -556,6 +583,29 @@
       { "question": "Can crypto market cap predict price?", "answer": "No, market cap does not predict prices directly." },
       { "question": "Is this financial advice?", "answer": "No. This platform provides educational insights only." }
     ],
+    "leverageRisk": {
+  "badge": "Trader Positioning",
+  "title": "Crypto Leverage Risk Tracker",
+  "description": "Track whether futures traders are becoming too crowded, overheated, or balanced using live funding rates and open interest.",
+  "riskScore": "Leverage Risk Score",
+  "avgFunding": "Average Funding Rate",
+  "avgFundingHint": "Positive funding means longs are paying shorts. Very high funding can signal crowded bullish positioning.",
+  "openInterest": "Total Open Interest",
+  "openInterestShort": "Open Interest",
+  "openInterestHint": "Higher open interest means more leveraged positions are active in the market.",
+  "disclaimer": "Leverage risk is an educational signal, not financial advice.",
+  "levels": {
+    "low": "Low Risk",
+    "normal": "Normal Risk",
+    "heated": "Heated Market",
+    "dangerous": "Dangerous Leverage"
+  },
+  "bias": {
+    "longCrowded": "Long traders are becoming crowded. Upside momentum may exist, but liquidation risk is higher.",
+    "shortCrowded": "Short traders are becoming crowded. A short squeeze can happen if price moves against them.",
+    "balanced": "Positioning looks balanced. Leverage risk is not extreme right now."
+  }
+},
     "smartMoney": {
   "badge": "Smart Money Alerts",
   "title": "Smart Money Alert Board",

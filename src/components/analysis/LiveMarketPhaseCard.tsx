@@ -6,6 +6,17 @@ type MarketData = {
   totalMarketCap: number;
   marketCapChange24h: number;
   btcDominance: number;
+  ethDominance: number;
+  totalTvl: number;
+  tvlChange1d: number;
+  tvlChange7d: number;
+  stableChange1d: number;
+  marketPhase: string;
+  riskLevel: string;
+  trendStrength: string;
+  marketHint: string;
+  summary: string;
+  updatedAt: string;
 };
 
 function formatUsd(value: number) {
@@ -15,83 +26,15 @@ function formatUsd(value: number) {
   return `$${value.toLocaleString()}`;
 }
 
-function getPhase(data: MarketData) {
-  const cap = data.totalMarketCap;
-  const change = data.marketCapChange24h;
-  const btc = data.btcDominance;
+function formatPct(value: number) {
+  return `${value >= 0 ? "+" : ""}${value.toFixed(2)}%`;
+}
 
-  if (change < -3) {
-    return {
-      phase: "Contraction",
-      risk: "High Risk",
-      hint: "Best to wait",
-      tone: "text-red-400 bg-red-400/10",
-      points: [
-        "Market momentum is weakening.",
-        "Many users reduce exposure or wait for stronger confirmation.",
-        "Risk management matters more than chasing entries.",
-        `BTC dominance is ${btc.toFixed(2)}%, showing where capital is concentrated.`,
-      ],
-    };
-  }
-
-  if (cap < 1_500_000_000_000) {
-    return {
-      phase: "Accumulation",
-      risk: "Lower Risk",
-      hint: "Best time to research",
-      tone: "text-cyan-300 bg-cyan-400/10",
-      points: [
-        "Market activity is quieter and sentiment is usually cautious.",
-        "Long-term users often research, dollar-cost average, or build watchlists.",
-        "This phase can offer opportunity, but confirmation is still important.",
-        `Current market cap is ${formatUsd(cap)}.`,
-      ],
-    };
-  }
-
-  if (cap < 2_400_000_000_000) {
-    return {
-      phase: "Early Expansion",
-      risk: "Moderate Risk",
-      hint: "Best time to hold carefully",
-      tone: "text-emerald-300 bg-emerald-400/10",
-      points: [
-        "Liquidity is returning and market structure is improving.",
-        "Bitcoin often leads before broader altcoin strength appears.",
-        "Users usually watch trend confirmation and manage position size.",
-        `24h market cap change is ${change.toFixed(2)}%.`,
-      ],
-    };
-  }
-
-  if (cap < 3_000_000_000_000) {
-    return {
-      phase: "Expansion",
-      risk: "Moderate Risk",
-      hint: "Best time to ride trend",
-      tone: "text-emerald-300 bg-emerald-400/10",
-      points: [
-        "Market cap is growing and momentum is improving.",
-        "Users often hold winners, rotate carefully, and avoid over-leverage.",
-        "Risk is rising because more people are entering the market.",
-        `BTC dominance is ${btc.toFixed(2)}%, so Bitcoin still influences market direction.`,
-      ],
-    };
-  }
-
-  return {
-    phase: "Late Cycle",
-    risk: "High Risk",
-    hint: "Best time to take caution",
-    tone: "text-amber-300 bg-amber-400/10",
-    points: [
-      "The market may be close to overheated conditions.",
-      "Users often reduce risk, take partial profits, or avoid emotional buying.",
-      "Upside can continue, but downside risk becomes larger.",
-      `Current market cap is ${formatUsd(cap)}.`,
-    ],
-  };
+function riskTone(risk: string) {
+  if (risk === "High") return "text-red-300 bg-red-400/10";
+  if (risk === "Elevated") return "text-amber-300 bg-amber-400/10";
+  if (risk === "Medium") return "text-yellow-300 bg-yellow-400/10";
+  return "text-emerald-300 bg-emerald-400/10";
 }
 
 export default function LiveMarketPhaseCard({ t }: any) {
@@ -100,22 +43,11 @@ export default function LiveMarketPhaseCard({ t }: any) {
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch("/api/crypto/market-cap", {
-          cache: "no-store",
-        });
-
+        const res = await fetch("/api/crypto/market-cap", { cache: "no-store" });
         if (!res.ok) return;
-
         const json = await res.json();
-
-        setData({
-          totalMarketCap: json.totalMarketCap,
-          marketCapChange24h: json.marketCapChange24h,
-          btcDominance: json.btcDominance,
-        });
-      } catch {
-        // silent fail
-      }
+        setData(json);
+      } catch {}
     }
 
     load();
@@ -123,42 +55,43 @@ export default function LiveMarketPhaseCard({ t }: any) {
     return () => window.clearInterval(interval);
   }, []);
 
-  const card = data ? getPhase(data) : null;
-
-  const fallbackPoints = Array.isArray(t.analysis.heroCard.points)
-  ? t.analysis.heroCard.points
-  : [];
-
-const points = card?.points || fallbackPoints;
+  const points = data
+    ? [
+        `Total market cap: ${formatUsd(data.totalMarketCap)} (${formatPct(data.marketCapChange24h)} 24h).`,
+        `Bitcoin dominance: ${data.btcDominance.toFixed(2)}%.`,
+        `DeFi TVL: ${formatUsd(data.totalTvl)} (${formatPct(data.tvlChange7d)} 7d).`,
+        `Stablecoin supply change: ${formatPct(data.stableChange1d)} 24h.`,
+      ]
+    : Array.isArray(t.analysis.heroCard.points)
+      ? t.analysis.heroCard.points
+      : [];
 
   return (
     <div className="rounded-3xl border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur sm:p-5">
       <div className="rounded-2xl bg-slate-900 p-5 sm:p-6">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="text-sm text-slate-400">
-              {t.analysis.heroCard.label}
-            </p>
-
+            <p className="text-sm text-slate-400">{t.analysis.heroCard.label}</p>
             <h2 className="mt-2 text-3xl font-black">
-              {card ? card.phase : t.common.loading}
+              {data ? data.marketPhase : t.common.loading}
             </h2>
           </div>
 
-          {card && (
-            <span className={`w-fit rounded-full px-4 py-2 text-sm font-bold ${card.tone}`}>
-              {card.risk}
+          {data && (
+            <span className={`w-fit rounded-full px-4 py-2 text-sm font-bold ${riskTone(data.riskLevel)}`}>
+              {data.riskLevel} Risk
             </span>
           )}
         </div>
 
-        {card && (
+        {data && (
           <div className="mb-5 rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-4">
             <p className="text-xs font-bold uppercase tracking-widest text-emerald-300">
               Market Hint
             </p>
-            <p className="mt-2 text-lg font-black text-white">{card.hint}</p>
-            <p className="mt-2 text-xs leading-6 text-slate-400">
+            <p className="mt-2 text-lg font-black text-white">{data.marketHint}</p>
+            <p className="mt-3 text-sm leading-6 text-slate-300">{data.summary}</p>
+            <p className="mt-3 text-xs leading-6 text-slate-500">
               Educational signal only. Not financial advice.
             </p>
           </div>

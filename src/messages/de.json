@@ -394,7 +394,7 @@
   "title": "Analyse der Krypto-Marktkapitalisierung",
   "description": "Analysieren Sie die gesamte Marktkapitalisierung von Kryptowährungen, vergleichen Sie den aktuellen Marktwert mit früheren Krypto-Zyklen und verstehen Sie Bitcoin-Dominanz, Marktphasen und langfristige Krypto-Trends.",
   "primaryCta": "Markt analysieren",
-  "secondaryCta": "Historische Daten anzeigen",
+  "secondaryCta": "Altcoin-Saison-Index",
   "chartLabel": "Gesamte Krypto-Marktkapitalisierung",
   "marketSignal": "Expansionsphase",
   "chartNote": "Beispiel für ein Marktkapitalisierungsdiagramm. Live-Krypto-API-Daten werden später verbunden.",
@@ -411,10 +411,9 @@
     { "label": "BTC-Dominanz", "value": "53.6%", "change": "Bitcoin führt den Markt an" },
     { "label": "Marktphase", "value": "Expansion", "change": "Moderates Risiko" }
   ],
-  "chartTitle": "Globale Krypto-Marktkapitalisierung im Zeitverlauf",
-  "chartDescription": "Verfolgen Sie, wie sich die gesamte Krypto-Marktkapitalisierung über Bullenmärkte, Bärenmärkte, Erholungsphasen und langfristige Bitcoin-Zyklen hinweg verändert.",
-  "ranges": ["1J", "3J", "5J", "ALLE"],
-  "comparisonTitle": "Vergleich der Krypto-Marktzyklen",
+  "historicalLabel": "Altcoin-Saison-Index",
+"chartTitle": "Verfolge, Wann Altcoins Marktstärke Gewinnen",
+"chartDescription": "Der Altcoin-Saison-Index hilft dir zu verstehen, ob Kapital in Bitcoin bleibt oder in Altcoins rotiert. Beobachte Führungswechsel, Momentum und Risikobereitschaft im Kryptomarkt.",
   "comparisons": [
     { "year": "2017", "value": "$830B", "note": "Früherer Zyklus-Höchststand" },
     { "year": "2021", "value": "$3.0T", "note": "Früheres Allzeithoch" },
@@ -441,6 +440,21 @@
   "chartLabel": "Jährliche Marktkapitalisierungs-Hochs",
   "greenRed": "Grün bedeutet, dass der heutige Wert höher ist. Rot bedeutet, dass der heutige Wert niedriger ist.",
   "loading": "Historische Marktdaten werden geladen..."
+},
+"altseason": {
+  "badge": "Altseason-Index",
+  "title": "Ist es Bitcoin-Saison oder Altcoin-Saison?",
+  "loadingText": "Live-Altseason-Daten werden geladen...",
+  "score": "Altseason-Score",
+  "phase": "Aktuelle Phase",
+  "bitcoinSeason": "Bitcoin-Saison",
+  "rotation": "Rotationszone",
+  "altseason": "Altseason",
+  "outperforming": "Besser als BTC",
+  "btc30d": "BTC 30T",
+  "leaders": "Altcoins vor BTC",
+  "laggards": "Schwächste große Altcoins",
+  "loading": "Wird geladen..."
 },
   "faqTitle": "Häufig gestellte Fragen",
   "faqs": [
@@ -515,7 +529,6 @@
     "text": "Nutze Kryptonal, um die Daten in eine klare Marktübersicht umzuwandeln."
   }
 ],
-"historicalLabel": "Historische Daten",
 "comparisonLabel": "Zyklusvergleich",
 "comparisonText": "Vergleiche das Verhalten der Marktkapitalisierung über verschiedene Kryptozyklen hinweg und vermeide es, heutige Zahlen isoliert zu betrachten.",
 "faqLabel": "FAQ",
@@ -617,6 +630,17 @@
     "historyTitle": "Warum historische Daten wichtig sind",
     "historyText": "Historische Daten helfen dabei, wiederkehrende Muster zu erkennen, garantieren jedoch keine zukünftige Entwicklung."
   },
+  "stableLiquidity": {
+  "totalLiquidity": "Gesamte Stablecoin-Liquidität",
+  "liquidity_entering": "Liquidität fließt ein",
+  "liquidity_leaving": "Liquidität fließt ab",
+  "liquidity_neutral": "Liquidität neutral",
+  "change1d": "1T Veränderung",
+  "change7d": "7T Veränderung",
+  "dominance": "Dominanz",
+  "topChains": "Top Stablecoin-Netzwerke",
+  "updated": "Aktualisiert"
+},
   "internalLinksTitle": "Weitere Krypto-Tools entdecken",
   "internalLinks": [
     {
@@ -655,6 +679,29 @@
       "answer": "Nein. Diese Plattform bietet nur Bildungsinhalte und Einblicke."
     }
   ],
+  "leverageRisk": {
+  "badge": "Trader-Positionierung",
+  "title": "Krypto-Leverage-Risiko-Tracker",
+  "description": "Verfolge mit Live-Funding-Raten und Open Interest, ob Futures-Trader überfüllt, überhitzt oder ausgeglichen positioniert sind.",
+  "riskScore": "Leverage-Risiko-Score",
+  "avgFunding": "Durchschnittliche Funding-Rate",
+  "avgFundingHint": "Positive Funding-Raten bedeuten, dass Long-Positionen Short-Positionen bezahlen. Sehr hohe Funding-Raten können auf überfüllte bullische Positionierungen hinweisen.",
+  "openInterest": "Gesamtes Open Interest",
+  "openInterestShort": "Open Interest",
+  "openInterestHint": "Höheres Open Interest bedeutet, dass mehr gehebelte Positionen im Markt aktiv sind.",
+  "disclaimer": "Das Leverage-Risiko ist ein Bildungsindikator und keine Finanzberatung.",
+  "levels": {
+    "low": "Niedriges Risiko",
+    "normal": "Normales Risiko",
+    "heated": "Überhitzter Markt",
+    "dangerous": "Gefährlicher Leverage"
+  },
+  "bias": {
+    "longCrowded": "Long-Trader werden zunehmend überfüllt. Aufwärtsdynamik kann bestehen, aber das Liquidationsrisiko ist höher.",
+    "shortCrowded": "Short-Trader werden zunehmend überfüllt. Ein Short Squeeze kann auftreten, wenn sich der Preis gegen sie bewegt.",
+    "balanced": "Die Positionierung wirkt ausgeglichen. Das Leverage-Risiko ist derzeit nicht extrem."
+  }
+},
   "smartMoney": {
     "badge": "Smart-Money-Alarme",
     "title": "Smart-Money-Alarmtafel",
