@@ -388,6 +388,43 @@
   "disclaimer": "Deine Watchlist wird lokal im Browser gespeichert. Das Löschen von Browserdaten kann sie entfernen. Preise dienen nur Bildungszwecken und sind keine Finanzberatung."
 }
   },
+  "cryptoPrices": {
+  "badge": "Live-Kryptomarkt",
+  "global": "Global",
+  "title": "Live-Kryptopreise, Gewinner, Verlierer und Börsen",
+  "description": "Verfolge die Top-200-Kryptowährungen nach Marktkapitalisierung, entdecke Marktbewegungen, beobachte trendende Coins und vergleiche führende Börsen.",
+  "search": "Coin suchen...",
+  "tabs": {
+    "coins": "Top 200",
+    "gainers": "Gewinner",
+    "losers": "Verlierer",
+    "new": "Trend / Neu",
+    "exchanges": "Börsen"
+  },
+  "metrics": {
+    "coinsTracked": "Verfolgte Coins",
+    "topGainer": "Top-Gewinner",
+    "updated": "Aktualisiert"
+  },
+  "table": {
+    "coin": "Coin",
+    "price": "Preis",
+    "marketCap": "Marktkapitalisierung",
+    "marketCapRank": "Marktkapitalisierungs-Rang",
+    "volume": "Volumen",
+    "volumeBtc": "BTC-Volumen",
+    "supply": "Angebot",
+    "trustScore": "Vertrauensbewertung",
+    "year": "Jahr"
+  },
+  "states": {
+    "failed": "Krypto-Marktdaten konnten nicht geladen werden."
+  },
+  "seo": {
+    "title": "Live-Kryptopreise | Top Coins, Gewinner und Börsen",
+    "description": "Verfolge Live-Kryptowährungspreise, die Top-200-Coins, größte Gewinner, größte Verlierer, trendende Coins und führende Börsen."
+  }
+},
   "marketCap": {
   "back": "← Zurück zur Startseite",
   "badge": "Globale Krypto-Marktintelligenz",

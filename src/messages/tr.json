@@ -388,6 +388,43 @@
     "disclaimer": "Watchlist’in tarayıcında yerel olarak saklanır. Tarayıcı verilerini temizlemek watchlist’i silebilir. Fiyatlar yalnızca eğitim amaçlıdır ve finansal tavsiye değildir."
   }
 },
+"cryptoPrices": {
+  "badge": "Canlı Kripto Piyasası",
+  "global": "Küresel",
+  "title": "Canlı Kripto Fiyatları, Yükselenler, Düşenler ve Borsalar",
+  "description": "Piyasa değerine göre en büyük 200 kripto parayı takip edin, piyasa hareketlerini keşfedin, trend coinleri izleyin ve önde gelen borsaları karşılaştırın.",
+  "search": "Coin ara...",
+  "tabs": {
+    "coins": "İlk 200",
+    "gainers": "Yükselenler",
+    "losers": "Düşenler",
+    "new": "Trend / Yeni",
+    "exchanges": "Borsalar"
+  },
+  "metrics": {
+    "coinsTracked": "Takip edilen coinler",
+    "topGainer": "En çok yükselen",
+    "updated": "Güncellendi"
+  },
+  "table": {
+    "coin": "Coin",
+    "price": "Fiyat",
+    "marketCap": "Piyasa Değeri",
+    "marketCapRank": "Piyasa değeri sıralaması",
+    "volume": "Hacim",
+    "volumeBtc": "BTC Hacmi",
+    "supply": "Arz",
+    "trustScore": "Güven Puanı",
+    "year": "Yıl"
+  },
+  "states": {
+    "failed": "Kripto piyasa verileri yüklenemedi."
+  },
+  "seo": {
+    "title": "Canlı Kripto Fiyatları | En İyi Coinler, Yükselenler ve Borsalar",
+    "description": "Canlı kripto para fiyatlarını, en büyük 200 coin’i, en çok yükselenleri, en çok düşenleri, trend coinleri ve önde gelen borsaları takip edin."
+  }
+},
   "marketCap": {
   "back": "← Ana Sayfaya Dön",
   "badge": "Küresel Kripto Piyasa Zekası",

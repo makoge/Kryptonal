@@ -4,6 +4,7 @@
     "loading": "Loading..."
   },
   "nav": {
+    "crypto": "Crypto",
     "marketCap": "Market Cap",
     "analysis": "Analysis",
     "blog": "Blog",
@@ -310,7 +311,44 @@
   },
   "disclaimer": "Your watchlist is stored locally in your browser. Clearing browser data may remove it. Prices are educational only and not financial advice."
 }
+},
 
+"cryptoPrices": {
+  "badge": "Live Crypto Market",
+  "global": "Global",
+  "title": "Live Crypto Prices, Gainers, Losers & Exchanges",
+  "description": "Track the top 200 cryptocurrencies by market cap, discover market movers, monitor trending coins, and compare leading exchanges.",
+  "search": "Search coin...",
+  "tabs": {
+    "coins": "Top 200",
+    "gainers": "Gainers",
+    "losers": "Losers",
+    "new": "Trending / New",
+    "exchanges": "Exchanges"
+  },
+  "metrics": {
+    "coinsTracked": "Coins tracked",
+    "topGainer": "Top gainer",
+    "updated": "Updated"
+  },
+  "table": {
+    "coin": "Coin",
+    "price": "Price",
+    "marketCap": "Market Cap",
+    "marketCapRank": "Market cap rank",
+    "volume": "Volume",
+    "volumeBtc": "Volume BTC",
+    "supply": "Supply",
+    "trustScore": "Trust Score",
+    "year": "Year"
+  },
+  "states": {
+    "failed": "Failed to load crypto market data."
+  },
+  "seo": {
+    "title": "Live Crypto Prices Today | Top Coins, Gainers & Exchanges",
+    "description": "Track live cryptocurrency prices, top 200 coins, top gainers, top losers, trending coins, and top exchanges."
+  }
 },
  
   "marketCap": {

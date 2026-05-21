@@ -387,6 +387,43 @@
     "disclaimer": "Tu watchlist se almacena localmente en tu navegador. Borrar los datos del navegador puede eliminarla. Los precios son solo educativos y no constituyen asesoramiento financiero."
   }
 },
+"cryptoPrices": {
+  "badge": "Mercado Cripto en Vivo",
+  "global": "Global",
+  "title": "Precios Cripto en Vivo, Ganadores, Perdedores y Exchanges",
+  "description": "Sigue las 200 principales criptomonedas por capitalización de mercado, descubre movimientos del mercado, monitorea monedas en tendencia y compara las principales exchanges.",
+  "search": "Buscar moneda...",
+  "tabs": {
+    "coins": "Top 200",
+    "gainers": "Ganadores",
+    "losers": "Perdedores",
+    "new": "Tendencias / Nuevas",
+    "exchanges": "Exchanges"
+  },
+  "metrics": {
+    "coinsTracked": "Monedas rastreadas",
+    "topGainer": "Mayor ganadora",
+    "updated": "Actualizado"
+  },
+  "table": {
+    "coin": "Moneda",
+    "price": "Precio",
+    "marketCap": "Capitalización",
+    "marketCapRank": "Clasificación por capitalización",
+    "volume": "Volumen",
+    "volumeBtc": "Volumen BTC",
+    "supply": "Suministro",
+    "trustScore": "Puntuación de Confianza",
+    "year": "Año"
+  },
+  "states": {
+    "failed": "No se pudieron cargar los datos del mercado cripto."
+  },
+  "seo": {
+    "title": "Precios Cripto en Vivo | Mejores Monedas, Ganadores y Exchanges",
+    "description": "Sigue precios de criptomonedas en vivo, las 200 principales monedas, mayores ganadores, mayores perdedores, monedas en tendencia y principales exchanges."
+  }
+},
   "marketCap": {
   "back": "← Volver al Inicio",
   "badge": "Inteligencia Global del Mercado Cripto",

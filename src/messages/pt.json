@@ -388,6 +388,43 @@
     "disclaimer": "Sua watchlist é armazenada localmente no navegador. Limpar os dados do navegador pode removê-la. Os preços são apenas educativos e não constituem aconselhamento financeiro."
   }
 },
+"cryptoPrices": {
+  "badge": "Mercado Cripto Ao Vivo",
+  "global": "Global",
+  "title": "Preços Cripto Ao Vivo, Maiores Altas, Maiores Quedas e Exchanges",
+  "description": "Acompanhe as 200 maiores criptomoedas por valor de mercado, descubra os movimentos do mercado, monitore moedas em tendência e compare as principais exchanges.",
+  "search": "Pesquisar moeda...",
+  "tabs": {
+    "coins": "Top 200",
+    "gainers": "Maiores Altas",
+    "losers": "Maiores Quedas",
+    "new": "Tendências / Novas",
+    "exchanges": "Exchanges"
+  },
+  "metrics": {
+    "coinsTracked": "Moedas monitoradas",
+    "topGainer": "Maior alta",
+    "updated": "Atualizado"
+  },
+  "table": {
+    "coin": "Moeda",
+    "price": "Preço",
+    "marketCap": "Valor de Mercado",
+    "marketCapRank": "Classificação por valor de mercado",
+    "volume": "Volume",
+    "volumeBtc": "Volume BTC",
+    "supply": "Oferta",
+    "trustScore": "Pontuação de Confiança",
+    "year": "Ano"
+  },
+  "states": {
+    "failed": "Falha ao carregar os dados do mercado cripto."
+  },
+  "seo": {
+    "title": "Preços Cripto Ao Vivo | Principais Moedas, Altas e Exchanges",
+    "description": "Acompanhe preços de criptomoedas ao vivo, top 200 moedas, maiores altas, maiores quedas, moedas em tendência e principais exchanges."
+  }
+},
 "marketCap": {
   "back": "← Voltar para o Início",
   "badge": "Inteligência Global do Mercado Cripto",

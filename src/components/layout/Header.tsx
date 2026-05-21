@@ -5,12 +5,14 @@
 import Link from "next/link";
 import { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { usePathname } from "next/navigation";
 
 type HeaderProps = {
   locale: string;
   t: {
     brand: string;
     nav: {
+      crypto: string;
       marketCap: string;
       analysis: string;
       blog: string;
@@ -23,7 +25,10 @@ type HeaderProps = {
 export default function Header({ locale, t }: HeaderProps) {
   const [open, setOpen] = useState(false);
 
+  const pathname = usePathname();
+
   const links = [
+    {href: `/${locale}/crypto-prices`, label: t.nav.crypto },
     { href: `/${locale}/market-cap`, label: t.nav.marketCap },
     { href: `/${locale}/analysis`, label: t.nav.analysis },
     { href: `/${locale}/blog`, label: t.nav.blog },
@@ -72,7 +77,11 @@ export default function Header({ locale, t }: HeaderProps) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl bg-white/5 px-4 py-3 hover:text-emerald-400"
+                className={`rounded-xl bg-white/5 px-4 py-3 transition hover:text-emerald-400 ${
+               pathname === link.href
+               ? "text-emerald-400 border border-emerald-400/30"
+               : "text-slate-300"
+                }`}
               >
                 {link.label}
               </Link>

@@ -388,6 +388,43 @@
     "disclaimer": "Votre watchlist est stockée localement dans votre navigateur. La suppression des données du navigateur peut la supprimer. Les prix sont fournis à titre éducatif uniquement et ne constituent pas un conseil financier."
   }
 },
+"cryptoPrices": {
+  "badge": "Marché Crypto en Direct",
+  "global": "Global",
+  "title": "Prix Crypto en Direct, Gagnants, Perdants et Exchanges",
+  "description": "Suivez les 200 principales cryptomonnaies par capitalisation boursière, découvrez les mouvements du marché, surveillez les coins tendance et comparez les principales plateformes d’échange.",
+  "search": "Rechercher une crypto...",
+  "tabs": {
+    "coins": "Top 200",
+    "gainers": "Gagnants",
+    "losers": "Perdants",
+    "new": "Tendance / Nouveaux",
+    "exchanges": "Exchanges"
+  },
+  "metrics": {
+    "coinsTracked": "Cryptos suivies",
+    "topGainer": "Meilleure hausse",
+    "updated": "Mis à jour"
+  },
+  "table": {
+    "coin": "Crypto",
+    "price": "Prix",
+    "marketCap": "Capitalisation",
+    "marketCapRank": "Classement par capitalisation",
+    "volume": "Volume",
+    "volumeBtc": "Volume BTC",
+    "supply": "Offre",
+    "trustScore": "Score de Confiance",
+    "year": "Année"
+  },
+  "states": {
+    "failed": "Impossible de charger les données du marché crypto."
+  },
+  "seo": {
+    "title": "Prix Crypto en Direct | Top Coins, Gagnants et Exchanges",
+    "description": "Suivez les prix des cryptomonnaies en direct, les 200 principales coins, les plus fortes hausses, les plus fortes baisses, les coins tendance et les principales plateformes d’échange."
+  }
+},
 "marketCap": {
   "back": "← Retour à l’Accueil",
   "badge": "Intelligence Globale du Marché Crypto",
