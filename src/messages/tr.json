@@ -6,7 +6,7 @@
   "nav": {
     "marketCap": "Piyasa Değeri",
     "analysis": "Analiz",
-    "blog": "Blog",
+    "blog": "Blog/Haberler",
     "gamingCrypto": "Gaming Kripto",
     "start": "Analizi Başlat"
   },
@@ -424,6 +424,77 @@
     "title": "Canlı Kripto Fiyatları | En İyi Coinler, Yükselenler ve Borsalar",
     "description": "Canlı kripto para fiyatlarını, en büyük 200 coin’i, en çok yükselenleri, en çok düşenleri, trend coinleri ve önde gelen borsaları takip edin."
   }
+},
+"blog": {
+  "metaTitle": "Kryptonal Blog ve Kripto Haber Merkezi",
+  "metaDescription": "Kripto haberlerini, blockchain eğitimlerini, Web3 fırsatlarını, NFT trendlerini, gaming crypto araştırmalarını, regülasyonları ve piyasayı etkileyen makro gelişmeleri takip edin.",
+  "badges": [
+    "Kripto Haberleri",
+    "Blockchain",
+    "Web3",
+    "Gaming Crypto",
+    "Piyasa Analizi"
+  ],
+  "title": "Kryptonal Blog ve Kripto Haber Merkezi",
+  "subtitle": "Son dakika kripto haberlerini, piyasayı etkileyen politik gelişmeleri, blockchain eğitimlerini, Web3 fırsatlarını, NFT trendlerini ve gaming crypto araştırmalarını tek bir akıllı bilgi platformunda takip edin.",
+  "readLatest": "Son Haberleri Oku",
+  "exploreGuides": "Kripto Rehberlerini Keşfet",
+  "searchPlaceholder": "Kripto haberleri ve rehberlerde ara...",
+  "liveNewsLabel": "Canlı Haberler",
+  "latestNewsTitle": "Son Piyasa Haberleri",
+  "noNews": "Bu filtre için haber bulunamadı.",
+  "readMore": "Devamını oku",
+  "researchLabel": "Kryptonal Araştırma",
+  "guidesTitle": "Kripto Rehberleri ve Eğitim",
+  "editorialNote": "Bazı eğitim içerikleri yapay zeka destekli olabilir ve yayınlanmadan önce incelenir.",
+  "readGuide": "Rehberi oku",
+  "footerNote": "Çeviriler yapay zeka tarafından oluşturulmuştur ve hatalar veya yanlış bilgiler içerebilir. Önemli finansal bilgileri her zaman bağımsız olarak doğrulayın.",
+  "whyTitle": "Kripto Haberleri Neden Önemlidir?",
+  "whyText": "Kripto piyasaları çok hızlı hareket eder. Bitcoin, Ethereum, stablecoinler, regülasyonlar, makro politikalar ve siyasi kararlar likiditeyi, yatırımcı duyarlılığını ve piyasa davranışlarını etkileyebilir.",
+  "organizeTitle": "Kryptonal Kripto Bilgilerini Nasıl Düzenler?",
+  "organizeText": "Kryptonal; kripto haberlerini, piyasa eğitimlerini, blockchain rehberlerini, Web3 araştırmalarını, gaming crypto analizlerini ve risk odaklı içerikleri bir araya getirerek kullanıcıların piyasada neler olduğunu ve neden önemli olduğunu anlamasına yardımcı olur.",
+  "adviceTitle": "Eğitim Amaçlı İçerik, Finansal Tavsiye Değildir",
+  "adviceText": "Kryptonal içerikleri yalnızca eğitim ve piyasa farkındalığı amacıyla hazırlanır. Önemli finansal bilgileri her zaman bağımsız olarak doğrulayın.",
+  "faqTitle": "SSS",
+
+  "filters": {
+    "all": "Tümü",
+    "crypto": "Kripto",
+    "politics": "Politika",
+    "web3": "Web3",
+    "gaming": "Oyun",
+    "regulation": "Regülasyon",
+    "macro": "Makro"
+  },
+
+  "backToBlog": "Bloga Dön",
+
+  "educationalTitle": "Yalnızca eğitim amaçlı içerik",
+
+  "educationalText": "Kryptonal makaleleri öğrenme ve piyasa farkındalığı amacıyla hazırlanır. Bu içerikler finansal tavsiye değildir. Önemli finansal bilgileri her zaman bağımsız olarak doğrulayın.",
+
+  "faq": [
+    {
+      "q": "Kryptonal Blog nedir?",
+      "a": "Kryptonal Blog; piyasa güncellemeleri, blockchain rehberleri, Web3, NFT, DeFi ve gaming crypto içerikleri sunan bir kripto haber ve eğitim platformudur."
+    },
+    {
+      "q": "Kryptonal finansal tavsiye verir mi?",
+      "a": "Hayır. Kryptonal yalnızca eğitim amaçlı içerik sağlar, finansal tavsiye vermez."
+    },
+    {
+      "q": "Kryptonal kripto haberlerini nereden alıyor?",
+      "a": "Haberler güvenilir üçüncü taraf API kaynaklarından alınabilir ve okunabilir bir haber deneyimi için düzenlenir."
+    },
+    {
+      "q": "Makaleler insanlar tarafından mı yoksa yapay zeka tarafından mı yazılıyor?",
+      "a": "Bazı eğitim içerikleri yapay zeka destekli olabilir ve yayınlanmadan önce incelenir."
+    },
+    {
+      "q": "Haberler ne sıklıkla güncelleniyor?",
+      "a": "Haber API sistemi sunucu tarafı önbellekleme ve yeniden doğrulama ile düzenli olarak güncellenebilir."
+    }
+  ]
 },
   "marketCap": {
   "back": "← Ana Sayfaya Dön",

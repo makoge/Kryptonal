@@ -6,7 +6,7 @@
 "nav": {
   "marketCap": "Capitalização",
   "analysis": "Análise",
-  "blog": "Blog",
+  "blog": "Blog/Notícias",
   "gamingCrypto": "Gaming Crypto",
   "start": "Iniciar análise"
 },
@@ -424,6 +424,77 @@
     "title": "Preços Cripto Ao Vivo | Principais Moedas, Altas e Exchanges",
     "description": "Acompanhe preços de criptomoedas ao vivo, top 200 moedas, maiores altas, maiores quedas, moedas em tendência e principais exchanges."
   }
+},
+"blog": {
+  "metaTitle": "Kryptonal Blog e Central de Notícias Cripto",
+  "metaDescription": "Acompanhe notícias de criptomoedas, educação blockchain, oportunidades Web3, tendências NFT, pesquisas sobre gaming crypto, regulamentações e atualizações macroeconômicas que movem o mercado.",
+  "badges": [
+    "Notícias Cripto",
+    "Blockchain",
+    "Web3",
+    "Gaming Crypto",
+    "Análise de Mercado"
+  ],
+  "title": "Kryptonal Blog e Central de Notícias Cripto",
+  "subtitle": "Acompanhe notícias cripto de última hora, atualizações políticas que impactam o mercado, educação blockchain, oportunidades Web3, tendências NFT e pesquisas sobre gaming crypto em um único espaço inteligente de informação.",
+  "readLatest": "Ler Últimas Notícias",
+  "exploreGuides": "Explorar Guias Cripto",
+  "searchPlaceholder": "Pesquisar notícias e guias cripto...",
+  "liveNewsLabel": "Notícias ao Vivo",
+  "latestNewsTitle": "Últimas Notícias do Mercado",
+  "noNews": "Nenhuma notícia encontrada para este filtro.",
+  "readMore": "Ler mais",
+  "researchLabel": "Pesquisa Kryptonal",
+  "guidesTitle": "Guias e Educação Cripto",
+  "editorialNote": "Alguns artigos educacionais podem ser assistidos por IA e revisados antes da publicação.",
+  "readGuide": "Ler guia",
+  "footerNote": "As traduções são geradas por IA e podem conter erros ou desinformação. Sempre verifique informações financeiras importantes de forma independente.",
+  "whyTitle": "Por Que as Notícias Cripto Importam?",
+  "whyText": "Os mercados cripto se movem rapidamente. Bitcoin, Ethereum, stablecoins, regulamentações, políticas macroeconômicas e decisões políticas podem afetar liquidez, sentimento e comportamento dos investidores.",
+  "organizeTitle": "Como a Kryptonal Organiza Informações Cripto",
+  "organizeText": "A Kryptonal combina manchetes cripto, educação de mercado, guias blockchain, pesquisas Web3, insights sobre gaming crypto e análises focadas em risco para ajudar os usuários a entender o que está acontecendo e por que isso importa.",
+  "adviceTitle": "Conteúdo Educacional, Não Conselho Financeiro",
+  "adviceText": "O conteúdo da Kryptonal é criado apenas para educação e conscientização de mercado. Sempre verifique informações financeiras importantes de forma independente.",
+  "faqTitle": "FAQ",
+
+  "filters": {
+    "all": "Todos",
+    "crypto": "Cripto",
+    "politics": "Política",
+    "web3": "Web3",
+    "gaming": "Gaming",
+    "regulation": "Regulamentação",
+    "macro": "Macro"
+  },
+
+  "backToBlog": "Voltar ao Blog",
+
+  "educationalTitle": "Conteúdo apenas para fins educacionais",
+
+  "educationalText": "Os artigos da Kryptonal são criados para aprendizado e conscientização de mercado. Isto não é aconselhamento financeiro. Sempre verifique informações financeiras importantes de forma independente.",
+
+  "faq": [
+    {
+      "q": "O que é o Blog Kryptonal?",
+      "a": "O Blog Kryptonal é uma plataforma de notícias e educação cripto para atualizações de mercado, guias blockchain, Web3, NFTs, DeFi e gaming crypto."
+    },
+    {
+      "q": "A Kryptonal fornece aconselhamento financeiro?",
+      "a": "Não. A Kryptonal fornece apenas conteúdo educacional, não aconselhamento financeiro."
+    },
+    {
+      "q": "De onde a Kryptonal obtém notícias cripto?",
+      "a": "As notícias podem ser coletadas de APIs confiáveis de terceiros e organizadas em uma experiência de leitura unificada."
+    },
+    {
+      "q": "Os artigos são escritos por humanos ou IA?",
+      "a": "Alguns artigos educacionais podem ser assistidos por IA e revisados antes da publicação."
+    },
+    {
+      "q": "Com que frequência as notícias são atualizadas?",
+      "a": "O sistema de notícias pode ser atualizado regularmente usando cache no servidor e revalidação."
+    }
+  ]
 },
 "marketCap": {
   "back": "← Voltar para o Início",

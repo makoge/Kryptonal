@@ -12,20 +12,52 @@ type Props = {
 };
 
 async function getData() {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const headers: Record<string, string> = {};
+
+if (process.env.COINGECKO_API_KEY) {
+  headers["x-cg-demo-api-key"] = process.env.COINGECKO_API_KEY;
+}
 
   try {
-    const res = await fetch(`${base}/api/crypto-prices`, {
-      next: { revalidate: 60 },
-    });
+    const [coinsRes, exchangesRes, trendingRes] = await Promise.all([
+      fetch(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=1h,24h,7d",
+        { next: { revalidate: 60 }, headers }
+      ),
+      fetch("https://api.coingecko.com/api/v3/exchanges?per_page=20&page=1", {
+        next: { revalidate: 300 },
+        headers,
+      }),
+      fetch("https://api.coingecko.com/api/v3/search/trending", {
+        next: { revalidate: 300 },
+        headers,
+      }),
+    ]);
 
-    if (!res.ok) return null;
-    return res.json();
+    if (!coinsRes.ok) return null;
+
+    const coins = await coinsRes.json();
+    const exchanges = exchangesRes.ok ? await exchangesRes.json() : [];
+    const trending = trendingRes.ok ? await trendingRes.json() : { coins: [] };
+
+    return {
+      coins,
+      gainers: [...coins]
+        .filter((c: any) => typeof c.price_change_percentage_24h === "number")
+        .sort((a: any, b: any) => b.price_change_percentage_24h - a.price_change_percentage_24h)
+        .slice(0, 10),
+      losers: [...coins]
+        .filter((c: any) => typeof c.price_change_percentage_24h === "number")
+        .sort((a: any, b: any) => a.price_change_percentage_24h - b.price_change_percentage_24h)
+        .slice(0, 10),
+      exchanges,
+      newCoins: trending?.coins ?? [],
+      updatedAt: new Date().toISOString(),
+    };
   } catch {
     return null;
   }
 }
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const dict = await getDictionary(locale);

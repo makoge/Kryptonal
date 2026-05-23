@@ -6,7 +6,7 @@
   "nav": {
     "marketCap": "Marktkapitalisierung",
     "analysis": "Analyse",
-    "blog": "Blog",
+    "blog": "Blog/Nachrichten",
     "gamingCrypto": "Gaming-Krypto",
     "start": "Analyse starten"
   },
@@ -424,6 +424,77 @@
     "title": "Live-Kryptopreise | Top Coins, Gewinner und Börsen",
     "description": "Verfolge Live-Kryptowährungspreise, die Top-200-Coins, größte Gewinner, größte Verlierer, trendende Coins und führende Börsen."
   }
+},
+"blog": {
+  "metaTitle": "Kryptonal Blog & Krypto-News-Hub",
+  "metaDescription": "Verfolge Krypto-News, Blockchain-Bildung, Web3-Möglichkeiten, NFT-Trends, Gaming-Crypto-Forschung, Regulierungen und marktbewegende makroökonomische Entwicklungen.",
+  "badges": [
+    "Krypto-News",
+    "Blockchain",
+    "Web3",
+    "Gaming Crypto",
+    "Marktanalyse"
+  ],
+  "title": "Kryptonal Blog & Krypto-News-Hub",
+  "subtitle": "Verfolge aktuelle Krypto-News, marktbewegende politische Entwicklungen, Blockchain-Bildung, Web3-Möglichkeiten, NFT-Trends und Gaming-Crypto-Forschung in einem intelligenten Informationsbereich.",
+  "readLatest": "Neueste Nachrichten lesen",
+  "exploreGuides": "Krypto-Guides entdecken",
+  "searchPlaceholder": "Krypto-News und Guides durchsuchen...",
+  "liveNewsLabel": "Live-News",
+  "latestNewsTitle": "Neueste Marktnachrichten",
+  "noNews": "Keine Nachrichten für diesen Filter gefunden.",
+  "readMore": "Mehr lesen",
+  "researchLabel": "Kryptonal Forschung",
+  "guidesTitle": "Krypto-Guides & Bildung",
+  "editorialNote": "Einige Bildungsartikel können KI-unterstützt und vor der Veröffentlichung überprüft werden.",
+  "readGuide": "Guide lesen",
+  "footerNote": "Übersetzungen werden von KI erstellt und können Fehler oder Fehlinformationen enthalten. Überprüfe wichtige Finanzinformationen immer unabhängig.",
+  "whyTitle": "Warum sind Krypto-News wichtig?",
+  "whyText": "Die Kryptomärkte bewegen sich schnell. Bitcoin, Ethereum, Stablecoins, Regulierungen, makroökonomische Politik und politische Entscheidungen können Liquidität, Marktstimmung und Investorenverhalten beeinflussen.",
+  "organizeTitle": "Wie Kryptonal Krypto-Informationen organisiert",
+  "organizeText": "Kryptonal kombiniert Krypto-Schlagzeilen, Marktbildung, Blockchain-Guides, Web3-Forschung, Gaming-Crypto-Analysen und risikoorientierte Inhalte, damit Nutzer verstehen, was passiert und warum es wichtig ist.",
+  "adviceTitle": "Bildungsinhalte, keine Finanzberatung",
+  "adviceText": "Die Inhalte von Kryptonal dienen ausschließlich Bildungs- und Informationszwecken. Überprüfe wichtige Finanzinformationen immer unabhängig.",
+  "faqTitle": "FAQ",
+
+  "filters": {
+    "all": "Alle",
+    "crypto": "Krypto",
+    "politics": "Politik",
+    "web3": "Web3",
+    "gaming": "Gaming",
+    "regulation": "Regulierung",
+    "macro": "Makro"
+  },
+
+  "backToBlog": "Zurück zum Blog",
+
+  "educationalTitle": "Nur zu Bildungszwecken",
+
+  "educationalText": "Die Artikel von Kryptonal dienen dem Lernen und der Marktaufklärung. Dies ist keine Finanzberatung. Überprüfe wichtige Finanzinformationen immer unabhängig.",
+
+  "faq": [
+    {
+      "q": "Was ist der Kryptonal Blog?",
+      "a": "Der Kryptonal Blog ist eine Plattform für Krypto-News und Bildung zu Marktupdates, Blockchain-Guides, Web3, NFTs, DeFi und Gaming Crypto."
+    },
+    {
+      "q": "Bietet Kryptonal Finanzberatung an?",
+      "a": "Nein. Kryptonal bietet ausschließlich Bildungsinhalte und keine Finanzberatung."
+    },
+    {
+      "q": "Woher bezieht Kryptonal seine Krypto-News?",
+      "a": "Nachrichten können von vertrauenswürdigen Drittanbieter-APIs gesammelt und zu einem einheitlichen Leseerlebnis zusammengeführt werden."
+    },
+    {
+      "q": "Werden die Artikel von Menschen oder KI geschrieben?",
+      "a": "Einige Bildungsartikel können KI-unterstützt und vor der Veröffentlichung überprüft werden."
+    },
+    {
+      "q": "Wie oft werden die Nachrichten aktualisiert?",
+      "a": "Das Nachrichtensystem kann regelmäßig durch Server-Caching und Revalidierung aktualisiert werden."
+    }
+  ]
 },
   "marketCap": {
   "back": "← Zurück zur Startseite",

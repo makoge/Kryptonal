@@ -6,7 +6,7 @@
 "nav": {
   "marketCap": "Capitalisation",
   "analysis": "Analyse",
-  "blog": "Blog",
+  "blog": "Blog/Actualités",
   "gamingCrypto": "Gaming Crypto",
   "start": "Commencer l’analyse"
 },
@@ -424,6 +424,77 @@
     "title": "Prix Crypto en Direct | Top Coins, Gagnants et Exchanges",
     "description": "Suivez les prix des cryptomonnaies en direct, les 200 principales coins, les plus fortes hausses, les plus fortes baisses, les coins tendance et les principales plateformes d’échange."
   }
+},
+"blog": {
+  "metaTitle": "Kryptonal Blog et Hub d’Actualités Crypto",
+  "metaDescription": "Suivez les actualités crypto, l’éducation blockchain, les opportunités Web3, les tendances NFT, les recherches gaming crypto, les réglementations et les mises à jour macroéconomiques qui influencent les marchés.",
+  "badges": [
+    "Actualités Crypto",
+    "Blockchain",
+    "Web3",
+    "Gaming Crypto",
+    "Analyse du Marché"
+  ],
+  "title": "Kryptonal Blog et Hub d’Actualités Crypto",
+  "subtitle": "Suivez les dernières actualités crypto, les mises à jour politiques influençant les marchés, l’éducation blockchain, les opportunités Web3, les tendances NFT et les recherches gaming crypto dans un espace d’information intelligent.",
+  "readLatest": "Lire les Dernières Actualités",
+  "exploreGuides": "Explorer les Guides Crypto",
+  "searchPlaceholder": "Rechercher des actualités et guides crypto...",
+  "liveNewsLabel": "Actualités en Direct",
+  "latestNewsTitle": "Dernières Actualités du Marché",
+  "noNews": "Aucune actualité trouvée pour ce filtre.",
+  "readMore": "Lire plus",
+  "researchLabel": "Recherche Kryptonal",
+  "guidesTitle": "Guides et Éducation Crypto",
+  "editorialNote": "Certains articles éducatifs peuvent être assistés par IA et révisés avant publication.",
+  "readGuide": "Lire le guide",
+  "footerNote": "Les traductions sont générées par IA et peuvent contenir des erreurs ou des informations incorrectes. Vérifiez toujours indépendamment les informations financières importantes.",
+  "whyTitle": "Pourquoi les Actualités Crypto Sont-elles Importantes ?",
+  "whyText": "Les marchés crypto évoluent rapidement. Bitcoin, Ethereum, les stablecoins, les réglementations, les politiques macroéconomiques et les décisions politiques peuvent affecter la liquidité, le sentiment et le comportement des investisseurs.",
+  "organizeTitle": "Comment Kryptonal Organise les Informations Crypto",
+  "organizeText": "Kryptonal combine les actualités crypto, l’éducation de marché, les guides blockchain, les recherches Web3, les analyses gaming crypto et les contenus axés sur le risque afin d’aider les utilisateurs à comprendre ce qui se passe et pourquoi cela est important.",
+  "adviceTitle": "Contenu Éducatif, Pas de Conseil Financier",
+  "adviceText": "Le contenu de Kryptonal est créé uniquement à des fins éducatives et de sensibilisation au marché. Vérifiez toujours indépendamment les informations financières importantes.",
+  "faqTitle": "FAQ",
+
+  "filters": {
+    "all": "Tous",
+    "crypto": "Crypto",
+    "politics": "Politique",
+    "web3": "Web3",
+    "gaming": "Gaming",
+    "regulation": "Régulation",
+    "macro": "Macro"
+  },
+
+  "backToBlog": "Retour au Blog",
+
+  "educationalTitle": "Contenu à but éducatif uniquement",
+
+  "educationalText": "Les articles de Kryptonal sont créés pour l’apprentissage et la sensibilisation au marché. Ceci n’est pas un conseil financier. Vérifiez toujours indépendamment les informations financières importantes.",
+
+  "faq": [
+    {
+      "q": "Qu’est-ce que le Blog Kryptonal ?",
+      "a": "Le Blog Kryptonal est une plateforme d’actualités et d’éducation crypto couvrant les mises à jour du marché, les guides blockchain, Web3, NFT, DeFi et gaming crypto."
+    },
+    {
+      "q": "Kryptonal fournit-il des conseils financiers ?",
+      "a": "Non. Kryptonal fournit uniquement du contenu éducatif, pas de conseils financiers."
+    },
+    {
+      "q": "D’où Kryptonal obtient-il ses actualités crypto ?",
+      "a": "Les actualités peuvent provenir d’API tierces fiables et être organisées dans une expérience de lecture unifiée."
+    },
+    {
+      "q": "Les articles sont-ils écrits par des humains ou par IA ?",
+      "a": "Certains articles éducatifs peuvent être assistés par IA et révisés avant publication."
+    },
+    {
+      "q": "À quelle fréquence les actualités sont-elles mises à jour ?",
+      "a": "Le système d’actualités peut être mis à jour régulièrement grâce au cache serveur et à la revalidation."
+    }
+  ]
 },
 "marketCap": {
   "back": "← Retour à l’Accueil",

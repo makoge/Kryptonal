@@ -1,191 +1,147 @@
 import type { Metadata } from "next";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import { getDictionary } from "@/lib/getDictionary";
 import Link from "next/link";
+import NewsHub from "@/components/blog/NewsHub";
+import { fetchLatestNews } from "@/lib/news/fetchNews";
+import { getDictionary } from "@/lib/getDictionary";
+import Header from "@/components/layout/Header";
+import { Import } from "lucide-react";
+import Footer from "@/components/layout/Footer";
 
-const siteUrl = "https://kryptonal.com";
 
 type PageProps = {
-  params: Promise<{
-    locale: string;
-  }>;
+  params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
+  const dict = await getDictionary(locale);
+  const t = dict.blog;
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kryptonal.com";
+  const url = `${baseUrl}/${locale}/blog`;
 
   return {
-    title:
-      "Kryptonal Blog | Crypto, Blockchain, Web3 & Gaming Crypto Guides",
-    description:
-      "Learn about cryptocurrency, blockchain technology, Bitcoin cycles, Web3 opportunities, gaming crypto, NFTs, DeFi, and market analysis on Kryptonal.",
+    title: t.metaTitle,
+    description: t.metaDescription,
     alternates: {
-      canonical: `${siteUrl}/${locale}/blog`,
+      canonical: url,
       languages: {
-        en: `${siteUrl}/en/blog`,
-        es: `${siteUrl}/es/blog`,
-        pt: `${siteUrl}/pt/blog`,
-        fr: `${siteUrl}/fr/blog`,
-        de: `${siteUrl}/de/blog`,
-        tr: `${siteUrl}/tr/blog`,
+        en: `${baseUrl}/en/blog`,
+        es: `${baseUrl}/es/blog`,
+        pt: `${baseUrl}/pt/blog`,
+        fr: `${baseUrl}/fr/blog`,
+        de: `${baseUrl}/de/blog`,
+        tr: `${baseUrl}/tr/blog`,
       },
     },
     openGraph: {
-      title:
-        "Kryptonal Blog | Crypto, Blockchain, Web3 & Gaming Crypto Guides",
-      description:
-        "Educational crypto content covering blockchain, Web3, Bitcoin cycles, gaming crypto, and market intelligence.",
-      url: `${siteUrl}/${locale}/blog`,
+      title: t.metaTitle,
+      description: t.metaDescription,
+      url,
       siteName: "Kryptonal",
       type: "website",
-      locale,
-      images: [
-        {
-          url: `${siteUrl}/og/blog.jpg`,
-          width: 1200,
-          height: 630,
-          alt: "Kryptonal Blog",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
-      title:
-        "Kryptonal Blog | Crypto, Blockchain, Web3 & Gaming Crypto Guides",
-      description:
-        "Educational crypto content covering blockchain, Web3, Bitcoin cycles, gaming crypto, and market intelligence.",
-      images: [`${siteUrl}/og/blog.jpg`],
-    },
-    robots: {
-      index: true,
-      follow: true,
+      title: t.metaTitle,
+      description: t.metaDescription,
     },
   };
 }
 
 export default async function BlogPage({ params }: PageProps) {
   const { locale } = await params;
-  const t = getDictionary(locale);
+  const dict = await getDictionary(locale);
+  const t = dict.blog;
+
+  const news = await fetchLatestNews();
 
   return (
     <>
-      <Header locale={locale} t={t} />
-
-      <main className="min-h-screen bg-slate-950 text-white">
-        <section className="relative overflow-hidden px-4 py-24 sm:px-5 md:py-32">
-          <div className="absolute left-1/2 top-10 h-96 w-96 -translate-x-1/2 rounded-full bg-emerald-500/20 blur-3xl" />
-
-          <div className="relative mx-auto max-w-5xl text-center">
-            <div className="mb-6 inline-flex items-center rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm font-semibold text-emerald-400">
-              🚀 Coming Soon
-            </div>
-
-            <p className="mb-5 text-sm font-bold uppercase tracking-[0.3em] text-emerald-400">
-              Kryptonal Blog
-            </p>
-
-            <h1 className="mx-auto max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
-              Learn crypto, blockchain, Web3 and gaming crypto the smart way.
-            </h1>
-
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-              We are building a premium crypto learning hub focused on Bitcoin
-              cycles, blockchain technology, Web3 opportunities, DeFi, NFTs,
-              gaming crypto, and market intelligence explained in simple
-              language.
-            </p>
-
-            <div className="mt-12 grid gap-5 md:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left backdrop-blur-xl">
-                <div className="mb-4 text-3xl">📈</div>
-
-                <h2 className="text-xl font-bold text-white">
-                  Market Cycle Guides
-                </h2>
-
-                <p className="mt-4 leading-7 text-slate-300">
-                  Understand Bitcoin cycles, crypto market cap trends, bull
-                  markets, bear markets, and long-term market behavior.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left backdrop-blur-xl">
-                <div className="mb-4 text-3xl">⛓️</div>
-
-                <h2 className="text-xl font-bold text-white">
-                  Blockchain & Web3
-                </h2>
-
-                <p className="mt-4 leading-7 text-slate-300">
-                  Learn blockchain fundamentals, smart contracts, decentralized
-                  applications, wallets, and the future of Web3.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left backdrop-blur-xl">
-                <div className="mb-4 text-3xl">🎮</div>
-
-                <h2 className="text-xl font-bold text-white">
-                  Gaming Crypto
-                </h2>
-
-                <p className="mt-4 leading-7 text-slate-300">
-                  Discover gaming crypto ecosystems, play-to-earn models, NFT
-                  gaming economies, and metaverse opportunities.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-14 flex flex-col justify-center gap-4 sm:flex-row">
-              <Link
-                href={`/${locale}/market-cap`}
-                className="rounded-xl bg-emerald-400 px-8 py-4 text-center font-bold text-slate-950 transition hover:scale-[1.02]"
+    <Header locale={locale} t={dict} />
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.18),transparent_35%),linear-gradient(to_bottom,#020617,#020617,#0f172a)] px-4 py-10 text-white sm:px-6">
+      <section className="mx-auto max-w-7xl pt-12">
+        <div className="max-w-4xl">
+          <div className="flex flex-wrap gap-2">
+            {t.badges.map((badge: string) => (
+              <span
+                key={badge}
+                className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-bold text-emerald-300"
               >
-                Explore Market Cap
-              </Link>
-
-              <Link
-                href={`/${locale}`}
-                className="rounded-xl border border-white/10 bg-white/5 px-8 py-4 text-center font-bold text-white transition hover:bg-white/10"
-              >
-                Back Home
-              </Link>
-            </div>
-
-            <div className="mx-auto mt-16 max-w-3xl rounded-3xl border border-white/10 bg-slate-900/40 p-6 text-left backdrop-blur-xl">
-              <h3 className="text-lg font-bold text-white">
-                What will be published?
-              </h3>
-
-              <ul className="mt-5 space-y-4 text-slate-300">
-                <li>
-                  • Beginner-friendly crypto and blockchain tutorials
-                </li>
-                <li>
-                  • Bitcoin and crypto cycle analysis
-                </li>
-                <li>
-                  • Web3 opportunities and decentralized ecosystems
-                </li>
-                <li>
-                  • Gaming crypto and NFT ecosystem research
-                </li>
-                <li>
-                  • SEO-rich educational articles for long-term learning
-                </li>
-                <li>
-                  • Market intelligence and downloadable crypto insights
-                </li>
-              </ul>
-            </div>
+                {badge}
+              </span>
+            ))}
           </div>
-        </section>
-      </main>
 
-      <Footer locale={locale} t={t} />
+          <h1 className="mt-8 text-4xl font-black tracking-tight md:text-7xl">
+            {t.title}
+          </h1>
+
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            {t.subtitle}
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#latest-news"
+              className="rounded-full bg-emerald-400 px-6 py-3 text-center font-black text-slate-950 hover:bg-emerald-300"
+            >
+              {t.readLatest}
+            </a>
+
+            <Link
+              href={`/${locale}/blog#guides`}
+              className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-center font-black text-white hover:bg-white/10"
+            >
+              {t.exploreGuides}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-16 max-w-7xl">
+        <NewsHub initialNews={news} locale={locale} t={t} />
+      </section>
+
+      <section className="mx-auto mt-24 max-w-5xl rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur md:p-10">
+        <h2 className="text-3xl font-black md:text-5xl">{t.whyTitle}</h2>
+
+        <div className="mt-6 space-y-5 text-slate-300">
+          <p>{t.whyText}</p>
+
+          <h3 className="text-2xl font-black text-white">{t.organizeTitle}</h3>
+          <p>{t.organizeText}</p>
+
+          <h3 className="text-2xl font-black text-white">{t.adviceTitle}</h3>
+          <p>{t.adviceText}</p>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-16 max-w-5xl">
+        <h2 className="text-3xl font-black md:text-5xl">{t.faqTitle}</h2>
+
+        <div className="mt-8 space-y-4">
+          {t.faq.map((item: any) => (
+            <details
+              key={item.q}
+              className="rounded-2xl border border-white/10 bg-white/[0.04] p-5"
+            >
+              <summary className="cursor-pointer font-bold text-white">
+                {item.q}
+              </summary>
+              <p className="mt-3 text-sm leading-6 text-slate-300">
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <footer className="mx-auto mt-20 max-w-7xl border-t border-white/10 py-8 text-sm text-slate-400">
+        {t.footerNote}
+      </footer>
+    </main>
+    <Footer locale={locale} t={dict} />
     </>
   );
 }
