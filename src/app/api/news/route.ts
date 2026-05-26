@@ -30,6 +30,7 @@ export async function GET(req: Request) {
   return NextResponse.json({
     ok: true,
     count: filtered.length,
+    usingFallback: filtered.some((item) => item.source === "Kryptonal"),
     news: filtered.slice(0, limit),
   });
 }

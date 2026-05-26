@@ -20,11 +20,10 @@ function getTotalFromChartPoint(point: any) {
 }
 
 function getFlowSignal(change7dPct: number) {
-  if (change7dPct >= 1) return "Liquidity entering";
-  if (change7dPct <= -1) return "Liquidity leaving";
-  return "Liquidity neutral";
+  if (change7dPct >= 1) return "entering";
+  if (change7dPct <= -1) return "leaving";
+  return "neutral";
 }
-
 export async function GET() {
   try {
     const [stableRes, chartRes] = await Promise.all([

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect,  useState } from "react";
 
 type Chain = {
   chain: string;
@@ -120,9 +120,7 @@ export default function StablecoinFlows({ t }: Props) {
     return () => window.clearInterval(interval);
   }, []);
 
-  const totalStablecoins = useMemo(() => {
-    return data?.chains?.reduce((sum, item) => sum + item.value, 0) || 0;
-  }, [data]);
+ const totalStablecoins = data?.totalStablecoins || 0;
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-14 sm:px-5 md:py-20">
@@ -153,7 +151,7 @@ export default function StablecoinFlows({ t }: Props) {
               {data ? formatBillions(totalStablecoins) : t.common.loading}
             </p>
 
-            <MiniStableGraph chart={data?.chart || []} growing={!!data?.isGrowing} />
+           <MiniStableGraph chart={data?.chart || []} growing={!!data?.isGrowing} />
 
 <p
   className={`mt-3 text-sm font-black ${
