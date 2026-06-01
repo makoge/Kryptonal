@@ -123,7 +123,7 @@ export default function StablecoinFlows({ t }: Props) {
  const totalStablecoins = data?.totalStablecoins || 0;
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-5 md:py-20">
+    <section id="stablecoin-liquidity" className="mx-auto max-w-7xl px-4 py-14 sm:px-5 md:py-20">
       <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-4 shadow-2xl backdrop-blur sm:p-6">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>

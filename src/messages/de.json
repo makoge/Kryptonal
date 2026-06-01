@@ -385,7 +385,135 @@
     "price": "Preis",
     "action": "Aktion"
   },
-  "disclaimer": "Deine Watchlist wird lokal im Browser gespeichert. Das Löschen von Browserdaten kann sie entfernen. Preise dienen nur Bildungszwecken und sind keine Finanzberatung."
+  "disclaimer": "Deine Watchlist wird lokal im Browser gespeichert. Das Löschen von Browserdaten kann sie entfernen. Preise dienen nur Bildungszwecken und sind keine Finanzberatung."},
+"directory": {
+  "metaTitle": "Kryptonal Krypto-Tools | Marktanalyse- und Recherche-Tools",
+  "metaDescription": "Entdecke die Kryptonal Krypto-Tools für Marktwertanalyse, Bitcoin-Zyklen, Stablecoin-Liquidität, Blockchain-Stärke, Sektorrotation, Gaming Crypto und Risikosignale.",
+  "heroTitle": "Kryptonal Krypto-Tools",
+  "heroText": "Entdecke Marktintelligenz-Tools, die dir helfen, Kryptozyklen, Liquidität, Sektoren, Blockchains, Gaming-Narrative, Risikobedingungen und langfristige Markttrends zu analysieren.",
+  "explore": "Tools Entdecken",
+  "badges": [
+    "Live-Daten",
+    "Marktanalyse",
+    "Recherche-Tools",
+    "Krypto-Intelligenz"
+  ],
+  "categories": {
+    "all": "Alle",
+    "market": "Markt",
+    "bitcoin": "Bitcoin",
+    "defi": "DeFi",
+    "chains": "Blockchains",
+    "gaming": "Gaming",
+    "risk": "Risiko",
+    "education": "Bildung"
+  },
+  "status": {
+    "live": "Live",
+    "beta": "Beta",
+    "coming-soon": "Demnächst"
+  },
+  "cta": {
+    "live": "Tool Verwenden",
+    "beta": "Tool Anzeigen",
+    "coming-soon": "Demnächst"
+  },
+  "uses": "Nutzungen",
+  "tools": {
+    "marketCap": {
+      "name": "Krypto-Marktkapitalisierungsanalyse",
+      "description": "Vergleiche die gesamte Krypto-Marktkapitalisierung über verschiedene Jahre und Marktzyklen hinweg.",
+      "benefit": "Verstehe, wo sich der Markt im Vergleich zu früheren Zyklusphasen befindet."
+    },
+    "analysisEngine": {
+      "name": "Analyse-Engine",
+      "description": "Erstelle leicht verständliche Krypto-Marktzusammenfassungen aus Live-Marktsignalen.",
+      "benefit": "Verwandle komplexe Signale in einfache Markterklärungen."
+    },
+    "bitcoinCycle": {
+      "name": "Bitcoin-Zyklus-Tracker",
+      "description": "Analysiere Bitcoin-Zyklen, historische Hochs, Rückgänge und Marktphasen.",
+      "benefit": "Vergleiche das Bitcoin-Preisverhalten zwischen großen Marktzyklen."
+    },
+    "stablecoin": {
+      "name": "Stablecoin-Liquiditäts-Tracker",
+      "description": "Verfolge die Stablecoin-Liquidität und verstehe, ob Kapital in den Kryptomarkt hinein- oder herausfließt.",
+      "benefit": "Beobachte eines der wichtigsten Liquiditätssignale im Kryptomarkt."
+    },
+    "chainStrength": {
+      "name": "Blockchain-Stärke-Tracker",
+      "description": "Vergleiche Blockchain-Ökosysteme nach TVL, Wachstum, Liquidität und Momentum.",
+      "benefit": "Erkenne, welche Ökosysteme an Stärke gewinnen."
+    },
+    "sectorRotation": {
+      "name": "Sektor-Rotations-Heatmap",
+      "description": "Entdecke, welche Krypto-Sektoren Momentum gewinnen oder verlieren.",
+      "benefit": "Erkenne, wohin sich die Marktaufmerksamkeit bewegen könnte."
+    },
+    "gamingPulse": {
+      "name": "Gaming Crypto Pulse",
+      "description": "Verfolge Web3-Gaming-Narrative, Gaming-Token und GameFi-Marktentwicklungen.",
+      "benefit": "Behalte Gaming-Crypto-Trends an einem Ort im Blick."
+    },
+    "riskSignal": {
+      "name": "Risikosignal-Dashboard",
+      "description": "Verstehe das Marktrisiko mithilfe von Trend-, Liquiditäts-, Dominanz- und Volatilitätssignalen.",
+      "benefit": "Vermeide es, den Markt nur anhand des Preises zu analysieren."
+    }
+  },
+  "whyTitle": "Warum Kryptonal-Tools verwenden?",
+  "whyText": "Kryptonal-Tools vereinfachen komplexe Kryptodaten, damit Nutzer Marktzyklen vergleichen, Liquidität verstehen, Analysen in Inhalte umwandeln und Marktbedingungen mit mehr Vertrauen erforschen können. Kein Tool sollte als Finanzberatung angesehen werden.",
+  "seo": [
+    {
+      "title": "Was sind Krypto-Analyse-Tools?",
+      "text": "Krypto-Analyse-Tools helfen Nutzern dabei, Marktdaten zu lesen, Trends zu vergleichen und Signale wie Liquidität, Dominanz, Volatilität, TVL und Sektor-Momentum zu verstehen."
+    },
+    {
+      "title": "Warum Krypto-Marktools wichtig sind",
+      "text": "Der Kryptomarkt bewegt sich in Zyklen. Tools helfen Nutzern, Vermutungen zu vermeiden, indem sie verstreute Daten in klarere Einblicke verwandeln."
+    },
+    {
+      "title": "Wie Kryptonal-Tools helfen, Marktzyklen zu verstehen",
+      "text": "Kryptonal kombiniert Marktwertanalyse, Bitcoin-Zyklus-Tracking, Liquiditäts-Tools, Blockchain-Stärke und Sektorrotation, um Nutzern zu helfen zu verstehen, in welcher Phase sich der Markt befinden könnte."
+    },
+    {
+      "title": "Wie man Krypto-Tools sicher verwendet",
+      "text": "Nutze Tools zur Recherche und nicht für blinde Entscheidungen. Vergleiche immer mehrere Signale und denke daran, dass Kryptomärkte riskant sind."
+    }
+  ],
+  "faqTitle": "Häufig Gestellte Fragen",
+  "faqs": [
+    {
+      "q": "Was sind Kryptonal Krypto-Tools?",
+      "a": "Es sind Recherche-Tools zur Analyse von Krypto-Marktzyklen, Liquidität, Blockchains, Sektoren, Gaming-Narrativen und Risikosignalen."
+    },
+    {
+      "q": "Sind die Tools kostenlos nutzbar?",
+      "a": "Die meisten Kryptonal-Tools sind kostenlos oder leicht zugänglich gestaltet, während die Plattform wächst."
+    },
+    {
+      "q": "Bieten die Tools Finanzberatung?",
+      "a": "Nein. Kryptonal-Tools dienen ausschließlich Bildungs- und Forschungszwecken."
+    },
+    {
+      "q": "Wie werden die Nutzungszahlen der Tools gezählt?",
+      "a": "Klicks sollten über eine sichere Backend-API gezählt werden und nicht nur über den Client-Browser."
+    },
+    {
+      "q": "Kann ich Kryptonal-Analysen für Content-Erstellung verwenden?",
+      "a": "Ja. Die Tools können Content-Erstellern helfen, Marktdaten in einfachere Bildungsinhalte umzuwandeln."
+    },
+    {
+      "q": "Sind die Tools übersetzt?",
+      "a": "Ja. Die Tools-Seite ist für Englisch, Spanisch, Portugiesisch, Französisch, Deutsch und Türkisch ausgelegt."
+    },
+    {
+      "q": "Woher stammen die Daten?",
+      "a": "Kryptonal kann vertrauenswürdige Krypto-Daten-APIs und serverseitige Datenrouten verwenden, um API-Schlüssel zu schützen."
+    }
+  ],
+  "finalTitle": "Beginne jetzt mit der Erkundung von Krypto-Marktintelligenz.",
+  "finalCta": "Market-Cap-Tool Verwenden"
 }
   },
   "cryptoPrices": {
@@ -493,6 +621,250 @@
     {
       "q": "Wie oft werden die Nachrichten aktualisiert?",
       "a": "Das Nachrichtensystem kann regelmäßig durch Server-Caching und Revalidierung aktualisiert werden."
+    }
+  ]
+},
+"gaming": {
+  "heroBadge": "GameFi • NFT Gaming • Web3-Spiele",
+  "heroTitle": "Entdecke die Zukunft von Gaming Crypto",
+  "heroSubtitle": "Verfolge Web3-Gaming-Trends, Gaming-Token, NFT-Ökonomien, Blockchain-Spiele, GameFi-Ökosysteme und neue Gaming-Chancen.",
+  "exploreTokens": "Gaming-Token Entdecken",
+  "exploreGames": "Web3-Spiele Entdecken",
+  "liveGamingMovers": "Live Gaming Bewegungen",
+"gamingCoinsToday": "Gaming Coins Heute",
+  "marketPulse": "Gaming Markt-Puls",
+  "marketCap": "Gaming-Sektor Marktkapitalisierung",
+  "topGainer": "Top-Gewinner",
+  "change24h": "24h Veränderung",
+  "hotNarrative": "Trend-Narrativ",
+  "dominantChain": "Dominante Blockchain",
+
+  "trendingTokens": "Trendende Gaming-Token",
+  "price": "Preis",
+  "marketCapShort": "MCap",
+
+  "featuredGames": "Empfohlene Web3-Spiele",
+  "dailyPulse": "Täglicher Gaming-Puls",
+  "bullishWatch": "Bullischer Ausblick",
+  "dailyPulseText": "Das Volumen des Gaming-Sektors erholt sich, während AI-Gaming- und Telegram-Ökosysteme an Dynamik gewinnen. Immutable bleibt eine dominante Gaming-Blockchain, während sich die NFT-Aktivität langsam erholt.",
+  "riskMedium": "Risiko: Mittel",
+  "opportunityHigh": "Chance: Hoch",
+  "sentimentImproving": "Stimmung: Verbessert sich",
+
+  "faq": "Gaming Crypto FAQ",
+  "finalTitle": "Entdecke die nächste Generation des Gamings.",
+  "footerNote": "Übersetzungen werden durch KI generiert und können Fehler enthalten. Finanzinformationen sollten immer unabhängig überprüft werden.",
+
+  "tokens": [
+    {
+      "name": "Immutable",
+      "symbol": "IMX",
+      "price": "$1.86",
+      "change": "+8.4%",
+      "marketCap": "$3.1B",
+      "chain": "Immutable",
+      "category": "Gaming-Infrastruktur",
+      "badge": "Trend"
+    }
+  ],
+
+  "games": [
+    {
+      "name": "Off The Grid",
+      "genre": "Battle Royale",
+      "chain": "Avalanche",
+      "token": "GUN",
+      "activity": "Hoch",
+      "status": "Kostenlos spielbar",
+      "description": "Cinematischer Shooter mit Web3-Eigentum."
+    }
+  ],
+   "gamesToExplore": "Spiele zum Entdecken",
+"howToStart": "So startest du",
+"advantages": "Vorteile",
+"risks": "Risiken",
+
+"ecosystems": {
+  "ronin": {
+    "category": "Gaming-Blockchain",
+    "description": "Ronin ist eine auf Gaming fokussierte Blockchain, bekannt durch Axie Infinity, Pixels, Apeiron und andere Play-to-Earn-Spiele.",
+
+    "games": [
+      "Pixels",
+      "Axie Infinity",
+      "Apeiron",
+      "The Machines Arena"
+    ],
+
+    "howToStart": [
+      "Erstelle eine Ronin Wallet",
+      "Füge RON oder unterstützte Assets hinzu",
+      "Verbinde deine Wallet mit einem Ronin-Spiel"
+    ],
+
+    "advantages": [
+      "Starke Gaming-Community",
+      "Günstige Transaktionen",
+      "Beliebte Web3-Spiele bereits live"
+    ],
+
+    "risks": [
+      "Spielbelohnungen können sich ändern",
+      "Der Tokenpreis kann volatil sein",
+      "Manche Spiele benötigen Zeit oder Kapital"
+    ]
+  },
+
+  "immutable": {
+    "category": "Gaming-Infrastruktur",
+    "description": "Immutable ist ein Web3-Gaming-Ökosystem mit Fokus auf NFT-Gaming, skalierbare Spielökonomien und digitalen Besitz.",
+
+    "games": [
+      "Illuvium",
+      "Gods Unchained",
+      "Guild of Guardians",
+      "Ember Sword"
+    ],
+
+    "howToStart": [
+      "Erstelle eine kompatible Wallet",
+      "Wähle ein Spiel aus dem Immutable-Ökosystem",
+      "Verbinde deine Wallet und erstelle ein Profil"
+    ],
+
+    "advantages": [
+      "Großes Web3-Gaming-Ökosystem",
+      "Starke NFT-Gaming-Infrastruktur",
+      "Viele kommende Spiele"
+    ],
+
+    "risks": [
+      "Einige Spiele befinden sich noch in früher Entwicklung",
+      "NFT-Nachfrage kann schwanken",
+      "Gaming-Adoption kann Zeit benötigen"
+    ]
+  },
+
+  "floki": {
+    "category": "Metaverse-Spiel",
+    "description": "Das Gaming-Ökosystem von FLOKI konzentriert sich auf Valhalla, ein metaverseähnliches Blockchain-Spiel, das mit dem FLOKI-Token verbunden ist.",
+
+    "games": [
+      "Valhalla"
+    ],
+
+    "howToStart": [
+      "Informiere dich über das FLOKI-Ökosystem",
+      "Erstelle eine kompatible Wallet",
+      "Erkunde Valhalla und dessen Wirtschaft"
+    ],
+
+    "advantages": [
+      "Starke Community-Bekanntheit",
+      "Metaverse-Positionierung",
+      "Bekannter Gaming-Token"
+    ],
+
+    "risks": [
+      "Hohe Volatilität",
+      "Hype-getriebene Bewegungen",
+      "Risiko geringer Spieladoption"
+    ]
+  },
+
+  "gala": {
+    "category": "Gaming-Plattform",
+    "description": "Gala Games ist ein Blockchain-Gaming-Ökosystem mit mehreren Spielen, digitalen Assets und unterhaltungsorientierten Produkten.",
+
+    "games": [
+      "Town Star",
+      "Mirandus",
+      "Spider Tanks",
+      "Last Expedition"
+    ],
+
+    "howToStart": [
+      "Erstelle ein Gala-Konto",
+      "Entdecke Spiele im Gala-Ökosystem",
+      "Verbinde deine Wallet"
+    ],
+
+    "advantages": [
+      "Mehrere Spiele in einem Ökosystem",
+      "Bekannte Gaming-Marke",
+      "Starker Fokus auf Unterhaltung"
+    ],
+
+    "risks": [
+      "Die Qualität der Spiele variiert",
+      "Der Nutzen des Tokens hängt von der Adoption ab",
+      "Assets können an Wert verlieren"
+    ]
+  },
+
+  "beam": {
+    "category": "Gaming-Netzwerk",
+    "description": "Beam ist ein Blockchain-Ökosystem mit Fokus auf Web3-Gaming und digitale Gaming-Ökonomien.",
+
+    "games": [
+      "Trial Xtreme",
+      "Walker World",
+      "Hash Rush"
+    ],
+
+    "howToStart": [
+      "Informiere dich über Beam-Spiele",
+      "Erstelle eine unterstützte Wallet",
+      "Entdecke unterstützte Marktplätze"
+    ],
+
+    "advantages": [
+      "Gaming-native Infrastruktur",
+      "Fokus auf Web3-Spiele",
+      "Wachsendes Ökosystem"
+    ],
+
+    "risks": [
+      "Ökosystem in früher Entwicklungsphase",
+      "Adoption ist nicht garantiert",
+      "Hohe Marktvolatilität"
+    ]
+  }
+},
+
+"risk": "Risiko",
+"opportunity": "Chance",
+"sentiment": "Stimmung",
+
+"levels": {
+  "low": "Niedrig",
+  "medium": "Mittel",
+  "high": "Hoch"
+},
+
+"sentiments": {
+  "bullish": "Bullisch",
+  "improving": "Verbessert sich",
+  "neutral": "Neutral",
+  "cooling": "Abkühlend",
+  "bearish": "Bärisch"
+},
+  "faqItems": [
+    {
+      "question": "Was ist Gaming Crypto?",
+      "answer": "Gaming Crypto bezieht sich auf blockchainbasierte Gaming-Ökonomien, Token, NFTs und Web3-Spiele."
+    },
+    {
+      "question": "Was ist GameFi?",
+      "answer": "GameFi kombiniert Gaming mit Krypto-Belohnungen, digitalem Eigentum, Token und Blockchain-Ökonomien."
+    },
+    {
+      "question": "Sind Gaming-Token riskant?",
+      "answer": "Ja. Gaming-Token können sehr volatil sein und hängen von Adoption, Liquidität, Spielqualität und Marktstimmung ab."
+    },
+    {
+      "question": "Kann man mit Krypto-Spielen Geld verdienen?",
+      "answer": "Einige Krypto-Spiele bieten Belohnungen, aber Gewinne sind nicht garantiert und Token-Preise können schnell fallen."
     }
   ]
 },

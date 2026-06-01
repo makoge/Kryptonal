@@ -303,7 +303,7 @@ export default async function MarketCapPage({ params }: PageProps) {
                   </Link>
 
                   <Link
-                    href="#altcoinseason index"
+                    href="#altcoin-index"
                     className="rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4 text-center font-bold text-white backdrop-blur transition hover:border-cyan-300/40 hover:bg-white/[0.08]"
                   >
                     {t.marketCap.secondaryCta}
@@ -493,7 +493,7 @@ export default async function MarketCapPage({ params }: PageProps) {
         ) : null}
 
         <section
-          id="historical-data"
+          id="altcoin-index"
           className="relative px-4 py-14 sm:px-5 sm:py-20"
         >
           <div className="mx-auto max-w-7xl">

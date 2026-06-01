@@ -93,9 +93,9 @@ export default function ChainStrengthTracker({ t }: any) {
   }, []);
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-5 md:py-20">
+    <section id="chain-strength"  className="mx-auto max-w-7xl px-4 py-14 sm:px-5 md:py-20">
       <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-4 shadow-2xl backdrop-blur sm:p-6">
-        <div>
+        <div >
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-emerald-400 sm:text-sm">
             {t.chainStrength.badge}
           </p>

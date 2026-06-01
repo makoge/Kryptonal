@@ -105,7 +105,8 @@ export default function CycleComparison({ data }: any) {
   });
 
   return (
-    <section className="px-4 py-20 sm:px-6">
+    <section id="cycle-comparison" className="px-4 py-20 sm:px-6">
+      
       <div className="mx-auto max-w-7xl">
         <h2 className="text-3xl font-black md:text-5xl">{data.title}</h2>
         <p className="mt-5 max-w-3xl leading-8 text-slate-300">{data.text}</p>

@@ -9,6 +9,7 @@ const pages = [
   "/crypto-prices",
   "/market-cap",
   "/analysis",
+  "/tools",
   "/blog",
   "/gaming-crypto",
 ] as const;
@@ -21,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency:
         page === ""
           ? ("weekly" as const)
-          : page === "/crypto-prices"
+          : page === "/crypto-prices" || page === "/tools"
           ? ("daily" as const)
           : ("monthly" as const),
       priority:
@@ -29,6 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? 1
           : page === "/crypto-prices"
           ? 0.95
+          : page === "/tools"
+          ? 0.9
           : 0.8,
     }))
   );

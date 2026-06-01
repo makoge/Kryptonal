@@ -386,7 +386,136 @@
       "action": "İşlem"
     },
     "disclaimer": "Watchlist’in tarayıcında yerel olarak saklanır. Tarayıcı verilerini temizlemek watchlist’i silebilir. Fiyatlar yalnızca eğitim amaçlıdır ve finansal tavsiye değildir."
-  }
+  },
+  "directory": {
+  "metaTitle": "Kryptonal Kripto Araçları | Piyasa Analizi ve Araştırma Araçları",
+  "metaDescription": "Piyasa değeri analizi, Bitcoin döngüleri, stablecoin likiditesi, zincir gücü, sektör rotasyonu, gaming crypto ve risk sinyalleri için Kryptonal kripto araçlarını keşfedin.",
+  "heroTitle": "Kryptonal Kripto Araçları",
+  "heroText": "Kripto döngülerini, likiditeyi, sektörleri, zincirleri, gaming anlatılarını, risk koşullarını ve uzun vadeli piyasa trendlerini analiz etmenize yardımcı olmak için oluşturulan piyasa zekası araçlarını keşfedin.",
+  "explore": "Araçları Keşfet",
+  "badges": [
+    "Canlı Veri",
+    "Piyasa Analizi",
+    "Araştırma Araçları",
+    "Kripto Zekası"
+  ],
+  "categories": {
+    "all": "Tümü",
+    "market": "Piyasa",
+    "bitcoin": "Bitcoin",
+    "defi": "DeFi",
+    "chains": "Zincirler",
+    "gaming": "Gaming",
+    "risk": "Risk",
+    "education": "Eğitim"
+  },
+  "status": {
+    "live": "Canlı",
+    "beta": "Beta",
+    "coming-soon": "Yakında"
+  },
+  "cta": {
+    "live": "Aracı Kullan",
+    "beta": "Aracı Gör",
+    "coming-soon": "Yakında"
+  },
+  "uses": "kullanım",
+  "tools": {
+    "marketCap": {
+      "name": "Kripto Piyasa Değeri Analizi",
+      "description": "Toplam kripto piyasa değerini farklı yıllar ve piyasa döngüleri arasında karşılaştırın.",
+      "benefit": "Piyasanın önceki döngü aşamalarına göre nerede olduğunu anlayın."
+    },
+    "analysisEngine": {
+      "name": "Analiz Motoru",
+      "description": "Canlı piyasa sinyallerinden sade ve anlaşılır kripto piyasa özetleri oluşturun.",
+      "benefit": "Karmaşık sinyalleri basit piyasa açıklamalarına dönüştürün."
+    },
+    "bitcoinCycle": {
+      "name": "Bitcoin Döngü Takibi",
+      "description": "Bitcoin döngü davranışını, tarihi zirveleri, düşüşleri ve piyasa aşamalarını inceleyin.",
+      "benefit": "Bitcoin fiyat davranışını büyük döngüler arasında karşılaştırın."
+    },
+    "stablecoin": {
+      "name": "Stablecoin Likidite Takibi",
+      "description": "Stablecoin likiditesini takip edin ve sermayenin kriptoya girip girmediğini anlayın.",
+      "benefit": "Kriptodaki en güçlü likidite ipuçlarından birini takip edin."
+    },
+    "chainStrength": {
+      "name": "Zincir Gücü Takibi",
+      "description": "Blockchain ekosistemlerini TVL, büyüme, likidite ve momentum açısından karşılaştırın.",
+      "benefit": "Hangi ekosistemlerin güç kazandığını görün."
+    },
+    "sectorRotation": {
+      "name": "Sektör Rotasyon Haritası",
+      "description": "Hangi kripto sektörlerinin momentum kazandığını veya kaybettiğini keşfedin.",
+      "benefit": "Piyasa ilgisinin nereye kayabileceğini fark edin."
+    },
+    "gamingPulse": {
+      "name": "Gaming Crypto Pulse",
+      "description": "Web3 gaming anlatılarını, gaming tokenlerini ve GameFi piyasa aktivitelerini takip edin.",
+      "benefit": "Gaming crypto trendlerini tek yerde takip edin."
+    },
+    "riskSignal": {
+      "name": "Risk Sinyal Paneli",
+      "description": "Trend, likidite, dominans ve volatilite sinyalleriyle piyasa riskini anlayın.",
+      "benefit": "Piyasayı sadece fiyata göre okumaktan kaçının."
+    }
+  },
+  "whyTitle": "Neden Kryptonal araçlarını kullanmalısınız?",
+  "whyText": "Kryptonal araçları karmaşık kripto verilerini sadeleştirir, böylece kullanıcılar piyasa döngülerini karşılaştırabilir, likiditeyi anlayabilir, analizleri içeriğe dönüştürebilir ve piyasa koşullarını daha güvenli şekilde araştırabilir. Hiçbir araç finansal tavsiye olarak görülmemelidir.",
+  "seo": [
+    {
+      "title": "Kripto analiz araçları nedir?",
+      "text": "Kripto analiz araçları kullanıcıların piyasa verilerini okumasına, trendleri karşılaştırmasına ve likidite, dominans, volatilite, TVL ve sektör momentumu gibi sinyalleri anlamasına yardımcı olur."
+    },
+    {
+      "title": "Kripto piyasa araçları neden önemlidir?",
+      "text": "Kripto piyasaları döngüler halinde hareket eder. Araçlar, dağınık verileri daha net içgörülere dönüştürerek kullanıcıların tahmin yürütmesini azaltır."
+    },
+    {
+      "title": "Kryptonal araçları piyasa döngülerini anlamanıza nasıl yardımcı olur?",
+      "text": "Kryptonal, piyasa değeri analizi, Bitcoin döngü takibi, likidite araçları, zincir gücü ve sektör rotasyonunu birleştirerek kullanıcıların piyasanın hangi aşamada olabileceğini anlamasına yardımcı olur."
+    },
+    {
+      "title": "Kripto araçları güvenli şekilde nasıl kullanılır?",
+      "text": "Araçları körü körüne karar vermek için değil, araştırma amacıyla kullanın. Her zaman birden fazla sinyali karşılaştırın ve kripto piyasalarının riskli olduğunu unutmayın."
+    }
+  ],
+  "faqTitle": "Sık Sorulan Sorular",
+  "faqs": [
+    {
+      "q": "Kryptonal kripto araçları nedir?",
+      "a": "Bunlar kripto piyasa döngülerini, likiditeyi, zincirleri, sektörleri, gaming anlatılarını ve risk sinyallerini analiz etmek için kullanılan araştırma araçlarıdır."
+    },
+    {
+      "q": "Araçlar ücretsiz mi?",
+      "a": "Kryptonal araçlarının çoğu platform büyürken ücretsiz veya erişilebilir olacak şekilde tasarlanmıştır."
+    },
+    {
+      "q": "Araçlar finansal tavsiye verir mi?",
+      "a": "Hayır. Kryptonal araçları yalnızca eğitim ve araştırma amaçlıdır."
+    },
+    {
+      "q": "Araç kullanım sayıları nasıl hesaplanır?",
+      "a": "Tıklamalar yalnızca istemci tarayıcısından değil, güvenli bir backend API üzerinden sayılmalıdır."
+    },
+    {
+      "q": "Kryptonal analizlerini içerik üretimi için kullanabilir miyim?",
+      "a": "Evet. Araçlar, içerik üreticilerinin piyasa verilerini daha sade eğitim içeriklerine dönüştürmesine yardımcı olabilir."
+    },
+    {
+      "q": "Araçlar çevrilmiş durumda mı?",
+      "a": "Evet. Araçlar sayfası İngilizce, İspanyolca, Portekizce, Fransızca, Almanca ve Türkçe için tasarlanmıştır."
+    },
+    {
+      "q": "Veriler nereden geliyor?",
+      "a": "Kryptonal, API anahtarlarını korumak için güvenilir kripto veri API’leri ve sunucu taraflı veri yolları kullanabilir."
+    }
+  ],
+  "finalTitle": "Kripto piyasa zekasını keşfetmeye başlayın.",
+  "finalCta": "Piyasa Değeri Aracını Kullan"
+}
 },
 "cryptoPrices": {
   "badge": "Canlı Kripto Piyasası",
@@ -493,6 +622,250 @@
     {
       "q": "Haberler ne sıklıkla güncelleniyor?",
       "a": "Haber API sistemi sunucu tarafı önbellekleme ve yeniden doğrulama ile düzenli olarak güncellenebilir."
+    }
+  ]
+},
+"gaming": {
+  "heroBadge": "GameFi • NFT Oyunları • Web3 Oyunları",
+  "heroTitle": "Gaming Crypto’nun Geleceğini Keşfet",
+  "heroSubtitle": "Web3 oyun trendlerini, gaming tokenlerini, NFT ekonomilerini, blockchain oyunlarını, GameFi ekosistemlerini ve yükselen fırsatları takip et.",
+  "exploreTokens": "Gaming Tokenlerini Keşfet",
+  "exploreGames": "Web3 Oyunlarını Keşfet",
+   "liveGamingMovers": "Canlı Gaming Hareketleri",
+"gamingCoinsToday": "Bugünün Gaming Coinleri",
+  "marketPulse": "Gaming Piyasa Nabzı",
+  "marketCap": "Gaming Sektörü Piyasa Değeri",
+  "topGainer": "En Çok Yükselen",
+  "change24h": "24s Değişim",
+  "hotNarrative": "Sıcak Anlatı",
+  "dominantChain": "Baskın Blockchain",
+
+  "trendingTokens": "Trend Gaming Tokenleri",
+  "price": "Fiyat",
+  "marketCapShort": "Piyasa Değeri",
+
+  "featuredGames": "Öne Çıkan Web3 Oyunları",
+  "dailyPulse": "Günlük Gaming Nabzı",
+  "bullishWatch": "Yükseliş İzlemesi",
+  "dailyPulseText": "Gaming sektöründe hacim toparlanırken AI gaming ve Telegram ekosistemleri ivme kazanıyor. Immutable güçlü bir gaming blockchain’i olmaya devam ederken NFT aktivitesi yavaşça toparlanıyor.",
+  "riskMedium": "Risk: Orta",
+  "opportunityHigh": "Fırsat: Yüksek",
+  "sentimentImproving": "Duyarlılık: İyileşiyor",
+
+  "faq": "Gaming Crypto SSS",
+  "finalTitle": "Yeni nesil oyun dünyasını keşfet.",
+  "footerNote": "Çeviriler AI tarafından oluşturulmuştur ve hatalar içerebilir. Finansal bilgileri her zaman bağımsız olarak doğrulayın.",
+
+  "tokens": [
+    {
+      "name": "Immutable",
+      "symbol": "IMX",
+      "price": "$1.86",
+      "change": "+8.4%",
+      "marketCap": "$3.1B",
+      "chain": "Immutable",
+      "category": "Gaming Altyapısı",
+      "badge": "Sıcak"
+    }
+  ],
+
+  "games": [
+    {
+      "name": "Off The Grid",
+      "genre": "Battle Royale",
+      "chain": "Avalanche",
+      "token": "GUN",
+      "activity": "Yüksek",
+      "status": "Oynaması ücretsiz",
+      "description": "Web3 sahipliği sunan sinematik bir nişancı oyunu."
+    }
+  ],
+  "gamesToExplore": "Keşfedilecek oyunlar",
+"howToStart": "Nasıl başlanır",
+"advantages": "Avantajlar",
+"risks": "Riskler",
+
+"ecosystems": {
+  "ronin": {
+    "category": "Gaming Blockchain",
+    "description": "Ronin, Axie Infinity, Pixels, Apeiron ve diğer play-to-earn tarzı oyunlarla tanınan oyun odaklı bir blockchain ağıdır.",
+
+    "games": [
+      "Pixels",
+      "Axie Infinity",
+      "Apeiron",
+      "The Machines Arena"
+    ],
+
+    "howToStart": [
+      "Bir Ronin Wallet oluştur",
+      "Cüzdanını RON veya desteklenen varlıklarla fonla",
+      "Cüzdanını bir Ronin oyununa bağla"
+    ],
+
+    "advantages": [
+      "Güçlü oyun topluluğu",
+      "Düşük maliyetli işlemler",
+      "Popüler Web3 oyunları aktif durumda"
+    ],
+
+    "risks": [
+      "Oyun ödülleri değişebilir",
+      "Token fiyatı volatil olabilir",
+      "Bazı oyunlar zaman veya sermaye gerektirebilir"
+    ]
+  },
+
+  "immutable": {
+    "category": "Gaming Altyapısı",
+    "description": "Immutable, NFT oyunları, ölçeklenebilir oyun ekonomileri ve dijital sahiplik üzerine kurulu bir Web3 gaming ekosistemidir.",
+
+    "games": [
+      "Illuvium",
+      "Gods Unchained",
+      "Guild of Guardians",
+      "Ember Sword"
+    ],
+
+    "howToStart": [
+      "Uyumlu bir cüzdan oluştur",
+      "Immutable ekosisteminden bir oyun seç",
+      "Cüzdanını bağlayıp profil oluştur"
+    ],
+
+    "advantages": [
+      "Büyük Web3 gaming ekosistemi",
+      "Güçlü NFT gaming altyapısı",
+      "Birçok yeni oyun geliyor"
+    ],
+
+    "risks": [
+      "Bazı oyunlar hâlâ erken aşamada",
+      "NFT talebi değişken olabilir",
+      "Gaming benimsenmesi zaman alabilir"
+    ]
+  },
+
+  "floki": {
+    "category": "Metaverse Oyunu",
+    "description": "FLOKI gaming ekosistemi, FLOKI tokenine bağlı metaverse tarzı blockchain oyunu Valhalla etrafında şekillenmektedir.",
+
+    "games": [
+      "Valhalla"
+    ],
+
+    "howToStart": [
+      "FLOKI ekosistemini araştır",
+      "Uyumlu bir cüzdan oluştur",
+      "Valhalla ve oyun ekonomisini keşfet"
+    ],
+
+    "advantages": [
+      "Güçlü topluluk bilinirliği",
+      "Metaverse odaklı yapı",
+      "Kolay tanınan gaming tokeni"
+    ],
+
+    "risks": [
+      "Yüksek volatilite",
+      "Hype kaynaklı fiyat hareketleri",
+      "Oyun benimsenme riski"
+    ]
+  },
+
+  "gala": {
+    "category": "Gaming Platformu",
+    "description": "Gala Games, çoklu oyunlar, dijital varlıklar ve eğlence odaklı ürünler sunan bir blockchain gaming ekosistemidir.",
+
+    "games": [
+      "Town Star",
+      "Mirandus",
+      "Spider Tanks",
+      "Last Expedition"
+    ],
+
+    "howToStart": [
+      "Bir Gala hesabı oluştur",
+      "Gala oyunlarını keşfet",
+      "Cüzdanını bağla"
+    ],
+
+    "advantages": [
+      "Tek ekosistemde birçok oyun",
+      "Bilinen gaming markası",
+      "Güçlü eğlence odaklı yapı"
+    ],
+
+    "risks": [
+      "Oyun kalitesi değişebilir",
+      "Token kullanımı benimsenmeye bağlıdır",
+      "Varlıklar değer kaybedebilir"
+    ]
+  },
+
+  "beam": {
+    "category": "Gaming Ağı",
+    "description": "Beam, Web3 oyunlarını ve dijital oyun ekonomilerini desteklemek için oluşturulmuş oyun odaklı bir blockchain ekosistemidir.",
+
+    "games": [
+      "Trial Xtreme",
+      "Walker World",
+      "Hash Rush"
+    ],
+
+    "howToStart": [
+      "Beam ekosistemindeki oyunları araştır",
+      "Desteklenen bir cüzdan oluştur",
+      "Desteklenen marketleri keşfet"
+    ],
+
+    "advantages": [
+      "Gaming odaklı altyapı",
+      "Web3 oyunlarına özel yapı",
+      "Büyüyen ekosistem"
+    ],
+
+    "risks": [
+      "Erken aşama ekosistem",
+      "Benimsenme garanti değildir",
+      "Yüksek piyasa volatilitesi"
+    ]
+  }
+},
+"risk": "Risk",
+"opportunity": "Fırsat",
+"sentiment": "Duyarlılık",
+
+"levels": {
+  "low": "Düşük",
+  "medium": "Orta",
+  "high": "Yüksek"
+},
+
+"sentiments": {
+  "bullish": "Yükseliş",
+  "improving": "İyileşiyor",
+  "neutral": "Nötr",
+  "cooling": "Zayıflıyor",
+  "bearish": "Düşüş"
+},
+
+  "faqItems": [
+    {
+      "question": "Gaming crypto nedir?",
+      "answer": "Gaming crypto, blockchain destekli oyun ekonomilerini, tokenleri, NFT’leri ve Web3 oyunlarını ifade eder."
+    },
+    {
+      "question": "GameFi nedir?",
+      "answer": "GameFi; oyunları kripto ödülleri, dijital sahiplik, tokenler ve blockchain ekonomileriyle birleştirir."
+    },
+    {
+      "question": "Gaming tokenleri riskli mi?",
+      "answer": "Evet. Gaming tokenleri yüksek volatiliteye sahip olabilir ve benimsenme, likidite, oyun kalitesi ve piyasa duyarlılığına bağlıdır."
+    },
+    {
+      "question": "Crypto oyunları oynayarak para kazanabilir misin?",
+      "answer": "Bazı crypto oyunları ödüller sunar, ancak kazanç garanti değildir ve token fiyatları hızla düşebilir."
     }
   ]
 },

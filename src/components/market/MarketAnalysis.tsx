@@ -80,7 +80,7 @@ export default function MarketAnalysis({ locale, t }: Props) {
   }
 
   return (
-    <div className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.06] p-5 shadow-2xl sm:p-6 md:p-8">
+    <div id="marketcap-analysis" className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.06] p-5 shadow-2xl sm:p-6 md:p-8">
       <p className="mb-4 text-sm font-bold uppercase tracking-widest text-emerald-400">
         {t.analysisTool.badge}
       </p>

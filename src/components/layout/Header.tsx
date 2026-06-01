@@ -18,6 +18,7 @@ type HeaderProps = {
       blog: string;
       gamingCrypto: string;
       start: string;
+      tools: string;
     };
   };
 };
@@ -28,6 +29,7 @@ export default function Header({ locale, t }: HeaderProps) {
   const pathname = usePathname();
 
   const links = [
+    { href: `/${locale}/tools`, label: t.nav.tools },
     {href: `/${locale}/crypto-prices`, label: t.nav.crypto },
     { href: `/${locale}/market-cap`, label: t.nav.marketCap },
     { href: `/${locale}/analysis`, label: t.nav.analysis },
@@ -44,7 +46,9 @@ export default function Header({ locale, t }: HeaderProps) {
 
         <nav className="hidden items-center gap-7 text-sm text-slate-300 lg:flex">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-emerald-400">
+            <Link key={link.href} href={link.href} className={`hover:text-emerald-400 ${
+    pathname === link.href ? "text-emerald-400" : ""
+  }`}>
               {link.label}
             </Link>
           ))}
