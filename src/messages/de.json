@@ -72,6 +72,49 @@
   "cycles": {
     "title": "Krypto-Marktzyklen vergleichen",
     "text": "Sieh, wie sich der aktuelle Markt mit früheren Zyklus-Hochs vergleicht.",
+    "ui": {
+  "badge": "Live-Zyklus-Intelligenz",
+  "currentCycleScore": "Aktueller Zyklus-Score",
+  "daysSinceHalving": "Tage seit dem Halving",
+  "alignBy": "Zyklen vergleichen nach",
+  "pathTitle": "Bitcoin-Zykluspfad-Simulator",
+  "pathText": "Durchsuche die jüngste Bitcoin-Preisentwicklung und teste mögliche zukünftige Preisverläufe mit einfachen Wachstumsszenarien.",
+  "projectedPrice": "Prognostizierter BTC-Preis",
+  "targetGrowth": "Zielwachstum",
+  "futureWindow": "Zukünftiger Zeitraum",
+  "days": "Tage",
+  "historicalPrice": "Historischer Preis",
+  "futureScenario": "Zukünftiges Szenario",
+  "simulatorDisclaimer": "Dieser Simulator dient ausschließlich Bildungszwecken. Zukünftige Verläufe sind Szenarien und keine Vorhersagen oder Finanzberatung.",
+  "alignModes": {
+    "halving": "Tage Seit Dem Halving",
+    "low": "Tage Seit Dem Zyklustief",
+    "ath": "Tage Seit Dem Vorherigen ATH"
+  },
+  "btcDominance": "BTC-Dominanz",
+  "stablecoinFlow": "Stablecoin-Fluss 7T",
+  "volatility": "BTC-Volatilität 30T",
+  "phases": {
+    "accumulation": "Akkumulation",
+    "neutral": "Neutral",
+    "expansion": "Expansion",
+    "altRotation": "Altcoin-Rotation",
+    "euphoria": "Euphorie"
+  },
+  "risks": {
+    "moderate": "Moderat",
+    "moderateHigh": "Mäßig Hoch",
+    "defensive": "Defensiv",
+    "high": "Hohes Risiko"
+  },
+  "insights": {
+    "euphoria": "Der aktuelle Zyklus-Score ist erhöht. Das Momentum wirkt stark, aber das Risiko einer späten Zyklusphase kann schnell steigen, wenn die Märkte zu schnell wachsen.",
+    "altRotation": "Die aktuelle Marktlage deutet darauf hin, dass Kapital über Bitcoin hinaus rotieren könnte. Dies ist häufig die Phase, in der Ethereum, Large Caps und starke Narrative besondere Aufmerksamkeit verdienen.",
+    "liquidityImproving": "Die Stablecoin-Liquidität verbessert sich, was bessere Marktbedingungen unterstützen kann, sofern Preisentwicklung und Risikostimmung dies ebenfalls bestätigen.",
+    "bitcoinLed": "Die Bitcoin-Dominanz bleibt hoch, was darauf hindeutet, dass der Markt weiterhin von BTC geführt wird, bevor eine stärkere Beteiligung der Altcoins einsetzt.",
+    "balanced": "Der aktuelle Markt ist ausgeglichen. Die Bedingungen sind weder extrem bullisch noch bärisch, daher bleiben Bestätigungen durch Trend, Liquidität und Dominanz wichtig."
+  }
+},
     "items": [
       {
         "year": "2017",
@@ -376,6 +419,18 @@
   "title": "Datenschutzorientierte Watchlist",
   "description": "Verfolge deine Lieblings-Kryptowährungen ohne Kontoerstellung. Deine Watchlist wird lokal im Browser gespeichert und die Preise werden über Kryptonal aktualisiert.",
   "searchPlaceholder": "Coin suchen, z. B. BTC, ETH, SOL...",
+  "portfolioValue": "Portfolio-Wert",
+"totalProfit": "Gesamter Gewinn/Verlust",
+"assetsTracked": "Verfolgte Vermögenswerte",
+"alerts": "Ausgelöste Benachrichtigungen",
+"amount": "Gehaltene Menge",
+"entryPrice": "Einstiegspreis",
+"alertAbove": "Benachrichtigen Über",
+"alertBelow": "Benachrichtigen Unter",
+"value": "Wert",
+"profitLoss": "Gewinn/Verlust",
+"return": "Rendite",
+"alertHit": "Benachrichtigung Ausgelöst",
   "add": "Hinzufügen",
   "remove": "Entfernen",
   "loading": "Live-Preise werden geladen...",
@@ -430,6 +485,35 @@
       "description": "Erstelle leicht verständliche Krypto-Marktzusammenfassungen aus Live-Marktsignalen.",
       "benefit": "Verwandle komplexe Signale in einfache Markterklärungen."
     },
+    "privacyWatchlist": {
+  "badge": "Privates Coin-Tracking",
+  "title": "Datenschutzorientierte Watchlist",
+  "description": "Verfolge deine bevorzugten Krypto-Assets, ohne ein Konto zu erstellen. Deine Watchlist wird lokal in deinem Browser gespeichert und die Preise werden über Kryptonal aktualisiert.",
+  "benefit": "Erstelle ein privates Krypto-Portfolio, verfolge Gewinne und Verluste und richte Preisalarme ein, ohne persönliche Daten weiterzugeben.",
+  "searchPlaceholder": "Coin suchen, z. B. BTC, ETH, SOL...",
+  "add": "Hinzufügen",
+  "remove": "Entfernen",
+  "loading": "Live-Preise werden geladen...",
+  "empty": "Deine Watchlist ist leer. Suche nach einem Coin, um ihn hinzuzufügen.",
+  "portfolioValue": "Portfolio-Wert",
+  "totalProfit": "Gesamter Gewinn/Verlust",
+  "assetsTracked": "Verfolgte Vermögenswerte",
+  "alerts": "Ausgelöste Benachrichtigungen",
+  "amount": "Gehaltene Menge",
+  "entryPrice": "Einstiegspreis",
+  "alertAbove": "Benachrichtigen Über",
+  "alertBelow": "Benachrichtigen Unter",
+  "value": "Wert",
+  "profitLoss": "Gewinn/Verlust",
+  "return": "Rendite",
+  "alertHit": "Benachrichtigung Ausgelöst",
+  "table": {
+    "asset": "Vermögenswert",
+    "price": "Preis",
+    "action": "Aktion"
+  },
+  "disclaimer": "Ihr Portfolio und Ihre Benachrichtigungen werden lokal in Ihrem Browser gespeichert. Das Löschen von Browserdaten kann Ihre gespeicherten Informationen entfernen. Die Preise dienen ausschließlich Bildungszwecken und stellen keine Finanzberatung dar."
+},
     "bitcoinCycle": {
       "name": "Bitcoin-Zyklus-Tracker",
       "description": "Analysiere Bitcoin-Zyklen, historische Hochs, Rückgänge und Marktphasen.",

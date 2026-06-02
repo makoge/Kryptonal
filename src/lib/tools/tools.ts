@@ -57,6 +57,17 @@ export const KRYPTONAL_TOOLS: KryptonalTool[] = [
     usageCount: 894,
   },
   {
+  slug: "privacy-watchlist",
+  nameKey: "privacyWatchlist.name",
+  descriptionKey: "privacyWatchlist.description",
+  benefitKey: "privacyWatchlist.benefit",
+  category: "market",
+  status: "live",
+  href: "/tools/watchlist",
+  icon: "🔐",
+  usageCount: 1,
+},
+  {
     slug: "bitcoin-cycle-tracker",
     nameKey: "bitcoinCycle.name",
     descriptionKey: "bitcoinCycle.description",

@@ -72,6 +72,49 @@
   "cycles": {
     "title": "Kripto piyasa döngülerini karşılaştır",
     "text": "Mevcut piyasanın önceki döngü zirveleriyle nasıl karşılaştırıldığını görün.",
+    "ui": {
+  "badge": "Canlı Döngü Zekası",
+  "currentCycleScore": "Mevcut Döngü Skoru",
+  "daysSinceHalving": "Halving’den bu yana geçen gün",
+  "alignBy": "Döngüleri şuna göre karşılaştır",
+  "pathTitle": "Bitcoin Döngü Yol Simülatörü",
+  "pathText": "Bitcoin’in son fiyat geçmişinde gezinin ve basit büyüme senaryolarıyla olası gelecek fiyat yollarını test edin.",
+  "projectedPrice": "Tahmini BTC fiyatı",
+  "targetGrowth": "Hedef büyüme",
+  "futureWindow": "Gelecek zaman aralığı",
+  "days": "gün",
+  "historicalPrice": "Geçmiş fiyat",
+  "futureScenario": "Gelecek senaryosu",
+  "simulatorDisclaimer": "Bu simülatör yalnızca eğitim amaçlıdır. Gelecek yollar senaryodur; tahmin veya finansal tavsiye değildir.",
+  "alignModes": {
+    "halving": "Halving’den Bu Yana Geçen Gün",
+    "low": "Döngü Dibinden Bu Yana Geçen Gün",
+    "ath": "Önceki ATH’den Bu Yana Geçen Gün"
+  },
+  "btcDominance": "BTC Dominansı",
+  "stablecoinFlow": "Stablecoin Akışı 7G",
+  "volatility": "BTC Volatilitesi 30G",
+  "phases": {
+    "accumulation": "Akümülasyon",
+    "neutral": "Nötr",
+    "expansion": "Genişleme",
+    "altRotation": "Altcoin Rotasyonu",
+    "euphoria": "Coşku"
+  },
+  "risks": {
+    "moderate": "Orta",
+    "moderateHigh": "Orta-Yüksek",
+    "defensive": "Savunmacı",
+    "high": "Yüksek Risk"
+  },
+  "insights": {
+    "euphoria": "Mevcut döngü skoru yüksek. Momentum güçlü görünüyor, ancak piyasa çok hızlı yükseldiğinde geç döngü riski hızla artabilir.",
+    "altRotation": "Mevcut yapı, sermayenin Bitcoin dışına da akmaya başlayabileceğini gösteriyor. Bu dönemlerde Ethereum, büyük piyasa değerli coinler ve güçlü anlatılar daha yakından izlenebilir.",
+    "liquidityImproving": "Stablecoin likiditesi iyileşiyor. Fiyat trendi ve risk algısı da bunu desteklerse piyasa koşulları için olumlu olabilir.",
+    "bitcoinLed": "Bitcoin dominansı yüksek kalmaya devam ediyor. Bu, daha geniş altcoin katılımı güçlenmeden önce piyasanın hâlâ BTC liderliğinde olduğunu gösterir.",
+    "balanced": "Mevcut piyasa dengeli. Koşullar aşırı boğa veya ayı görünümünde değil; bu yüzden trend, likidite ve dominans onayı hâlâ önemlidir."
+  }
+},
     "items": [
       {
         "year": "2017",
@@ -376,6 +419,18 @@
     "title": "Gizlilik Odaklı Watchlist",
     "description": "Favori kripto varlıklarını hesap oluşturmadan takip et. Watchlist’in tarayıcında yerel olarak saklanır ve fiyatlar Kryptonal üzerinden güncellenir.",
     "searchPlaceholder": "Coin ara, örn: BTC, ETH, SOL...",
+    "portfolioValue": "Portföy Değeri",
+"totalProfit": "Toplam Kâr/Zarar",
+"assetsTracked": "Takip Edilen Varlıklar",
+"alerts": "Tetiklenen Uyarılar",
+"amount": "Sahip Olunan Miktar",
+"entryPrice": "Giriş Fiyatı",
+"alertAbove": "Şunun Üzerinde Uyar",
+"alertBelow": "Şunun Altında Uyar",
+"value": "Değer",
+"profitLoss": "Kâr/Zarar",
+"return": "Getiri",
+"alertHit": "Uyarı Tetiklendi",
     "add": "Ekle",
     "remove": "Kaldır",
     "loading": "Canlı fiyatlar yükleniyor...",
@@ -431,6 +486,35 @@
       "description": "Canlı piyasa sinyallerinden sade ve anlaşılır kripto piyasa özetleri oluşturun.",
       "benefit": "Karmaşık sinyalleri basit piyasa açıklamalarına dönüştürün."
     },
+    "privacyWatchlist": {
+  "badge": "Özel Coin Takibi",
+  "title": "Gizlilik Odaklı İzleme Listesi",
+  "description": "Hesap oluşturmadan favori kripto varlıklarınızı takip edin. İzleme listeniz tarayıcınızda saklanır ve fiyatlar Kryptonal üzerinden güncellenir.",
+  "benefit": "Kişisel verilerinizi paylaşmadan özel bir kripto portföyü oluşturun, kâr ve zararınızı takip edin ve fiyat uyarıları ayarlayın.",
+  "searchPlaceholder": "Coin ara, örn. BTC, ETH, SOL...",
+  "add": "Ekle",
+  "remove": "Kaldır",
+  "loading": "Canlı fiyatlar yükleniyor...",
+  "empty": "İzleme listeniz boş. Eklemek için bir coin arayın.",
+  "portfolioValue": "Portföy Değeri",
+  "totalProfit": "Toplam Kâr/Zarar",
+  "assetsTracked": "Takip Edilen Varlıklar",
+  "alerts": "Tetiklenen Uyarılar",
+  "amount": "Sahip Olunan Miktar",
+  "entryPrice": "Giriş Fiyatı",
+  "alertAbove": "Şunun Üzerinde Uyar",
+  "alertBelow": "Şunun Altında Uyar",
+  "value": "Değer",
+  "profitLoss": "Kâr/Zarar",
+  "return": "Getiri",
+  "alertHit": "Uyarı Tetiklendi",
+  "table": {
+    "asset": "Varlık",
+    "price": "Fiyat",
+    "action": "İşlem"
+  },
+  "disclaimer": "Portföyünüz ve uyarılarınız yalnızca tarayıcınızda yerel olarak saklanır. Tarayıcı verilerini temizlemek kayıtlı bilgileri silebilir. Fiyatlar eğitim amaçlıdır ve finansal tavsiye değildir."
+},
     "bitcoinCycle": {
       "name": "Bitcoin Döngü Takibi",
       "description": "Bitcoin döngü davranışını, tarihi zirveleri, düşüşleri ve piyasa aşamalarını inceleyin.",
@@ -1305,6 +1389,7 @@
       "kripto piyasa sinyalleri"
     ]
   },
+    
   "privacyWatchlist": {
     "title": "Özel Kripto Watchlist | Kryptonal",
     "description": "Giriş yapmadan özel bir kripto watchlist oluştur. Kryptonal ile canlı fiyatları tarayıcında yerel olarak takip et."

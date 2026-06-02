@@ -17,46 +17,36 @@ const COINS: Record<string, { name: string; symbol: string; key: string }> = {
   stellar: { name: "Stellar", symbol: "XLM", key: "coingecko:stellar" },
   bitcoinCash: { name: "Bitcoin Cash", symbol: "BCH", key: "coingecko:bitcoin-cash" },
   monero: { name: "Monero", symbol: "XMR", key: "coingecko:monero" },
- shiba: { name: "Shiba Inu", symbol: "SHIB", key: "coingecko:shiba-inu" },
- pepe: { name: "Pepe", symbol: "PEPE", key: "coingecko:pepe" },
- dogecoin: { name: "Dogecoin", symbol: "DOGE", key: "coingecko:dogecoin" },
- floki: { name: "FLOKI", symbol: "FLOKI", key: "coingecko:floki" },
- kaito: {
-  name: "Kaito",
-  symbol: "KAITO",
-  key: "coingecko:kaito"
-},
-
-worldcoin: {
-  name: "Worldcoin",
-  symbol: "WLD",
-  key: "coingecko:worldcoin-wld"
-},
-
-mubarak: {
-  name: "Mubarak",
-  symbol: "MUBARAK",
-  key: "coingecko:mubarak"
-},
-
-bonk: {
-  name: "Bonk",
-  symbol: "BONK",
-  key: "coingecko:bonk"
-},
+  shiba: { name: "Shiba Inu", symbol: "SHIB", key: "coingecko:shiba-inu" },
+  pepe: { name: "Pepe", symbol: "PEPE", key: "coingecko:pepe" },
+  dogecoin: { name: "Dogecoin", symbol: "DOGE", key: "coingecko:dogecoin" },
+  floki: { name: "FLOKI", symbol: "FLOKI", key: "coingecko:floki" },
+  kaito: { name: "Kaito", symbol: "KAITO", key: "coingecko:kaito" },
+  worldcoin: { name: "Worldcoin", symbol: "WLD", key: "coingecko:worldcoin-wld" },
+  mubarak: { name: "Mubarak", symbol: "MUBARAK", key: "coingecko:mubarak" },
+  bonk: { name: "Bonk", symbol: "BONK", key: "coingecko:bonk" },
 };
 
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
-    const ids = searchParams.get("ids")?.split(",").filter(Boolean) || [];
+
+    const ids = searchParams
+      .get("ids")
+      ?.split(",")
+      .map((id) => id.trim())
+      .filter(Boolean)
+      .slice(0, 30) || [];
 
     const selected = ids
       .filter((id) => COINS[id])
       .map((id) => ({ id, ...COINS[id] }));
 
-    if (selected.length === 0) {
-      return NextResponse.json({ coins: [] });
+    if (!selected.length) {
+      return NextResponse.json({
+        updatedAt: new Date().toISOString(),
+        coins: [],
+      });
     }
 
     const llamaKeys = selected.map((coin) => coin.key).join(",");
@@ -66,7 +56,7 @@ export async function GET(req: Request) {
       { next: { revalidate: 60 } }
     );
 
-    if (!res.ok) throw new Error("DefiLlama price API failed");
+    if (!res.ok) throw new Error("Price API failed");
 
     const json = await res.json();
 
@@ -86,9 +76,9 @@ export async function GET(req: Request) {
       coins,
     });
   } catch {
-    return NextResponse.json(
-      { updatedAt: new Date().toISOString(), coins: [] },
-      { status: 200 }
-    );
+    return NextResponse.json({
+      updatedAt: new Date().toISOString(),
+      coins: [],
+    });
   }
 }

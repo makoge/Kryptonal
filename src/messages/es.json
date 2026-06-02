@@ -72,6 +72,49 @@
   "cycles": {
     "title": "Comparar ciclos del mercado cripto",
     "text": "Descubre cómo se compara el mercado actual con los máximos de ciclos anteriores.",
+    "ui": {
+  "badge": "Inteligencia de Ciclo en Vivo",
+  "currentCycleScore": "Puntuación Actual del Ciclo",
+  "daysSinceHalving": "Días desde el halving",
+  "alignBy": "Comparar ciclos por",
+  "pathTitle": "Simulador de Trayectoria del Ciclo de Bitcoin",
+  "pathText": "Explora el historial reciente de precios de Bitcoin y prueba posibles trayectorias futuras utilizando escenarios simples de crecimiento.",
+  "projectedPrice": "Precio proyectado de BTC",
+  "targetGrowth": "Crecimiento objetivo",
+  "futureWindow": "Horizonte futuro",
+  "days": "días",
+  "historicalPrice": "Precio histórico",
+  "futureScenario": "Escenario futuro",
+  "simulatorDisclaimer": "Este simulador es solo para fines educativos. Las trayectorias futuras son escenarios, no predicciones ni asesoramiento financiero.",
+  "alignModes": {
+    "halving": "Días Desde el Halving",
+    "low": "Días Desde el Mínimo del Ciclo",
+    "ath": "Días Desde el ATH Anterior"
+  },
+  "btcDominance": "Dominancia de BTC",
+  "stablecoinFlow": "Flujo de Stablecoins 7D",
+  "volatility": "Volatilidad de BTC 30D",
+  "phases": {
+    "accumulation": "Acumulación",
+    "neutral": "Neutral",
+    "expansion": "Expansión",
+    "altRotation": "Rotación hacia Altcoins",
+    "euphoria": "Euforia"
+  },
+  "risks": {
+    "moderate": "Moderado",
+    "moderateHigh": "Moderadamente Alto",
+    "defensive": "Defensivo",
+    "high": "Alto Riesgo"
+  },
+  "insights": {
+    "euphoria": "La puntuación actual del ciclo es elevada. El impulso parece fuerte, pero el riesgo de una fase tardía del ciclo puede aumentar rápidamente cuando los mercados avanzan demasiado rápido.",
+    "altRotation": "La configuración actual sugiere que el capital podría estar rotando más allá de Bitcoin. Este suele ser el momento en que Ethereum, las grandes capitalizaciones y las narrativas más sólidas merecen mayor atención.",
+    "liquidityImproving": "La liquidez de las stablecoins está mejorando, lo que puede respaldar mejores condiciones de mercado si la tendencia de precios y el sentimiento de riesgo también lo confirman.",
+    "bitcoinLed": "La dominancia de Bitcoin sigue siendo elevada, lo que sugiere que el mercado aún está liderado por BTC antes de que la participación más amplia de las altcoins se fortalezca.",
+    "balanced": "El mercado actual está equilibrado. Las condiciones no son extremadamente alcistas ni bajistas, por lo que la confirmación mediante tendencia, liquidez y dominancia sigue siendo importante."
+  }
+},
     "items": [
       {
         "year": "2017",
@@ -375,6 +418,18 @@
     "title": "Watchlist privada",
     "description": "Sigue tus criptomonedas favoritas sin crear una cuenta. Tu watchlist se guarda localmente en tu navegador y los precios se actualizan mediante Kryptonal.",
     "searchPlaceholder": "Buscar moneda, ej. BTC, ETH, SOL...",
+    "portfolioValue": "Valor de la Cartera",
+"totalProfit": "Ganancia/Pérdida Total",
+"assetsTracked": "Activos Seguidos",
+"alerts": "Alertas Activadas",
+"amount": "Cantidad Mantenida",
+"entryPrice": "Precio de Entrada",
+"alertAbove": "Alerta por Encima de",
+"alertBelow": "Alerta por Debajo de",
+"value": "Valor",
+"profitLoss": "Ganancia/Pérdida",
+"return": "Rendimiento",
+"alertHit": "Alerta Activada",
     "add": "Agregar",
     "remove": "Eliminar",
     "loading": "Cargando precios en vivo...",
@@ -430,6 +485,35 @@
       "description": "Genera resúmenes del mercado cripto en lenguaje sencillo utilizando señales de mercado en vivo.",
       "benefit": "Convierte señales complejas en explicaciones simples del mercado."
     },
+    "privacyWatchlist": {
+  "badge": "Seguimiento Privado de Monedas",
+  "title": "Lista de Seguimiento con Privacidad Primero",
+  "description": "Sigue tus activos criptográficos favoritos sin crear una cuenta. Tu lista de seguimiento permanece guardada en tu navegador y los precios se actualizan a través de Kryptonal.",
+  "benefit": "Crea una cartera cripto privada, realiza seguimiento de ganancias y pérdidas, y configura alertas de precio sin compartir datos personales.",
+  "searchPlaceholder": "Buscar moneda, ej. BTC, ETH, SOL...",
+  "add": "Agregar",
+  "remove": "Eliminar",
+  "loading": "Cargando precios en vivo...",
+  "empty": "Tu lista de seguimiento está vacía. Busca una moneda para agregar.",
+  "portfolioValue": "Valor de la Cartera",
+  "totalProfit": "Ganancia/Pérdida Total",
+  "assetsTracked": "Activos Seguidos",
+  "alerts": "Alertas Activadas",
+  "amount": "Cantidad Mantenida",
+  "entryPrice": "Precio de Entrada",
+  "alertAbove": "Alerta por Encima de",
+  "alertBelow": "Alerta por Debajo de",
+  "value": "Valor",
+  "profitLoss": "Ganancia/Pérdida",
+  "return": "Rendimiento",
+  "alertHit": "Alerta Activada",
+  "table": {
+    "asset": "Activo",
+    "price": "Precio",
+    "action": "Acción"
+  },
+  "disclaimer": "Tu cartera y tus alertas se almacenan localmente en tu navegador. Borrar los datos del navegador puede eliminar la información guardada. Los precios son solo para fines educativos y no constituyen asesoramiento financiero."
+},
     "bitcoinCycle": {
       "name": "Rastreador de Ciclos de Bitcoin",
       "description": "Estudia el comportamiento de los ciclos de Bitcoin, máximos históricos, caídas y fases del mercado.",

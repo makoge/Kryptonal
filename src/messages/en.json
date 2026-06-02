@@ -74,6 +74,49 @@
   "cycles": {
     "title": "Compare Crypto Market Cycles",
     "text": "See how the current market compares with previous cycle peaks.",
+    "ui": {
+  "badge": "Live Cycle Intelligence",
+  "currentCycleScore": "Current Cycle Score",
+  "daysSinceHalving": "Days since halving",
+  "alignBy": "Compare cycles by",
+  "pathTitle": "Bitcoin Cycle Path Simulator",
+"pathText": "Scroll through Bitcoin’s recent price history and test possible future price paths using simple growth scenarios.",
+"projectedPrice": "Projected BTC price",
+"targetGrowth": "Target growth",
+"futureWindow": "Future window",
+"days": "days",
+"historicalPrice": "Historical price",
+"futureScenario": "Future scenario",
+"simulatorDisclaimer": "This simulator is educational only. Future paths are scenarios, not predictions or financial advice.",
+  "alignModes": {
+    "halving": "Days Since Halving",
+    "low": "Days Since Cycle Low",
+    "ath": "Days Since Previous ATH"
+  },
+  "btcDominance": "BTC Dominance",
+  "stablecoinFlow": "Stablecoin Flow 7D",
+  "volatility": "BTC Volatility 30D",
+  "phases": {
+    "accumulation": "Accumulation",
+    "neutral": "Neutral",
+    "expansion": "Expansion",
+    "altRotation": "Alt Rotation",
+    "euphoria": "Euphoria"
+  },
+  "risks": {
+    "moderate": "Moderate",
+    "moderateHigh": "Moderate High",
+    "defensive": "Defensive",
+    "high": "High Risk"
+  },
+  "insights": {
+    "euphoria": "The current cycle score is elevated. Momentum looks strong, but late-cycle risk can rise quickly when markets move too fast.",
+    "altRotation": "The current setup suggests capital may be rotating beyond Bitcoin. This is usually where Ethereum, large caps, and stronger narratives deserve closer attention.",
+    "liquidityImproving": "Stablecoin liquidity is improving, which can support better market conditions if price trend and risk sentiment also confirm.",
+    "bitcoinLed": "Bitcoin dominance remains high, suggesting the market is still BTC-led before broader altcoin participation becomes stronger.",
+    "balanced": "The current market is balanced. Conditions are not extremely bullish or bearish, so confirmation from trend, liquidity, and dominance still matters."
+  }
+},
     "items": [
       {
         "year": "2017",
@@ -301,6 +344,18 @@
   "title": "Privacy-First Watchlist",
   "description": "Track your favorite crypto assets without creating an account. Your watchlist stays saved inside your browser and prices update through Kryptonal.",
   "searchPlaceholder": "Search coin, e.g. BTC, ETH, SOL...",
+  "portfolioValue": "Portfolio Value",
+"totalProfit": "Total Profit/Loss",
+"assetsTracked": "Assets Tracked",
+"alerts": "Alerts Triggered",
+"amount": "Amount Held",
+"entryPrice": "Entry Price",
+"alertAbove": "Alert Above",
+"alertBelow": "Alert Below",
+"value": "Value",
+"profitLoss": "Profit/Loss",
+"return": "Return",
+"alertHit": "Alert Hit",
   "add": "Add",
   "remove": "Remove",
   "loading": "Loading live prices...",
@@ -351,6 +406,35 @@
       "description": "Generate plain-English crypto market summaries from live market signals.",
       "benefit": "Turn complex signals into simple market explanations."
     },
+    "privacyWatchlist": {
+  "badge": "Private Coin Tracking",
+  "title": "Privacy-First Watchlist",
+  "description": "Track your favorite crypto assets without creating an account. Your watchlist stays saved inside your browser and prices update through Kryptonal.",
+  "benefit": "Build a private crypto portfolio, track profits and losses, and create price alerts without sharing personal data.",
+  "searchPlaceholder": "Search coin, e.g. BTC, ETH, SOL...",
+  "add": "Add",
+  "remove": "Remove",
+  "loading": "Loading live prices...",
+  "empty": "Your watchlist is empty. Search for a coin to add one.",
+  "portfolioValue": "Portfolio Value",
+  "totalProfit": "Total Profit/Loss",
+  "assetsTracked": "Assets Tracked",
+  "alerts": "Alerts Triggered",
+  "amount": "Amount Held",
+  "entryPrice": "Entry Price",
+  "alertAbove": "Alert Above",
+  "alertBelow": "Alert Below",
+  "value": "Value",
+  "profitLoss": "Profit/Loss",
+  "return": "Return",
+  "alertHit": "Alert Hit",
+  "table": {
+    "asset": "Asset",
+    "price": "Price",
+    "action": "Action"
+  },
+  "disclaimer": "Your portfolio and alerts are stored locally in your browser. Clearing browser data may remove your saved information. Prices are for educational purposes only and do not constitute financial advice."
+},
     "bitcoinCycle": {
       "name": "Bitcoin Cycle Tracker",
       "description": "Study Bitcoin cycle behavior, historical peaks, drawdowns, and market phases.",
@@ -1139,7 +1223,7 @@
         "Momentum building slowly"
       ]
     },
-    "deepEngine": {
+  "deepEngine": {
   "badge": "Intelligence Engine",
   "title": "Deep Crypto Analysis Engine",
   "description": "Generate a deeper market read covering cycles, Bitcoin dominance, risk management, altcoin rotation, and a plain-English “So what?” takeaway.",
@@ -1233,7 +1317,7 @@
       { "question": "Can crypto market cap predict price?", "answer": "No, market cap does not predict prices directly." },
       { "question": "Is this financial advice?", "answer": "No. This platform provides educational insights only." }
     ],
-    "leverageRisk": {
+  "leverageRisk": {
   "badge": "Trader Positioning",
   "title": "Crypto Leverage Risk Tracker",
   "description": "Track whether futures traders are becoming too crowded, overheated, or balanced using live funding rates and open interest.",
@@ -1256,7 +1340,7 @@
     "balanced": "Positioning looks balanced. Leverage risk is not extreme right now."
   }
 },
-    "smartMoney": {
+  "smartMoney": {
   "badge": "Smart Money Alerts",
   "title": "Smart Money Alert Board",
   "description": "Track chains where liquidity, TVL, and weekly growth suggest stronger capital activity.",
@@ -1392,10 +1476,7 @@
     "title": "Crypto ROI Vision | Kryptonal",
     "description": "Calculate historical crypto ROI, simulate future price targets, and explore how investments could grow with Kryptonal."
   },
-  "cryptoRoiVision": {
-  "title": "Crypto ROI Vision | Kryptonal",
-  "description": "Geçmiş kripto yatırım getirilerini hesaplayın, gelecekteki fiyat hedeflerini simüle edin ve yatırımların Kryptonal ile nasıl büyüyebileceğini keşfedin."
-},
+
   "privacyWatchlist": {
   "title": "Privacy-First Crypto Watchlist | Kryptonal",
   "description": "Create a private crypto watchlist without login. Track live prices locally in your browser with Kryptonal."
