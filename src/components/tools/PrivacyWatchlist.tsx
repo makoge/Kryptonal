@@ -29,10 +29,10 @@ const AVAILABLE_COINS = [
 
 type Holding = {
   id: string;
-  amount: number;
-  entryPrice: number;
-  alertAbove: number;
-  alertBelow: number;
+  amount: string;
+  entryPrice: string;
+  alertAbove: string;
+  alertBelow: string;
 };
 
 type PriceCoin = {
@@ -64,8 +64,8 @@ function formatUsd(value: number) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-    minimumFractionDigits: 4,
-    maximumFractionDigits: 8,
+    minimumFractionDigits: 6,
+    maximumFractionDigits: 10,
   }).format(value);
 }
 
@@ -73,6 +73,10 @@ function pct(value: number) {
   if (!Number.isFinite(value)) return "0%";
   const sign = value > 0 ? "+" : "";
   return `${sign}${value.toFixed(2)}%`;
+}
+
+function cleanDecimal(value: string) {
+  return value.replace(",", ".").replace(/[^0-9.]/g, "");
 }
 
 export default function PrivacyWatchlist({ t }: { t: any }) {
@@ -83,6 +87,11 @@ export default function PrivacyWatchlist({ t }: { t: any }) {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const watchlistIds = useMemo(
+  () => holdings.map((h) => h.id).sort().join(","),
+  [holdings]
+);
+
   useEffect(() => {
     const saved = localStorage.getItem("kryptonal_private_portfolio");
 
@@ -90,9 +99,9 @@ export default function PrivacyWatchlist({ t }: { t: any }) {
       setHoldings(JSON.parse(saved));
     } else {
       setHoldings([
-        { id: "bitcoin", amount: 0, entryPrice: 0, alertAbove: 0, alertBelow: 0 },
-        { id: "ethereum", amount: 0, entryPrice: 0, alertAbove: 0, alertBelow: 0 },
-        { id: "solana", amount: 0, entryPrice: 0, alertAbove: 0, alertBelow: 0 },
+        { id: "bitcoin", amount: "", entryPrice: "", alertAbove: "", alertBelow: "" },
+        { id: "ethereum", amount: "", entryPrice: "", alertAbove: "", alertBelow: "" },
+        { id: "solana", amount: "", entryPrice: "", alertAbove: "", alertBelow: "" },
       ]);
     }
   }, []);
@@ -110,8 +119,7 @@ export default function PrivacyWatchlist({ t }: { t: any }) {
     async function loadPrices() {
       try {
         setLoading(true);
-
-        const ids = holdings.map((h) => h.id).join(",");
+       const ids = watchlistIds;
 
         const res = await fetch(`/api/tools/watchlist-prices?ids=${ids}`, {
           cache: "no-store",
@@ -124,24 +132,31 @@ export default function PrivacyWatchlist({ t }: { t: any }) {
       }
     }
 
-    loadPrices();
-    const timer = setInterval(loadPrices, 60000);
+loadPrices();
 
-    return () => clearInterval(timer);
-  }, [holdings]);
+const timer = setInterval(loadPrices, 60000);
+
+return () => clearInterval(timer);
+}, [watchlistIds]);
 
   const rows = useMemo(() => {
     return holdings.map((holding) => {
       const coin = coins.find((c) => c.id === holding.id);
+
       const price = coin?.price || 0;
-      const value = holding.amount * price;
-      const cost = holding.amount * holding.entryPrice;
+      const amount = parseFloat(holding.amount || "0");
+      const entryPrice = parseFloat(holding.entryPrice || "0");
+      const alertAbove = parseFloat(holding.alertAbove || "0");
+      const alertBelow = parseFloat(holding.alertBelow || "0");
+
+      const value = amount * price;
+      const cost = amount * entryPrice;
       const profit = cost > 0 ? value - cost : 0;
       const profitPct = cost > 0 ? ((value - cost) / cost) * 100 : 0;
 
       const alertHit =
-        (holding.alertAbove > 0 && price >= holding.alertAbove) ||
-        (holding.alertBelow > 0 && price <= holding.alertBelow);
+        (alertAbove > 0 && price >= alertAbove) ||
+        (alertBelow > 0 && price <= alertBelow);
 
       return {
         ...holding,
@@ -180,7 +195,7 @@ export default function PrivacyWatchlist({ t }: { t: any }) {
   function addCoin(id: string) {
     setHoldings((prev) => [
       ...prev,
-      { id, amount: 0, entryPrice: 0, alertAbove: 0, alertBelow: 0 },
+      { id, amount: "", entryPrice: "", alertAbove: "", alertBelow: "" },
     ]);
     setQuery("");
   }
@@ -189,10 +204,10 @@ export default function PrivacyWatchlist({ t }: { t: any }) {
     setHoldings((prev) => prev.filter((coin) => coin.id !== id));
   }
 
-  function updateHolding(id: string, field: keyof Holding, value: number) {
+  function updateHolding(id: string, field: keyof Holding, value: string) {
     setHoldings((prev) =>
       prev.map((holding) =>
-        holding.id === id ? { ...holding, [field]: value } : holding
+        holding.id === id ? { ...holding, [field]: cleanDecimal(value) } : holding
       )
     );
   }
@@ -213,34 +228,10 @@ export default function PrivacyWatchlist({ t }: { t: any }) {
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
-            <p className="text-sm text-slate-400">{copy.portfolioValue}</p>
-            <p className="mt-2 text-3xl font-black">{formatUsd(totalValue)}</p>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
-            <p className="text-sm text-slate-400">{copy.totalProfit}</p>
-            <p
-              className={`mt-2 text-3xl font-black ${
-                totalProfit >= 0 ? "text-emerald-300" : "text-red-300"
-              }`}
-            >
-              {formatUsd(totalProfit)}
-            </p>
-            <p className="mt-1 text-sm text-slate-400">{pct(totalProfitPct)}</p>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
-            <p className="text-sm text-slate-400">{copy.assetsTracked}</p>
-            <p className="mt-2 text-3xl font-black">{holdings.length}</p>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
-            <p className="text-sm text-slate-400">{copy.alerts}</p>
-            <p className="mt-2 text-3xl font-black text-amber-300">
-              {triggeredAlerts}/{activeAlerts}
-            </p>
-          </div>
+          <SummaryCard label={copy.portfolioValue} value={formatUsd(totalValue)} />
+          <SummaryCard label={copy.totalProfit} value={formatUsd(totalProfit)} sub={pct(totalProfitPct)} positive={totalProfit >= 0} />
+          <SummaryCard label={copy.assetsTracked} value={String(holdings.length)} />
+          <SummaryCard label={copy.alerts} value={`${triggeredAlerts}/${activeAlerts}`} amber />
         </div>
 
         <div className="mt-8 rounded-[2rem] border border-white/10 bg-black/30 p-5 shadow-2xl backdrop-blur-xl">
@@ -317,94 +308,16 @@ export default function PrivacyWatchlist({ t }: { t: any }) {
                   </div>
 
                   <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    <label>
-                      <span className="text-xs font-bold text-slate-400">
-                        {copy.amount}
-                      </span>
-                      <input
-                        type="number"
-                        min="0"
-                        value={row.amount || ""}
-                        onChange={(e) =>
-                          updateHolding(row.id, "amount", Number(e.target.value))
-                        }
-                        className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none focus:border-amber-300"
-                      />
-                    </label>
-
-                    <label>
-                      <span className="text-xs font-bold text-slate-400">
-                        {copy.entryPrice}
-                      </span>
-                      <input
-                        type="number"
-                        min="0"
-                        value={row.entryPrice || ""}
-                        onChange={(e) =>
-                          updateHolding(row.id, "entryPrice", Number(e.target.value))
-                        }
-                        className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none focus:border-amber-300"
-                      />
-                    </label>
-
-                    <label>
-                      <span className="text-xs font-bold text-slate-400">
-                        {copy.alertAbove}
-                      </span>
-                      <input
-                        type="number"
-                        min="0"
-                        value={row.alertAbove || ""}
-                        onChange={(e) =>
-                          updateHolding(row.id, "alertAbove", Number(e.target.value))
-                        }
-                        className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none focus:border-amber-300"
-                      />
-                    </label>
-
-                    <label>
-                      <span className="text-xs font-bold text-slate-400">
-                        {copy.alertBelow}
-                      </span>
-                      <input
-                        type="number"
-                        min="0"
-                        value={row.alertBelow || ""}
-                        onChange={(e) =>
-                          updateHolding(row.id, "alertBelow", Number(e.target.value))
-                        }
-                        className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none focus:border-amber-300"
-                      />
-                    </label>
+                    <DecimalInput label={copy.amount} value={row.amount} placeholder="0.1" onChange={(v) => updateHolding(row.id, "amount", v)} />
+                    <DecimalInput label={copy.entryPrice} value={row.entryPrice} placeholder="65000" onChange={(v) => updateHolding(row.id, "entryPrice", v)} />
+                    <DecimalInput label={copy.alertAbove} value={row.alertAbove} placeholder="120000" onChange={(v) => updateHolding(row.id, "alertAbove", v)} />
+                    <DecimalInput label={copy.alertBelow} value={row.alertBelow} placeholder="90000" onChange={(v) => updateHolding(row.id, "alertBelow", v)} />
                   </div>
 
                   <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                    <div className="rounded-2xl bg-white/[0.04] p-4">
-                      <p className="text-xs text-slate-400">{copy.value}</p>
-                      <p className="mt-1 font-black">{formatUsd(row.value)}</p>
-                    </div>
-
-                    <div className="rounded-2xl bg-white/[0.04] p-4">
-                      <p className="text-xs text-slate-400">{copy.profitLoss}</p>
-                      <p
-                        className={`mt-1 font-black ${
-                          row.profit >= 0 ? "text-emerald-300" : "text-red-300"
-                        }`}
-                      >
-                        {formatUsd(row.profit)}
-                      </p>
-                    </div>
-
-                    <div className="rounded-2xl bg-white/[0.04] p-4">
-                      <p className="text-xs text-slate-400">{copy.return}</p>
-                      <p
-                        className={`mt-1 font-black ${
-                          row.profitPct >= 0 ? "text-emerald-300" : "text-red-300"
-                        }`}
-                      >
-                        {pct(row.profitPct)}
-                      </p>
-                    </div>
+                    <MiniStat label={copy.value} value={formatUsd(row.value)} />
+                    <MiniStat label={copy.profitLoss} value={formatUsd(row.profit)} positive={row.profit >= 0} />
+                    <MiniStat label={copy.return} value={pct(row.profitPct)} positive={row.profitPct >= 0} />
                   </div>
                 </article>
               ))}
@@ -417,5 +330,82 @@ export default function PrivacyWatchlist({ t }: { t: any }) {
         </div>
       </section>
     </main>
+  );
+}
+
+function DecimalInput({
+  label,
+  value,
+  placeholder,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  placeholder: string;
+  onChange: (value: string) => void;
+}) {
+  return (
+    <label>
+      <span className="text-xs font-bold text-slate-400">{label}</span>
+      <input
+        type="text"
+        inputMode="decimal"
+        value={value}
+        placeholder={placeholder}
+        onChange={(e) => onChange(e.target.value)}
+        className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none placeholder:text-slate-600 focus:border-amber-300"
+      />
+    </label>
+  );
+}
+
+function SummaryCard({
+  label,
+  value,
+  sub,
+  positive,
+  amber,
+}: {
+  label: string;
+  value: string;
+  sub?: string;
+  positive?: boolean;
+  amber?: boolean;
+}) {
+  return (
+    <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+      <p className="text-sm text-slate-400">{label}</p>
+      <p
+        className={`mt-2 text-3xl font-black ${
+          amber ? "text-amber-300" : positive === undefined ? "text-white" : positive ? "text-emerald-300" : "text-red-300"
+        }`}
+      >
+        {value}
+      </p>
+      {sub && <p className="mt-1 text-sm text-slate-400">{sub}</p>}
+    </div>
+  );
+}
+
+function MiniStat({
+  label,
+  value,
+  positive,
+}: {
+  label: string;
+  value: string;
+  positive?: boolean;
+}) {
+  return (
+    <div className="rounded-2xl bg-white/[0.04] p-4">
+      <p className="text-xs text-slate-400">{label}</p>
+      <p
+        className={`mt-1 font-black ${
+          positive === undefined ? "text-white" : positive ? "text-emerald-300" : "text-red-300"
+        }`}
+      >
+        {value}
+      </p>
+    </div>
   );
 }

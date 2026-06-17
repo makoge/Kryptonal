@@ -19,75 +19,49 @@ function pct(value: number) {
   return `${sign}${value.toFixed(2)}%`;
 }
 
-function getMarketPhase({
-  marketCapChange24h,
-  btcDominance,
-  tvlChange7d,
-  stableChange1d,
-}: {
-  marketCapChange24h: number;
-  btcDominance: number;
-  tvlChange7d: number;
-  stableChange1d: number;
-}) {
-  if (marketCapChange24h > 3 && btcDominance < 54 && tvlChange7d > 1) {
-    return "altcoinExpansion";
-  }
-
-  if (marketCapChange24h > 1 && btcDominance >= 58) {
-    return "bitcoinLedRecovery";
-  }
-
-  if (marketCapChange24h < 0 && btcDominance >= 58) {
-    return "defensiveBitcoinRotation";
-  }
-
-  if (marketCapChange24h < -3 || tvlChange7d < -3) {
-    return "marketContraction";
-  }
-
-  if (stableChange1d > 0.5 && marketCapChange24h >= 0) {
-    return "earlyRecovery";
-  }
-
-  return "neutralConsolidation";
+function changePct(now: number, previous: number) {
+  return previous > 0 ? ((now - previous) / previous) * 100 : 0;
 }
 
-function getRiskLevel({
-  marketCapChange24h,
-  btcDominance,
-  tvlChange1d,
-}: {
-  marketCapChange24h: number;
-  btcDominance: number;
-  tvlChange1d: number;
-}) {
-  if (marketCapChange24h < -3 || tvlChange1d < -2) return "high";
-  if (btcDominance >= 58 && marketCapChange24h < 0) return "elevated";
-  if (marketCapChange24h > 3) return "medium";
+function getStableTotal(point: any) {
+  return Number(
+    point?.totalCirculatingUSD?.peggedUSD ||
+      point?.totalCirculating?.peggedUSD ||
+      0
+  );
+}
+
+function getMarketPhase(score: number) {
+  if (score >= 2.5) return "expansion";
+  if (score >= 1) return "recovery";
+  if (score > -0.75) return "consolidation";
+  if (score > -2) return "distribution";
+  return "riskOff";
+}
+
+function getRiskLevel(score: number) {
+  if (score <= -2) return "high";
+  if (score <= -0.75) return "elevated";
+  if (score >= 2.5) return "medium";
   return "balanced";
 }
 
-function getTrendStrength({
-  marketCapChange24h,
-  tvlChange7d,
-  stableChange1d,
-}: {
-  marketCapChange24h: number;
-  tvlChange7d: number;
-  stableChange1d: number;
-}) {
-  const score =
-    marketCapChange24h * 0.5 + tvlChange7d * 0.35 + stableChange1d * 0.15;
+function getTrendStrength(score: number) {
+  if (score >= 2.5) return "strong";
+  if (score >= 1) return "improving";
+  if (score > -0.75) return "moderate";
+  return "weak";
+}
 
-  if (score > 2.5) return "strong";
-  if (score < -1.5) return "weak";
-  return "moderate";
+function getTone(value: number) {
+  if (value > 0.3) return "green";
+  if (value < -0.3) return "red";
+  return "amber";
 }
 
 export async function GET() {
   try {
-    const [globalRes, chainsRes, stableRes, btcRes, blockRes] =
+    const [globalRes, tvlChartRes, stableChartRes, blockRes] =
       await Promise.all([
         fetch("https://api.coingecko.com/api/v3/global", {
           next: { revalidate: 300 },
@@ -95,13 +69,10 @@ export async function GET() {
             ? { "x-cg-demo-api-key": process.env.COINGECKO_API_KEY }
             : {},
         }),
-        fetch("https://api.llama.fi/v2/chains", {
+        fetch("https://api.llama.fi/charts", {
           next: { revalidate: 300 },
         }),
-        fetch("https://stablecoins.llama.fi/stablecoins", {
-          next: { revalidate: 300 },
-        }),
-        fetch("https://coins.llama.fi/prices/current/coingecko:bitcoin", {
+        fetch("https://stablecoins.llama.fi/stablecoincharts/all", {
           next: { revalidate: 300 },
         }),
         fetch("https://mempool.space/api/blocks/tip/height", {
@@ -109,20 +80,13 @@ export async function GET() {
         }),
       ]);
 
-    if (
-      !globalRes.ok ||
-      !chainsRes.ok ||
-      !stableRes.ok ||
-      !btcRes.ok ||
-      !blockRes.ok
-    ) {
+    if (!globalRes.ok || !tvlChartRes.ok || !stableChartRes.ok || !blockRes.ok) {
       throw new Error("Market pulse fetch failed");
     }
 
     const globalJson = await globalRes.json();
-    const chains = await chainsRes.json();
-    const stablecoins = await stableRes.json();
-    const btcJson = await btcRes.json();
+    const tvlChart = await tvlChartRes.json();
+    const stableChart = await stableChartRes.json();
     const blockHeight = Number(await blockRes.text());
 
     const global = globalJson.data;
@@ -131,55 +95,41 @@ export async function GET() {
     const marketCapChange24h = Number(
       global?.market_cap_change_percentage_24h_usd || 0
     );
+
     const btcDominance = Number(global?.market_cap_percentage?.btc || 0);
     const ethDominance = Number(global?.market_cap_percentage?.eth || 0);
 
-    const totalTvl = chains.reduce(
-      (sum: number, chain: any) => sum + Number(chain.tvl || 0),
-      0
+    const latestTvl = tvlChart.at(-1);
+    const prevTvl1d = tvlChart.at(-2);
+    const prevTvl7d = tvlChart.at(-8);
+
+    const totalTvl = Number(latestTvl?.totalLiquidityUSD || 0);
+    const tvlChange1d = changePct(
+      totalTvl,
+      Number(prevTvl1d?.totalLiquidityUSD || 0)
+    );
+    const tvlChange7d = changePct(
+      totalTvl,
+      Number(prevTvl7d?.totalLiquidityUSD || 0)
     );
 
-    const validTvl1d = chains.filter(
-      (chain: any) => typeof chain.change_1d === "number"
+    const latestStable = stableChart.at(-1);
+    const prevStable1d = stableChart.at(-2);
+
+    const totalStablecoins = getStableTotal(latestStable);
+    const stableChange1d = changePct(
+      totalStablecoins,
+      getStableTotal(prevStable1d)
     );
 
-    const validTvl7d = chains.filter(
-      (chain: any) => typeof chain.change_7d === "number"
-    );
+    const score =
+      marketCapChange24h * 0.45 +
+      tvlChange7d * 0.35 +
+      stableChange1d * 0.2;
 
-    const avgTvlChange1d =
-      validTvl1d.reduce(
-        (sum: number, chain: any) => sum + Number(chain.change_1d || 0),
-        0
-      ) / Math.max(validTvl1d.length, 1);
-
-    const avgTvlChange7d =
-      validTvl7d.reduce(
-        (sum: number, chain: any) => sum + Number(chain.change_7d || 0),
-        0
-      ) / Math.max(validTvl7d.length, 1);
-
-    const stableChange1d = Number(stablecoins?.change_1d?.peggedUSD || 0);
-    const btcPrice = Number(btcJson?.coins?.["coingecko:bitcoin"]?.price || 0);
-
-    const marketPhase = getMarketPhase({
-      marketCapChange24h,
-      btcDominance,
-      tvlChange7d: avgTvlChange7d,
-      stableChange1d,
-    });
-
-    const riskLevel = getRiskLevel({
-      marketCapChange24h,
-      btcDominance,
-      tvlChange1d: avgTvlChange1d,
-    });
-
-    const trendStrength = getTrendStrength({
-      marketCapChange24h,
-      tvlChange7d: avgTvlChange7d,
-      stableChange1d,
-    });
+    const marketPhase = getMarketPhase(score);
+    const riskLevel = getRiskLevel(score);
+    const trendStrength = getTrendStrength(score);
 
     const blocksRemaining = Math.max(NEXT_HALVING_BLOCK - blockHeight, 0);
     const daysRemaining = Math.ceil(blocksRemaining / BLOCKS_PER_DAY);
@@ -187,20 +137,33 @@ export async function GET() {
     return NextResponse.json({
       updatedAt: new Date().toISOString(),
 
-      btcPrice: compactUsd(btcPrice),
       totalMarketCap: compactUsd(totalMarketCap),
       totalTvl: compactUsd(totalTvl),
+      totalStablecoins: compactUsd(totalStablecoins),
 
       marketCapChange24h: pct(marketCapChange24h),
+      tvlChange1d: pct(tvlChange1d),
+      tvlChange7d: pct(tvlChange7d),
+      stableChange1d: pct(stableChange1d),
+
       btcDominance: `${btcDominance.toFixed(2)}%`,
       ethDominance: `${ethDominance.toFixed(2)}%`,
-      tvlChange1d: pct(avgTvlChange1d),
-      tvlChange7d: pct(avgTvlChange7d),
-      stableChange1d: pct(stableChange1d),
 
       marketPhase,
       riskLevel,
       trendStrength,
+
+      tones: {
+        marketPhase: getTone(score),
+        riskLevel:
+          riskLevel === "high" || riskLevel === "elevated" ? "red" : "green",
+        trendStrength:
+          trendStrength === "strong" || trendStrength === "improving"
+            ? "green"
+            : trendStrength === "weak"
+            ? "red"
+            : "amber",
+      },
 
       halving: {
         currentBlock: blockHeight,
@@ -210,19 +173,26 @@ export async function GET() {
       },
     });
   } catch {
-    return NextResponse.json(
-      {
-        marketPhase: "neutralConsolidation",
-        riskLevel: "balanced",
-        trendStrength: "moderate",
-        halving: {
-          currentBlock: 0,
-          nextHalvingBlock: NEXT_HALVING_BLOCK,
-          blocksRemaining: 0,
-          daysRemaining: 0,
-        },
+    return NextResponse.json({
+      updatedAt: new Date().toISOString(),
+      marketPhase: "dataLoading",
+      riskLevel: "balanced",
+      trendStrength: "moderate",
+      totalTvl: "Unavailable",
+      tvlChange1d: "—",
+      tvlChange7d: "—",
+      stableChange1d: "—",
+      tones: {
+        marketPhase: "amber",
+        riskLevel: "amber",
+        trendStrength: "amber",
       },
-      { status: 200 }
-    );
+      halving: {
+        currentBlock: 0,
+        nextHalvingBlock: NEXT_HALVING_BLOCK,
+        blocksRemaining: 0,
+        daysRemaining: 0,
+      },
+    });
   }
 }

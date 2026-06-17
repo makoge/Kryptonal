@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model article_views {
+  slug  String @id
+  views Int    @default(0)
+}
+
+model AirdropSubmission {
+  id          String   @id @default(cuid())
+  name        String
+  token       String?  @default("TBA")
+  platform    String
+  chain       String?  @default("Unknown")
+  description String
+  officialUrl String
+  twitterUrl  String?
+  status      String   @default("pending")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([status])
+}

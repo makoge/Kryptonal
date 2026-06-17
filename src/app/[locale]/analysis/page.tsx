@@ -171,7 +171,7 @@ export default async function AnalysisPage({ params }: PageProps) {
         <StablecoinFlows t={t} />
         <ChainStrengthTracker t={t} />
         <SectorRotationHeatmap t={t} />
-        <LeverageRiskTracker t={t.analysis} />
+        {/*<LeverageRiskTracker t={t.analysis} />*/}
 
         
 

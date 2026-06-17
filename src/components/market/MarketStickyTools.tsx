@@ -11,19 +11,62 @@ type Coin = {
   price: number;
   change24h: number;
   change7d: number;
-  sparkline: number[];
   sentiment: number;
-  mood: "bullish" | "bearish" | "neutral";
+  mood: string;
+  trendKey?: "strongMomentum" | "improving" | "neutral" | "cooling" | "weak";
+  sparkline: number[];
 };
 
 type StickyData = {
   updatedAt: string;
-  fearGreed: { value: number; label: string };
-  gas: { ethGwei: number; btcSatVb: number; solMicroLamports: number };
-  coins: Coin[];
-};
 
-const compareOptions = ["BTC / ETH", "BTC / SOL", "ETH / SOL"];
+  fearGreed: {
+    value: number;
+    label: string;
+  };
+
+  marketMood?: {
+    key: "bullish" | "neutral" | "bearish";
+    score: number;
+    summaryKey:
+      | "riskAppetiteStrong"
+      | "fearfulMarket"
+      | "momentumImproving"
+      | "marketCooling"
+      | "mixedMomentum";
+  };
+
+  gas: {
+    ethGwei: number;
+    btcSatVb: number;
+    solMicroLamports: number;
+    bnbGwei?: number;
+
+    ethLevel?: "cheap" | "normal" | "expensive";
+    btcLevel?: "cheap" | "normal" | "expensive";
+    solLevel?: "cheap" | "normal" | "expensive";
+    bnbLevel?: "cheap" | "normal" | "expensive";
+
+    actions?: {
+      ethereum: string;
+      bitcoin: string;
+      solana: string;
+      bnb: string;
+    };
+  };
+
+  coins: Coin[];
+
+  bestNetworkNow?: "bitcoin" | "ethereum" | "solana" | "bnb" | "none";
+};
+const compareOptions = [
+  "BTC / ETH",
+  "BTC / SOL",
+  "BTC / BNB",
+  "ETH / SOL",
+  "ETH / BNB",
+  "SOL / BNB",
+];
 
 function formatPrice(value: number) {
   if (!value) return "—";
@@ -97,6 +140,21 @@ function getCoin(coins: Coin[], symbol: string) {
 export default function MarketStickyTools({ t }: Props) {
   const [data, setData] = useState<StickyData | null>(null);
   const [compare, setCompare] = useState("BTC / ETH");
+
+  const trendLabels = t.marketCap.trendLabels || {};
+
+  const moodKey = data?.marketMood?.key || "neutral";
+
+         t.marketCap.marketMoodValues?.[moodKey]
+
+         const summaryKey =
+  data?.marketMood?.summaryKey || "mixedMomentum";
+
+t.marketCap.moodSummaries?.[summaryKey]
+
+const networkKey = data?.bestNetworkNow || "none";
+
+
 
   useEffect(() => {
     async function load() {
@@ -174,6 +232,11 @@ export default function MarketStickyTools({ t }: Props) {
           </div>
         </div>
 
+        <div className="mt-3 text-center text-sm font-bold text-emerald-300">
+  {t.marketCap.bestNetworkNow}:{" "}
+  {t.marketCap.networkLabels?.[networkKey]}
+</div>
+
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-3xl border border-emerald-300/20 bg-emerald-300/[0.06] p-5 backdrop-blur-xl sm:p-6">
             <p className="text-xs font-black uppercase tracking-[0.25em] text-emerald-300">
@@ -204,6 +267,24 @@ export default function MarketStickyTools({ t }: Props) {
               {t.marketCap.fearGreedText}
             </p>
           </div>
+
+          <div className="mt-5 rounded-2xl border border-white/10 bg-black/20 p-4">
+  <p className="text-xs uppercase tracking-widest text-slate-500">
+    {t.marketCap.marketMood}
+  </p>
+
+  <p className="mt-2 text-xl font-black text-white">
+  {t.marketCap.marketMoodValues?.[
+    data?.marketMood?.key ?? "neutral"
+  ]}
+</p>
+
+  <p className="mt-2 text-sm text-slate-400">
+  {t.marketCap.moodSummaries?.[
+    data?.marketMood?.summaryKey ?? "mixedMomentum"
+  ]}
+</p>
+</div>
 
           <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl sm:p-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -322,6 +403,9 @@ export default function MarketStickyTools({ t }: Props) {
             <div className="mt-6 grid gap-3">
               {selectedCoins.map((coin) => {
                 const isPositive = coin.change24h >= 0;
+
+                const trendKey = coin.trendKey ?? "neutral";
+  
                 const moodLabel =
                   coin.mood === "bullish"
                     ? t.marketCap.bullish
@@ -366,10 +450,18 @@ export default function MarketStickyTools({ t }: Props) {
                       >
                         {coin.sentiment}%
                       </p>
-                      <p className="text-xs font-bold text-slate-400">
-                        {moodLabel} · {isPositive ? "+" : ""}
-                        {coin.change24h.toFixed(2)}%
-                      </p>
+                     <p className="text-xs font-bold text-slate-400">
+  {t.marketCap.trendLabels?.[trendKey]}
+</p>
+
+<p
+  className={`text-xs font-black ${
+    isPositive ? "text-emerald-300" : "text-red-300"
+  }`}
+>
+  {isPositive ? "+" : ""}
+  {coin.change24h.toFixed(2)}%
+</p>
                     </div>
                   </div>
                 );

@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import CryptoROIVision from "@/components/tools/CryptoROIVision";
+import CryptoROIVision from "@/components/tools/CryptoProfitSimulator";
 import { getDictionary } from "@/lib/getDictionary";
 
 const siteUrl = "https://kryptonal.com";

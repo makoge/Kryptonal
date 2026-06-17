@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary } from "@/lib/getDictionary";
+import ArticleViewTracker from "@/components/blog/ArticleViewTracker";
 
 type PageProps = {
   params: Promise<{
@@ -74,6 +75,7 @@ export default async function BlogArticlePage({
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.14),transparent_35%),linear-gradient(to_bottom,#020617,#020617,#0f172a)] px-4 py-12 text-white sm:px-6">
+      <ArticleViewTracker slug={slug} />
       <article className="mx-auto max-w-3xl">
         <Link
           href={`/${locale}/blog`}
@@ -105,7 +107,7 @@ export default async function BlogArticlePage({
         </div>
 
         <div className="mt-12 space-y-12">
-          {article.content.map((section: any) => (
+          {article.content?.map((section: any) => (
             <section key={section.heading}>
               <h2 className="text-2xl font-black leading-tight text-white md:text-3xl">
                 {section.heading}

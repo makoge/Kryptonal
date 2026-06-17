@@ -88,7 +88,8 @@ export default function NewsHub({
               article={article}
               locale={locale}
               readGuide={t.readGuide}
-            />
+                t={t}
+               />
           ))}
         </div>
       </section>

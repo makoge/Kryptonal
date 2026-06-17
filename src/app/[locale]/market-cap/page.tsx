@@ -99,6 +99,12 @@ type GlobalMarketData = {
   updatedAt: string;
 };
 
+type MarketOverviewData = {
+  marketPhase: string;
+  riskLevel: string;
+  trendStrength: string;
+};
+
 async function getGlobalMarketData(): Promise<GlobalMarketData | null> {
   try {
     const res = await fetch("https://api.coingecko.com/api/v3/global", {
@@ -134,11 +140,26 @@ function formatMarketCap(value: number) {
   return `$${value.toLocaleString()}`;
 }
 
-function getMarketPhase(change24h: number) {
-  if (change24h >= 3) return "Expansion";
-  if (change24h <= -3) return "Contraction";
-  if (change24h < 0) return "Cooling";
-  return "Recovery";
+async function getMarketOverviewData(): Promise<MarketOverviewData | null> {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || "https://kryptonal.com"}/api/crypto/market-cap`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) return null;
+
+    return res.json();
+  } catch {
+    return null;
+  }
+}
+
+function get24hSignal(change24h: number) {
+  if (change24h >= 3) return "Strong bullish momentum";
+  if (change24h >= 1) return "Bullish momentum";
+  if (change24h > -1) return "Moderate";
+  if (change24h > -3) return "Bearish pressure";
+  return "Strong bearish pressure";
 }
 
 function getDominanceSignal(btcDominance: number) {
@@ -166,6 +187,9 @@ export default async function MarketCapPage({ params }: PageProps) {
   const { locale } = await params;
   const t = getDictionary(locale);
 
+const globalData = await getGlobalMarketData();
+const overviewData = await getMarketOverviewData();
+
   const marketCapFaqs = arr<FaqItem>(t.marketCap.faqs);
   const marketCapAnalysisTags = arr<string>(t.marketCap.analysisTags);
   const metrics = arr<TranslationItem>(t.marketCap.metrics);
@@ -174,7 +198,7 @@ export default async function MarketCapPage({ params }: PageProps) {
   const trustPills = arr<string>(t.marketCap.trustPills);
 
 
-  const globalData = await getGlobalMarketData();
+  
 
   const dominanceSignal = globalData
   ? getDominanceSignal(globalData.btcDominance)
@@ -189,11 +213,11 @@ export default async function MarketCapPage({ params }: PageProps) {
         positive: globalData.change24h >= 0,
       },
       {
-        label: t.marketCap.change24h,
-        value: `${globalData.change24h >= 0 ? "+" : ""}${globalData.change24h.toFixed(2)}%`,
-        change: globalData.change24h >= 0 ? "Bullish momentum" : "Bearish pressure",
-        positive: globalData.change24h >= 0,
-      },
+  label: t.marketCap.change24h,
+  value: `${globalData.change24h >= 0 ? "+" : ""}${globalData.change24h.toFixed(2)}%`,
+  change: get24hSignal(globalData.change24h),
+  positive: globalData.change24h >= 0,
+},
       {
         label: t.marketCap.btcDominance,
         value: `${globalData.btcDominance.toFixed(2)}%`,
@@ -201,11 +225,11 @@ export default async function MarketCapPage({ params }: PageProps) {
         positive: true,
       },
       {
-        label: t.marketCap.marketPhase,
-        value: getMarketPhase(globalData.change24h),
-        change: `${t.marketCap.updated}: ${globalData.updatedAt}`,
-        positive: globalData.change24h >= 0,
-      },
+  label: t.marketCap.marketPhase,
+  value: overviewData?.marketPhase || "...",
+  change: `${t.marketCap.updated}: ${globalData.updatedAt}`,
+  positive: true,
+}
     ]
   : metrics.slice(0, 4).map((metric) => ({
       label: metric.label,

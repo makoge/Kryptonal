@@ -43,45 +43,8 @@ function getLocale(locale: Locale) {
   return map[locale];
 }
 
-function getPhase({
-  marketCapChange24h,
-  btcDominance,
-  ethDominance,
-  tvlChange7d,
-  stableChange1d,
-}: {
-  marketCapChange24h: number;
-  btcDominance: number;
-  ethDominance: number;
-  tvlChange7d: number;
-  stableChange1d: number;
-}) {
-  if (marketCapChange24h > 3 && btcDominance < 54 && tvlChange7d > 1) {
-    return "altcoinExpansion";
-  }
 
-  if (marketCapChange24h > 1 && btcDominance >= 58) {
-    return "bitcoinLedRecovery";
-  }
 
-  if (marketCapChange24h < 0 && btcDominance >= 58) {
-    return "defensiveBitcoinRotation";
-  }
-
-  if (marketCapChange24h < -3 || tvlChange7d < -3) {
-    return "marketContraction";
-  }
-
-  if (stableChange1d > 0.5 && marketCapChange24h >= 0) {
-    return "earlyRecovery";
-  }
-
-  if (ethDominance > 11 && btcDominance < 56) {
-    return "riskOnRotation";
-  }
-
-  return "neutralConsolidation";
-}
 
 function getRisk({
   marketCapChange24h,
@@ -118,6 +81,8 @@ function getTrend({
   return "moderate";
 }
 
+
+
 const words = {
   en: {
     title: "Kryptonal Deep Market Analysis",
@@ -134,14 +99,12 @@ const words = {
     comparison: "Cycle comparison",
     disclaimer: "Not financial advice. Crypto markets are volatile.",
     phases: {
-      altcoinExpansion: "Altcoin Expansion",
-      bitcoinLedRecovery: "Bitcoin-Led Recovery",
-      defensiveBitcoinRotation: "Defensive Bitcoin Rotation",
-      marketContraction: "Market Contraction",
-      earlyRecovery: "Early Recovery",
-      riskOnRotation: "Risk-On Rotation",
-      neutralConsolidation: "Neutral Consolidation",
-    },
+  expansion: "Expansion",
+  recovery: "Recovery",
+  consolidation: "Consolidation",
+  distribution: "Distribution",
+  riskOff: "Risk-Off",
+},
     risks: {
       high: "High",
       elevated: "Elevated",
@@ -169,14 +132,12 @@ const words = {
     comparison: "Comparación de ciclo",
     disclaimer: "No es asesoramiento financiero. Los mercados cripto son volátiles.",
     phases: {
-      altcoinExpansion: "Expansión de Altcoins",
-      bitcoinLedRecovery: "Recuperación Liderada por Bitcoin",
-      defensiveBitcoinRotation: "Rotación Defensiva hacia Bitcoin",
-      marketContraction: "Contracción del Mercado",
-      earlyRecovery: "Recuperación Temprana",
-      riskOnRotation: "Rotación Risk-On",
-      neutralConsolidation: "Consolidación Neutral",
-    },
+  expansion: "Expansión",
+  recovery: "Recuperación",
+  consolidation: "Consolidación",
+  distribution: "Distribución",
+  riskOff: "Mercado defensivo",
+},
     risks: {
       high: "Alto",
       elevated: "Elevado",
@@ -204,14 +165,12 @@ const words = {
     comparison: "Comparação de ciclo",
     disclaimer: "Não é aconselhamento financeiro. Mercados cripto são voláteis.",
     phases: {
-      altcoinExpansion: "Expansão das Altcoins",
-      bitcoinLedRecovery: "Recuperação Liderada pelo Bitcoin",
-      defensiveBitcoinRotation: "Rotação Defensiva para Bitcoin",
-      marketContraction: "Contração do Mercado",
-      earlyRecovery: "Recuperação Inicial",
-      riskOnRotation: "Rotação Risk-On",
-      neutralConsolidation: "Consolidação Neutra",
-    },
+  expansion: "Expansão",
+  recovery: "Recuperação",
+  consolidation: "Consolidação",
+  distribution: "Distribuição",
+  riskOff: "Mercado defensivo",
+},
     risks: {
       high: "Alto",
       elevated: "Elevado",
@@ -239,14 +198,12 @@ const words = {
     comparison: "Comparaison du cycle",
     disclaimer: "Ceci n’est pas un conseil financier. Les marchés crypto sont volatils.",
     phases: {
-      altcoinExpansion: "Expansion des Altcoins",
-      bitcoinLedRecovery: "Reprise menée par le Bitcoin",
-      defensiveBitcoinRotation: "Rotation Défensive vers le Bitcoin",
-      marketContraction: "Contraction du Marché",
-      earlyRecovery: "Reprise Précoce",
-      riskOnRotation: "Rotation Risk-On",
-      neutralConsolidation: "Consolidation Neutre",
-    },
+  expansion: "Expansion",
+  recovery: "Reprise",
+  consolidation: "Consolidation",
+  distribution: "Distribution",
+  riskOff: "Marché défensif",
+},
     risks: {
       high: "Élevé",
       elevated: "Élevé",
@@ -274,14 +231,12 @@ const words = {
     comparison: "Zyklusvergleich",
     disclaimer: "Keine Finanzberatung. Kryptomärkte sind volatil.",
     phases: {
-      altcoinExpansion: "Altcoin-Expansion",
-      bitcoinLedRecovery: "Bitcoin-geführte Erholung",
-      defensiveBitcoinRotation: "Defensive Bitcoin-Rotation",
-      marketContraction: "Marktkontraktion",
-      earlyRecovery: "Frühe Erholung",
-      riskOnRotation: "Risk-On-Rotation",
-      neutralConsolidation: "Neutrale Konsolidierung",
-    },
+  expansion: "Expansion",
+  recovery: "Erholung",
+  consolidation: "Konsolidierung",
+  distribution: "Distribution",
+  riskOff: "Defensiver Markt",
+},
     risks: {
       high: "Hoch",
       elevated: "Erhöht",
@@ -309,14 +264,12 @@ const words = {
     comparison: "Döngü karşılaştırması",
     disclaimer: "Finansal tavsiye değildir. Kripto piyasaları volatildir.",
     phases: {
-      altcoinExpansion: "Altcoin Genişlemesi",
-      bitcoinLedRecovery: "Bitcoin Öncülüğünde Toparlanma",
-      defensiveBitcoinRotation: "Savunmacı Bitcoin Rotasyonu",
-      marketContraction: "Piyasa Daralması",
-      earlyRecovery: "Erken Toparlanma",
-      riskOnRotation: "Risk-On Rotasyonu",
-      neutralConsolidation: "Nötr Konsolidasyon",
-    },
+  expansion: "Genişleme",
+  recovery: "Toparlanma",
+  consolidation: "Konsolidasyon",
+  distribution: "Dağıtım",
+  riskOff: "Savunmacı piyasa",
+},
     risks: {
       high: "Yüksek",
       elevated: "Yüksek",
@@ -501,7 +454,7 @@ export async function POST(req: NextRequest) {
       fetch("https://api.llama.fi/v2/chains", {
         next: { revalidate: 300 },
       }),
-      fetch("https://stablecoins.llama.fi/stablecoins", {
+      fetch("https://stablecoins.llama.fi/stablecoincharts/all", {
         next: { revalidate: 300 },
       }),
       fetch("https://api.alternative.me/fng/?limit=1", {
@@ -513,19 +466,26 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Market API failed" }, { status: 502 });
     }
 
+    function getStableTotal(point: any) {
+  return Number(
+    point?.totalCirculatingUSD?.peggedUSD ||
+      point?.totalCirculating?.peggedUSD ||
+      point?.totalCirculatingUSD ||
+      point?.totalCirculating ||
+      0
+  );
+}
+
     const globalJson = await globalRes.json();
     const chains = chainsRes.ok ? await chainsRes.json() : [];
-    const stablecoins = stableRes.ok ? await stableRes.json() : null;
+    const stableChart = stableRes.ok ? await stableRes.json() : [];
     const fearJson = fearRes.ok ? await fearRes.json() : null;
 
     const global = globalJson.data;
 
     const marketCap = Number(global?.total_market_cap?.usd || 0);
-    const marketCapChange24h = Number(
-      global?.market_cap_change_percentage_24h_usd || 0
-    );
-    const btcDominance = Number(global?.market_cap_percentage?.btc || 0);
-    const ethDominance = Number(global?.market_cap_percentage?.eth || 0);
+    
+    
 
     const validChains = Array.isArray(chains) ? chains : [];
 
@@ -534,49 +494,59 @@ export async function POST(req: NextRequest) {
       0
     );
 
-    const validTvl1d = validChains.filter(
-      (chain: any) => typeof chain.change_1d === "number"
-    );
+    
+const fearGreed = Number(fearJson?.data?.[0]?.value || 50);
 
-    const validTvl7d = validChains.filter(
-      (chain: any) => typeof chain.change_7d === "number"
-    );
 
-    const tvlChange1d =
-      validTvl1d.reduce(
-        (sum: number, chain: any) => sum + Number(chain.change_1d || 0),
-        0
-      ) / Math.max(validTvl1d.length, 1);
 
-    const tvlChange7d =
-      validTvl7d.reduce(
-        (sum: number, chain: any) => sum + Number(chain.change_7d || 0),
-        0
-      ) / Math.max(validTvl7d.length, 1);
+    const baseUrl =
+  process.env.NODE_ENV === "development"
+    ? "http://192.168.8.103:3000"
+    : process.env.NEXT_PUBLIC_SITE_URL || "https://kryptonal.com";
 
-    const stableChange1d = Number(stablecoins?.change_1d?.peggedUSD || 0);
-    const fearGreed = Number(fearJson?.data?.[0]?.value || 50);
+const marketRes = await fetch(`${baseUrl}/api/crypto/market-cap`, {
+  next: { revalidate: 60 },
+});
+const w = words[locale];
 
-    const phase = getPhase({
-      marketCapChange24h,
-      btcDominance,
-      ethDominance,
-      tvlChange7d,
-      stableChange1d,
-    });
+const market = await marketRes.json();
 
-    const risk = getRisk({
-      marketCapChange24h,
-      btcDominance,
-      tvlChange1d,
-      fearGreed,
-    });
+function normalizePhaseKey(value: string) {
+  if (value === "Expansion") return "expansion";
+  if (value === "Recovery") return "recovery";
+  if (value === "Consolidation") return "consolidation";
+  if (value === "Distribution") return "distribution";
+  if (value === "Risk-Off") return "riskOff";
+  return value;
+}
 
-    const trend = getTrend({
-      marketCapChange24h,
-      tvlChange7d,
-      stableChange1d,
-    });
+function normalizeRiskKey(value: string) {
+  if (value === "High") return "high";
+  if (value === "Elevated") return "elevated";
+  if (value === "Medium") return "medium";
+  if (value === "Balanced") return "balanced";
+  return value;
+}
+
+function normalizeTrendKey(value: string) {
+  if (value === "Strong") return "strong";
+  if (value === "Moderate") return "moderate";
+  if (value === "Weak") return "weak";
+  return value;
+}
+
+const phase = normalizePhaseKey(market.marketPhase);
+const risk = normalizeRiskKey(market.riskLevel);
+const trend = normalizeTrendKey(market.trendStrength);
+
+const marketCapChange24h = market.marketCapChange24h;
+const btcDominance = market.btcDominance;
+const ethDominance = market.ethDominance;
+const tvlChange7d = market.tvlChange7d;
+const stableChange1d = market.stableChange1d;
+
+
+   
 
     const result = buildAnalysis({
       locale,
