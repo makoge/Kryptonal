@@ -320,16 +320,16 @@
           ]
         },
         {
-          "badge": "Monitoramento privado",
-          "title": "Privacy-First Watchlist",
-          "text": "Acompanhe as moedas que você gosta sem cadastro. Sua watchlist permanece salva no navegador para que você possa voltar a qualquer momento e continuar monitorando seus ativos favoritos.",
-          "href": "/tools/watchlist",
-          "cta": "Criar watchlist",
-          "accent": "amber",
+          "badge": "Gestão de Portfólio",
+          "title": "Rastreador de Portfólio Cripto",
+          "text": "Acompanhe seus ativos de criptomoedas, monitore lucros e perdas, analise a alocação do portfólio, gerencie riscos e configure alertas de preço sem criar uma conta. Seu portfólio permanece privado no seu dispositivo.",
+          "href": "/tools/crypto-portfolio-tracker",
+          "cta": "Acompanhar Portfólio",
+          "accent": "emerald",
           "stats": [
-            "Sem login",
-            "Preços em tempo real",
-            "Salvo no seu dispositivo"
+            "Rastreamento privado de portfólio",
+            "Análise de lucros e perdas",
+            "Insights de alocação de portfólio"
           ]
         }
       ]
@@ -540,12 +540,132 @@
       "remove": "Remover",
       "loading": "Carregando preços ao vivo...",
       "empty": "Sua watchlist está vazia. Pesquise uma moeda para adicionar.",
+      "portfolioHealth": "Saúde do Portfólio",
+      "allocation": "Alocação",
+      "largestHolding": "Maior Posição",
+      "diversificationScore": "Pontuação de Diversificação",
+      "riskLevel": "Nível de Risco",
+      "lowRisk": "Baixo Risco",
+      "mediumRisk": "Risco Médio",
+      "highRisk": "Alto Risco",
+      "bestPerformer": "Melhor Desempenho",
+      "worstPerformer": "Pior Desempenho",
+      "seoTitle": "Guia de Rastreador de Portfólio Cripto",
+      "faqBestTrackerQ": "Qual é o melhor rastreador de portfólio para criptomoedas?",
+      "faqBestTrackerA": "O melhor rastreador de portfólio cripto depende das suas necessidades. Uma boa ferramenta deve oferecer preços em tempo real, acompanhamento de lucros e perdas, análise de alocação, insights de risco, alertas e armazenamento que respeite a privacidade.",
+      "faqFreeTrackerQ": "Existe um rastreador de portfólio gratuito?",
+      "faqFreeTrackerA": "Sim. O Kryptonal oferece um rastreador de portfólio cripto gratuito que ajuda os usuários a monitorar ativos, calcular lucros e perdas, acompanhar alertas e analisar a exposição do portfólio sem exigir uma conta.",
+      "faqWhatTrackerQ": "O que é um rastreador de portfólio cripto?",
+      "faqWhatTrackerA": "Um rastreador de portfólio cripto é uma ferramenta que ajuda investidores a acompanhar seus ativos de criptomoedas, valor atual, lucro ou prejuízo, alocação e desempenho em um único lugar.",
+      "faqHowTrackQ": "Como posso acompanhar meu portfólio de criptomoedas?",
+      "faqHowTrackA": "Você pode acompanhar seu portfólio adicionando cada moeda, inserindo a quantidade que possui, registrando seu preço de entrada e analisando valor em tempo real, lucros, perdas, alocação e sinais de risco.",
+      "faq1000Q": "É possível ganhar US$ 1000 por dia com criptomoedas?",
+      "faq1000A": "É possível, mas normalmente exige grande capital, habilidades avançadas de trading, alto risco ou condições de mercado excepcionalmente favoráveis. A maioria dos investidores deve focar no crescimento do portfólio, controle de risco e consistência de longo prazo, em vez de metas fixas de lucro diário.",
+
       "table": {
         "asset": "Ativo",
         "price": "Preço",
         "action": "Ação"
       },
       "disclaimer": "Sua watchlist é armazenada localmente no navegador. Limpar os dados do navegador pode removê-la. Os preços são apenas educativos e não constituem aconselhamento financeiro."
+    },
+    "cryptoEtfTracker": {
+      "name": "Rastreador de ETFs Cripto",
+      "description": "Acompanhe entradas de ETFs de Bitcoin, demanda institucional, classificações de fundos e sentimento de mercado em um só lugar.",
+      "benefit": "Entenda se o capital dos ETFs está entrando ou saindo do mercado de criptomoedas antes de tomar decisões de pesquisa.",
+
+      "badge": "Análise de Fluxo de ETFs",
+      "title": "Rastreador de ETFs Cripto",
+      "descriptionLong": "Acompanhe entradas de ETFs de Bitcoin, fluxos de ETFs cripto, status de aprovação de ETFs, demanda institucional e a melhor lista de ETFs de criptomoedas em um só lugar.",
+      "sourceWarning": "Os dados de ETFs podem mudar rapidamente. Sempre verifique os dados oficiais dos emissores e das bolsas antes de tomar decisões financeiras.",
+
+      "dailyFlow": "Fluxo Líquido Diário",
+      "sevenDayFlow": "Fluxo Líquido de 7 Dias",
+      "thirtyDayFlow": "Fluxo Líquido de 30 Dias",
+      "approvedEtfs": "ETFs Aprovados",
+
+      "flowSignal": "Sinal de Fluxo de ETFs",
+      "leaderboard": "Melhor Lista de ETFs de Criptomoedas",
+      "approvalList": "Lista de Aprovação de ETFs Cripto",
+      "bitcoinInflowsChart": "Gráfico de Entradas de ETFs de Bitcoin",
+      "sourceNote": "Nota da Fonte",
+
+      "signals": {
+        "strongAccumulation": "Forte Acumulação",
+        "accumulation": "Acumulação",
+        "neutral": "Neutro",
+        "distribution": "Distribuição",
+        "heavyOutflows": "Fortes Saídas"
+      },
+
+      "faqTitle": "Perguntas Frequentes sobre ETFs Cripto",
+
+      "faq1Q": "Qual é o melhor rastreador de ETFs cripto?",
+      "faq1A": "Um bom rastreador de ETFs cripto deve monitorar entradas de ETFs de Bitcoin, fluxos de ETFs cripto, classificações de fundos, status de aprovação de ETFs e demanda institucional.",
+
+      "faq2Q": "Posso acompanhar as entradas diárias de ETFs de Bitcoin?",
+      "faq2A": "Sim. Um rastreador diário de entradas de ETFs de Bitcoin ajuda os investidores a monitorar se o capital está entrando ou saindo dos produtos de ETF de Bitcoin.",
+
+      "faq3Q": "O que é fluxo de ETF cripto?",
+      "faq3A": "Fluxo de ETF cripto mede o dinheiro que entra ou sai de fundos negociados em bolsa vinculados a ativos digitais como Bitcoin ou Ethereum.",
+
+      "faq4Q": "O que é aprovação de ETF cripto?",
+      "faq4A": "A aprovação de ETF cripto significa que um órgão regulador permitiu que um fundo negociado em bolsa fosse listado e negociado sob regras específicas.",
+
+      "faq5Q": "Qual é a melhor lista de ETFs de criptomoedas?",
+      "faq5A": "Entre os ETFs de criptomoedas mais populares estão BlackRock IBIT, Fidelity FBTC, ARKB, Bitwise BITB, VanEck HODL e outros ETFs spot de Bitcoin regulamentados."
+    },
+    "cryptoScamRiskChecker": {
+      "name": "Verificador de Risco de Fraudes em Cripto",
+      "description": "Analise projetos de criptomoedas, sites, endereços de carteira e tokens em busca de sinais comuns de fraude.",
+      "benefit": "Identifique riscos potenciais antes de investir, avaliando a transparência do projeto, indicadores de segurança e sinais de confiança.",
+      "badge": "Ferramenta de Segurança Cripto",
+      "title": "Verificador de Risco de Fraudes em Cripto",
+      "descriptionLong": "Verifique projetos de criptomoedas, sites, endereços de carteira e tokens em busca de sinais comuns de fraude antes de tomar decisões de pesquisa.",
+      "inputLabel": "Insira o nome de um projeto, URL de site, endereço de carteira ou contrato de token",
+      "placeholder": "Exemplo: https://example.com, 0x... ou nome do projeto",
+      "button": "Verificar Risco",
+      "checking": "Verificando...",
+      "resultTitle": "Resultado da Análise de Risco",
+      "riskScore": "Pontuação de Risco",
+      "redFlags": "Sinais de Alerta",
+      "positiveSigns": "Sinais Positivos",
+      "recommendations": "Recomendações de Segurança",
+      "disclaimer": "Esta ferramenta é apenas para fins educacionais. Ela não garante que um projeto seja seguro ou inseguro.",
+      "error": "Não foi possível verificar esta entrada. Tente novamente.",
+      "faqTitle": "Perguntas Frequentes sobre o Verificador de Risco de Fraudes em Cripto",
+      "faq1Q": "Como verificar uma fraude em criptomoedas?",
+      "faq1A": "Você pode verificar uma possível fraude analisando o site do projeto, o contrato do token, a liquidez, a transparência da equipe, a atividade social e as auditorias de segurança.",
+      "faq2Q": "Quais são as fraudes mais comuns em criptomoedas atualmente?",
+      "faq2A": "As fraudes mais comuns incluem plataformas de investimento falsas, sites de phishing, lançamentos falsos de tokens, rug pulls, golpes de brindes e serviços fraudulentos de recuperação de fundos.",
+      "faq3Q": "É possível recuperar o dinheiro perdido em uma fraude com criptomoedas?",
+      "faq3A": "Recuperar criptomoedas após uma fraude é difícil porque as transações em blockchain geralmente são irreversíveis. As vítimas devem denunciar rapidamente o caso e reunir todos os registros das transações.",
+      "faq4Q": "Como posso verificar se alguém é um golpista?",
+      "faq4A": "Você pode verificar possíveis golpistas analisando endereços de carteira, domínios de sites, perfis em redes sociais, documentos do projeto e alertas da comunidade."
+    },
+    "cryptocurrencyConverter": {
+      "name": "Conversor de Criptomoedas",
+      "description": "Converta preços de criptomoedas entre Bitcoin, Ethereum, stablecoins, altcoins e moedas fiduciárias usando dados de mercado em tempo real.",
+      "benefit": "Entenda rapidamente o valor das criptomoedas em diferentes moedas e ativos antes de tomar decisões de pesquisa.",
+      "badge": "Ferramenta Cripto em Tempo Real",
+      "title": "Conversor de Criptomoedas",
+      "descriptionLong": "Converta Bitcoin, Ethereum, stablecoins, altcoins e moedas fiduciárias utilizando dados do mercado de criptomoedas em tempo real. Compare valores entre ativos digitais e moedas tradicionais com cálculos rápidos e simples.",
+      "amount": "Quantidade",
+      "from": "De",
+      "to": "Para",
+      "result": "Resultado",
+      "loading": "Carregando preços...",
+      "error": "Não foi possível carregar os preços em tempo real. Exibindo dados de reserva.",
+      "updated": "Atualizado",
+      "faqTitle": "Perguntas Frequentes sobre o Conversor de Criptomoedas",
+      "faq1Q": "O que é um conversor de criptomoedas?",
+      "faq1A": "Um conversor de criptomoedas é uma ferramenta que calcula o valor de uma criptomoeda em outra criptomoeda ou moeda fiduciária usando os preços atuais do mercado.",
+      "faq2Q": "Como funciona um conversor de criptomoedas?",
+      "faq2A": "Um conversor de criptomoedas compara os preços de mercado em tempo real entre diferentes ativos. Por exemplo, converter Bitcoin para Ethereum é feito comparando o valor atual do BTC com o ETH e aplicando a quantidade selecionada.",
+      "faq3Q": "Posso converter Bitcoin para USD?",
+      "faq3A": "Sim. Você pode converter Bitcoin, Ethereum, stablecoins e altcoins selecionadas para USD e outras moedas suportadas usando dados de mercado atualizados.",
+      "faq4Q": "Isto é aconselhamento financeiro?",
+      "faq4A": "Não. Esta ferramenta é fornecida apenas para fins educacionais e de pesquisa. As informações exibidas não devem ser consideradas aconselhamento financeiro, de investimento ou de negociação."
     },
     "directory": {
       "metaTitle": "Ferramentas Cripto Kryptonal | Ferramentas de Análise e Pesquisa de Mercado",
@@ -593,33 +713,9 @@
         },
 
         "privacyWatchlist": {
-          "badge": "Monitoramento Privado de Moedas",
-          "title": "Lista de Observação com Privacidade em Primeiro Lugar",
-          "description": "Acompanhe seus ativos cripto favoritos sem criar uma conta. Sua lista de observação permanece salva no seu navegador e os preços são atualizados pelo Kryptonal.",
-          "benefit": "Crie um portfólio cripto privado, acompanhe lucros e perdas e configure alertas de preço sem compartilhar dados pessoais.",
-          "searchPlaceholder": "Pesquisar moeda, ex. BTC, ETH, SOL...",
-          "add": "Adicionar",
-          "remove": "Remover",
-          "loading": "Carregando preços em tempo real...",
-          "empty": "Sua lista de observação está vazia. Pesquise uma moeda para adicionar.",
-          "portfolioValue": "Valor do Portfólio",
-          "totalProfit": "Lucro/Prejuízo Total",
-          "assetsTracked": "Ativos Monitorados",
-          "alerts": "Alertas Acionados",
-          "amount": "Quantidade Mantida",
-          "entryPrice": "Preço de Entrada",
-          "alertAbove": "Alerta Acima de",
-          "alertBelow": "Alerta Abaixo de",
-          "value": "Valor",
-          "profitLoss": "Lucro/Prejuízo",
-          "return": "Retorno",
-          "alertHit": "Alerta Acionado",
-          "table": {
-            "asset": "Ativo",
-            "price": "Preço",
-            "action": "Ação"
-          },
-          "disclaimer": "Seu portfólio e alertas são armazenados localmente no seu navegador. Limpar os dados do navegador pode remover suas informações salvas. Os preços são apenas para fins educacionais e não constituem aconselhamento financeiro."
+          "name": "Rastreador de Portfólio Cripto",
+          "description": "Acompanhe seu portfólio de criptomoedas, monitore lucros e perdas, analise a alocação dos ativos e gerencie alertas de preço sem criar uma conta. Seus dados permanecem privados no navegador.",
+          "benefit": "Crie um portfólio cripto privado, acompanhe o desempenho, monitore a diversificação, gerencie riscos e configure alertas de preço sem compartilhar informações pessoais."
         },
         "bitcoinCycle": {
           "name": "Rastreador de Ciclos do Bitcoin",
@@ -655,6 +751,21 @@
           "name": "Verificador de Segurança da Carteira",
           "description": "Analise o formato da carteira, redes compatíveis, sinais de risco e recomendações de segurança antes de interagir com um endereço de criptomoeda.",
           "benefit": "Revise sinais de reputação da carteira e reduza riscos antes de enviar fundos, conectar carteiras ou confiar em endereços desconhecidos."
+        },
+        "cryptoEtfTracker": {
+          "name": "Rastreador de ETFs Cripto",
+          "description": "Acompanhe os fluxos dos ETFs de Bitcoin, a demanda institucional, as classificações dos fundos e o sentimento do mercado em um só lugar.",
+          "benefit": "Entenda se o capital dos ETFs está entrando ou saindo do mercado de criptomoedas antes de tomar decisões de pesquisa e investimento."
+        },
+        "cryptoScamRiskChecker": {
+          "name": "Verificador de Risco de Fraudes em Cripto",
+          "description": "Analise projetos de criptomoedas, sites, endereços de carteira e tokens em busca de sinais comuns de fraude.",
+          "benefit": "Identifique riscos potenciais antes de investir, avaliando a transparência do projeto, indicadores de segurança e sinais de confiança."
+        },
+        "cryptocurrencyConverter": {
+          "name": "Conversor de Criptomoedas",
+          "description": "Converta preços de criptomoedas entre Bitcoin, Ethereum, stablecoins, altcoins e moedas fiduciárias usando dados de mercado em tempo real.",
+          "benefit": "Entenda rapidamente o valor das criptomoedas em diferentes moedas e ativos antes de tomar decisões de pesquisa."
         },
         "gamingPulse": {
           "name": "Gaming Crypto Pulse",
@@ -2586,6 +2697,8 @@
     "educationOnly": "Conteúdo apenas educacional",
     "notFinancialAdvice": "Não é aconselhamento financeiro",
     "highRisk": "Cripto é de alto risco",
+    "privacy": "Privacidade",
+    "terms": "Termos e Condições",
     "translationNote": "As traduções são geradas por IA e podem conter erros ou informações incorretas. Sempre verifique informações financeiras importantes de forma independente."
   },
   "seo": {

@@ -313,16 +313,16 @@
           ]
         },
         {
-          "badge": "Privates Tracking",
-          "title": "Privacy-First Watchlist",
-          "text": "Verfolge deine Lieblings-Coins ohne Registrierung. Deine Watchlist bleibt lokal im Browser gespeichert, damit du jederzeit zurückkehren und deine Assets weiter beobachten kannst.",
-          "href": "/tools/watchlist",
-          "cta": "Watchlist erstellen",
-          "accent": "amber",
+          "badge": "Portfolio-Verwaltung",
+          "title": "Krypto-Portfolio-Tracker",
+          "text": "Verfolgen Sie Ihre Kryptowährungen, überwachen Sie Gewinne und Verluste, analysieren Sie die Portfolio-Aufteilung, verwalten Sie Risiken und erstellen Sie Preisalarme – ganz ohne Konto. Ihr Portfolio bleibt privat auf Ihrem Gerät gespeichert.",
+          "href": "/tools/crypto-portfolio-tracker",
+          "cta": "Portfolio Verfolgen",
+          "accent": "emerald",
           "stats": [
-            "Kein Login erforderlich",
-            "Live-Preisverfolgung",
-            "Lokal auf deinem Gerät gespeichert"
+            "Private Portfolio-Verfolgung",
+            "Gewinn- und Verlustanalyse",
+            "Einblicke in die Portfolio-Aufteilung"
           ]
         }
       ]
@@ -533,12 +533,131 @@
       "remove": "Entfernen",
       "loading": "Live-Preise werden geladen...",
       "empty": "Deine Watchlist ist leer. Suche nach einem Coin, um ihn hinzuzufügen.",
+      "portfolioHealth": "Portfolio-Gesundheit",
+      "allocation": "Portfolio-Aufteilung",
+      "largestHolding": "Größte Position",
+      "diversificationScore": "Diversifikationswert",
+      "riskLevel": "Risikostufe",
+      "lowRisk": "Niedriges Risiko",
+      "mediumRisk": "Mittleres Risiko",
+      "highRisk": "Hohes Risiko",
+      "bestPerformer": "Beste Performance",
+      "worstPerformer": "Schlechteste Performance",
+      "seoTitle": "Leitfaden für Krypto-Portfolio-Tracker",
+      "faqBestTrackerQ": "Welcher ist der beste Portfolio-Tracker für Kryptowährungen?",
+      "faqBestTrackerA": "Der beste Krypto-Portfolio-Tracker hängt von Ihren Anforderungen ab. Ein guter Tracker sollte Echtzeitkurse, Gewinn- und Verlustverfolgung, Portfolio-Analysen, Risikoeinblicke, Benachrichtigungen und datenschutzfreundliche Speicherung bieten.",
+      "faqFreeTrackerQ": "Gibt es einen kostenlosen Portfolio-Tracker?",
+      "faqFreeTrackerA": "Ja. Kryptonal bietet einen kostenlosen Krypto-Portfolio-Tracker, mit dem Nutzer ihre Bestände überwachen, Gewinne und Verluste berechnen, Benachrichtigungen verfolgen und ihr Portfolio analysieren können, ohne ein Konto erstellen zu müssen.",
+      "faqWhatTrackerQ": "Was ist ein Krypto-Portfolio-Tracker?",
+      "faqWhatTrackerA": "Ein Krypto-Portfolio-Tracker ist ein Tool, das Anlegern hilft, ihre Kryptowährungsbestände, den aktuellen Wert, Gewinne oder Verluste, die Portfolio-Aufteilung und die Gesamtperformance an einem Ort zu verfolgen.",
+      "faqHowTrackQ": "Wie kann ich mein Krypto-Portfolio verfolgen?",
+      "faqHowTrackA": "Sie können Ihr Krypto-Portfolio verfolgen, indem Sie jede Kryptowährung hinzufügen, die gehaltene Menge eingeben, den Einstiegspreis erfassen und anschließend den aktuellen Wert, Gewinne, Verluste, die Portfolio-Aufteilung und Risikosignale überwachen.",
+      "faq1000Q": "Kann man mit Kryptowährungen 1.000 US-Dollar pro Tag verdienen?",
+      "faq1000A": "Das ist möglich, erfordert jedoch in der Regel erhebliches Kapital, fortgeschrittene Trading-Kenntnisse, eine hohe Risikobereitschaft oder außergewöhnlich günstige Marktbedingungen. Die meisten Anleger sollten sich auf langfristiges Portfoliowachstum, Risikomanagement und Beständigkeit konzentrieren, anstatt feste tägliche Gewinnziele anzustreben.",
       "table": {
         "asset": "Asset",
         "price": "Preis",
         "action": "Aktion"
       },
       "disclaimer": "Deine Watchlist wird lokal im Browser gespeichert. Das Löschen von Browserdaten kann sie entfernen. Preise dienen nur Bildungszwecken und sind keine Finanzberatung."
+    },
+    "cryptoEtfTracker": {
+      "name": "Krypto-ETF-Tracker",
+      "description": "Verfolgen Sie Bitcoin-ETF-Zuflüsse, institutionelle Nachfrage, Fondsrankings und die Marktstimmung an einem Ort.",
+      "benefit": "Verstehen Sie, ob ETF-Kapital in den Kryptomarkt hinein- oder herausfließt, bevor Sie Anlageentscheidungen treffen.",
+
+      "badge": "ETF-Flow-Analyse",
+      "title": "Krypto-ETF-Tracker",
+      "descriptionLong": "Verfolgen Sie Bitcoin-ETF-Zuflüsse, Krypto-ETF-Flüsse, ETF-Zulassungsstatus, institutionelle Nachfrage und die beste Liste von Kryptowährungs-ETFs an einem Ort.",
+      "sourceWarning": "ETF-Daten können sich schnell ändern. Überprüfen Sie immer die offiziellen Daten der Emittenten und Börsen, bevor Sie finanzielle Entscheidungen treffen.",
+
+      "dailyFlow": "Täglicher Nettofluss",
+      "sevenDayFlow": "7-Tage-Nettofluss",
+      "thirtyDayFlow": "30-Tage-Nettofluss",
+      "approvedEtfs": "Zugelassene ETFs",
+
+      "flowSignal": "ETF-Flow-Signal",
+      "leaderboard": "Beste Kryptowährungs-ETF-Liste",
+      "approvalList": "Krypto-ETF-Zulassungsliste",
+      "bitcoinInflowsChart": "Bitcoin-ETF-Zuflussdiagramm",
+      "sourceNote": "Quellenhinweis",
+
+      "signals": {
+        "strongAccumulation": "Starke Akkumulation",
+        "accumulation": "Akkumulation",
+        "neutral": "Neutral",
+        "distribution": "Distribution",
+        "heavyOutflows": "Starke Abflüsse"
+      },
+
+      "faqTitle": "Krypto-ETF-Tracker FAQ",
+
+      "faq1Q": "Welcher ist der beste Krypto-ETF-Tracker?",
+      "faq1A": "Ein guter Krypto-ETF-Tracker sollte Bitcoin-ETF-Zuflüsse, Krypto-ETF-Flüsse, Fondsrankings, ETF-Zulassungsstatus und institutionelle Nachfrage überwachen.",
+
+      "faq2Q": "Kann ich Bitcoin-ETF-Zuflüsse täglich verfolgen?",
+      "faq2A": "Ja. Ein täglicher Bitcoin-ETF-Zufluss-Tracker hilft Anlegern zu überwachen, ob Kapital in Bitcoin-ETF-Produkte hinein- oder herausfließt.",
+
+      "faq3Q": "Was ist ein Krypto-ETF-Flow?",
+      "faq3A": "Ein Krypto-ETF-Flow misst das Geld, das in börsengehandelte Fonds fließt oder diese verlässt, die mit digitalen Vermögenswerten wie Bitcoin oder Ethereum verbunden sind.",
+
+      "faq4Q": "Was bedeutet die Zulassung eines Krypto-ETF?",
+      "faq4A": "Die Zulassung eines Krypto-ETF bedeutet, dass eine Aufsichtsbehörde einem börsengehandelten Fonds erlaubt hat, unter bestimmten Regeln gelistet und gehandelt zu werden.",
+
+      "faq5Q": "Welche ist die beste Kryptowährungs-ETF-Liste?",
+      "faq5A": "Zu den beliebtesten Kryptowährungs-ETFs gehören BlackRock IBIT, Fidelity FBTC, ARKB, Bitwise BITB, VanEck HODL und andere regulierte Spot-Bitcoin-ETFs."
+    },
+    "cryptoScamRiskChecker": {
+      "name": "Krypto-Betrugsrisiko-Prüfer",
+      "description": "Analysieren Sie Krypto-Projekte, Websites, Wallet-Adressen und Token auf häufige Anzeichen von Betrug.",
+      "benefit": "Erkennen Sie potenzielle Risiken vor einer Investition, indem Sie die Transparenz des Projekts, Sicherheitsindikatoren und Vertrauenssignale bewerten.",
+      "badge": "Krypto-Sicherheitstool",
+      "title": "Krypto-Betrugsrisiko-Prüfer",
+      "descriptionLong": "Überprüfen Sie Krypto-Projekte, Websites, Wallet-Adressen und Token auf häufige Betrugswarnzeichen, bevor Sie Recherchen oder Investitionsentscheidungen treffen.",
+      "inputLabel": "Geben Sie einen Projektnamen, eine Website-URL, eine Wallet-Adresse oder einen Token-Vertrag ein",
+      "placeholder": "Beispiel: https://example.com, 0x... oder Projektname",
+      "button": "Risiko Prüfen",
+      "checking": "Wird geprüft...",
+      "resultTitle": "Ergebnis der Risikoanalyse",
+      "riskScore": "Risikobewertung",
+      "redFlags": "Warnsignale",
+      "positiveSigns": "Positive Signale",
+      "recommendations": "Sicherheitsempfehlungen",
+      "disclaimer": "Dieses Tool dient ausschließlich Bildungszwecken. Es garantiert nicht, dass ein Projekt sicher oder unsicher ist.",
+      "error": "Diese Eingabe konnte nicht überprüft werden. Bitte versuchen Sie es erneut.",
+      "faqTitle": "FAQ zum Krypto-Betrugsrisiko-Prüfer",
+      "faq1Q": "Wie kann man einen Krypto-Betrug erkennen?",
+      "faq1A": "Sie können einen möglichen Krypto-Betrug erkennen, indem Sie die Website des Projekts, den Token-Vertrag, die Liquidität, die Transparenz des Teams, die sozialen Aktivitäten und Sicherheitsprüfungen analysieren.",
+      "faq2Q": "Welche Krypto-Betrugsmaschen sind derzeit am häufigsten?",
+      "faq2A": "Zu den häufigsten Betrugsmaschen gehören gefälschte Investmentplattformen, Phishing-Websites, gefälschte Token-Starts, Rug Pulls, Giveaway-Betrug und betrügerische Wiederherstellungsdienste.",
+      "faq3Q": "Kann man sein Geld zurückbekommen, wenn man Opfer eines Krypto-Betrugs wird?",
+      "faq3A": "Die Wiederherstellung von Kryptowährungen nach einem Betrug ist schwierig, da Blockchain-Transaktionen in der Regel nicht rückgängig gemacht werden können. Betroffene sollten den Vorfall schnell melden und alle Transaktionsdaten sichern.",
+      "faq4Q": "Wie kann ich überprüfen, ob jemand ein Betrüger ist?",
+      "faq4A": "Sie können potenzielle Betrüger überprüfen, indem Sie Wallet-Adressen, Domainnamen, Social-Media-Profile, Projektdokumentationen und Warnungen der Community analysieren."
+    },
+    "cryptocurrencyConverter": {
+      "name": "Kryptowährungs-Konverter",
+      "description": "Konvertieren Sie Kryptowährungspreise zwischen Bitcoin, Ethereum, Stablecoins, Altcoins und Fiat-Währungen mit Echtzeit-Marktdaten.",
+      "benefit": "Verstehen Sie schnell den Wert von Kryptowährungen in verschiedenen Währungen und Vermögenswerten, bevor Sie Rechercheentscheidungen treffen.",
+      "badge": "Live-Krypto-Tool",
+      "title": "Kryptowährungs-Konverter",
+      "descriptionLong": "Konvertieren Sie Bitcoin, Ethereum, Stablecoins, Altcoins und Fiat-Währungen mithilfe von Echtzeit-Daten aus dem Kryptomarkt. Vergleichen Sie Werte zwischen digitalen Vermögenswerten und traditionellen Währungen mit schnellen und einfachen Berechnungen.",
+      "amount": "Betrag",
+      "from": "Von",
+      "to": "Nach",
+      "result": "Ergebnis",
+      "loading": "Preise werden geladen...",
+      "error": "Live-Preise konnten nicht geladen werden. Es werden Ersatzdaten angezeigt.",
+      "updated": "Aktualisiert",
+      "faqTitle": "Häufig gestellte Fragen zum Kryptowährungs-Konverter",
+      "faq1Q": "Was ist ein Kryptowährungs-Konverter?",
+      "faq1A": "Ein Kryptowährungs-Konverter ist ein Tool, das den Wert einer Kryptowährung in eine andere Kryptowährung oder Fiat-Währung anhand aktueller Marktpreise berechnet.",
+      "faq2Q": "Wie funktioniert ein Kryptowährungs-Konverter?",
+      "faq2A": "Ein Kryptowährungs-Konverter vergleicht aktuelle Marktpreise verschiedener Vermögenswerte. Beispielsweise wird die Umrechnung von Bitcoin in Ethereum durch den Vergleich des aktuellen BTC-Werts mit dem ETH-Wert und die Anwendung des ausgewählten Betrags berechnet.",
+      "faq3Q": "Kann ich Bitcoin in USD umrechnen?",
+      "faq3A": "Ja. Sie können Bitcoin, Ethereum, Stablecoins und ausgewählte Altcoins mithilfe aktueller Marktdaten in USD und andere unterstützte Währungen umrechnen.",
+      "faq4Q": "Ist dies eine Finanzberatung?",
+      "faq4A": "Nein. Dieses Tool dient ausschließlich Bildungs- und Forschungszwecken. Die angezeigten Informationen sollten nicht als Finanz-, Anlage- oder Handelsberatung betrachtet werden."
     },
     "directory": {
       "metaTitle": "Kryptonal Krypto-Tools | Marktanalyse- und Recherche-Tools",
@@ -590,33 +709,9 @@
           "benefit": "Sehen Sie, wie sich Investitionen entwickelt hätten, und prüfen Sie, ob Preisziele realistisch sind."
         },
         "privacyWatchlist": {
-          "badge": "Privates Coin-Tracking",
-          "title": "Datenschutzorientierte Watchlist",
-          "description": "Verfolge deine bevorzugten Krypto-Assets, ohne ein Konto zu erstellen. Deine Watchlist wird lokal in deinem Browser gespeichert und die Preise werden über Kryptonal aktualisiert.",
-          "benefit": "Erstelle ein privates Krypto-Portfolio, verfolge Gewinne und Verluste und richte Preisalarme ein, ohne persönliche Daten weiterzugeben.",
-          "searchPlaceholder": "Coin suchen, z. B. BTC, ETH, SOL...",
-          "add": "Hinzufügen",
-          "remove": "Entfernen",
-          "loading": "Live-Preise werden geladen...",
-          "empty": "Deine Watchlist ist leer. Suche nach einem Coin, um ihn hinzuzufügen.",
-          "portfolioValue": "Portfolio-Wert",
-          "totalProfit": "Gesamter Gewinn/Verlust",
-          "assetsTracked": "Verfolgte Vermögenswerte",
-          "alerts": "Ausgelöste Benachrichtigungen",
-          "amount": "Gehaltene Menge",
-          "entryPrice": "Einstiegspreis",
-          "alertAbove": "Benachrichtigen Über",
-          "alertBelow": "Benachrichtigen Unter",
-          "value": "Wert",
-          "profitLoss": "Gewinn/Verlust",
-          "return": "Rendite",
-          "alertHit": "Benachrichtigung Ausgelöst",
-          "table": {
-            "asset": "Vermögenswert",
-            "price": "Preis",
-            "action": "Aktion"
-          },
-          "disclaimer": "Ihr Portfolio und Ihre Benachrichtigungen werden lokal in Ihrem Browser gespeichert. Das Löschen von Browserdaten kann Ihre gespeicherten Informationen entfernen. Die Preise dienen ausschließlich Bildungszwecken und stellen keine Finanzberatung dar."
+          "name": "Krypto-Portfolio-Tracker",
+          "description": "Verfolgen Sie Ihr Kryptowährungsportfolio, überwachen Sie Gewinne und Verluste, analysieren Sie die Portfolio-Aufteilung und verwalten Sie Preisalarme, ohne ein Konto zu erstellen. Ihre Daten bleiben privat in Ihrem Browser gespeichert.",
+          "benefit": "Erstellen Sie ein privates Krypto-Portfolio, verfolgen Sie die Performance, überwachen Sie die Diversifikation, verwalten Sie Risiken und richten Sie Preisalarme ein, ohne persönliche Daten preiszugeben."
         },
         "bitcoinCycle": {
           "name": "Bitcoin-Zyklus-Tracker",
@@ -652,6 +747,45 @@
           "name": "Airdrop Radar",
           "description": "Verfolge tokenlose Protokolle, von der Community eingereichte Airdrops und potenzielle Chancen sicher an einem Ort.",
           "benefit": "Entdecke frühe Airdrop-Möglichkeiten mit Sicherheitswarnungen und Rechercheprüfungen, bevor du eine Wallet verbindest."
+        },
+        "cryptoEtfTracker": {
+          "name": "Krypto-ETF-Tracker",
+          "description": "Verfolgen Sie Bitcoin-ETF-Zuflüsse, institutionelle Nachfrage, Fondsrankings und die Marktstimmung an einem Ort.",
+          "benefit": "Verstehen Sie, ob ETF-Kapital in den Kryptomarkt hinein- oder herausfließt, bevor Sie fundierte Recherchen und Anlageentscheidungen treffen."
+        },
+        "cryptoScamRiskChecker": {
+          "name": "Krypto-Betrugsrisiko-Prüfer",
+          "description": "Analysieren Sie Krypto-Projekte, Websites, Wallet-Adressen und Token auf häufige Anzeichen von Betrug.",
+          "benefit": "Erkennen Sie potenzielle Risiken vor einer Investition, indem Sie die Transparenz des Projekts, Sicherheitsindikatoren und Vertrauenssignale bewerten."
+        },
+        "cryptocurrencyConverter": {
+          "name": "Kryptowährungs-Konverter",
+          "description": "Konvertieren Sie Kryptowährungspreise zwischen Bitcoin, Ethereum, Stablecoins, Altcoins und Fiat-Währungen mit Echtzeit-Marktdaten.",
+          "benefit": "Verstehen Sie schnell den Wert von Kryptowährungen in verschiedenen Währungen und Vermögenswerten, bevor Sie Rechercheentscheidungen treffen."
+        },
+        "cryptocurrencyConverter": {
+          "name": "Kryptowährungs-Konverter",
+          "description": "Konvertieren Sie Kryptowährungspreise zwischen Bitcoin, Ethereum, Stablecoins, Altcoins und Fiat-Währungen mit Echtzeit-Marktdaten.",
+          "benefit": "Verstehen Sie schnell den Wert von Kryptowährungen in verschiedenen Währungen und Vermögenswerten, bevor Sie Rechercheentscheidungen treffen.",
+          "badge": "Live-Krypto-Tool",
+          "title": "Kryptowährungs-Konverter",
+          "descriptionLong": "Konvertieren Sie Bitcoin, Ethereum, Stablecoins, Altcoins und Fiat-Währungen mithilfe von Echtzeit-Daten aus dem Kryptomarkt. Vergleichen Sie Werte zwischen digitalen Vermögenswerten und traditionellen Währungen mit schnellen und einfachen Berechnungen.",
+          "amount": "Betrag",
+          "from": "Von",
+          "to": "Nach",
+          "result": "Ergebnis",
+          "loading": "Preise werden geladen...",
+          "error": "Live-Preise konnten nicht geladen werden. Es werden Ersatzdaten angezeigt.",
+          "updated": "Aktualisiert",
+          "faqTitle": "Häufig gestellte Fragen zum Kryptowährungs-Konverter",
+          "faq1Q": "Was ist ein Kryptowährungs-Konverter?",
+          "faq1A": "Ein Kryptowährungs-Konverter ist ein Tool, das den Wert einer Kryptowährung in eine andere Kryptowährung oder Fiat-Währung anhand aktueller Marktpreise berechnet.",
+          "faq2Q": "Wie funktioniert ein Kryptowährungs-Konverter?",
+          "faq2A": "Ein Kryptowährungs-Konverter vergleicht aktuelle Marktpreise verschiedener Vermögenswerte. Beispielsweise wird die Umrechnung von Bitcoin in Ethereum durch den Vergleich des aktuellen BTC-Werts mit dem ETH-Wert und die Anwendung des ausgewählten Betrags berechnet.",
+          "faq3Q": "Kann ich Bitcoin in USD umrechnen?",
+          "faq3A": "Ja. Sie können Bitcoin, Ethereum, Stablecoins und ausgewählte Altcoins mithilfe aktueller Marktdaten in USD und andere unterstützte Währungen umrechnen.",
+          "faq4Q": "Ist dies eine Finanzberatung?",
+          "faq4A": "Nein. Dieses Tool dient ausschließlich Bildungs- und Forschungszwecken. Die angezeigten Informationen sollten nicht als Finanz-, Anlage- oder Handelsberatung betrachtet werden."
         },
         "gamingPulse": {
           "name": "Gaming Crypto Pulse",
@@ -2567,6 +2701,8 @@
     "educationOnly": "Nur Bildungsinhalte",
     "notFinancialAdvice": "Keine Finanzberatung",
     "highRisk": "Krypto ist mit hohem Risiko verbunden",
+    "privacy": "Datenschutz",
+    "terms": "Allgemeine Geschäftsbedingungen",
     "translationNote": "Übersetzungen werden von KI generiert und können Fehler oder Fehlinformationen enthalten. Überprüfen Sie wichtige Finanzinformationen immer unabhängig."
   },
   "seo": {

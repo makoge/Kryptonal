@@ -12,6 +12,17 @@ const pages = [
   "/tools",
   "/blog",
   "/gaming-crypto",
+
+  // Tool Pages
+  "/tools/crypto-portfolio-tracker",
+  "/tools/high-yield-finder",
+  "/tools/roi-calculator",
+  "/tools/airdrop-radar",
+  "/tools/address-validator",
+  "/tools/wallet-security-checker",
+  "/tools/crypto-scam-risk-checker",
+  "/tools/cryptocurrency-converter",
+  "/tools/crypto-etf-tracker",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -22,18 +33,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency:
         page === ""
           ? ("weekly" as const)
-          : page === "/crypto-prices" || page === "/tools"
-          ? ("daily" as const)
-          : ("monthly" as const),
+          : page === "/crypto-prices" ||
+              page === "/tools" ||
+              page.startsWith("/tools/")
+            ? ("daily" as const)
+            : ("monthly" as const),
       priority:
         page === ""
           ? 1
           : page === "/crypto-prices"
-          ? 0.95
-          : page === "/tools"
-          ? 0.9
-          : 0.8,
-    }))
+            ? 0.95
+            : page === "/tools"
+              ? 0.9
+              : page.startsWith("/tools/")
+                ? 0.88
+                : 0.8,
+    })),
   );
 
   const blogPages: MetadataRoute.Sitemap = locales.flatMap((locale) =>
@@ -42,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(article.date || Date.now()),
       changeFrequency: "monthly" as const,
       priority: 0.85,
-    }))
+    })),
   );
 
   return [...staticPages, ...blogPages];

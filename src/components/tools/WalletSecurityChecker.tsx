@@ -2,16 +2,28 @@
 
 import { useState } from "react";
 
-type Network = {
+type Explorer = {
   name: string;
-  explorerUrl: string;
+  url: string;
 };
+
+type Stats = {
+  txCount?: number;
+  balanceLabel?: string;
+  firstSeen?: string;
+  lastSeen?: string;
+  source?: string;
+} | null;
 
 type Result = {
   score: number;
   level: string;
+  network: string;
+  family: string;
   walletType: string;
-  networks: Network[];
+  confidence: string;
+  stats: Stats;
+  explorers: Explorer[];
   warnings: string[];
   strengths: string[];
   recommendations: string[];
@@ -48,7 +60,7 @@ export default function WalletSecurityChecker() {
       <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950 text-white shadow-[0_0_80px_rgba(34,211,238,0.08)]">
         <div className="border-b border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(45,212,191,0.22),transparent_35%),radial-gradient(circle_at_top_right,rgba(56,189,248,0.16),transparent_35%)] p-6 sm:p-10">
           <div className="mb-5 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.25em] text-cyan-200">
-            Wallet Risk Tool
+            Multi-Chain Wallet Risk Tool
           </div>
 
           <h1 className="max-w-4xl text-4xl font-black tracking-tight sm:text-6xl">
@@ -56,17 +68,19 @@ export default function WalletSecurityChecker() {
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-            Analyze EVM wallet format, basic risk signals, compatible networks,
-            and safety recommendations before interacting with a wallet.
+            Check wallet format, detect network type, review available activity
+            data, explorer links, safety warnings, and wallet reputation
+            signals.
           </p>
 
           <div className="mt-6 rounded-2xl border border-amber-300/20 bg-amber-300/10 p-4 text-sm leading-7 text-amber-100">
-            ⚠️ This tool does not guarantee wallet safety. Always verify
-            transaction history, approvals, and contract interactions.
+            ⚠️ This tool helps reduce risk, but it cannot prove a wallet is
+            safe. Always verify transaction history, approvals, and official
+            sources.
           </div>
         </div>
 
-        <div className="grid gap-6 p-4 sm:p-6 lg:grid-cols-[1fr_1fr]">
+        <div className="grid gap-6 p-4 sm:p-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-3xl border border-white/10 bg-white/[0.035] p-5">
             <label className="text-sm font-black uppercase tracking-[0.2em] text-slate-400">
               Wallet Address
@@ -75,7 +89,7 @@ export default function WalletSecurityChecker() {
             <textarea
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              placeholder="Paste 0x wallet address..."
+              placeholder="Paste 0x, bc1, Solana, XRP, Tron, Dogecoin address..."
               className="mt-4 min-h-36 w-full rounded-2xl border border-white/10 bg-slate-900/80 px-5 py-4 text-white outline-none placeholder:text-slate-600 focus:border-emerald-300/50"
             />
 
@@ -111,29 +125,52 @@ export default function WalletSecurityChecker() {
                   <p className="mt-2 text-lg font-bold">{result.level}</p>
                 </div>
 
-                <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
-                    Wallet Type
-                  </p>
-                  <p className="mt-2 font-black">{result.walletType}</p>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  <Info label="Detected Network" value={result.network} />
+                  <Info label="Wallet Type" value={result.walletType} />
+                  <Info label="Address Family" value={result.family} />
+                  <Info label="Confidence" value={result.confidence} />
                 </div>
+
+                {result.stats && (
+                  <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                    <Info
+                      label="Transactions"
+                      value={String(result.stats.txCount ?? "N/A")}
+                    />
+                    <Info
+                      label="Balance"
+                      value={result.stats.balanceLabel || "N/A"}
+                    />
+                    <Info
+                      label="Data Source"
+                      value={result.stats.source || "N/A"}
+                    />
+                  </div>
+                )}
 
                 <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
                   <p className="text-sm font-black text-slate-300">
-                    Compatible Networks
+                    Explorer Links
                   </p>
                   <div className="mt-3 flex flex-wrap gap-2">
-                    {result.networks.map((network) => (
-                      <a
-                        key={network.name}
-                        href={network.explorerUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="rounded-full bg-cyan-300/10 px-3 py-2 text-xs font-bold text-cyan-200 hover:bg-cyan-300/20"
-                      >
-                        {network.name}
-                      </a>
-                    ))}
+                    {result.explorers.length ? (
+                      result.explorers.map((explorer) => (
+                        <a
+                          key={explorer.name}
+                          href={explorer.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="rounded-full bg-cyan-300/10 px-3 py-2 text-xs font-bold text-cyan-200 hover:bg-cyan-300/20"
+                        >
+                          {explorer.name}
+                        </a>
+                      ))
+                    ) : (
+                      <span className="text-sm text-slate-500">
+                        No explorer detected
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -158,6 +195,17 @@ export default function WalletSecurityChecker() {
         </div>
       </div>
     </section>
+  );
+}
+
+function Info({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+      <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
+        {label}
+      </p>
+      <p className="mt-2 break-words text-sm font-black text-white">{value}</p>
+    </div>
   );
 }
 

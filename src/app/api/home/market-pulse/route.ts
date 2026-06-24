@@ -27,7 +27,7 @@ function getStableTotal(point: any) {
   return Number(
     point?.totalCirculatingUSD?.peggedUSD ||
       point?.totalCirculating?.peggedUSD ||
-      0
+      0,
   );
 }
 
@@ -39,16 +39,33 @@ function getMarketPhase(score: number) {
   return "riskOff";
 }
 
-function getRiskLevel(score: number) {
-  if (score <= -2) return "high";
-  if (score <= -0.75) return "elevated";
-  if (score >= 2.5) return "medium";
+function getRiskLevel(args: {
+  marketCapChange24h: number;
+  tvlChange1d: number;
+  stableChange1d: number;
+  btcDominance: number;
+}) {
+  let risk = 0;
+
+  if (args.marketCapChange24h <= -4) risk += 55;
+  else if (args.marketCapChange24h <= -2) risk += 35;
+  else if (args.marketCapChange24h <= -1) risk += 20;
+
+  if (args.tvlChange1d < -1) risk += 20;
+  else if (args.tvlChange1d < 0) risk += 10;
+
+  if (args.stableChange1d < -0.2) risk += 15;
+  if (args.btcDominance >= 58 && args.marketCapChange24h < 0) risk += 15;
+
+  if (risk >= 55) return "high";
+  if (risk >= 35) return "elevated";
+  if (risk >= 18) return "medium";
   return "balanced";
 }
 
 function getTrendStrength(score: number) {
   if (score >= 2.5) return "strong";
-  if (score >= 1) return "improving";
+  if (score >= 0.75) return "moderate";
   if (score > -0.75) return "moderate";
   return "weak";
 }
@@ -80,7 +97,12 @@ export async function GET() {
         }),
       ]);
 
-    if (!globalRes.ok || !tvlChartRes.ok || !stableChartRes.ok || !blockRes.ok) {
+    if (
+      !globalRes.ok ||
+      !tvlChartRes.ok ||
+      !stableChartRes.ok ||
+      !blockRes.ok
+    ) {
       throw new Error("Market pulse fetch failed");
     }
 
@@ -93,7 +115,7 @@ export async function GET() {
 
     const totalMarketCap = Number(global?.total_market_cap?.usd || 0);
     const marketCapChange24h = Number(
-      global?.market_cap_change_percentage_24h_usd || 0
+      global?.market_cap_change_percentage_24h_usd || 0,
     );
 
     const btcDominance = Number(global?.market_cap_percentage?.btc || 0);
@@ -106,11 +128,11 @@ export async function GET() {
     const totalTvl = Number(latestTvl?.totalLiquidityUSD || 0);
     const tvlChange1d = changePct(
       totalTvl,
-      Number(prevTvl1d?.totalLiquidityUSD || 0)
+      Number(prevTvl1d?.totalLiquidityUSD || 0),
     );
     const tvlChange7d = changePct(
       totalTvl,
-      Number(prevTvl7d?.totalLiquidityUSD || 0)
+      Number(prevTvl7d?.totalLiquidityUSD || 0),
     );
 
     const latestStable = stableChart.at(-1);
@@ -119,16 +141,20 @@ export async function GET() {
     const totalStablecoins = getStableTotal(latestStable);
     const stableChange1d = changePct(
       totalStablecoins,
-      getStableTotal(prevStable1d)
+      getStableTotal(prevStable1d),
     );
 
     const score =
-      marketCapChange24h * 0.45 +
-      tvlChange7d * 0.35 +
-      stableChange1d * 0.2;
+      marketCapChange24h * 0.45 + tvlChange7d * 0.35 + stableChange1d * 0.2;
 
     const marketPhase = getMarketPhase(score);
-    const riskLevel = getRiskLevel(score);
+    const riskLevel = getRiskLevel({
+      marketCapChange24h,
+      tvlChange1d,
+      stableChange1d,
+      btcDominance,
+    });
+
     const trendStrength = getTrendStrength(score);
 
     const blocksRemaining = Math.max(NEXT_HALVING_BLOCK - blockHeight, 0);
@@ -158,11 +184,11 @@ export async function GET() {
         riskLevel:
           riskLevel === "high" || riskLevel === "elevated" ? "red" : "green",
         trendStrength:
-          trendStrength === "strong" || trendStrength === "improving"
+          trendStrength === "strong"
             ? "green"
             : trendStrength === "weak"
-            ? "red"
-            : "amber",
+              ? "red"
+              : "amber",
       },
 
       halving: {

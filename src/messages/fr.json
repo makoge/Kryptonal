@@ -320,16 +320,16 @@
           ]
         },
         {
-          "badge": "Suivi privé",
-          "title": "Privacy-First Watchlist",
-          "text": "Suivez les cryptos qui vous intéressent sans inscription. Votre watchlist reste enregistrée dans votre navigateur afin que vous puissiez revenir à tout moment et continuer à surveiller vos actifs favoris.",
-          "href": "/tools/watchlist",
-          "cta": "Créer une watchlist",
-          "accent": "amber",
+          "badge": "Gestion de Portefeuille",
+          "title": "Suivi de Portefeuille Crypto",
+          "text": "Suivez vos actifs en cryptomonnaies, surveillez vos profits et pertes, analysez la répartition de votre portefeuille, gérez les risques et configurez des alertes de prix sans créer de compte. Votre portefeuille reste privé sur votre appareil.",
+          "href": "/tools/crypto-portfolio-tracker",
+          "cta": "Suivre le Portefeuille",
+          "accent": "emerald",
           "stats": [
-            "Aucune connexion requise",
-            "Suivi des prix en direct",
-            "Sauvegardé sur votre appareil"
+            "Suivi privé du portefeuille",
+            "Analyse des profits et pertes",
+            "Informations sur la répartition du portefeuille"
           ]
         }
       ]
@@ -540,12 +540,131 @@
       "remove": "Supprimer",
       "loading": "Chargement des prix en direct...",
       "empty": "Votre watchlist est vide. Recherchez une crypto pour en ajouter une.",
+      "portfolioHealth": "Santé du Portefeuille",
+      "allocation": "Répartition",
+      "largestHolding": "Plus Grande Position",
+      "diversificationScore": "Score de Diversification",
+      "riskLevel": "Niveau de Risque",
+      "lowRisk": "Risque Faible",
+      "mediumRisk": "Risque Modéré",
+      "highRisk": "Risque Élevé",
+      "bestPerformer": "Meilleure Performance",
+      "worstPerformer": "Pire Performance",
+      "seoTitle": "Guide du Suivi de Portefeuille Crypto",
+      "faqBestTrackerQ": "Quel est le meilleur tracker de portefeuille crypto ?",
+      "faqBestTrackerA": "Le meilleur tracker de portefeuille crypto dépend de vos besoins. Un bon outil doit proposer des prix en temps réel, le suivi des profits et pertes, l’analyse de la répartition du portefeuille, des informations sur les risques, des alertes et un stockage respectueux de la confidentialité.",
+      "faqFreeTrackerQ": "Existe-t-il un tracker de portefeuille gratuit ?",
+      "faqFreeTrackerA": "Oui. Kryptonal propose un tracker de portefeuille crypto gratuit qui aide les utilisateurs à suivre leurs actifs, calculer leurs profits et pertes, gérer des alertes et analyser leur exposition au marché sans nécessiter de compte.",
+      "faqWhatTrackerQ": "Qu'est-ce qu'un tracker de portefeuille crypto ?",
+      "faqWhatTrackerA": "Un tracker de portefeuille crypto est un outil qui aide les investisseurs à suivre leurs actifs numériques, leur valeur actuelle, leurs gains ou pertes, leur répartition et leurs performances en un seul endroit.",
+      "faqHowTrackQ": "Comment suivre mon portefeuille crypto ?",
+      "faqHowTrackA": "Vous pouvez suivre votre portefeuille crypto en ajoutant chaque actif, en indiquant la quantité détenue, en saisissant votre prix d’achat et en consultant la valeur en temps réel, les profits, les pertes, la répartition et les indicateurs de risque.",
+      "faq1000Q": "Peut-on gagner 1 000 $ par jour avec les cryptomonnaies ?",
+      "faq1000A": "C’est possible, mais cela nécessite généralement un capital important, des compétences avancées en trading, une prise de risque élevée ou des conditions de marché exceptionnellement favorables. La plupart des investisseurs devraient privilégier la croissance du portefeuille, la gestion du risque et la régularité à long terme plutôt que de viser un revenu quotidien fixe.",
       "table": {
         "asset": "Actif",
         "price": "Prix",
         "action": "Action"
       },
       "disclaimer": "Votre watchlist est stockée localement dans votre navigateur. La suppression des données du navigateur peut la supprimer. Les prix sont fournis à titre éducatif uniquement et ne constituent pas un conseil financier."
+    },
+    "cryptoEtfTracker": {
+      "name": "Suivi des ETF Crypto",
+      "description": "Suivez les entrées des ETF Bitcoin, la demande institutionnelle, les classements des fonds et le sentiment du marché en un seul endroit.",
+      "benefit": "Comprenez si les capitaux des ETF entrent ou sortent du marché des cryptomonnaies avant de prendre des décisions d'investissement.",
+
+      "badge": "Analyse des Flux d’ETF",
+      "title": "Suivi des ETF Crypto",
+      "descriptionLong": "Suivez les entrées des ETF Bitcoin, les flux des ETF crypto, le statut d’approbation des ETF, la demande institutionnelle et la meilleure liste d’ETF de cryptomonnaies en un seul endroit.",
+      "sourceWarning": "Les données des ETF peuvent évoluer rapidement. Vérifiez toujours les données officielles des émetteurs et des bourses avant de prendre des décisions financières.",
+
+      "dailyFlow": "Flux Net Quotidien",
+      "sevenDayFlow": "Flux Net sur 7 Jours",
+      "thirtyDayFlow": "Flux Net sur 30 Jours",
+      "approvedEtfs": "ETF Approuvés",
+
+      "flowSignal": "Signal de Flux ETF",
+      "leaderboard": "Meilleure Liste d’ETF de Cryptomonnaies",
+      "approvalList": "Liste d’Approbation des ETF Crypto",
+      "bitcoinInflowsChart": "Graphique des Entrées des ETF Bitcoin",
+      "sourceNote": "Note de Source",
+
+      "signals": {
+        "strongAccumulation": "Forte Accumulation",
+        "accumulation": "Accumulation",
+        "neutral": "Neutre",
+        "distribution": "Distribution",
+        "heavyOutflows": "Sorties Importantes"
+      },
+
+      "faqTitle": "FAQ sur les ETF Crypto",
+
+      "faq1Q": "Quel est le meilleur outil de suivi des ETF crypto ?",
+      "faq1A": "Un bon outil de suivi des ETF crypto doit surveiller les entrées des ETF Bitcoin, les flux des ETF crypto, les classements des fonds, le statut d’approbation des ETF et la demande institutionnelle.",
+
+      "faq2Q": "Puis-je suivre quotidiennement les entrées des ETF Bitcoin ?",
+      "faq2A": "Oui. Un suivi quotidien des entrées des ETF Bitcoin aide les investisseurs à surveiller si les capitaux entrent ou sortent des produits ETF Bitcoin.",
+
+      "faq3Q": "Qu’est-ce qu’un flux d’ETF crypto ?",
+      "faq3A": "Le flux d’ETF crypto mesure l’argent entrant ou sortant des fonds négociés en bourse liés à des actifs numériques comme le Bitcoin ou l’Ethereum.",
+
+      "faq4Q": "Qu’est-ce que l’approbation d’un ETF crypto ?",
+      "faq4A": "L’approbation d’un ETF crypto signifie qu’un organisme de réglementation a autorisé un fonds négocié en bourse à être coté et négocié selon des règles spécifiques.",
+
+      "faq5Q": "Quelle est la meilleure liste d’ETF de cryptomonnaies ?",
+      "faq5A": "Parmi les ETF de cryptomonnaies les plus populaires figurent BlackRock IBIT, Fidelity FBTC, ARKB, Bitwise BITB, VanEck HODL et d’autres ETF Bitcoin au comptant réglementés."
+    },
+    "cryptoScamRiskChecker": {
+      "name": "Vérificateur de Risque d'Arnaque Crypto",
+      "description": "Analysez les projets crypto, les sites web, les adresses de portefeuille et les tokens afin de détecter les signes courants d’arnaque.",
+      "benefit": "Identifiez les risques potentiels avant d’investir en évaluant la transparence du projet, les indicateurs de sécurité et les signaux de confiance.",
+      "badge": "Outil de Sécurité Crypto",
+      "title": "Vérificateur de Risque d'Arnaque Crypto",
+      "descriptionLong": "Vérifiez les projets crypto, les sites web, les adresses de portefeuille et les tokens afin d’identifier les signes courants d’arnaque avant de prendre des décisions de recherche.",
+      "inputLabel": "Entrez un nom de projet, une URL de site web, une adresse de portefeuille ou un contrat de token",
+      "placeholder": "Exemple : https://example.com, 0x... ou nom du projet",
+      "button": "Vérifier le Risque",
+      "checking": "Vérification en cours...",
+      "resultTitle": "Résultat de l’Analyse des Risques",
+      "riskScore": "Score de Risque",
+      "redFlags": "Signaux d’Alerte",
+      "positiveSigns": "Signaux Positifs",
+      "recommendations": "Recommandations de Sécurité",
+      "disclaimer": "Cet outil est fourni uniquement à des fins éducatives. Il ne garantit pas qu’un projet soit sûr ou dangereux.",
+      "error": "Impossible de vérifier cette entrée. Veuillez réessayer.",
+      "faqTitle": "FAQ du Vérificateur de Risque d'Arnaque Crypto",
+      "faq1Q": "Comment vérifier une arnaque crypto ?",
+      "faq1A": "Vous pouvez vérifier une éventuelle arnaque crypto en examinant le site web du projet, le contrat du token, la liquidité, la transparence de l’équipe, l’activité sociale et les audits de sécurité.",
+      "faq2Q": "Quelles sont les arnaques crypto les plus courantes actuellement ?",
+      "faq2A": "Les arnaques les plus fréquentes incluent les fausses plateformes d’investissement, les sites de phishing, les faux lancements de tokens, les rug pulls, les faux cadeaux promotionnels et les services frauduleux de récupération de fonds.",
+      "faq3Q": "Peut-on récupérer son argent après une arnaque crypto ?",
+      "faq3A": "Récupérer des cryptomonnaies après une arnaque est souvent difficile, car les transactions blockchain sont généralement irréversibles. Les victimes doivent signaler rapidement l’incident et conserver toutes les preuves et informations de transaction.",
+      "faq4Q": "Comment puis-je vérifier si quelqu’un est un escroc ?",
+      "faq4A": "Vous pouvez vérifier un potentiel escroc en examinant les adresses de portefeuille, les noms de domaine, les profils sur les réseaux sociaux, la documentation du projet et les alertes de la communauté."
+    },
+    "cryptocurrencyConverter": {
+      "name": "Convertisseur de Cryptomonnaies",
+      "description": "Convertissez les prix des cryptomonnaies entre Bitcoin, Ethereum, stablecoins, altcoins et devises fiduciaires grâce à des données de marché en temps réel.",
+      "benefit": "Comprenez rapidement la valeur des cryptomonnaies dans différentes devises et actifs avant de prendre des décisions de recherche.",
+      "badge": "Outil Crypto en Temps Réel",
+      "title": "Convertisseur de Cryptomonnaies",
+      "descriptionLong": "Convertissez Bitcoin, Ethereum, stablecoins, altcoins et devises fiduciaires à l’aide de données du marché des cryptomonnaies en temps réel. Comparez facilement les valeurs entre actifs numériques et monnaies traditionnelles grâce à des calculs rapides et simples.",
+      "amount": "Montant",
+      "from": "De",
+      "to": "Vers",
+      "result": "Résultat",
+      "loading": "Chargement des prix...",
+      "error": "Impossible de charger les prix en temps réel. Affichage des données de secours.",
+      "updated": "Mis à jour",
+      "faqTitle": "FAQ du Convertisseur de Cryptomonnaies",
+      "faq1Q": "Qu'est-ce qu'un convertisseur de cryptomonnaies ?",
+      "faq1A": "Un convertisseur de cryptomonnaies est un outil qui calcule la valeur d'une cryptomonnaie dans une autre cryptomonnaie ou une devise fiduciaire en utilisant les prix actuels du marché.",
+      "faq2Q": "Comment fonctionne un convertisseur de cryptomonnaies ?",
+      "faq2A": "Un convertisseur de cryptomonnaies compare les prix du marché en temps réel entre différents actifs. Par exemple, convertir du Bitcoin en Ethereum consiste à comparer la valeur actuelle du BTC à celle de l’ETH et à appliquer le montant sélectionné.",
+      "faq3Q": "Puis-je convertir du Bitcoin en USD ?",
+      "faq3A": "Oui. Vous pouvez convertir du Bitcoin, de l’Ethereum, des stablecoins et certaines altcoins en USD et dans d’autres devises prises en charge à l’aide de données de marché actualisées.",
+      "faq4Q": "S'agit-il d'un conseil financier ?",
+      "faq4A": "Non. Cet outil est fourni uniquement à des fins éducatives et de recherche. Les informations affichées ne doivent pas être considérées comme des conseils financiers, d’investissement ou de trading."
     },
     "directory": {
       "metaTitle": "Outils Crypto Kryptonal | Outils d’Analyse et de Recherche du Marché",
@@ -597,33 +716,9 @@
           "benefit": "Découvrez comment vos investissements auraient évolué et si les objectifs de prix sont réalistes."
         },
         "privacyWatchlist": {
-          "badge": "Suivi Privé des Cryptomonnaies",
-          "title": "Liste de Surveillance Axée sur la Confidentialité",
-          "description": "Suivez vos actifs crypto préférés sans créer de compte. Votre liste de surveillance reste enregistrée dans votre navigateur et les prix sont mis à jour via Kryptonal.",
-          "benefit": "Créez un portefeuille crypto privé, suivez vos profits et pertes, et configurez des alertes de prix sans partager vos données personnelles.",
-          "searchPlaceholder": "Rechercher une crypto, ex. BTC, ETH, SOL...",
-          "add": "Ajouter",
-          "remove": "Supprimer",
-          "loading": "Chargement des prix en direct...",
-          "empty": "Votre liste de surveillance est vide. Recherchez une crypto pour en ajouter une.",
-          "portfolioValue": "Valeur du Portefeuille",
-          "totalProfit": "Profit/Perte Total(e)",
-          "assetsTracked": "Actifs Suivis",
-          "alerts": "Alertes Déclenchées",
-          "amount": "Quantité Détenue",
-          "entryPrice": "Prix d'Achat",
-          "alertAbove": "Alerte Au-Dessus de",
-          "alertBelow": "Alerte En Dessous de",
-          "value": "Valeur",
-          "profitLoss": "Profit/Perte",
-          "return": "Rendement",
-          "alertHit": "Alerte Déclenchée",
-          "table": {
-            "asset": "Actif",
-            "price": "Prix",
-            "action": "Action"
-          },
-          "disclaimer": "Votre portefeuille et vos alertes sont stockés localement dans votre navigateur. La suppression des données du navigateur peut effacer vos informations enregistrées. Les prix sont fournis uniquement à des fins éducatives et ne constituent pas un conseil financier."
+          "name": "Suivi de Portefeuille Crypto",
+          "description": "Suivez votre portefeuille de cryptomonnaies, surveillez vos profits et pertes, analysez la répartition de vos actifs et gérez des alertes de prix sans créer de compte. Vos données restent privées dans votre navigateur.",
+          "benefit": "Créez un portefeuille crypto privé, suivez vos performances, surveillez votre diversification, gérez les risques et configurez des alertes de prix sans partager d'informations personnelles."
         },
         "bitcoinCycle": {
           "name": "Suivi des Cycles Bitcoin",
@@ -659,6 +754,45 @@
           "name": "Radar des Airdrops",
           "description": "Suivez les protocoles sans token, les airdrops soumis par la communauté et les opportunités potentielles en toute sécurité.",
           "benefit": "Découvrez des opportunités d’airdrops précoces grâce à des avertissements de sécurité et des vérifications de recherche avant de connecter un portefeuille."
+        },
+        "cryptoEtfTracker": {
+          "name": "Suivi des ETF Crypto",
+          "description": "Suivez les flux des ETF Bitcoin, la demande institutionnelle, le classement des fonds et le sentiment du marché en un seul endroit.",
+          "benefit": "Comprenez si les capitaux des ETF entrent ou sortent du marché des cryptomonnaies avant de prendre des décisions de recherche et d'investissement."
+        },
+        "cryptoScamRiskChecker": {
+          "name": "Vérificateur de Risque d'Arnaque Crypto",
+          "description": "Analysez les projets crypto, les sites web, les adresses de portefeuille et les tokens afin de détecter les signes courants d’arnaque.",
+          "benefit": "Identifiez les risques potentiels avant d’investir en évaluant la transparence du projet, les indicateurs de sécurité et les signaux de confiance."
+        },
+        "cryptocurrencyConverter": {
+          "name": "Convertisseur de Cryptomonnaies",
+          "description": "Convertissez les prix des cryptomonnaies entre Bitcoin, Ethereum, stablecoins, altcoins et devises fiduciaires grâce à des données de marché en temps réel.",
+          "benefit": "Comprenez rapidement la valeur des cryptomonnaies dans différentes devises et actifs avant de prendre des décisions de recherche."
+        },
+        "cryptocurrencyConverter": {
+          "name": "Convertisseur de Cryptomonnaies",
+          "description": "Convertissez les prix des cryptomonnaies entre Bitcoin, Ethereum, stablecoins, altcoins et devises fiduciaires grâce à des données de marché en temps réel.",
+          "benefit": "Comprenez rapidement la valeur des cryptomonnaies dans différentes devises et actifs avant de prendre des décisions de recherche.",
+          "badge": "Outil Crypto en Temps Réel",
+          "title": "Convertisseur de Cryptomonnaies",
+          "descriptionLong": "Convertissez Bitcoin, Ethereum, stablecoins, altcoins et devises fiduciaires à l’aide de données du marché des cryptomonnaies en temps réel. Comparez facilement les valeurs entre actifs numériques et monnaies traditionnelles grâce à des calculs rapides et simples.",
+          "amount": "Montant",
+          "from": "De",
+          "to": "Vers",
+          "result": "Résultat",
+          "loading": "Chargement des prix...",
+          "error": "Impossible de charger les prix en temps réel. Affichage des données de secours.",
+          "updated": "Mis à jour",
+          "faqTitle": "FAQ du Convertisseur de Cryptomonnaies",
+          "faq1Q": "Qu'est-ce qu'un convertisseur de cryptomonnaies ?",
+          "faq1A": "Un convertisseur de cryptomonnaies est un outil qui calcule la valeur d'une cryptomonnaie dans une autre cryptomonnaie ou une devise fiduciaire en utilisant les prix actuels du marché.",
+          "faq2Q": "Comment fonctionne un convertisseur de cryptomonnaies ?",
+          "faq2A": "Un convertisseur de cryptomonnaies compare les prix du marché en temps réel entre différents actifs. Par exemple, convertir du Bitcoin en Ethereum consiste à comparer la valeur actuelle du BTC à celle de l’ETH et à appliquer le montant sélectionné.",
+          "faq3Q": "Puis-je convertir du Bitcoin en USD ?",
+          "faq3A": "Oui. Vous pouvez convertir du Bitcoin, de l’Ethereum, des stablecoins et certaines altcoins en USD et dans d’autres devises prises en charge à l’aide de données de marché actualisées.",
+          "faq4Q": "S'agit-il d'un conseil financier ?",
+          "faq4A": "Non. Cet outil est fourni uniquement à des fins éducatives et de recherche. Les informations affichées ne doivent pas être considérées comme des conseils financiers, d’investissement ou de trading."
         },
         "gamingPulse": {
           "name": "Gaming Crypto Pulse",
@@ -2576,6 +2710,8 @@
     "educationOnly": "Contenu éducatif uniquement",
     "notFinancialAdvice": "Pas un conseil financier",
     "highRisk": "La crypto comporte des risques élevés",
+    "privacy": "Confidentialité",
+    "terms": "Conditions Générales",
     "translationNote": "Les traductions sont générées par IA et peuvent contenir des erreurs ou des informations incorrectes. Vérifiez toujours indépendamment les informations financières importantes."
   },
   "seo": {

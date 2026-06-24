@@ -315,16 +315,16 @@
           ]
         },
         {
-          "badge": "Private Tracking",
-          "title": "Privacy-First Watchlist",
-          "text": "Track the coins you care about without signing up. Your watchlist stays in your browser, so you can return anytime and continue monitoring your favorite assets.",
-          "href": "/tools/watchlist",
-          "cta": "Build Watchlist",
-          "accent": "amber",
+          "badge": "Portfolio Management",
+          "title": "Crypto Portfolio Tracker",
+          "text": "Track your crypto holdings, monitor profits and losses, analyze portfolio allocation, manage risk, and create price alerts without creating an account. Your portfolio stays private on your device.",
+          "href": "/tools/crypto-portfolio-tracker",
+          "cta": "Track Portfolio",
+          "accent": "emerald",
           "stats": [
-            "No login required",
-            "Live price tracking",
-            "Saved on your device"
+            "Private portfolio tracking",
+            "Profit & loss analysis",
+            "Portfolio allocation insights"
           ]
         }
       ]
@@ -529,6 +529,28 @@
       "alertAbove": "Alert Above",
       "alertBelow": "Alert Below",
       "value": "Value",
+      "portfolioHealth": "Portfolio Health",
+      "allocation": "Allocation",
+      "largestHolding": "Largest Holding",
+      "diversificationScore": "Diversification Score",
+      "riskLevel": "Risk Level",
+      "lowRisk": "Low Risk",
+      "mediumRisk": "Medium Risk",
+      "highRisk": "High Risk",
+      "bestPerformer": "Best Performer",
+      "worstPerformer": "Worst Performer",
+      "seoTitle": "Crypto Portfolio Tracker Guide",
+      "faqBestTrackerQ": "What is the best portfolio tracker for crypto?",
+      "faqBestTrackerA": "The best crypto portfolio tracker depends on your needs. A strong tracker should offer live prices, profit and loss tracking, portfolio allocation, risk insights, alerts, and privacy-friendly storage.",
+      "faqFreeTrackerQ": "Is there a free portfolio tracker?",
+      "faqFreeTrackerA": "Yes. Kryptonal offers a free crypto portfolio tracker that helps users monitor holdings, calculate profit and loss, track alerts, and review portfolio exposure without requiring an account.",
+      "faqWhatTrackerQ": "What is a crypto portfolio tracker?",
+      "faqWhatTrackerA": "A crypto portfolio tracker is a tool that helps investors monitor their cryptocurrency holdings, current value, profit or loss, allocation, and performance in one place.",
+      "faqHowTrackQ": "How do I track my crypto portfolio?",
+      "faqHowTrackA": "You can track your crypto portfolio by adding each coin, entering the amount you hold, adding your entry price, and reviewing live value, profit, loss, allocation, and risk signals.",
+      "faq1000Q": "Can you make $1000 a day with crypto?",
+      "faq1000A": "It is possible, but it usually requires large capital, advanced trading skill, high risk, or unusually strong market conditions. Most users should focus on portfolio growth, risk control, and long-term consistency instead of fixed daily profit targets.",
+
       "profitLoss": "Profit/Loss",
       "return": "Return",
       "alertHit": "Alert Hit",
@@ -542,6 +564,76 @@
         "action": "Action"
       },
       "disclaimer": "Your watchlist is stored locally in your browser. Clearing browser data may remove it. Prices are educational only and not financial advice."
+    },
+    "cryptoEtfTracker": {
+      "name": "Crypto ETF Tracker",
+      "description": "Track Bitcoin ETF inflows, institutional demand, fund rankings, and market sentiment in one place.",
+      "benefit": "Understand whether ETF capital is entering or leaving the crypto market before making research decisions.",
+
+      "badge": "ETF Flow Intelligence",
+      "title": "Crypto ETF Tracker",
+      "descriptionLong": "Track Bitcoin ETF inflows, crypto ETF flow, ETF approval status, institutional demand, and the best cryptocurrency ETF list in one place.",
+      "sourceWarning": "ETF data can change quickly. Always verify official issuer and exchange data before making financial decisions.",
+
+      "dailyFlow": "Daily Net Flow",
+      "sevenDayFlow": "7D Net Flow",
+      "thirtyDayFlow": "30D Net Flow",
+      "approvedEtfs": "Approved ETFs",
+
+      "flowSignal": "ETF Flow Signal",
+      "leaderboard": "Best Cryptocurrency ETF List",
+      "approvalList": "ETF Approval Crypto List",
+      "bitcoinInflowsChart": "Bitcoin ETF Inflows Chart",
+      "sourceNote": "Source Note",
+
+      "signals": {
+        "strongAccumulation": "Strong Accumulation",
+        "accumulation": "Accumulation",
+        "neutral": "Neutral",
+        "distribution": "Distribution",
+        "heavyOutflows": "Heavy Outflows"
+      },
+
+      "faqTitle": "Crypto ETF Tracker FAQ",
+
+      "faq1Q": "What is the best crypto ETF tracker?",
+      "faq1A": "A good crypto ETF tracker should monitor Bitcoin ETF inflows, crypto ETF flow, fund rankings, ETF approval status, and institutional demand.",
+
+      "faq2Q": "Can I track Bitcoin ETF inflows daily?",
+      "faq2A": "Yes. A Bitcoin ETF inflows tracker daily view helps investors monitor whether capital is entering or leaving Bitcoin ETF products.",
+
+      "faq3Q": "What is crypto ETF flow?",
+      "faq3A": "Crypto ETF flow measures money entering or leaving exchange-traded funds linked to crypto assets such as Bitcoin or Ethereum.",
+
+      "faq4Q": "What is crypto ETF approval?",
+      "faq4A": "Crypto ETF approval means a regulator has allowed an exchange-traded fund to list and trade under specific rules.",
+
+      "faq5Q": "What is the best cryptocurrency ETF list?",
+      "faq5A": "Popular cryptocurrency ETFs include BlackRock IBIT, Fidelity FBTC, ARKB, Bitwise BITB, VanEck HODL, and other regulated spot Bitcoin ETFs."
+    },
+    "cryptocurrencyConverter": {
+      "name": "Cryptocurrency Converter",
+      "description": "Convert crypto prices between Bitcoin, Ethereum, stablecoins, altcoins, and fiat currencies using live market data.",
+      "benefit": "Quickly understand crypto value across different coins and currencies before making research decisions.",
+      "badge": "Live Crypto Tool",
+      "title": "Cryptocurrency Converter",
+      "descriptionLong": "Convert Bitcoin, Ethereum, stablecoins, altcoins, and fiat currencies using live cryptocurrency market data. Compare values across digital assets and traditional currencies with fast and simple calculations.",
+      "amount": "Amount",
+      "from": "From",
+      "to": "To",
+      "result": "Result",
+      "loading": "Loading prices...",
+      "error": "Unable to load live prices. Showing fallback data.",
+      "updated": "Updated",
+      "faqTitle": "Cryptocurrency Converter FAQ",
+      "faq1Q": "What is a cryptocurrency converter?",
+      "faq1A": "A cryptocurrency converter is a tool that calculates the value of one cryptocurrency in another cryptocurrency or fiat currency using current market prices.",
+      "faq2Q": "How does a crypto converter work?",
+      "faq2A": "A crypto converter compares live market prices between assets. For example, converting Bitcoin to Ethereum is calculated by comparing the current market value of BTC against ETH and applying the selected amount.",
+      "faq3Q": "Can I convert Bitcoin to USD?",
+      "faq3A": "Yes. You can convert Bitcoin, Ethereum, stablecoins, and selected altcoins into USD and other supported currencies using current market data.",
+      "faq4Q": "Is this financial advice?",
+      "faq4A": "No. This tool is provided for educational and research purposes only. The information displayed should not be considered financial, investment, or trading advice."
     },
     "directory": {
       "metaTitle": "Kryptonal Crypto Tools | Market Analysis & Research Tools",
@@ -593,34 +685,14 @@
           "benefit": "Identify suspicious activity, evaluate wallet reputation, and review security signals before interacting with a wallet."
         },
         "privacyWatchlist": {
-          "name": "Privacy-First Watchlist",
-          "badge": "Private Coin Tracking",
-          "title": "Privacy-First Watchlist",
-          "description": "Track your favorite crypto assets without creating an account. Your watchlist stays saved inside your browser and prices update through Kryptonal.",
-          "benefit": "Build a private crypto portfolio, track profits and losses, and create price alerts without sharing personal data.",
-          "searchPlaceholder": "Search coin, e.g. BTC, ETH, SOL...",
-          "add": "Add",
-          "remove": "Remove",
-          "loading": "Loading live prices...",
-          "empty": "Your watchlist is empty. Search for a coin to add one.",
-          "portfolioValue": "Portfolio Value",
-          "totalProfit": "Total Profit/Loss",
-          "assetsTracked": "Assets Tracked",
-          "alerts": "Alerts Triggered",
-          "amount": "Amount Held",
-          "entryPrice": "Entry Price",
-          "alertAbove": "Alert Above",
-          "alertBelow": "Alert Below",
-          "value": "Value",
-          "profitLoss": "Profit/Loss",
-          "return": "Return",
-          "alertHit": "Alert Hit",
-          "table": {
-            "asset": "Asset",
-            "price": "Price",
-            "action": "Action"
-          },
-          "disclaimer": "Your portfolio and alerts are stored locally in your browser. Clearing browser data may remove your saved information. Prices are for educational purposes only and do not constitute financial advice."
+          "name": "Crypto Portfolio Tracker",
+          "description": "Track your cryptocurrency portfolio, monitor profits and losses, analyze portfolio allocation, and manage price alerts without creating an account. Your data stays private inside your browser.",
+          "benefit": "Build a private crypto portfolio, track performance, monitor diversification, manage risk, and create price alerts without sharing personal information."
+        },
+        "cryptoEtfTracker": {
+          "name": "Crypto ETF Tracker",
+          "description": "Track Bitcoin ETF flows, institutional demand, fund rankings, and market sentiment in one place.",
+          "benefit": "Understand whether ETF capital is entering or leaving the crypto market before making research decisions."
         },
         "bitcoinCycle": {
           "name": "Bitcoin Cycle Tracker",
@@ -651,6 +723,16 @@
           "name": "Address Validator",
           "description": "Validate cryptocurrency wallet addresses and detect supported blockchain networks.",
           "benefit": "Reduce transfer mistakes by checking wallet address formats before sending crypto."
+        },
+        "cryptoScamRiskChecker": {
+          "name": "Crypto Scam Risk Checker",
+          "description": "Analyze crypto projects, websites, wallet addresses, and tokens for common scam warning signs.",
+          "benefit": "Identify potential crypto risks before investing by reviewing project transparency, security indicators, and trust signals."
+        },
+        "cryptocurrencyConverter": {
+          "name": "Cryptocurrency Converter",
+          "description": "Convert crypto prices between Bitcoin, Ethereum, stablecoins, altcoins, and fiat currencies using live market data.",
+          "benefit": "Quickly understand crypto value across different coins and currencies before making research decisions."
         },
         "gamingPulse": {
           "name": "Gaming Crypto Pulse",
@@ -2547,6 +2629,8 @@
     "educationOnly": "Educational content only",
     "notFinancialAdvice": "Not financial advice",
     "highRisk": "Crypto is high risk",
+    "privacy": "privacy",
+    "terms": "terms",
     "translationNote": "Translations are generated by AI and may contain mistakes or misinformation. Always verify important financial information independently."
   },
   "seo": {

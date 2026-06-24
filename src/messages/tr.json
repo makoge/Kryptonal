@@ -317,16 +317,16 @@
           ]
         },
         {
-          "badge": "Gizli Takip",
-          "title": "Privacy-First Watchlist",
-          "text": "Kayıt olmadan ilgilendiğiniz coinleri takip edin. Watchlist’iniz tarayıcınızda saklanır, böylece istediğiniz zaman geri dönüp favori varlıklarınızı izlemeye devam edebilirsiniz.",
-          "href": "/tools/watchlist",
-          "cta": "Watchlist oluştur",
-          "accent": "amber",
+          "badge": "Portföy Yönetimi",
+          "title": "Kripto Portföy Takipçisi",
+          "text": "Kripto varlıklarınızı takip edin, kâr ve zararınızı izleyin, portföy dağılımınızı analiz edin, riskleri yönetin ve hesap oluşturmadan fiyat uyarıları oluşturun. Portföyünüz cihazınızda gizli kalır.",
+          "href": "/tools/crypto-portfolio-tracker",
+          "cta": "Portföyü Takip Et",
+          "accent": "emerald",
           "stats": [
-            "Giriş gerekmez",
-            "Canlı fiyat takibi",
-            "Cihazınızda saklanır"
+            "Özel portföy takibi",
+            "Kâr ve zarar analizi",
+            "Portföy dağılımı içgörüleri"
           ]
         }
       ]
@@ -537,12 +537,131 @@
       "remove": "Kaldır",
       "loading": "Canlı fiyatlar yükleniyor...",
       "empty": "Watchlist’in boş. Eklemek için bir coin ara.",
+      "portfolioHealth": "Portföy Sağlığı",
+      "allocation": "Dağılım",
+      "largestHolding": "En Büyük Varlık",
+      "diversificationScore": "Çeşitlendirme Skoru",
+      "riskLevel": "Risk Seviyesi",
+      "lowRisk": "Düşük Risk",
+      "mediumRisk": "Orta Risk",
+      "highRisk": "Yüksek Risk",
+      "bestPerformer": "En İyi Performans",
+      "worstPerformer": "En Kötü Performans",
+      "seoTitle": "Kripto Portföy Takip Rehberi",
+      "faqBestTrackerQ": "Kripto için en iyi portföy takip aracı hangisidir?",
+      "faqBestTrackerA": "En iyi kripto portföy takip aracı ihtiyaçlarınıza bağlıdır. Güçlü bir araç canlı fiyatlar, kâr-zarar takibi, portföy dağılımı, risk içgörüleri, uyarılar ve gizlilik dostu depolama sunmalıdır.",
+      "faqFreeTrackerQ": "Ücretsiz bir portföy takip aracı var mı?",
+      "faqFreeTrackerA": "Evet. Kryptonal, kullanıcıların hesap oluşturmadan varlıklarını izlemesine, kâr ve zararı hesaplamasına, uyarıları takip etmesine ve portföy riskini incelemesine yardımcı olan ücretsiz bir kripto portföy takip aracı sunar.",
+      "faqWhatTrackerQ": "Kripto portföy takip aracı nedir?",
+      "faqWhatTrackerA": "Kripto portföy takip aracı, yatırımcıların kripto varlıklarını, güncel değerini, kâr veya zararını, dağılımını ve performansını tek yerde izlemesine yardımcı olan bir araçtır.",
+      "faqHowTrackQ": "Kripto portföyümü nasıl takip ederim?",
+      "faqHowTrackA": "Her coini ekleyerek, sahip olduğunuz miktarı girerek, giriş fiyatınızı ekleyerek ve canlı değer, kâr, zarar, dağılım ve risk sinyallerini inceleyerek kripto portföyünüzü takip edebilirsiniz.",
+      "faq1000Q": "Kripto ile günde 1000 dolar kazanılabilir mi?",
+      "faq1000A": "Mümkün olabilir, ancak genellikle büyük sermaye, ileri düzey trading becerisi, yüksek risk veya olağanüstü güçlü piyasa koşulları gerektirir. Çoğu kullanıcı sabit günlük kâr hedefleri yerine portföy büyümesine, risk kontrolüne ve uzun vadeli istikrara odaklanmalıdır.",
       "table": {
         "asset": "Varlık",
         "price": "Fiyat",
         "action": "İşlem"
       },
       "disclaimer": "Watchlist’in tarayıcında yerel olarak saklanır. Tarayıcı verilerini temizlemek watchlist’i silebilir. Fiyatlar yalnızca eğitim amaçlıdır ve finansal tavsiye değildir."
+    },
+    "cryptoEtfTracker": {
+      "name": "Kripto ETF Takipçisi",
+      "description": "Bitcoin ETF girişlerini, kurumsal talebi, fon sıralamalarını ve piyasa duyarlılığını tek bir yerde takip edin.",
+      "benefit": "Araştırma kararları vermeden önce ETF sermayesinin kripto piyasasına girip girmediğini veya piyasadan çıkıp çıkmadığını anlayın.",
+
+      "badge": "ETF Akış Analizi",
+      "title": "Kripto ETF Takipçisi",
+      "descriptionLong": "Bitcoin ETF girişlerini, kripto ETF akışlarını, ETF onay durumlarını, kurumsal talebi ve en iyi kripto para ETF listesini tek bir yerde takip edin.",
+      "sourceWarning": "ETF verileri hızlı değişebilir. Finansal kararlar vermeden önce her zaman resmi ihraççı ve borsa verilerini doğrulayın.",
+
+      "dailyFlow": "Günlük Net Akış",
+      "sevenDayFlow": "7 Günlük Net Akış",
+      "thirtyDayFlow": "30 Günlük Net Akış",
+      "approvedEtfs": "Onaylı ETF'ler",
+
+      "flowSignal": "ETF Akış Sinyali",
+      "leaderboard": "En İyi Kripto Para ETF Listesi",
+      "approvalList": "Kripto ETF Onay Listesi",
+      "bitcoinInflowsChart": "Bitcoin ETF Giriş Grafiği",
+      "sourceNote": "Kaynak Notu",
+
+      "signals": {
+        "strongAccumulation": "Güçlü Birikim",
+        "accumulation": "Birikim",
+        "neutral": "Nötr",
+        "distribution": "Dağıtım",
+        "heavyOutflows": "Güçlü Çıkışlar"
+      },
+
+      "faqTitle": "Kripto ETF Takipçisi SSS",
+
+      "faq1Q": "En iyi kripto ETF takipçisi hangisidir?",
+      "faq1A": "İyi bir kripto ETF takipçisi, Bitcoin ETF girişlerini, kripto ETF akışlarını, fon sıralamalarını, ETF onay durumlarını ve kurumsal talebi takip etmelidir.",
+
+      "faq2Q": "Bitcoin ETF girişlerini günlük olarak takip edebilir miyim?",
+      "faq2A": "Evet. Günlük Bitcoin ETF giriş takipçisi, yatırımcıların sermayenin Bitcoin ETF ürünlerine girip girmediğini veya çıkıp çıkmadığını izlemesine yardımcı olur.",
+
+      "faq3Q": "Kripto ETF akışı nedir?",
+      "faq3A": "Kripto ETF akışı, Bitcoin veya Ethereum gibi kripto varlıklara bağlı borsa yatırım fonlarına giren veya çıkan parayı ölçer.",
+
+      "faq4Q": "Kripto ETF onayı nedir?",
+      "faq4A": "Kripto ETF onayı, bir düzenleyici kurumun belirli kurallar altında bir borsa yatırım fonunun listelenmesine ve işlem görmesine izin vermesi anlamına gelir.",
+
+      "faq5Q": "En iyi kripto para ETF listesi hangisidir?",
+      "faq5A": "Popüler kripto para ETF'leri arasında BlackRock IBIT, Fidelity FBTC, ARKB, Bitwise BITB, VanEck HODL ve diğer düzenlenmiş spot Bitcoin ETF'leri bulunmaktadır."
+    },
+    "cryptoScamRiskChecker": {
+      "name": "Kripto Dolandırıcılık Risk Kontrolü",
+      "description": "Kripto projelerini, web sitelerini, cüzdan adreslerini ve tokenleri yaygın dolandırıcılık işaretlerine karşı analiz edin.",
+      "benefit": "Yatırım yapmadan önce proje şeffaflığını, güvenlik göstergelerini ve güven sinyallerini inceleyerek olası riskleri belirleyin.",
+      "badge": "Kripto Güvenlik Aracı",
+      "title": "Kripto Dolandırıcılık Risk Kontrolü",
+      "descriptionLong": "Araştırma kararı vermeden önce kripto projelerini, web sitelerini, cüzdan adreslerini ve tokenleri yaygın dolandırıcılık uyarı işaretlerine karşı kontrol edin.",
+      "inputLabel": "Proje adı, web sitesi URL’si, cüzdan adresi veya token kontratı girin",
+      "placeholder": "Örnek: https://example.com, 0x... veya proje adı",
+      "button": "Riski Kontrol Et",
+      "checking": "Kontrol ediliyor...",
+      "resultTitle": "Risk Analizi Sonucu",
+      "riskScore": "Risk Puanı",
+      "redFlags": "Kırmızı Bayraklar",
+      "positiveSigns": "Olumlu İşaretler",
+      "recommendations": "Güvenlik Önerileri",
+      "disclaimer": "Bu araç yalnızca eğitim amaçlıdır. Bir projenin güvenli veya güvensiz olduğunu garanti etmez.",
+      "error": "Bu giriş kontrol edilemedi. Lütfen tekrar deneyin.",
+      "faqTitle": "Kripto Dolandırıcılık Risk Kontrolü SSS",
+      "faq1Q": "Kripto dolandırıcılığı nasıl kontrol edilir?",
+      "faq1A": "Bir kripto dolandırıcılığını kontrol etmek için proje web sitesini, token kontratını, likiditeyi, ekip şeffaflığını, sosyal aktiviteyi ve güvenlik denetimlerini inceleyebilirsiniz.",
+      "faq2Q": "Güncel kripto dolandırıcılıkları nelerdir?",
+      "faq2A": "Yaygın kripto dolandırıcılıkları arasında sahte yatırım platformları, kimlik avı siteleri, sahte token lansmanları, rug pull’lar, hediye dolandırıcılıkları ve sahte kurtarma hizmetleri bulunur.",
+      "faq3Q": "Kripto dolandırıcılığına uğrarsanız paranızı geri alabilir misiniz?",
+      "faq3A": "Kripto dolandırıcılığından sonra para kurtarmak zordur çünkü blockchain işlemleri genellikle geri döndürülemez. Mağdurlar hızlıca bildirim yapmalı ve işlem kayıtlarını toplamalıdır.",
+      "faq4Q": "Bir dolandırıcıyı nasıl doğrulayabilirim?",
+      "faq4A": "Potansiyel dolandırıcıları cüzdan adresleri, alan adları, sosyal profiller, proje belgeleri ve topluluk uyarıları üzerinden kontrol edebilirsiniz."
+    },
+    "cryptocurrencyConverter": {
+      "name": "Kripto Para Dönüştürücü",
+      "description": "Canlı piyasa verilerini kullanarak Bitcoin, Ethereum, stablecoinler, altcoinler ve itibari para birimleri arasında dönüşüm yapın.",
+      "benefit": "Araştırma kararları vermeden önce farklı kripto paralar ve para birimleri arasındaki değeri hızlıca anlayın.",
+      "badge": "Canlı Kripto Aracı",
+      "title": "Kripto Para Dönüştürücü",
+      "descriptionLong": "Bitcoin, Ethereum, stablecoinler, altcoinler ve itibari para birimleri arasında canlı piyasa verileriyle dönüşüm yapın.",
+      "amount": "Miktar",
+      "from": "Dönüştürülecek",
+      "to": "Dönüştürülen",
+      "result": "Sonuç",
+      "loading": "Fiyatlar yükleniyor...",
+      "error": "Canlı fiyatlar yüklenemedi. Yedek veriler gösteriliyor.",
+      "updated": "Güncellendi",
+      "faqTitle": "Kripto Para Dönüştürücü SSS",
+      "faq1Q": "Kripto para dönüştürücü nedir?",
+      "faq1A": "Kripto para dönüştürücü, piyasa fiyatlarını kullanarak bir kripto varlığın başka bir kripto varlık veya itibari para birimi karşısındaki değerini hesaplayan bir araçtır.",
+      "faq2Q": "Kripto dönüştürücü nasıl çalışır?",
+      "faq2A": "Kripto dönüştürücü canlı piyasa fiyatlarını karşılaştırır. Örneğin BTC'den ETH'ye dönüşüm, Bitcoin fiyatının Ethereum fiyatına bölünmesiyle hesaplanır ve güncel piyasa değerlerine göre sonuç verir.",
+      "faq3Q": "Bitcoin'i USD'ye dönüştürebilir miyim?",
+      "faq3A": "Evet. Bitcoin, Ethereum, stablecoinler ve seçili altcoinleri USD veya diğer desteklenen para birimlerine dönüştürebilirsiniz. Sonuçlar güncel piyasa fiyatlarına dayanır.",
+      "faq4Q": "Bu finansal tavsiye midir?",
+      "faq4A": "Hayır. Bu araç yalnızca eğitim ve araştırma amaçlıdır. Sağlanan bilgiler finansal, yatırım veya ticari tavsiye olarak değerlendirilmemelidir."
     },
     "directory": {
       "metaTitle": "Kryptonal Kripto Araçları | Piyasa Analizi ve Araştırma Araçları",
@@ -588,7 +707,11 @@
           "description": "Canlı piyasa sinyallerinden sade ve anlaşılır kripto piyasa özetleri oluşturun.",
           "benefit": "Karmaşık sinyalleri basit piyasa açıklamalarına dönüştürün."
         },
-
+        "privacyWatchlist": {
+          "name": "Kripto Portföy Takipçisi",
+          "description": "Hesap oluşturmadan kripto portföyünüzü takip edin, kâr ve zararınızı izleyin, portföy dağılımını analiz edin ve fiyat uyarılarını yönetin. Verileriniz tarayıcınızda gizli kalır.",
+          "benefit": "Özel bir kripto portföyü oluşturun, performansı takip edin, çeşitlendirmeyi analiz edin, riski yönetin ve kişisel bilgilerinizi paylaşmadan fiyat uyarıları oluşturun."
+        },
         "bitcoinCycle": {
           "name": "Bitcoin Döngü Takibi",
           "description": "Bitcoin döngü davranışını, tarihi zirveleri, düşüşleri ve piyasa aşamalarını inceleyin.",
@@ -624,6 +747,17 @@
           "description": "Kripto para cüzdan adreslerini doğrulayın, desteklenen ağları tespit edin ve gönderim öncesinde güvenlik uyarılarını inceleyin.",
           "benefit": "Cüzdan adres formatını, ağ uyumluluğunu ve checksum durumunu kontrol ederek maliyetli transfer hatalarını azaltın."
         },
+        "cryptoEtfTracker": {
+          "name": "Kripto ETF Takipçisi",
+          "description": "Bitcoin ETF akışlarını, kurumsal talebi, fon sıralamalarını ve piyasa duyarlılığını tek bir yerde takip edin.",
+          "benefit": "Araştırma ve yatırım kararları vermeden önce ETF sermayesinin kripto piyasasına girip girmediğini veya piyasadan çıkıp çıkmadığını anlayın."
+        },
+
+        "cryptocurrencyConverter": {
+          "name": "Kripto Para Dönüştürücü",
+          "description": "Canlı piyasa verilerini kullanarak Bitcoin, Ethereum, stablecoinler, altcoinler ve itibari para birimleri arasında dönüşüm yapın.",
+          "benefit": "Araştırma kararları vermeden önce farklı kripto paralar ve para birimleri arasındaki değeri hızlıca anlayın."
+        },
         "gamingPulse": {
           "name": "Gaming Crypto Pulse",
           "description": "Web3 gaming anlatılarını, gaming tokenlerini ve GameFi piyasa aktivitelerini takip edin.",
@@ -633,6 +767,11 @@
           "name": "Risk Sinyal Paneli",
           "description": "Trend, likidite, dominans ve volatilite sinyalleriyle piyasa riskini anlayın.",
           "benefit": "Piyasayı sadece fiyata göre okumaktan kaçının."
+        },
+        "cryptoScamRiskChecker": {
+          "name": "Kripto Dolandırıcılık Risk Kontrolü",
+          "description": "Kripto projelerini, web sitelerini, cüzdan adreslerini ve tokenleri yaygın dolandırıcılık işaretlerine karşı analiz edin.",
+          "benefit": "Yatırım yapmadan önce proje şeffaflığını, güvenlik göstergelerini ve güven sinyallerini inceleyerek olası riskleri belirleyin."
         },
         "highYieldFinder": {
           "name": "Yüksek Getiri Bulucu",
@@ -2539,6 +2678,8 @@
     "educationOnly": "Yalnızca eğitsel içerik",
     "notFinancialAdvice": "Finansal tavsiye değildir",
     "highRisk": "Kripto yüksek risklidir",
+    "privacy": "Gizlilik",
+    "terms": "Şartlar ve Koşullar",
     "translationNote": "Çeviriler yapay zekâ tarafından oluşturulmuştur ve hata veya yanlış bilgi içerebilir. Önemli finansal bilgileri her zaman bağımsız olarak doğrulayın."
   },
   "seo": {
