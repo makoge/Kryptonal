@@ -513,53 +513,65 @@
       "disclaimer": "Nur zu Bildungszwecken. Hohe APY-Renditen können Smart-Contract-Risiken, Liquiditätsrisiken, Token-Belohnungen, Impermanent Loss oder instabile Renditen beinhalten."
     },
     "privacyWatchlist": {
-      "badge": "Private Coin-Verfolgung",
-      "title": "Datenschutzorientierte Watchlist",
-      "description": "Verfolge deine Lieblings-Kryptowährungen ohne Kontoerstellung. Deine Watchlist wird lokal im Browser gespeichert und die Preise werden über Kryptonal aktualisiert.",
-      "searchPlaceholder": "Coin suchen, z. B. BTC, ETH, SOL...",
-      "portfolioValue": "Portfolio-Wert",
-      "totalProfit": "Gesamter Gewinn/Verlust",
-      "assetsTracked": "Verfolgte Vermögenswerte",
-      "alerts": "Ausgelöste Benachrichtigungen",
-      "amount": "Gehaltene Menge",
+      "badge": "Privates Portfolio-Tool",
+      "name": "Krypto-Portfolio-Tracker",
+      "title": "Krypto-Portfolio-Tracker",
+      "description": "Verfolgen Sie Ihre Kryptowährungen, Gewinne und Verluste, Portfolio-Allokation, Preisalarme und Risikosignale direkt in Ihrem Browser.",
+      "benefit": "Erstellen Sie ein privates Krypto-Portfolio, verfolgen Sie die Performance, überwachen Sie die Diversifizierung, verwalten Sie Risiken und richten Sie Preisalarme ein – ganz ohne persönliche Daten preiszugeben.",
+      "privacy": "Ihr Portfolio bleibt ausschließlich auf Ihrem Gerät gespeichert. Kryptonal verlangt keine Anmeldung und speichert Ihre Bestände nicht auf seinen Servern.",
+
+      "addHolding": "Bestand Hinzufügen",
+      "coin": "Coin",
+      "amount": "Menge",
       "entryPrice": "Einstiegspreis",
-      "alertAbove": "Benachrichtigen Über",
-      "alertBelow": "Benachrichtigen Unter",
-      "value": "Wert",
-      "profitLoss": "Gewinn/Verlust",
-      "return": "Rendite",
-      "alertHit": "Benachrichtigung Ausgelöst",
-      "add": "Hinzufügen",
-      "remove": "Entfernen",
-      "loading": "Live-Preise werden geladen...",
-      "empty": "Deine Watchlist ist leer. Suche nach einem Coin, um ihn hinzuzufügen.",
+      "alertAbove": "Alarm Oberhalb",
+      "alertBelow": "Alarm Unterhalb",
+
+      "totalValue": "Gesamtwert",
+      "invested": "Investierter Betrag",
+      "profitLoss": "Gewinn / Verlust",
+      "roi": "ROI",
+
       "portfolioHealth": "Portfolio-Gesundheit",
-      "allocation": "Portfolio-Aufteilung",
+      "allocation": "Allokation",
       "largestHolding": "Größte Position",
-      "diversificationScore": "Diversifikationswert",
+      "stablecoinExposure": "Stablecoin-Anteil",
+      "diversificationScore": "Diversifizierungsbewertung",
       "riskLevel": "Risikostufe",
+      "bestPerformer": "Beste Performance",
+      "worstPerformer": "Schlechteste Performance",
+      "insights": "Portfolio-Analyse",
+
       "lowRisk": "Niedriges Risiko",
       "mediumRisk": "Mittleres Risiko",
       "highRisk": "Hohes Risiko",
-      "bestPerformer": "Beste Performance",
-      "worstPerformer": "Schlechteste Performance",
-      "seoTitle": "Leitfaden für Krypto-Portfolio-Tracker",
+
+      "holdings": "Bestände",
+      "remove": "Entfernen",
+      "price": "Preis",
+      "value": "Wert",
+      "cost": "Kosten",
+      "pnl": "G/V",
+
+      "noHoldings": "Fügen Sie Ihren ersten Bestand hinzu, um Ihr Krypto-Portfolio zu verfolgen.",
+      "updatingPrices": "Preise werden aktualisiert...",
+
+      "seoTitle": "Leitfaden zum Krypto-Portfolio-Tracker",
+
       "faqBestTrackerQ": "Welcher ist der beste Portfolio-Tracker für Kryptowährungen?",
-      "faqBestTrackerA": "Der beste Krypto-Portfolio-Tracker hängt von Ihren Anforderungen ab. Ein guter Tracker sollte Echtzeitkurse, Gewinn- und Verlustverfolgung, Portfolio-Analysen, Risikoeinblicke, Benachrichtigungen und datenschutzfreundliche Speicherung bieten.",
+      "faqBestTrackerA": "Der beste Krypto-Portfolio-Tracker hängt von Ihren Anforderungen ab. Eine gute Lösung sollte Live-Kurse, Gewinn- und Verlustberechnung, Portfolio-Allokation, Risikoanalysen, Preisalarme und datenschutzfreundliche Speicherung bieten.",
+
       "faqFreeTrackerQ": "Gibt es einen kostenlosen Portfolio-Tracker?",
-      "faqFreeTrackerA": "Ja. Kryptonal bietet einen kostenlosen Krypto-Portfolio-Tracker, mit dem Nutzer ihre Bestände überwachen, Gewinne und Verluste berechnen, Benachrichtigungen verfolgen und ihr Portfolio analysieren können, ohne ein Konto erstellen zu müssen.",
+      "faqFreeTrackerA": "Ja. Kryptonal bietet einen kostenlosen Krypto-Portfolio-Tracker, mit dem Nutzer ihre Bestände überwachen, Gewinne und Verluste berechnen, Preisalarme erstellen und die Portfolioverteilung analysieren können – ganz ohne Konto.",
+
       "faqWhatTrackerQ": "Was ist ein Krypto-Portfolio-Tracker?",
-      "faqWhatTrackerA": "Ein Krypto-Portfolio-Tracker ist ein Tool, das Anlegern hilft, ihre Kryptowährungsbestände, den aktuellen Wert, Gewinne oder Verluste, die Portfolio-Aufteilung und die Gesamtperformance an einem Ort zu verfolgen.",
+      "faqWhatTrackerA": "Ein Krypto-Portfolio-Tracker ist ein Tool, mit dem Anleger ihre Kryptowährungen, den aktuellen Wert, Gewinne oder Verluste, die Portfolio-Allokation und die Gesamtperformance an einem Ort verfolgen können.",
+
       "faqHowTrackQ": "Wie kann ich mein Krypto-Portfolio verfolgen?",
-      "faqHowTrackA": "Sie können Ihr Krypto-Portfolio verfolgen, indem Sie jede Kryptowährung hinzufügen, die gehaltene Menge eingeben, den Einstiegspreis erfassen und anschließend den aktuellen Wert, Gewinne, Verluste, die Portfolio-Aufteilung und Risikosignale überwachen.",
+      "faqHowTrackA": "Fügen Sie jede Kryptowährung hinzu, geben Sie die gehaltene Menge sowie den Einstiegspreis ein. Das Tool berechnet automatisch den aktuellen Wert, Gewinne, Verluste, die Portfolio-Allokation und Risikosignale.",
+
       "faq1000Q": "Kann man mit Kryptowährungen 1.000 US-Dollar pro Tag verdienen?",
-      "faq1000A": "Das ist möglich, erfordert jedoch in der Regel erhebliches Kapital, fortgeschrittene Trading-Kenntnisse, eine hohe Risikobereitschaft oder außergewöhnlich günstige Marktbedingungen. Die meisten Anleger sollten sich auf langfristiges Portfoliowachstum, Risikomanagement und Beständigkeit konzentrieren, anstatt feste tägliche Gewinnziele anzustreben.",
-      "table": {
-        "asset": "Asset",
-        "price": "Preis",
-        "action": "Aktion"
-      },
-      "disclaimer": "Deine Watchlist wird lokal im Browser gespeichert. Das Löschen von Browserdaten kann sie entfernen. Preise dienen nur Bildungszwecken und sind keine Finanzberatung."
+      "faq1000A": "Das ist möglich, erfordert jedoch in der Regel ein hohes Kapital, fortgeschrittene Trading-Kenntnisse, eine hohe Risikobereitschaft oder außergewöhnliche Marktbedingungen. Die meisten Anleger sollten sich stattdessen auf langfristiges Portfolio-Wachstum, Risikomanagement und kontinuierliche Erträge konzentrieren."
     },
     "cryptoEtfTracker": {
       "name": "Krypto-ETF-Tracker",
@@ -659,6 +671,168 @@
       "faq4Q": "Ist dies eine Finanzberatung?",
       "faq4A": "Nein. Dieses Tool dient ausschließlich Bildungs- und Forschungszwecken. Die angezeigten Informationen sollten nicht als Finanz-, Anlage- oder Handelsberatung betrachtet werden."
     },
+    "addressValidator": {
+      "name": "Adressvalidator",
+      "description": "Validieren Sie Kryptowährungs-Wallet-Adressen, erkennen Sie unterstützte Netzwerke und überprüfen Sie Sicherheitshinweise, bevor Sie Kryptowährungen senden.",
+      "benefit": "Vermeiden Sie kostspielige Übertragungsfehler, indem Sie das Adressformat, die Netzwerkkompatibilität und den Checksum-Status überprüfen.",
+
+      "badge": "Wallet-Sicherheitstool",
+      "title": "Krypto-Adressvalidator",
+      "descriptionLong": "Überprüfen Sie das Format einer Wallet-Adresse, erkennen Sie mögliche Netzwerke, kontrollieren Sie den Checksum-Status und vermeiden Sie Übertragungsfehler, bevor Sie Kryptowährungen senden.",
+      "warning": "Ein gültiges Adressformat garantiert weder die Eigentümerschaft noch die Sicherheit oder das richtige Zielnetzwerk. Überprüfen Sie die Adresse immer mit dem Empfänger.",
+
+      "inputLabel": "Wallet-Adresse einfügen",
+      "placeholder": "0x..., bc1..., T..., r..., addr1..., Solana-Adresse...",
+      "checking": "Wird überprüft...",
+      "button": "Adresse Validieren",
+
+      "emptyResult": "Das Validierungsergebnis wird hier angezeigt.",
+      "status": "Status",
+      "validFormat": "Gültiges Format",
+      "invalidUnsupported": "Ungültig / Nicht Unterstützt",
+
+      "detectedNetwork": "Erkanntes Netzwerk",
+      "addressType": "Adresstyp",
+      "confidence": "Vertrauensstufe",
+      "checksum": "Prüfsumme (Checksum)",
+      "notChecked": "nicht überprüft",
+
+      "compatibleNetworks": "Kompatible Netzwerke",
+      "noneDetected": "Keine Netzwerke erkannt",
+      "warnings": "Warnungen",
+      "openExplorer": "Im Explorer Öffnen"
+    },
+    "walletSecurity": {
+      "name": "Wallet-Sicherheitsprüfer",
+      "description": "Analysieren Sie Kryptowallet-Adressen auf Netzwerkerkennung, Sicherheitssignale, Explorer-Links und Reputationsindikatoren, bevor Sie mit ihnen interagieren.",
+      "benefit": "Reduzieren Sie walletbezogene Risiken, indem Sie unterstützte Netzwerke, Aktivitätssignale, Sicherheitswarnungen und Explorer-Informationen prüfen, bevor Sie Kryptowährungen senden oder empfangen.",
+
+      "badge": "Multi-Chain-Wallet-Risikotool",
+      "title": "Wallet-Sicherheitsprüfer",
+      "descriptionLong": "Überprüfen Sie das Wallet-Format, erkennen Sie den Netzwerktyp, analysieren Sie verfügbare Aktivitätsdaten, Explorer-Links, Sicherheitswarnungen und Reputationssignale des Wallets.",
+      "warning": "Dieses Tool hilft dabei, Risiken zu reduzieren, kann jedoch nicht garantieren, dass ein Wallet sicher ist. Überprüfen Sie immer den Transaktionsverlauf, Berechtigungen und offizielle Quellen.",
+
+      "inputLabel": "Wallet-Adresse",
+      "placeholder": "0x-, bc1-, Solana-, XRP-, Tron- oder Dogecoin-Adresse einfügen...",
+      "checking": "Wallet wird überprüft...",
+      "button": "Wallet-Sicherheit prüfen",
+
+      "emptyResult": "Der Wallet-Sicherheitsbericht wird hier angezeigt.",
+
+      "securityScore": "Sicherheitsbewertung",
+
+      "detectedNetwork": "Erkanntes Netzwerk",
+      "walletType": "Wallet-Typ",
+      "addressFamily": "Adressfamilie",
+      "confidence": "Vertrauensstufe",
+
+      "transactions": "Transaktionen",
+      "balance": "Kontostand",
+      "dataSource": "Datenquelle",
+      "notAvailable": "N/V",
+
+      "explorerLinks": "Explorer-Links",
+      "noExplorerDetected": "Kein Explorer erkannt",
+
+      "strengths": "Stärken",
+      "warnings": "Warnungen",
+      "recommendations": "Empfehlungen",
+
+      "faqTitle": "FAQ zum Wallet-Sicherheitsprüfer",
+
+      "faq1Q": "Was ist ein Wallet-Sicherheitsprüfer?",
+      "faq1A": "Ein Wallet-Sicherheitsprüfer analysiert eine Kryptowallet-Adresse, um das Blockchain-Netzwerk, unterstützte Explorer, grundlegende Sicherheitssignale und potenzielle Risiken vor einer Interaktion zu identifizieren.",
+
+      "faq2Q": "Kann ein Wallet-Sicherheitsprüfer feststellen, ob ein Wallet sicher ist?",
+      "faq2A": "Nein. Ein Wallet-Sicherheitsprüfer kann nicht garantieren, dass ein Wallet sicher ist. Er hilft dabei, das Adressformat, unterstützte Netzwerke, Aktivitätsdaten und Warnsignale zu erkennen. Sie sollten jedoch immer den Transaktionsverlauf und offizielle Quellen überprüfen.",
+
+      "faq3Q": "Warum sollte ich ein Wallet überprüfen, bevor ich Kryptowährungen sende?",
+      "faq3A": "Die Überprüfung eines Wallets hilft dabei, das Risiko zu verringern, Gelder an eine ungültige Adresse, die falsche Blockchain oder ein verdächtiges Ziel zu senden. Außerdem wird die Netzwerkkompatibilität vor einer Transaktion bestätigt.",
+
+      "faq4Q": "Welche Wallet-Adressen werden unterstützt?",
+      "faq4A": "Der Wallet-Sicherheitsprüfer unterstützt zahlreiche Blockchain-Adressformate, darunter Bitcoin, Ethereum, Solana, XRP, Tron, Dogecoin, Cardano und weitere beliebte Kryptowährungsnetzwerke.",
+
+      "faq5Q": "Speichert dieses Tool meine Wallet-Adresse?",
+      "faq5A": "Nein. Kryptonal speichert Wallet-Adressen, die im Wallet-Sicherheitsprüfer eingegeben werden, nicht dauerhaft. Das Tool wurde entwickelt, um die Privatsphäre der Nutzer zu schützen und gleichzeitig Sicherheitsinformationen bereitzustellen."
+    },
+    "cryptocurrencyTaxCalculator": {
+      "name": "Kryptowährungs-Steuerrechner",
+      "description": "Schätzen Sie Kapitalgewinne, Verluste, fällige Steuern und den Gewinn nach Steuern für Kryptowährungen mithilfe einfacher manueller Eingaben.",
+      "benefit": "Verstehen Sie Ihre mögliche Steuerpflicht für Kryptowährungen, bevor Sie Ihre Steuererklärung einreichen oder finanzielle Entscheidungen treffen.",
+      "badge": "Krypto-Steuer-Tool",
+      "title": "Kryptowährungs-Steuerrechner",
+      "descriptionLong": "Schätzen Sie Kapitalgewinne, Verluste, fällige Steuern und den Gewinn nach Steuern für Kryptowährungen mithilfe einfacher manueller Eingaben. Dieser Rechner dient ausschließlich Bildungs- und Forschungszwecken und ersetzt keine professionelle Steuerberatung.",
+      "buyPrice": "Kaufpreis",
+      "sellPrice": "Verkaufspreis",
+      "quantity": "Menge",
+      "taxRate": "Steuersatz (%)",
+      "buyDate": "Kaufdatum",
+      "sellDate": "Verkaufsdatum",
+      "button": "Steuer Berechnen",
+      "calculating": "Wird berechnet...",
+      "country": "Land",
+      "currency": "Währung",
+      "transactionType": "Transaktionstyp",
+      "useCustomRate": "Benutzerdefinierten Steuersatz verwenden",
+      "taxableGain": "Steuerpflichtiger Gewinn",
+      "ruleNote": "Hinweis zu den Steuervorschriften des Landes",
+      "resultTitle": "Geschätztes Ergebnis der Krypto-Steuer",
+      "costBasis": "Anschaffungskosten",
+      "proceeds": "Verkaufserlös",
+      "gainLoss": "Kapitalgewinn / -verlust",
+      "profitPercent": "Gewinn in Prozent",
+      "estimatedTax": "Geschätzte Steuer",
+      "profitAfterTax": "Gewinn nach Steuern",
+      "holdingPeriod": "Haltedauer",
+      "disclaimer": "Dieser Rechner dient ausschließlich Bildungszwecken. Er stellt keine Steuer-, Rechts-, Finanz- oder Anlageberatung dar. Die steuerlichen Vorschriften für Kryptowährungen unterscheiden sich je nach Land.",
+      "error": "Die Steuerschätzung konnte nicht berechnet werden. Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.",
+      "faqTitle": "Häufig gestellte Fragen zum Kryptowährungs-Steuerrechner",
+      "faq1Q": "Was ist ein Kryptowährungs-Steuerrechner?",
+      "faq1A": "Ein Kryptowährungs-Steuerrechner schätzt Ihre Kapitalgewinne, Verluste, steuerpflichtigen Gewinne und Ihre mögliche Steuerpflicht anhand der von Ihnen eingegebenen Informationen.",
+      "faq2Q": "Wie berechnet man die Steuer auf Kryptowährungen?",
+      "faq2A": "Die Steuer auf Kryptowährungen wird in der Regel berechnet, indem die Anschaffungskosten vom Verkaufserlös abgezogen werden, um den Kapitalgewinn oder -verlust zu ermitteln. Anschließend wird der entsprechende Steuersatz auf den steuerpflichtigen Gewinn angewendet.",
+      "faq3Q": "Muss ich Steuern zahlen, wenn ich Bitcoin verkaufe?",
+      "faq3A": "In vielen Ländern kann der Verkauf von Bitcoin oder anderen Kryptowährungen mit Gewinn zu einem steuerpflichtigen Kapitalgewinn führen. Die genauen Regelungen hängen von den Steuergesetzen Ihres Landes ab.",
+      "faq4Q": "Handelt es sich hierbei um eine offizielle Steuerberatung?",
+      "faq4A": "Nein. Dieser Rechner liefert lediglich Schätzungen zu Bildungs- und Forschungszwecken. Konsultieren Sie immer einen qualifizierten Steuerberater, bevor Sie Ihre Kryptowährungssteuern einreichen."
+    },
+    "honeypotChecker": {
+      "name": "Honeypot-Prüfer",
+      "description": "Erkennen Sie potenzielle Honeypot-Token mithilfe einer erweiterten Blockchain-Sicherheitsanalyse.",
+      "benefit": "Prüfen Sie, ob ein Token Verkäufe verhindert, überhöhte Gebühren erhebt oder gefährliche Smart-Contract-Funktionen enthält.",
+      "badge": "Erweitertes Token-Sicherheitstool",
+      "title": "Honeypot-Prüfer",
+      "descriptionLong": "Analysieren Sie Krypto-Token auf Honeypot-Verhalten, Verkaufsbeschränkungen, Transaktionsgebühren, Eigentumsrisiken, Blacklist-Funktionen, Mint-Berechtigungen, Proxy-Verträge und weitere Sicherheitsmerkmale von Smart Contracts, bevor Sie mit einem Token interagieren.",
+      "tokenAddress": "Token-Vertragsadresse",
+      "placeholder": "Fügen Sie die Token-Vertragsadresse ein (0x...)",
+      "chain": "Blockchain-Netzwerk",
+      "button": "Honeypot-Risiko Prüfen",
+      "checking": "Token wird analysiert...",
+      "resultTitle": "Ergebnis der Honeypot-Analyse",
+      "riskScore": "Risikobewertung",
+      "sellable": "Verkäuflich",
+      "buyTax": "Kaufsteuer",
+      "sellTax": "Verkaufssteuer",
+      "transferTax": "Transfersteuer",
+      "token": "Token-Informationen",
+      "redFlags": "Erkannte Sicherheitsrisiken",
+      "positiveSigns": "Positive Sicherheitssignale",
+      "recommendations": "Empfehlungen",
+      "yes": "Ja",
+      "no": "Nein",
+      "unknown": "Unbekannt",
+      "disclaimer": "Dieses Tool dient ausschließlich Bildungszwecken. Obwohl es häufige Honeypot-Indikatoren und Smart-Contract-Risiken analysiert, kann kein automatisiertes Tool garantieren, dass ein Token vollständig sicher ist. Führen Sie vor einer Investition immer zusätzliche Recherchen durch.",
+      "error": "Dieser Token konnte nicht analysiert werden. Bitte überprüfen Sie die Vertragsadresse und das ausgewählte Blockchain-Netzwerk.",
+      "faqTitle": "Häufig gestellte Fragen zum Honeypot-Prüfer",
+      "faq1Q": "Was ist ein Honeypot-Token?",
+      "faq1A": "Ein Honeypot-Token ist eine betrügerische Kryptowährung, die es Nutzern erlaubt, Token zu kaufen, sie jedoch am Verkauf hindert oder diesen stark einschränkt. Dadurch werden Anleger im Vertrag festgehalten.",
+      "faq2Q": "Wie funktioniert ein Honeypot-Prüfer?",
+      "faq2A": "Ein Honeypot-Prüfer analysiert das Verhalten des Smart Contracts, Kauf- und Verkaufssteuern, Eigentümerrechte, Blacklist-Funktionen, Verkaufsbeschränkungen, Mint-Funktionen und weitere Sicherheitsindikatoren, um potenzielle Betrugs-Token zu erkennen.",
+      "faq3Q": "Kann ein Honeypot-Prüfer garantieren, dass ein Token sicher ist?",
+      "faq3A": "Nein. Er kann viele bekannte Betrugsmuster und Sicherheitsrisiken erkennen, aber kein automatisierter Scanner kann garantieren, dass ein Token vollständig sicher ist. Überprüfen Sie die Seriosität eines Projekts immer anhand mehrerer vertrauenswürdiger Quellen.",
+      "faq4Q": "Welche Blockchain-Netzwerke werden unterstützt?",
+      "faq4A": "Dieses Tool unterstützt die wichtigsten EVM-kompatiblen Blockchains, darunter Ethereum, BNB Chain, Base, Polygon, Arbitrum, Optimism und Avalanche – abhängig von der Verfügbarkeit entsprechender Sicherheitsdaten."
+    },
     "directory": {
       "metaTitle": "Kryptonal Krypto-Tools | Marktanalyse- und Recherche-Tools",
       "metaDescription": "Entdecke die Kryptonal Krypto-Tools für Marktwertanalyse, Bitcoin-Zyklen, Stablecoin-Liquidität, Blockchain-Stärke, Sektorrotation, Gaming Crypto und Risikosignale.",
@@ -697,6 +871,12 @@
           "name": "Krypto-Marktkapitalisierungsanalyse",
           "description": "Vergleiche die gesamte Krypto-Marktkapitalisierung über verschiedene Jahre und Marktzyklen hinweg.",
           "benefit": "Verstehe, wo sich der Markt im Vergleich zu früheren Zyklusphasen befindet."
+        },
+        "honeypotChecker": {
+          "name": "Honeypot-Prüfer",
+          "description": "Erkennen Sie potenzielle Honeypot-Token durch die Analyse der Verkaufbarkeit, Transaktionssteuern, Eigentumsrisiken und Sicherheitsmerkmale von Smart Contracts.",
+          "benefit": "Vermeiden Sie betrügerische Token, indem Sie prüfen, ob ein Token verkauft werden kann, und erweiterte Sicherheitsindikatoren vor dem Handel analysieren.",
+          "disclaimer": "Nur zu Bildungszwecken. Die Ergebnisse sind Schätzungen auf Grundlage öffentlich verfügbarer Blockchain-Daten und Sicherheitsanalysen. Führen Sie stets Ihre eigene Recherche durch, bevor Sie mit einem Token interagieren."
         },
         "analysisEngine": {
           "name": "Analyse-Engine",
@@ -743,6 +923,12 @@
           "description": "Analysiere Wallet-Format, kompatible Netzwerke, Risikosignale und Sicherheitsempfehlungen, bevor du mit einer Krypto-Adresse interagierst.",
           "benefit": "Überprüfe Reputationssignale einer Wallet und reduziere Risiken, bevor du Gelder sendest, Wallets verbindest oder unbekannten Adressen vertraust."
         },
+        "cryptocurrencyTaxCalculator": {
+          "name": "Kryptowährungs-Steuerrechner",
+          "description": "Schätzen Sie Kapitalgewinne, Verluste, fällige Steuern und den Gewinn nach Steuern für Kryptowährungen mithilfe einfacher manueller Eingaben.",
+          "benefit": "Verstehen Sie Ihre mögliche Steuerpflicht für Kryptowährungen, bevor Sie Ihre Steuererklärung einreichen oder finanzielle Entscheidungen treffen.",
+          "disclaimer": "Nur zu Bildungszwecken. Die Schätzungen spiegeln möglicherweise nicht die Steuergesetze Ihres Landes oder Ihre persönliche Steuersituation wider. Wenden Sie sich stets an einen qualifizierten Steuerberater."
+        },
         "airdropRadar": {
           "name": "Airdrop Radar",
           "description": "Verfolge tokenlose Protokolle, von der Community eingereichte Airdrops und potenzielle Chancen sicher an einem Ort.",
@@ -763,30 +949,7 @@
           "description": "Konvertieren Sie Kryptowährungspreise zwischen Bitcoin, Ethereum, Stablecoins, Altcoins und Fiat-Währungen mit Echtzeit-Marktdaten.",
           "benefit": "Verstehen Sie schnell den Wert von Kryptowährungen in verschiedenen Währungen und Vermögenswerten, bevor Sie Rechercheentscheidungen treffen."
         },
-        "cryptocurrencyConverter": {
-          "name": "Kryptowährungs-Konverter",
-          "description": "Konvertieren Sie Kryptowährungspreise zwischen Bitcoin, Ethereum, Stablecoins, Altcoins und Fiat-Währungen mit Echtzeit-Marktdaten.",
-          "benefit": "Verstehen Sie schnell den Wert von Kryptowährungen in verschiedenen Währungen und Vermögenswerten, bevor Sie Rechercheentscheidungen treffen.",
-          "badge": "Live-Krypto-Tool",
-          "title": "Kryptowährungs-Konverter",
-          "descriptionLong": "Konvertieren Sie Bitcoin, Ethereum, Stablecoins, Altcoins und Fiat-Währungen mithilfe von Echtzeit-Daten aus dem Kryptomarkt. Vergleichen Sie Werte zwischen digitalen Vermögenswerten und traditionellen Währungen mit schnellen und einfachen Berechnungen.",
-          "amount": "Betrag",
-          "from": "Von",
-          "to": "Nach",
-          "result": "Ergebnis",
-          "loading": "Preise werden geladen...",
-          "error": "Live-Preise konnten nicht geladen werden. Es werden Ersatzdaten angezeigt.",
-          "updated": "Aktualisiert",
-          "faqTitle": "Häufig gestellte Fragen zum Kryptowährungs-Konverter",
-          "faq1Q": "Was ist ein Kryptowährungs-Konverter?",
-          "faq1A": "Ein Kryptowährungs-Konverter ist ein Tool, das den Wert einer Kryptowährung in eine andere Kryptowährung oder Fiat-Währung anhand aktueller Marktpreise berechnet.",
-          "faq2Q": "Wie funktioniert ein Kryptowährungs-Konverter?",
-          "faq2A": "Ein Kryptowährungs-Konverter vergleicht aktuelle Marktpreise verschiedener Vermögenswerte. Beispielsweise wird die Umrechnung von Bitcoin in Ethereum durch den Vergleich des aktuellen BTC-Werts mit dem ETH-Wert und die Anwendung des ausgewählten Betrags berechnet.",
-          "faq3Q": "Kann ich Bitcoin in USD umrechnen?",
-          "faq3A": "Ja. Sie können Bitcoin, Ethereum, Stablecoins und ausgewählte Altcoins mithilfe aktueller Marktdaten in USD und andere unterstützte Währungen umrechnen.",
-          "faq4Q": "Ist dies eine Finanzberatung?",
-          "faq4A": "Nein. Dieses Tool dient ausschließlich Bildungs- und Forschungszwecken. Die angezeigten Informationen sollten nicht als Finanz-, Anlage- oder Handelsberatung betrachtet werden."
-        },
+
         "gamingPulse": {
           "name": "Gaming Crypto Pulse",
           "description": "Verfolge Web3-Gaming-Narrative, Gaming-Token und GameFi-Marktentwicklungen.",

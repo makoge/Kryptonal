@@ -520,54 +520,65 @@
       "disclaimer": "Apenas para fins educacionais. Preços futuros, retornos e projeções de mercado são especulativos e não constituem aconselhamento financeiro."
     },
     "privacyWatchlist": {
-      "badge": "Rastreamento privado de moedas",
-      "title": "Watchlist privada",
-      "description": "Acompanhe suas criptomoedas favoritas sem criar uma conta. Sua watchlist fica salva localmente no navegador e os preços são atualizados pela Kryptonal.",
-      "searchPlaceholder": "Pesquisar moeda, ex: BTC, ETH, SOL...",
-      "portfolioValue": "Valor do Portfólio",
-      "totalProfit": "Lucro/Prejuízo Total",
-      "assetsTracked": "Ativos Monitorados",
-      "alerts": "Alertas Acionados",
-      "amount": "Quantidade Mantida",
+      "badge": "Ferramenta de Portfólio Privado",
+      "name": "Rastreador de Portfólio Cripto",
+      "title": "Rastreador de Portfólio Cripto",
+      "description": "Acompanhe seus ativos em criptomoedas, lucros e perdas, alocação do portfólio, alertas de preço e sinais de risco diretamente no seu navegador.",
+      "benefit": "Crie um portfólio privado de criptomoedas, acompanhe o desempenho, monitore a diversificação, gerencie riscos e configure alertas de preço sem compartilhar informações pessoais.",
+      "privacy": "Seu portfólio permanece armazenado apenas no seu dispositivo. O Kryptonal não exige login nem armazena seus ativos em servidores.",
+
+      "addHolding": "Adicionar Ativo",
+      "coin": "Moeda",
+      "amount": "Quantidade",
       "entryPrice": "Preço de Entrada",
-      "alertAbove": "Alerta Acima de",
-      "alertBelow": "Alerta Abaixo de",
-      "value": "Valor",
-      "profitLoss": "Lucro/Prejuízo",
-      "return": "Retorno",
-      "alertHit": "Alerta Acionado",
-      "add": "Adicionar",
-      "remove": "Remover",
-      "loading": "Carregando preços ao vivo...",
-      "empty": "Sua watchlist está vazia. Pesquise uma moeda para adicionar.",
+      "alertAbove": "Alerta Acima",
+      "alertBelow": "Alerta Abaixo",
+
+      "totalValue": "Valor Total",
+      "invested": "Valor Investido",
+      "profitLoss": "Lucro / Prejuízo",
+      "roi": "ROI",
+
       "portfolioHealth": "Saúde do Portfólio",
       "allocation": "Alocação",
       "largestHolding": "Maior Posição",
+      "stablecoinExposure": "Exposição a Stablecoins",
       "diversificationScore": "Pontuação de Diversificação",
       "riskLevel": "Nível de Risco",
+      "bestPerformer": "Melhor Desempenho",
+      "worstPerformer": "Pior Desempenho",
+      "insights": "Insights do Portfólio",
+
       "lowRisk": "Baixo Risco",
       "mediumRisk": "Risco Médio",
       "highRisk": "Alto Risco",
-      "bestPerformer": "Melhor Desempenho",
-      "worstPerformer": "Pior Desempenho",
-      "seoTitle": "Guia de Rastreador de Portfólio Cripto",
-      "faqBestTrackerQ": "Qual é o melhor rastreador de portfólio para criptomoedas?",
-      "faqBestTrackerA": "O melhor rastreador de portfólio cripto depende das suas necessidades. Uma boa ferramenta deve oferecer preços em tempo real, acompanhamento de lucros e perdas, análise de alocação, insights de risco, alertas e armazenamento que respeite a privacidade.",
-      "faqFreeTrackerQ": "Existe um rastreador de portfólio gratuito?",
-      "faqFreeTrackerA": "Sim. O Kryptonal oferece um rastreador de portfólio cripto gratuito que ajuda os usuários a monitorar ativos, calcular lucros e perdas, acompanhar alertas e analisar a exposição do portfólio sem exigir uma conta.",
-      "faqWhatTrackerQ": "O que é um rastreador de portfólio cripto?",
-      "faqWhatTrackerA": "Um rastreador de portfólio cripto é uma ferramenta que ajuda investidores a acompanhar seus ativos de criptomoedas, valor atual, lucro ou prejuízo, alocação e desempenho em um único lugar.",
-      "faqHowTrackQ": "Como posso acompanhar meu portfólio de criptomoedas?",
-      "faqHowTrackA": "Você pode acompanhar seu portfólio adicionando cada moeda, inserindo a quantidade que possui, registrando seu preço de entrada e analisando valor em tempo real, lucros, perdas, alocação e sinais de risco.",
-      "faq1000Q": "É possível ganhar US$ 1000 por dia com criptomoedas?",
-      "faq1000A": "É possível, mas normalmente exige grande capital, habilidades avançadas de trading, alto risco ou condições de mercado excepcionalmente favoráveis. A maioria dos investidores deve focar no crescimento do portfólio, controle de risco e consistência de longo prazo, em vez de metas fixas de lucro diário.",
 
-      "table": {
-        "asset": "Ativo",
-        "price": "Preço",
-        "action": "Ação"
-      },
-      "disclaimer": "Sua watchlist é armazenada localmente no navegador. Limpar os dados do navegador pode removê-la. Os preços são apenas educativos e não constituem aconselhamento financeiro."
+      "holdings": "Ativos",
+      "remove": "Remover",
+      "price": "Preço",
+      "value": "Valor",
+      "cost": "Custo",
+      "pnl": "Lucro/Prejuízo",
+
+      "noHoldings": "Adicione seu primeiro ativo para começar a acompanhar seu portfólio de criptomoedas.",
+      "updatingPrices": "Atualizando preços...",
+
+      "seoTitle": "Guia do Rastreador de Portfólio Cripto",
+
+      "faqBestTrackerQ": "Qual é o melhor rastreador de portfólio para criptomoedas?",
+      "faqBestTrackerA": "O melhor rastreador de portfólio depende das suas necessidades. Uma boa ferramenta deve oferecer preços em tempo real, acompanhamento de lucros e perdas, alocação do portfólio, análise de risco, alertas e armazenamento focado na privacidade.",
+
+      "faqFreeTrackerQ": "Existe um rastreador de portfólio gratuito?",
+      "faqFreeTrackerA": "Sim. O Kryptonal oferece um rastreador de portfólio cripto gratuito que permite monitorar ativos, calcular lucros e perdas, configurar alertas e analisar a exposição do portfólio sem criar uma conta.",
+
+      "faqWhatTrackerQ": "O que é um rastreador de portfólio cripto?",
+      "faqWhatTrackerA": "Um rastreador de portfólio cripto é uma ferramenta que ajuda investidores a monitorar seus ativos, valor atual, lucro ou prejuízo, alocação e desempenho em um único lugar.",
+
+      "faqHowTrackQ": "Como acompanhar meu portfólio de criptomoedas?",
+      "faqHowTrackA": "Você pode acompanhar seu portfólio adicionando cada moeda, informando a quantidade que possui e o preço de entrada. A ferramenta calcula automaticamente o valor atual, lucro, prejuízo, alocação e sinais de risco.",
+
+      "faq1000Q": "É possível ganhar US$ 1.000 por dia com criptomoedas?",
+      "faq1000A": "É possível, mas normalmente exige grande capital, experiência em negociação, alto risco ou condições excepcionais de mercado. A maioria dos investidores deve focar no crescimento do portfólio, no controle de riscos e em resultados consistentes no longo prazo."
     },
     "cryptoEtfTracker": {
       "name": "Rastreador de ETFs Cripto",
@@ -667,6 +678,168 @@
       "faq4Q": "Isto é aconselhamento financeiro?",
       "faq4A": "Não. Esta ferramenta é fornecida apenas para fins educacionais e de pesquisa. As informações exibidas não devem ser consideradas aconselhamento financeiro, de investimento ou de negociação."
     },
+    "addressValidator": {
+      "name": "Validador de Endereços",
+      "description": "Valide endereços de carteiras de criptomoedas, detecte redes compatíveis e revise avisos de segurança antes de enviar criptomoedas.",
+      "benefit": "Reduza erros de transferência verificando o formato do endereço da carteira, a compatibilidade da rede e o status do checksum.",
+
+      "badge": "Ferramenta de Segurança da Carteira",
+      "title": "Validador de Endereços Cripto",
+      "descriptionLong": "Verifique o formato do endereço da carteira, detecte possíveis redes, analise o status do checksum e reduza erros de transferência antes de enviar criptomoedas.",
+      "warning": "Um formato de endereço válido não garante a propriedade, a segurança ou a rede de destino correta. Sempre confirme com o destinatário.",
+
+      "inputLabel": "Cole o endereço da carteira",
+      "placeholder": "0x..., bc1..., T..., r..., addr1..., endereço Solana...",
+      "checking": "Verificando...",
+      "button": "Validar Endereço",
+
+      "emptyResult": "O resultado da validação será exibido aqui.",
+      "status": "Status",
+      "validFormat": "Formato Válido",
+      "invalidUnsupported": "Inválido / Não Suportado",
+
+      "detectedNetwork": "Rede Detectada",
+      "addressType": "Tipo de Endereço",
+      "confidence": "Nível de Confiança",
+      "checksum": "Checksum",
+      "notChecked": "não verificado",
+
+      "compatibleNetworks": "Redes Compatíveis",
+      "noneDetected": "Nenhuma rede detectada",
+      "warnings": "Avisos",
+      "openExplorer": "Abrir no Explorador"
+    },
+    "walletSecurity": {
+      "name": "Verificador de Segurança da Carteira",
+      "description": "Analise endereços de carteiras de criptomoedas para detectar redes, sinais de segurança, links de exploradores e indicadores de reputação antes de interagir com eles.",
+      "benefit": "Reduza os riscos relacionados às carteiras analisando redes compatíveis, sinais de atividade, avisos de segurança e informações dos exploradores antes de enviar ou receber criptomoedas.",
+
+      "badge": "Ferramenta de Risco para Carteiras Multichain",
+      "title": "Verificador de Segurança da Carteira",
+      "descriptionLong": "Verifique o formato da carteira, detecte o tipo de rede, analise dados de atividade disponíveis, links de exploradores, avisos de segurança e sinais de reputação da carteira.",
+      "warning": "Esta ferramenta ajuda a reduzir riscos, mas não pode garantir que uma carteira seja segura. Sempre verifique o histórico de transações, permissões e fontes oficiais.",
+
+      "inputLabel": "Endereço da Carteira",
+      "placeholder": "Cole um endereço 0x, bc1, Solana, XRP, Tron, Dogecoin...",
+      "checking": "Verificando Carteira...",
+      "button": "Verificar Segurança da Carteira",
+
+      "emptyResult": "O relatório de segurança da carteira será exibido aqui.",
+
+      "securityScore": "Pontuação de Segurança",
+
+      "detectedNetwork": "Rede Detectada",
+      "walletType": "Tipo de Carteira",
+      "addressFamily": "Família do Endereço",
+      "confidence": "Nível de Confiança",
+
+      "transactions": "Transações",
+      "balance": "Saldo",
+      "dataSource": "Fonte dos Dados",
+      "notAvailable": "N/D",
+
+      "explorerLinks": "Links dos Exploradores",
+      "noExplorerDetected": "Nenhum explorador encontrado",
+
+      "strengths": "Pontos Fortes",
+      "warnings": "Avisos",
+      "recommendations": "Recomendações",
+
+      "faqTitle": "Perguntas Frequentes sobre o Verificador de Segurança da Carteira",
+
+      "faq1Q": "O que é um verificador de segurança da carteira?",
+      "faq1A": "Um verificador de segurança da carteira analisa um endereço de carteira de criptomoedas para identificar a rede blockchain, exploradores compatíveis, sinais básicos de segurança e possíveis riscos antes da interação.",
+
+      "faq2Q": "Um verificador de segurança pode dizer se uma carteira é segura?",
+      "faq2A": "Não. Ele não pode garantir que uma carteira seja segura. A ferramenta identifica o formato do endereço, redes compatíveis, dados de atividade e possíveis sinais de alerta, mas você deve sempre verificar o histórico de transações e fontes oficiais.",
+
+      "faq3Q": "Por que devo verificar uma carteira antes de enviar criptomoedas?",
+      "faq3A": "Verificar uma carteira ajuda a reduzir o risco de enviar fundos para um endereço inválido, para a blockchain errada ou para um destino suspeito. Também ajuda a confirmar a compatibilidade da rede antes da transação.",
+
+      "faq4Q": "Quais endereços de carteira são suportados?",
+      "faq4A": "O Verificador de Segurança da Carteira suporta diversos formatos de endereços de blockchain, incluindo Bitcoin, Ethereum, Solana, XRP, Tron, Dogecoin, Cardano e outras redes populares.",
+
+      "faq5Q": "Esta ferramenta armazena meu endereço de carteira?",
+      "faq5A": "Não. O Kryptonal não armazena permanentemente os endereços inseridos no Verificador de Segurança da Carteira. A ferramenta foi desenvolvida para priorizar a privacidade do usuário enquanto fornece informações de segurança."
+    },
+    "cryptocurrencyTaxCalculator": {
+      "name": "Calculadora de Impostos sobre Criptomoedas",
+      "description": "Estime ganhos de capital, perdas, impostos devidos e lucro após impostos em criptomoedas usando entradas manuais simples.",
+      "benefit": "Compreenda sua possível obrigação tributária sobre criptomoedas antes de declarar impostos ou tomar decisões financeiras.",
+      "badge": "Ferramenta de Impostos sobre Criptomoedas",
+      "title": "Calculadora de Impostos sobre Criptomoedas",
+      "descriptionLong": "Estime ganhos de capital, perdas, impostos devidos e lucro após impostos em criptomoedas utilizando entradas manuais simples. Esta calculadora foi desenvolvida apenas para fins educacionais e de pesquisa e não substitui a orientação de um profissional tributário.",
+      "buyPrice": "Preço de Compra",
+      "sellPrice": "Preço de Venda",
+      "quantity": "Quantidade",
+      "taxRate": "Taxa de Imposto (%)",
+      "buyDate": "Data da Compra",
+      "sellDate": "Data da Venda",
+      "button": "Calcular Imposto",
+      "calculating": "Calculando...",
+      "country": "País",
+      "currency": "Moeda",
+      "transactionType": "Tipo de Transação",
+      "useCustomRate": "Usar taxa de imposto personalizada",
+      "taxableGain": "Ganho Tributável",
+      "ruleNote": "Observação sobre as Regras Fiscais do País",
+      "resultTitle": "Resultado Estimado do Imposto sobre Criptomoedas",
+      "costBasis": "Custo de Aquisição",
+      "proceeds": "Valor da Venda",
+      "gainLoss": "Ganho / Perda de Capital",
+      "profitPercent": "Percentual de Lucro",
+      "estimatedTax": "Imposto Estimado",
+      "profitAfterTax": "Lucro Após Impostos",
+      "holdingPeriod": "Período de Posse",
+      "disclaimer": "Esta calculadora é fornecida apenas para fins educacionais. Não constitui aconselhamento tributário, jurídico, financeiro ou de investimento. As regras fiscais para criptomoedas variam de acordo com o país.",
+      "error": "Não foi possível calcular a estimativa do imposto. Verifique os dados informados e tente novamente.",
+      "faqTitle": "Perguntas Frequentes sobre a Calculadora de Impostos sobre Criptomoedas",
+      "faq1Q": "O que é uma calculadora de impostos sobre criptomoedas?",
+      "faq1A": "Uma calculadora de impostos sobre criptomoedas estima seus ganhos de capital, perdas, lucro tributável e possível obrigação fiscal com base nas informações fornecidas.",
+      "faq2Q": "Como calcular o imposto sobre criptomoedas?",
+      "faq2A": "O imposto sobre criptomoedas geralmente é calculado subtraindo o custo de aquisição do valor da venda para determinar o ganho ou perda de capital. Em seguida, aplica-se a taxa de imposto correspondente ao ganho tributável.",
+      "faq3Q": "Preciso pagar imposto ao vender Bitcoin?",
+      "faq3A": "Em muitos países, vender Bitcoin ou outras criptomoedas com lucro pode gerar um ganho de capital tributável. As regras exatas dependem da legislação fiscal do seu país.",
+      "faq4Q": "Isto é aconselhamento fiscal oficial?",
+      "faq4A": "Não. Esta calculadora fornece apenas estimativas para fins educacionais e de pesquisa. Consulte sempre um profissional tributário qualificado antes de declarar seus impostos sobre criptomoedas."
+    },
+    "honeypotChecker": {
+      "name": "Verificador de Honeypot",
+      "description": "Detecte possíveis tokens honeypot utilizando uma análise avançada de segurança da blockchain.",
+      "benefit": "Verifique se um token pode impedir vendas, cobrar taxas excessivas ou conter funções perigosas em seu contrato inteligente.",
+      "badge": "Ferramenta Avançada de Segurança de Tokens",
+      "title": "Verificador de Honeypot",
+      "descriptionLong": "Analise tokens de criptomoedas para identificar comportamento de honeypot, restrições de venda, taxas de transação, riscos de propriedade, funções de blacklist, permissões de mint, contratos proxy e outros sinais de segurança do contrato inteligente antes de interagir com um token.",
+      "tokenAddress": "Endereço do Contrato do Token",
+      "placeholder": "Cole o endereço do contrato do token (0x...)",
+      "chain": "Rede Blockchain",
+      "button": "Verificar Risco de Honeypot",
+      "checking": "Analisando token...",
+      "resultTitle": "Resultado da Análise de Honeypot",
+      "riskScore": "Pontuação de Risco",
+      "sellable": "Pode Ser Vendido",
+      "buyTax": "Taxa de Compra",
+      "sellTax": "Taxa de Venda",
+      "transferTax": "Taxa de Transferência",
+      "token": "Informações do Token",
+      "redFlags": "Riscos de Segurança Detectados",
+      "positiveSigns": "Sinais Positivos de Segurança",
+      "recommendations": "Recomendações",
+      "yes": "Sim",
+      "no": "Não",
+      "unknown": "Desconhecido",
+      "disclaimer": "Esta ferramenta é fornecida apenas para fins educacionais. Embora verifique indicadores comuns de honeypot e riscos em contratos inteligentes, nenhuma ferramenta automática pode garantir que um token seja totalmente seguro. Sempre realize pesquisas adicionais antes de investir.",
+      "error": "Não foi possível analisar este token. Verifique o endereço do contrato e a rede blockchain selecionada.",
+      "faqTitle": "Perguntas Frequentes sobre o Verificador de Honeypot",
+      "faq1Q": "O que é um token honeypot?",
+      "faq1A": "Um token honeypot é uma criptomoeda fraudulenta que permite aos usuários comprar tokens, mas impede ou restringe severamente a venda, prendendo os investidores dentro do contrato.",
+      "faq2Q": "Como funciona um verificador de honeypot?",
+      "faq2A": "Um verificador de honeypot analisa o comportamento do contrato inteligente, taxas de compra e venda, permissões do proprietário, funções de blacklist, restrições de venda, funções de mint e outros indicadores de segurança para identificar possíveis golpes.",
+      "faq3Q": "Um verificador de honeypot pode garantir que um token é seguro?",
+      "faq3A": "Não. Embora consiga identificar muitos padrões comuns de fraude e riscos de segurança, nenhum analisador automático pode garantir que um token seja completamente seguro. Sempre confirme a legitimidade do projeto utilizando várias fontes confiáveis.",
+      "faq4Q": "Quais redes blockchain são suportadas?",
+      "faq4A": "Esta ferramenta oferece suporte às principais blockchains compatíveis com EVM, incluindo Ethereum, BNB Chain, Base, Polygon, Arbitrum, Optimism e Avalanche, dependendo da disponibilidade dos dados de segurança."
+    },
     "directory": {
       "metaTitle": "Ferramentas Cripto Kryptonal | Ferramentas de Análise e Pesquisa de Mercado",
       "metaDescription": "Explore as ferramentas cripto da Kryptonal para análise de capitalização de mercado, ciclos do Bitcoin, liquidez de stablecoins, força das blockchains, rotação de setores, gaming crypto e sinais de risco.",
@@ -706,12 +879,23 @@
           "description": "Compare a capitalização total do mercado cripto em diferentes anos e ciclos de mercado.",
           "benefit": "Entenda onde o mercado está em comparação com fases anteriores do ciclo."
         },
+        "honeypotChecker": {
+          "name": "Verificador de Honeypot",
+          "description": "Detecte possíveis tokens honeypot analisando a possibilidade de venda, impostos sobre transações, riscos de propriedade e sinais de segurança do contrato inteligente.",
+          "benefit": "Evite tokens fraudulentos verificando se um token pode ser vendido e analisando indicadores avançados de segurança antes de negociar.",
+          "disclaimer": "Apenas para fins educacionais. Os resultados são estimativas baseadas em dados públicos da blockchain e análises de segurança. Faça sempre sua própria pesquisa antes de interagir com qualquer token."
+        },
         "analysisEngine": {
           "name": "Motor de Análise",
           "description": "Gere resumos do mercado cripto em linguagem simples usando sinais de mercado em tempo real.",
           "benefit": "Transforme sinais complexos em explicações simples do mercado."
         },
-
+        "cryptocurrencyTaxCalculator": {
+          "name": "Calculadora de Impostos sobre Criptomoedas",
+          "description": "Estime ganhos de capital, perdas, impostos devidos e lucro após impostos em criptomoedas usando entradas manuais simples.",
+          "benefit": "Compreenda sua possível obrigação tributária sobre criptomoedas antes de declarar impostos ou tomar decisões financeiras.",
+          "disclaimer": "Apenas para fins educacionais. As estimativas podem não refletir as leis fiscais do seu país ou a sua situação tributária individual. Consulte sempre um profissional qualificado."
+        },
         "privacyWatchlist": {
           "name": "Rastreador de Portfólio Cripto",
           "description": "Acompanhe seu portfólio de criptomoedas, monitore lucros e perdas, analise a alocação dos ativos e gerencie alertas de preço sem criar uma conta. Seus dados permanecem privados no navegador.",
@@ -752,6 +936,7 @@
           "description": "Analise o formato da carteira, redes compatíveis, sinais de risco e recomendações de segurança antes de interagir com um endereço de criptomoeda.",
           "benefit": "Revise sinais de reputação da carteira e reduza riscos antes de enviar fundos, conectar carteiras ou confiar em endereços desconhecidos."
         },
+
         "cryptoEtfTracker": {
           "name": "Rastreador de ETFs Cripto",
           "description": "Acompanhe os fluxos dos ETFs de Bitcoin, a demanda institucional, as classificações dos fundos e o sentimento do mercado em um só lugar.",

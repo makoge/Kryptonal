@@ -147,7 +147,7 @@ function pct(value: number) {
 }
 
 export default function PrivacyWatchlist({ t }: { t?: any }) {
-  const copy = { ...DEFAULT_COPY, ...(t?.privacyWatchlist || {}) };
+  const copy = { ...DEFAULT_COPY, ...(t?.tools?.privacyWatchlist || {}) };
 
   const [holdings, setHoldings] = useState<Holding[]>([]);
   const [prices, setPrices] = useState<PriceCoin[]>([]);
@@ -533,7 +533,7 @@ export default function PrivacyWatchlist({ t }: { t?: any }) {
           </div>
 
           {loading && (
-            <p className="mt-4 text-sm text-slate-500">Updating prices...</p>
+            <p className="mt-4 text-sm text-slate-500">{copy.updatingPrices}</p>
           )}
         </div>
 

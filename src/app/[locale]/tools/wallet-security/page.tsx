@@ -33,7 +33,7 @@ export default async function WalletSecurityPage({ params }: PageProps) {
       <Header locale={locale} t={t} />
 
       <main className="min-h-screen bg-slate-950">
-        <WalletSecurityChecker />
+        <WalletSecurityChecker t={t} />
       </main>
 
       <Footer locale={locale} t={t} />

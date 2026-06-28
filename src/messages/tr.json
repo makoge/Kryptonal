@@ -517,53 +517,65 @@
       "disclaimer": "Yalnızca eğitim amaçlıdır. Yüksek APY fırsatları akıllı kontrat riski, likidite riski, token teşvikleri, impermanent loss veya istikrarsız getiriler içerebilir."
     },
     "privacyWatchlist": {
-      "badge": "Özel Coin Takibi",
-      "title": "Gizlilik Odaklı Watchlist",
-      "description": "Favori kripto varlıklarını hesap oluşturmadan takip et. Watchlist’in tarayıcında yerel olarak saklanır ve fiyatlar Kryptonal üzerinden güncellenir.",
-      "searchPlaceholder": "Coin ara, örn: BTC, ETH, SOL...",
-      "portfolioValue": "Portföy Değeri",
-      "totalProfit": "Toplam Kâr/Zarar",
-      "assetsTracked": "Takip Edilen Varlıklar",
-      "alerts": "Tetiklenen Uyarılar",
-      "amount": "Sahip Olunan Miktar",
-      "entryPrice": "Giriş Fiyatı",
-      "alertAbove": "Şunun Üzerinde Uyar",
-      "alertBelow": "Şunun Altında Uyar",
-      "value": "Değer",
-      "profitLoss": "Kâr/Zarar",
-      "return": "Getiri",
-      "alertHit": "Uyarı Tetiklendi",
-      "add": "Ekle",
-      "remove": "Kaldır",
-      "loading": "Canlı fiyatlar yükleniyor...",
-      "empty": "Watchlist’in boş. Eklemek için bir coin ara.",
+      "badge": "Özel Portföy Aracı",
+      "name": "Kripto Portföy Takipçisi",
+      "title": "Kripto Portföy Takipçisi",
+      "description": "Kripto varlıklarınızı, kâr ve zararı, portföy dağılımını, fiyat uyarılarını ve risk sinyallerini doğrudan tarayıcınızda takip edin.",
+      "benefit": "Kişisel bilgilerinizi paylaşmadan özel bir kripto portföyü oluşturun, performansı takip edin, çeşitlendirmeyi analiz edin, riski yönetin ve fiyat uyarıları oluşturun.",
+      "privacy": "Portföyünüz yalnızca cihazınızda saklanır. Kryptonal giriş yapmanızı istemez ve varlıklarınızı sunucularında saklamaz.",
+
+      "addHolding": "Varlık Ekle",
+      "coin": "Kripto Para",
+      "amount": "Miktar",
+      "entryPrice": "Alış Fiyatı",
+      "alertAbove": "Üst Uyarı",
+      "alertBelow": "Alt Uyarı",
+
+      "totalValue": "Toplam Değer",
+      "invested": "Yatırılan Tutar",
+      "profitLoss": "Kâr / Zarar",
+      "roi": "Yatırım Getirisi (ROI)",
+
       "portfolioHealth": "Portföy Sağlığı",
       "allocation": "Dağılım",
       "largestHolding": "En Büyük Varlık",
-      "diversificationScore": "Çeşitlendirme Skoru",
+      "stablecoinExposure": "Stablecoin Maruziyeti",
+      "diversificationScore": "Çeşitlendirme Puanı",
       "riskLevel": "Risk Seviyesi",
+      "bestPerformer": "En İyi Performans",
+      "worstPerformer": "En Kötü Performans",
+      "insights": "Portföy Analizi",
+
       "lowRisk": "Düşük Risk",
       "mediumRisk": "Orta Risk",
       "highRisk": "Yüksek Risk",
-      "bestPerformer": "En İyi Performans",
-      "worstPerformer": "En Kötü Performans",
+
+      "holdings": "Varlıklar",
+      "remove": "Kaldır",
+      "price": "Fiyat",
+      "value": "Değer",
+      "cost": "Maliyet",
+      "pnl": "K/Z",
+
+      "noHoldings": "Kripto portföyünüzü takip etmeye başlamak için ilk varlığınızı ekleyin.",
+      "updatingPrices": "Fiyatlar güncelleniyor...",
+
       "seoTitle": "Kripto Portföy Takip Rehberi",
+
       "faqBestTrackerQ": "Kripto için en iyi portföy takip aracı hangisidir?",
-      "faqBestTrackerA": "En iyi kripto portföy takip aracı ihtiyaçlarınıza bağlıdır. Güçlü bir araç canlı fiyatlar, kâr-zarar takibi, portföy dağılımı, risk içgörüleri, uyarılar ve gizlilik dostu depolama sunmalıdır.",
+      "faqBestTrackerA": "En iyi kripto portföy takip aracı ihtiyaçlarınıza bağlıdır. İyi bir araç; canlı fiyatlar, kâr/zarar takibi, portföy dağılımı, risk analizleri, fiyat uyarıları ve gizlilik odaklı depolama sunmalıdır.",
+
       "faqFreeTrackerQ": "Ücretsiz bir portföy takip aracı var mı?",
-      "faqFreeTrackerA": "Evet. Kryptonal, kullanıcıların hesap oluşturmadan varlıklarını izlemesine, kâr ve zararı hesaplamasına, uyarıları takip etmesine ve portföy riskini incelemesine yardımcı olan ücretsiz bir kripto portföy takip aracı sunar.",
-      "faqWhatTrackerQ": "Kripto portföy takip aracı nedir?",
-      "faqWhatTrackerA": "Kripto portföy takip aracı, yatırımcıların kripto varlıklarını, güncel değerini, kâr veya zararını, dağılımını ve performansını tek yerde izlemesine yardımcı olan bir araçtır.",
-      "faqHowTrackQ": "Kripto portföyümü nasıl takip ederim?",
-      "faqHowTrackA": "Her coini ekleyerek, sahip olduğunuz miktarı girerek, giriş fiyatınızı ekleyerek ve canlı değer, kâr, zarar, dağılım ve risk sinyallerini inceleyerek kripto portföyünüzü takip edebilirsiniz.",
-      "faq1000Q": "Kripto ile günde 1000 dolar kazanılabilir mi?",
-      "faq1000A": "Mümkün olabilir, ancak genellikle büyük sermaye, ileri düzey trading becerisi, yüksek risk veya olağanüstü güçlü piyasa koşulları gerektirir. Çoğu kullanıcı sabit günlük kâr hedefleri yerine portföy büyümesine, risk kontrolüne ve uzun vadeli istikrara odaklanmalıdır.",
-      "table": {
-        "asset": "Varlık",
-        "price": "Fiyat",
-        "action": "İşlem"
-      },
-      "disclaimer": "Watchlist’in tarayıcında yerel olarak saklanır. Tarayıcı verilerini temizlemek watchlist’i silebilir. Fiyatlar yalnızca eğitim amaçlıdır ve finansal tavsiye değildir."
+      "faqFreeTrackerA": "Evet. Kryptonal, kullanıcıların hesap oluşturmadan varlıklarını izlemesine, kâr ve zararı hesaplamasına, fiyat uyarıları oluşturmasına ve portföy riskini analiz etmesine olanak tanıyan ücretsiz bir kripto portföy takip aracı sunar.",
+
+      "faqWhatTrackerQ": "Kripto portföy takipçisi nedir?",
+      "faqWhatTrackerA": "Kripto portföy takipçisi, yatırımcıların kripto varlıklarını, güncel değerlerini, kâr veya zararlarını, portföy dağılımını ve performansını tek bir yerde takip etmelerini sağlayan bir araçtır.",
+
+      "faqHowTrackQ": "Kripto portföyümü nasıl takip edebilirim?",
+      "faqHowTrackA": "Her kripto varlığınızı ekleyerek, sahip olduğunuz miktarı ve alış fiyatını girerek canlı portföy değeri, kâr, zarar, dağılım ve risk sinyallerini takip edebilirsiniz.",
+
+      "faq1000Q": "Kripto ile günde 1000 dolar kazanmak mümkün mü?",
+      "faq1000A": "Evet, mümkündür ancak genellikle yüksek sermaye, ileri düzey işlem deneyimi, yüksek risk veya olağanüstü piyasa koşulları gerektirir. Çoğu yatırımcı için uzun vadeli portföy büyümesine, risk yönetimine ve istikrarlı getiriler elde etmeye odaklanmak daha sağlıklıdır."
     },
     "cryptoEtfTracker": {
       "name": "Kripto ETF Takipçisi",
@@ -663,6 +675,168 @@
       "faq4Q": "Bu finansal tavsiye midir?",
       "faq4A": "Hayır. Bu araç yalnızca eğitim ve araştırma amaçlıdır. Sağlanan bilgiler finansal, yatırım veya ticari tavsiye olarak değerlendirilmemelidir."
     },
+    "addressValidator": {
+      "name": "Adres Doğrulayıcı",
+      "description": "Kripto para cüzdan adreslerini doğrulayın, desteklenen ağları tespit edin ve kripto göndermeden önce güvenlik uyarılarını inceleyin.",
+      "benefit": "Cüzdan adresi biçimini, ağ uyumluluğunu ve sağlama (checksum) durumunu kontrol ederek maliyetli transfer hatalarını azaltın.",
+
+      "badge": "Cüzdan Güvenlik Aracı",
+      "title": "Kripto Adres Doğrulayıcı",
+      "descriptionLong": "Cüzdan adresi biçimini kontrol edin, olası ağları tespit edin, sağlama (checksum) durumunu inceleyin ve kripto göndermeden önce transfer hatalarını azaltın.",
+      "warning": "Geçerli bir adres biçimi, adresin sahibini, güvenliğini veya doğru hedef ağı garanti etmez. Her zaman alıcıyla doğrulayın.",
+
+      "inputLabel": "Cüzdan adresini yapıştırın",
+      "placeholder": "0x..., bc1..., T..., r..., addr1..., Solana adresi...",
+      "checking": "Kontrol ediliyor...",
+      "button": "Adresi Doğrula",
+
+      "emptyResult": "Doğrulama sonucu burada görünecektir.",
+      "status": "Durum",
+      "validFormat": "Geçerli Biçim",
+      "invalidUnsupported": "Geçersiz / Desteklenmiyor",
+
+      "detectedNetwork": "Tespit Edilen Ağ",
+      "addressType": "Adres Türü",
+      "confidence": "Güven Seviyesi",
+      "checksum": "Sağlama (Checksum)",
+      "notChecked": "kontrol edilmedi",
+
+      "compatibleNetworks": "Uyumlu Ağlar",
+      "noneDetected": "Ağ tespit edilmedi",
+      "warnings": "Uyarılar",
+      "openExplorer": "Gezginde Aç"
+    },
+    "walletSecurity": {
+      "name": "Cüzdan Güvenlik Denetleyicisi",
+      "description": "Kripto cüzdan adreslerini ağ tespiti, güvenlik sinyalleri, blok gezgini bağlantıları ve itibar göstergeleri açısından analiz edin.",
+      "benefit": "Kripto gönderip almadan önce desteklenen ağları, etkinlik sinyallerini, güvenlik uyarılarını ve blok gezgini bilgilerini inceleyerek riskleri azaltın.",
+
+      "badge": "Çok Zincirli Cüzdan Risk Aracı",
+      "title": "Cüzdan Güvenlik Denetleyicisi",
+      "descriptionLong": "Cüzdan biçimini kontrol edin, ağ türünü tespit edin, mevcut etkinlik verilerini, blok gezgini bağlantılarını, güvenlik uyarılarını ve cüzdan itibar sinyallerini inceleyin.",
+      "warning": "Bu araç riski azaltmaya yardımcı olur ancak bir cüzdanın güvenli olduğunu kanıtlayamaz. İşlem geçmişini, izinleri ve resmi kaynakları her zaman doğrulayın.",
+
+      "inputLabel": "Cüzdan Adresi",
+      "placeholder": "0x, bc1, Solana, XRP, Tron, Dogecoin adresini yapıştırın...",
+      "checking": "Cüzdan Kontrol Ediliyor...",
+      "button": "Cüzdan Güvenliğini Kontrol Et",
+
+      "emptyResult": "Cüzdan güvenlik raporu burada görüntülenecektir.",
+
+      "securityScore": "Güvenlik Puanı",
+
+      "detectedNetwork": "Tespit Edilen Ağ",
+      "walletType": "Cüzdan Türü",
+      "addressFamily": "Adres Ailesi",
+      "confidence": "Güven Seviyesi",
+
+      "transactions": "İşlemler",
+      "balance": "Bakiye",
+      "dataSource": "Veri Kaynağı",
+      "notAvailable": "Yok",
+
+      "explorerLinks": "Blok Gezgini Bağlantıları",
+      "noExplorerDetected": "Blok gezgini bulunamadı",
+
+      "strengths": "Güçlü Yönler",
+      "warnings": "Uyarılar",
+      "recommendations": "Öneriler",
+
+      "faqTitle": "Cüzdan Güvenlik Denetleyicisi SSS",
+
+      "faq1Q": "Cüzdan güvenlik denetleyicisi nedir?",
+      "faq1A": "Bir cüzdan güvenlik denetleyicisi, blok zinciri ağını, desteklenen blok gezginlerini, temel güvenlik sinyallerini ve olası riskleri belirlemek için kripto para cüzdan adresini analiz eder.",
+
+      "faq2Q": "Bir cüzdan güvenlik denetleyicisi cüzdanın güvenli olup olmadığını söyleyebilir mi?",
+      "faq2A": "Hayır. Cüzdanın tamamen güvenli olduğunu garanti edemez. Adres biçimini, desteklenen ağları, etkinlik verilerini ve uyarı işaretlerini gösterir. İşlem geçmişini ve resmi kaynakları her zaman doğrulamalısınız.",
+
+      "faq3Q": "Kripto göndermeden önce neden bir cüzdanı kontrol etmeliyim?",
+      "faq3A": "Bir cüzdanı kontrol etmek, fonları geçersiz bir adrese, yanlış blok zincirine veya şüpheli bir hedefe göndermeyi önlemeye yardımcı olur. Ayrıca işlem yapmadan önce ağ uyumluluğunu doğrulamanızı sağlar.",
+
+      "faq4Q": "Hangi cüzdan adresleri destekleniyor?",
+      "faq4A": "Cüzdan Güvenlik Denetleyicisi; Bitcoin, Ethereum, Solana, XRP, Tron, Dogecoin, Cardano ve diğer popüler blok zinciri ağlarının adres biçimlerini destekler.",
+
+      "faq5Q": "Bu araç cüzdan adresimi saklıyor mu?",
+      "faq5A": "Hayır. Kryptonal, Cüzdan Güvenlik Denetleyicisi'ne girilen cüzdan adreslerini kalıcı olarak saklamaz. Araç, kullanıcı gizliliğini ön planda tutacak şekilde tasarlanmıştır."
+    },
+    "cryptocurrencyTaxCalculator": {
+      "name": "Kripto Para Vergi Hesaplayıcısı",
+      "description": "Basit manuel girişlerle kripto para sermaye kazançlarını, zararlarını, ödenecek vergiyi ve vergi sonrası kârı tahmin edin.",
+      "benefit": "Beyanname vermeden veya finansal kararlar almadan önce olası kripto vergi yükümlülüğünüzü anlayın.",
+      "badge": "Kripto Vergi Aracı",
+      "title": "Kripto Para Vergi Hesaplayıcısı",
+      "descriptionLong": "Basit manuel girişler kullanarak kripto para sermaye kazançlarını, zararlarını, ödenecek vergiyi ve vergi sonrası kârı tahmin edin. Bu hesaplayıcı yalnızca eğitim ve araştırma amaçlıdır ve profesyonel vergi danışmanlığının yerine geçmez.",
+      "buyPrice": "Alış Fiyatı",
+      "sellPrice": "Satış Fiyatı",
+      "quantity": "Miktar",
+      "taxRate": "Vergi Oranı (%)",
+      "buyDate": "Alış Tarihi",
+      "sellDate": "Satış Tarihi",
+      "button": "Vergiyi Hesapla",
+      "calculating": "Hesaplanıyor...",
+      "country": "Ülke",
+      "currency": "Para Birimi",
+      "transactionType": "İşlem Türü",
+      "useCustomRate": "Özel vergi oranı kullan",
+      "taxableGain": "Vergilendirilebilir Kazanç",
+      "ruleNote": "Ülke Vergi Notu",
+      "resultTitle": "Tahmini Kripto Vergi Sonucu",
+      "costBasis": "Maliyet Esası",
+      "proceeds": "Satış Geliri",
+      "gainLoss": "Sermaye Kazancı / Zararı",
+      "profitPercent": "Kâr Yüzdesi",
+      "estimatedTax": "Tahmini Vergi",
+      "profitAfterTax": "Vergi Sonrası Kâr",
+      "holdingPeriod": "Elde Tutma Süresi",
+      "disclaimer": "Bu hesaplayıcı yalnızca eğitim amaçlıdır. Vergi, hukuk, finans veya yatırım tavsiyesi niteliği taşımaz. Kripto para vergilendirme kuralları ülkelere göre değişiklik gösterir.",
+      "error": "Vergi tahmini hesaplanamadı. Lütfen girdiğiniz bilgileri kontrol ederek tekrar deneyin.",
+      "faqTitle": "Kripto Para Vergi Hesaplayıcısı SSS",
+      "faq1Q": "Kripto para vergi hesaplayıcısı nedir?",
+      "faq1A": "Kripto para vergi hesaplayıcısı, girdiğiniz bilgilere göre sermaye kazançlarınızı, zararlarınızı, vergilendirilebilir kârınızı ve olası vergi yükümlülüğünüzü tahmin eden bir araçtır.",
+      "faq2Q": "Kripto vergisi nasıl hesaplanır?",
+      "faq2A": "Kripto vergisi genellikle alış maliyetinizin satış gelirinizden çıkarılmasıyla bulunan sermaye kazancı veya zararına göre hesaplanır. Vergiye tabi kazançlara seçtiğiniz vergi oranı uygulanır.",
+      "faq3Q": "Bitcoin sattığımda vergi öder miyim?",
+      "faq3A": "Birçok ülkede Bitcoin veya diğer kripto paraları kârla satmak vergiye tabi sermaye kazancı oluşturabilir. Kesin kurallar ülkenizin vergi mevzuatına bağlıdır.",
+      "faq4Q": "Bu resmi vergi tavsiyesi midir?",
+      "faq4A": "Hayır. Bu hesaplayıcı yalnızca eğitim ve araştırma amaçlı tahminler sunar. Kripto para vergilerinizi beyan etmeden önce yetkili bir vergi uzmanına danışmanız önerilir."
+    },
+    "honeypotChecker": {
+      "name": "Honeypot Kontrol Aracı",
+      "description": "Gelişmiş blok zinciri güvenlik analiziyle olası honeypot tokenlerini tespit edin.",
+      "benefit": "Bir tokenin satışları engelleyip engellemediğini, aşırı işlem vergileri uygulayıp uygulamadığını veya tehlikeli akıllı sözleşme fonksiyonları içerip içermediğini kontrol edin.",
+      "badge": "Gelişmiş Token Güvenlik Aracı",
+      "title": "Honeypot Kontrol Aracı",
+      "descriptionLong": "Bir token ile etkileşime geçmeden önce honeypot davranışı, satış kısıtlamaları, işlem vergileri, sahiplik riskleri, kara liste fonksiyonları, mint yetkileri, proxy sözleşmeleri ve diğer akıllı sözleşme güvenlik sinyallerini analiz edin.",
+      "tokenAddress": "Token Sözleşme Adresi",
+      "placeholder": "Token sözleşme adresini yapıştırın (0x...)",
+      "chain": "Blok Zinciri Ağı",
+      "button": "Honeypot Riskini Kontrol Et",
+      "checking": "Token analiz ediliyor...",
+      "resultTitle": "Honeypot Risk Analizi",
+      "riskScore": "Risk Puanı",
+      "sellable": "Satılabilir",
+      "buyTax": "Alış Vergisi",
+      "sellTax": "Satış Vergisi",
+      "transferTax": "Transfer Vergisi",
+      "token": "Token Bilgileri",
+      "redFlags": "Tespit Edilen Güvenlik Riskleri",
+      "positiveSigns": "Olumlu Güvenlik Sinyalleri",
+      "recommendations": "Öneriler",
+      "yes": "Evet",
+      "no": "Hayır",
+      "unknown": "Bilinmiyor",
+      "disclaimer": "Bu araç yalnızca eğitim amaçlıdır. Yaygın honeypot göstergelerini ve akıllı sözleşme risklerini kontrol etse de hiçbir otomatik araç bir tokenin tamamen güvenli olduğunu garanti edemez. Yatırım yapmadan önce mutlaka ek araştırma yapın.",
+      "error": "Bu token analiz edilemedi. Lütfen sözleşme adresini ve seçilen blok zinciri ağını doğrulayın.",
+      "faqTitle": "Honeypot Kontrol Aracı SSS",
+      "faq1Q": "Honeypot token nedir?",
+      "faq1A": "Honeypot token, kullanıcıların token satın almasına izin veren ancak satmalarını engelleyen veya ciddi şekilde kısıtlayan sahte bir kripto para tokenidir. Bu dolandırıcılık yöntemi yatırımcıların fonlarını tuzağa düşürmek için kullanılır.",
+      "faq2Q": "Honeypot kontrol aracı nasıl çalışır?",
+      "faq2A": "Honeypot kontrol aracı, akıllı sözleşme davranışını, token vergilerini, sahiplik izinlerini, kara liste fonksiyonlarını, satış kısıtlamalarını, mint yetkilerini ve diğer güvenlik göstergelerini analiz ederek olası dolandırıcılık tokenlerini tespit eder.",
+      "faq3Q": "Honeypot kontrol aracı bir tokenin güvenli olduğunu garanti eder mi?",
+      "faq3A": "Hayır. Araç birçok yaygın dolandırıcılık modelini ve güvenlik riskini tespit edebilse de hiçbir otomatik tarayıcı bir tokenin tamamen güvenli olduğunu garanti edemez. Her zaman projenin güvenilirliğini birden fazla güvenilir kaynaktan doğrulayın.",
+      "faq4Q": "Hangi blok zinciri ağları destekleniyor?",
+      "faq4A": "Bu araç, mevcut güvenlik verilerine bağlı olarak Ethereum, BNB Chain, Base, Polygon, Arbitrum, Optimism ve Avalanche gibi başlıca EVM uyumlu blok zincirlerini destekler."
+    },
     "directory": {
       "metaTitle": "Kryptonal Kripto Araçları | Piyasa Analizi ve Araştırma Araçları",
       "metaDescription": "Piyasa değeri analizi, Bitcoin döngüleri, stablecoin likiditesi, zincir gücü, sektör rotasyonu, gaming crypto ve risk sinyalleri için Kryptonal kripto araçlarını keşfedin.",
@@ -702,6 +876,12 @@
           "description": "Toplam kripto piyasa değerini farklı yıllar ve piyasa döngüleri arasında karşılaştırın.",
           "benefit": "Piyasanın önceki döngü aşamalarına göre nerede olduğunu anlayın."
         },
+        "honeypotChecker": {
+          "name": "Honeypot Kontrol Aracı",
+          "description": "Satılabilirlik, işlem vergileri, sahiplik riskleri ve akıllı sözleşme güvenlik sinyallerini analiz ederek olası honeypot tokenlerini tespit edin.",
+          "benefit": "Bir tokenin satılabilir olup olmadığını ve gelişmiş güvenlik göstergelerini kontrol ederek dolandırıcılık tokenlerinden kaçının.",
+          "disclaimer": "Yalnızca eğitim amaçlıdır. Sonuçlar, herkese açık blok zinciri verileri ve güvenlik analizlerine dayalı tahminlerdir. Herhangi bir token ile etkileşime geçmeden önce kendi araştırmanızı yapın."
+        },
         "analysisEngine": {
           "name": "Analiz Motoru",
           "description": "Canlı piyasa sinyallerinden sade ve anlaşılır kripto piyasa özetleri oluşturun.",
@@ -726,6 +906,12 @@
           "name": "Cüzdan Güvenlik Kontrolü",
           "description": "Bir kripto adresiyle etkileşime geçmeden önce cüzdan formatını, uyumlu ağları, risk sinyallerini ve güvenlik önerilerini analiz edin.",
           "benefit": "Fon göndermeden, cüzdan bağlamadan veya bilinmeyen adreslere güvenmeden önce cüzdan güvenilirlik sinyallerini inceleyerek riskleri azaltın."
+        },
+        "cryptocurrencyTaxCalculator": {
+          "name": "Kripto Para Vergi Hesaplayıcısı",
+          "description": "Basit manuel girişlerle kripto para sermaye kazançlarını, zararlarını, ödenecek vergiyi ve vergi sonrası kârı tahmin edin.",
+          "benefit": "Beyanname vermeden veya finansal kararlar almadan önce olası kripto vergi yükümlülüğünüzü anlayın.",
+          "disclaimer": "Yalnızca eğitim amaçlıdır. Tahminler ülkenizin vergi yasalarını veya kişisel vergi durumunuzu yansıtmayabilir. Her zaman yetkili bir vergi uzmanına danışın."
         },
         "chainStrength": {
           "name": "Zincir Gücü Takibi",

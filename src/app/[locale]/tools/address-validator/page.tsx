@@ -33,7 +33,7 @@ export default async function AddressValidatorPage({ params }: PageProps) {
       <Header locale={locale} t={t} />
 
       <main className="min-h-screen bg-slate-950">
-        <AddressValidator locale={locale} />
+        <AddressValidator t={t} />
       </main>
 
       <Footer locale={locale} t={t} />

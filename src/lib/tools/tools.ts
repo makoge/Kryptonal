@@ -1,6 +1,8 @@
 export type ToolStatus = "live" | "beta" | "coming-soon";
 
 export type ToolCategory =
+  | "security"
+  | "finance"
   | "all"
   | "market"
   | "bitcoin"
@@ -29,7 +31,9 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
   "defi",
   "chains",
   "gaming",
+  "security",
   "risk",
+  "finance",
   "education",
 ];
 
@@ -39,11 +43,22 @@ export const KRYPTONAL_TOOLS: KryptonalTool[] = [
     nameKey: "addressValidator.name",
     descriptionKey: "addressValidator.description",
     benefitKey: "addressValidator.benefit",
-    category: "risk",
+    category: "security",
     status: "live",
     href: "/tools/address-validator",
     icon: "🛡️",
     usageCount: 1000,
+  },
+  {
+    slug: "cryptocurrency-tax-calculator",
+    nameKey: "cryptocurrencyTaxCalculator.name",
+    descriptionKey: "cryptocurrencyTaxCalculator.description",
+    benefitKey: "cryptocurrencyTaxCalculator.benefit",
+    category: "finance",
+    status: "live",
+    href: "/tools/cryptocurrency-tax-calculator",
+    icon: "🧾",
+    usageCount: 200,
   },
   {
     slug: "market-cap-analysis",
@@ -72,7 +87,7 @@ export const KRYPTONAL_TOOLS: KryptonalTool[] = [
     nameKey: "walletSecurity.name",
     descriptionKey: "walletSecurity.description",
     benefitKey: "walletSecurity.benefit",
-    category: "risk",
+    category: "security",
     status: "live",
     href: "/tools/wallet-security",
     icon: "🕵️",
@@ -98,7 +113,7 @@ export const KRYPTONAL_TOOLS: KryptonalTool[] = [
     status: "live",
     href: "/tools/roi-calculator",
     icon: "📈",
-    usageCount: 0,
+    usageCount: 20,
   },
   {
     slug: "high-yield-finder",
@@ -120,7 +135,7 @@ export const KRYPTONAL_TOOLS: KryptonalTool[] = [
     status: "live",
     href: "/tools/crypto-etf-tracker",
     icon: "🏦",
-    usageCount: 0,
+    usageCount: 10,
   },
   {
     slug: "bitcoin-cycle-tracker",
@@ -149,10 +164,21 @@ export const KRYPTONAL_TOOLS: KryptonalTool[] = [
     nameKey: "cryptoScamRiskChecker.name",
     descriptionKey: "cryptoScamRiskChecker.description",
     benefitKey: "cryptoScamRiskChecker.benefit",
-    category: "risk",
+    category: "security",
     status: "live",
     href: "/tools/crypto-scam-risk-checker",
     icon: "🛡️",
+    usageCount: 5,
+  },
+  {
+    slug: "honeypot-checker",
+    nameKey: "honeypotChecker.name",
+    descriptionKey: "honeypotChecker.description",
+    benefitKey: "honeypotChecker.benefit",
+    category: "security",
+    status: "live",
+    href: "/tools/honeypot-checker",
+    icon: "🍯",
     usageCount: 0,
   },
   {
@@ -166,7 +192,7 @@ export const KRYPTONAL_TOOLS: KryptonalTool[] = [
     icon: "⛓️",
     usageCount: 208,
   },
-  {
+  /*{
     slug: "sector-rotation-heatmap",
     nameKey: "sectorRotation.name",
     descriptionKey: "sectorRotation.description",
@@ -176,7 +202,7 @@ export const KRYPTONAL_TOOLS: KryptonalTool[] = [
     href: "/analysis#sector-rotation",
     icon: "🔥",
     usageCount: 111,
-  },
+  },*/
   {
     slug: "airdrop-radar",
     nameKey: "airdropRadar.name",
@@ -186,7 +212,7 @@ export const KRYPTONAL_TOOLS: KryptonalTool[] = [
     status: "live",
     href: "/tools/airdrop-radar",
     icon: "🪂",
-    usageCount: 0,
+    usageCount: 7,
   },
   {
     slug: "cryptocurrency-converter",
@@ -197,7 +223,7 @@ export const KRYPTONAL_TOOLS: KryptonalTool[] = [
     status: "live",
     href: "/tools/cryptocurrency-converter",
     icon: "🔁",
-    usageCount: 0,
+    usageCount: 70,
   },
   {
     slug: "gaming-crypto-pulse",

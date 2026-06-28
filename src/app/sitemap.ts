@@ -23,6 +23,7 @@ const pages = [
   "/tools/crypto-scam-risk-checker",
   "/tools/cryptocurrency-converter",
   "/tools/crypto-etf-tracker",
+  "/tools/cryptocurrency-tax-calculator",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
