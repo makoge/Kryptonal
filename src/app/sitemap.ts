@@ -13,6 +13,16 @@ const pages = [
   "/blog",
   "/gaming-crypto",
 
+  // Learn Pages
+  "/learn",
+  "/learn/crypto-chart-analyzer",
+  "/learn/free-cryptocurrency-courses",
+  "/learn/crypto-trading-course",
+  "/learn/blockchain",
+  "/learn/cryptocurrency-investment",
+  "/learn/cryptocurrency-stocks",
+  "/learn/fidelity-cryptocurrency",
+
   // Tool Pages
   "/tools/crypto-portfolio-tracker",
   "/tools/high-yield-finder",
@@ -24,6 +34,7 @@ const pages = [
   "/tools/cryptocurrency-converter",
   "/tools/crypto-etf-tracker",
   "/tools/cryptocurrency-tax-calculator",
+  "/tools/honeypot-checker",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -38,17 +49,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
               page === "/tools" ||
               page.startsWith("/tools/")
             ? ("daily" as const)
-            : ("monthly" as const),
+            : page.startsWith("/learn")
+              ? ("monthly" as const)
+              : ("monthly" as const),
       priority:
         page === ""
           ? 1
           : page === "/crypto-prices"
             ? 0.95
-            : page === "/tools"
+            : page === "/tools" || page === "/learn"
               ? 0.9
               : page.startsWith("/tools/")
                 ? 0.88
-                : 0.8,
+                : page.startsWith("/learn/")
+                  ? 0.85
+                  : 0.8,
     })),
   );
 

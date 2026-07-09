@@ -27,3 +27,19 @@ model AirdropSubmission {
 
   @@index([status])
 }
+
+model WhaleAlert {
+  hash         String   @id
+  asset        String
+  amount       Float
+  valueDisplay String   @map("value_display")
+  fromLabel    String   @map("from_label")
+  toLabel      String   @map("to_label")
+  sentiment    String
+  explanation  String
+  network      String
+  timestamp    DateTime @default(now())
+
+  @@index([timestamp(sort: Desc)])
+  @@map("whale_alerts")
+}

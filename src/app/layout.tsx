@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,14 +26,11 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
   },
-  
+
   verification: {
     google: "0H0t-HwOYX9LNMckY7C7T1roz2Wo8-mri5XTSwR7qKY",
   },
- 
 };
-
-
 
 export default function RootLayout({
   children,
@@ -47,8 +45,13 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         {children}
 
-         <GoogleAnalytics gaId="G-XDP6FCW8DF" />
-          <Analytics />
+        <GoogleAnalytics gaId="G-XDP6FCW8DF" />
+        <Analytics />
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="Ui7Uv4Fy+TEuEntN5eZatg"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
