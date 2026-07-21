@@ -1029,19 +1029,19 @@
   "cryptoPrices": {
     "badge": "Canlı Kripto Piyasası",
     "global": "Küresel",
-    "title": "Canlı Kripto Fiyatları, Yükselenler, Düşenler ve Borsalar",
-    "description": "Piyasa değerine göre en büyük 200 kripto parayı takip edin, piyasa hareketlerini keşfedin, trend coinleri izleyin ve önde gelen borsaları karşılaştırın.",
+    "title": "Canlı Kripto Fiyatları, Kazananlar, Kaybedenler ve Borsalar",
+    "description": "Piyasa değerine göre ilk 200 kripto parayı takip edin, piyasayı hareketlendirenleri keşfedin, trend olan coinleri izleyin ve önde gelen borsaları karşılaştırın.",
     "search": "Coin ara...",
     "tabs": {
       "coins": "İlk 200",
-      "gainers": "Yükselenler",
-      "losers": "Düşenler",
+      "gainers": "Kazananlar",
+      "losers": "Kaybedenler",
       "new": "Trend / Yeni",
       "exchanges": "Borsalar"
     },
     "metrics": {
       "coinsTracked": "Takip edilen coinler",
-      "topGainer": "En çok yükselen",
+      "topGainer": "En çok kazandıran",
       "updated": "Güncellendi"
     },
     "table": {
@@ -1050,17 +1050,73 @@
       "marketCap": "Piyasa Değeri",
       "marketCapRank": "Piyasa değeri sıralaması",
       "volume": "Hacim",
-      "volumeBtc": "BTC Hacmi",
-      "supply": "Arz",
-      "trustScore": "Güven Puanı",
+      "volumeBtc": "Hacim BTC",
+      "supply": "Dolaşımdaki Arz",
+      "trustScore": "Güven Skoru",
       "year": "Yıl"
     },
     "states": {
       "failed": "Kripto piyasa verileri yüklenemedi."
     },
     "seo": {
-      "title": "Canlı Kripto Fiyatları | En İyi Coinler, Yükselenler ve Borsalar",
-      "description": "Canlı kripto para fiyatlarını, en büyük 200 coin’i, en çok yükselenleri, en çok düşenleri, trend coinleri ve önde gelen borsaları takip edin."
+      "title": "Bugün Canlı Kripto Fiyatları | En İyi Coinler, Kazananlar ve Borsalar",
+      "description": "Canlı kripto para fiyatlarını, ilk 200 coini, en çok kazananları, en çok kaybedenleri, trend coinleri ve en iyi borsaları takip edin."
+    },
+    "modal": {
+      "loadingIntelligence": "Analiz yükleniyor...",
+      "unableToLoad": "Veri yüklenemiyor",
+      "apiLimitReached": "API sınırına ulaşıldı veya bu coinin geçmiş verileri eksik.",
+      "rank": "Sıra",
+      "ath": "ATH (En Yüksek)",
+      "priceChart": "Fiyat Grafiği",
+      "aiAnalysis": "Yapay Zeka Analizi",
+      "aboutProject": "Proje Hakkında",
+      "priceHistory7d": "7 Günlük Fiyat Geçmişi",
+      "currentPrice": "Güncel Fiyat",
+      "marketCap": "Piyasa Değeri",
+      "maxSupply": "Maksimum Arz",
+      "infinite": "Sınırsız",
+      "noChartData": "Grafik verisi bulunmuyor.",
+      "trend": "Trend",
+      "investmentProfile": "Yatırım Profili",
+      "resistanceLevel": "Direnç Seviyesi (Fib 0.618)",
+      "supportFloor": "Destek Tabanı (Fib 0.618)",
+      "high24h": "24s En Yüksek",
+      "low24h": "24s En Düşük",
+      "volumeMarketCap": "Hacim / Piyasa Değeri",
+      "whatIs": "Nedir:",
+      "noDescription": "Şu anda resmi bir proje açıklaması bulunmuyor.",
+      "categories": "Kategoriler ve Ekosistem",
+      "officialResources": "Resmi Kaynaklar",
+      "officialWebsite": "Resmi Web Sitesi",
+      "blockExplorer": "Blok Gezgini",
+      "share": "Paylaş",
+      "copyLink": "Bağlantıyı Kopyala",
+      "copied": "Kopyalandı!"
+    },
+    "analysis": {
+      "neutral": "Nötr ⚖️",
+      "neutralText": "Varlık şu anda günlük aralığında konsolide oluyor. İşlem hacmi piyasada bir kararsızlık dönemine işaret ediyor.",
+      "strongBullish": "Güçlü Yükseliş (Boğa) 🐂",
+      "strongBullishText": "Son 24 saatte %{change} değer kazanarak güçlü bir yukarı yönlü ivme gösteriyor. Fiyat agresif alım baskısına işaret ederek günlük en yüksek seviye olan ${high} değerine doğru güçlü bir şekilde ilerliyor.",
+      "strongBearish": "Güçlü Düşüş (Ayı) 🐻",
+      "strongBearishText": "Son zamanlarda %{change} düşerek önemli satışlar yaşıyor. Şu anda ${low} seviyesindeki 24 saatlik en düşük seviyenin yakınındaki kritik destek seviyelerini test ediyor.",
+      "slightlyBullish": "Hafif Yükseliş 📈",
+      "slightlyBullishText": "Hafif pozitif ivme sergiliyor. Genel piyasa volatilitesi ılımlı kalmasına rağmen, alıcılar şu anda kontrolü elinde tutuyor.",
+      "slightlyBearish": "Hafif Düşüş 📉",
+      "slightlyBearishText": "Hafif aşağı yönlü baskı yaşıyor. Varlık yavaşça değer kaybediyor ancak önemli günlük destek yapılarını henüz kırmadı.",
+      "speculativeFocus": "Spekülatif / Kısa Vadeli Odak",
+      "speculativeText": "Bu varlık yüksek volatilite ve dinamik piyasa duyarlılığı sergiliyor. Şu anda pasif uzun vadeli tutma yerine kısa vadeli (swing) ticaret için daha uygundur.",
+      "coreAsset": "Temel Varlık / Uzun Vadeli Potansiyel",
+      "coreText": "Piyasa değerine göre küresel kripto paralar arasında ilk 20'de yer alıyor. Yerleşik likiditesi, ağ güvenliği ve temel faydası sayesinde uzun vadeli stratejik tahsis için uygun bir adaydır.",
+      "midCap": "Orta Ölçekli Büyüme / Dengeli Ufuk",
+      "midCapText": "Büyüme potansiyeli ve yapısal risk arasında bir denge sergiliyor. Proje kilometre taşları ve benimsenme metrikleri sağlıklı kaldığı sürece orta vadeli pozisyonlama için uygundur.",
+      "supplyStandard": "Tokenomik ve arz dağılımı standart görünüyor.",
+      "supplyCaution": "Tokenomikte Dikkat: Toplam arzın sadece %{ratio}'si dolaşımda. Gelecekteki token kilit açılışları veya hak ediş (vesting) takvimleri enflasyonist satış baskısı yaratabilir.",
+      "supplyFavorable": "Olumlu Tokenomik: Arzın %{ratio}'sinden fazlası halihazırda dolaşımda, bu da ani seyreltmelerin fiyat büyümesini etkileme riskini azaltıyor.",
+      "athText": "Makro Görünüm: Tüm Zamanların En Yüksek Seviyesi (ATH) olan ${ath} değerinden %{change} aşağıda.",
+      "disclaimer": "Sorumluluk Reddi: Algoritmik tahminler 24 saatlik volatiliteye dayanmaktadır ve finansal tavsiye niteliği taşımaz.",
+      "shareText": "{name} ({symbol}) için canlı piyasa metriklerine ve analizlerine göz atın!"
     }
   },
   "blog": {
