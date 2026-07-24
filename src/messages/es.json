@@ -4,11 +4,14 @@
     "loading": "Cargando..."
   },
   "nav": {
+    "tools": "Herramientas",
+    "crypto": "Cripto",
     "marketCap": "Capitalización de Mercado",
     "analysis": "Análisis",
     "blog": "Blog/Noticias",
-    "gamingCrypto": "Gaming Crypto",
-    "start": "Iniciar Análisis"
+    "gamingCrypto": "Cripto Gaming",
+    "start": "Iniciar Análisis",
+    "trending": "Tendencias"
   },
   "home": {
     "hero": {
@@ -28,6 +31,30 @@
         { "label": "Dominancia BTC", "value": "54%" },
         { "label": "Miedo y Codicia", "value": "71" }
       ]
+    },
+    "heroBoard": {
+      "title": "Radar de Mercado en Vivo",
+      "subtitle": "Rastrea, fija favoritos y monitorea inversiones",
+      "tabs": {
+        "gainers": "Mayores Ganancias",
+        "favorites": "Favoritos",
+        "portfolio": "Portafolio"
+      },
+      "searchPlaceholder": "Búsqueda rápida de moneda para fijar...",
+      "emptyFavs": "Aún no hay monedas favoritas fijadas. ¡Busca arriba para fijar monedas!",
+      "noGainers": "No hay datos de ganancias disponibles.",
+      "portfolioTotal": "Valor del Portafolio",
+      "totalPnl": "G/P Neta",
+      "best": "Mejor",
+      "worst": "Peor",
+      "addAsset": "Agregar Activo",
+      "fullTracker": "Rastreador Completo ↗",
+      "note": "Todas las preferencias e inversiones se almacenan de forma privada en tu navegador.",
+      "addModalTitle": "Rastrear Activo en Tiempo Real",
+      "authTitle": "Se Requiere Registro",
+      "authMessage": "Necesitas crear una cuenta gratuita para fijar monedas favoritas, crear listas de seguimiento personalizadas y guardar tus preferencias.",
+      "authCreateAccount": "Crear Cuenta Gratuita",
+      "authCancel": "Tal Vez Más Tarde"
     },
     "summary": {
       "badge": "Resumen actual del mercado",
@@ -2923,6 +2950,43 @@
     "copied": "Copiado",
     "download": "Descargar TXT",
     "disclaimer": "Este contenido es solo para fines educativos y no constituye asesoramiento financiero."
+  },
+
+  "TrendingMeta": {
+    "title": "Noticias de Cripto y Finanzas en Tendencia | Kryptonal",
+    "description": "Sigue en vivo las historias en tendencia sobre criptomonedas, blockchain, mercado bursátil y finanzas globales."
+  },
+  "Trending": {
+    "Hero": {
+      "headline": "Descubre de Qué Está Hablando el Mundo",
+      "subtitle": "Sigue en vivo las historias en tendencia sobre criptomonedas, blockchain y finanzas globales.",
+      "exploreCta": "Explorar Tendencias",
+      "joinCta": "Unirse a la Discusión"
+    },
+    "Tabs": {
+      "storiesTab": "Historias en Tendencia",
+      "communityTab": "Comunidad",
+      "filters": {
+        "trending": "Tendencias",
+        "newest": "Más Recientes",
+        "marketImpact": "Impacto en el Mercado"
+      },
+      "card": {
+        "hot": "EN ALTA",
+        "breaking": "ÚLTIMA HORA",
+        "trending": "Tendencia"
+      },
+      "communityFeed": {
+        "title": "Únete a la Discusión",
+        "description": "Conecta tu cuenta para compartir gráficos, publicar análisis y votar en las predicciones de la comunidad.",
+        "signInBtn": "Iniciar Sesión para Participar"
+      }
+    },
+    "Sidebar": {
+      "liveMarket": "Mercado en Vivo",
+      "proTools": "Herramientas Interactivas",
+      "exploreTools": "Explorar Todas las Herramientas"
+    }
   },
   "footer": {
     "description": "Análisis de capitalización del mercado cripto, investigación de ciclos de Bitcoin, educación blockchain, oportunidades Web3 e información sobre gaming cripto para aprendices del mercado a largo plazo.",

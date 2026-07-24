@@ -4,11 +4,14 @@
     "loading": "Wird geladen..."
   },
   "nav": {
+    "tools": "Tools",
+    "crypto": "Krypto",
     "marketCap": "Marktkapitalisierung",
     "analysis": "Analyse",
     "blog": "Blog/Nachrichten",
-    "gamingCrypto": "Gaming-Krypto",
-    "start": "Analyse starten"
+    "gamingCrypto": "Gaming Krypto",
+    "start": "Analyse starten",
+    "trending": "Trends"
   },
   "home": {
     "hero": {
@@ -28,6 +31,30 @@
         { "label": "BTC-Dominanz", "value": "54%" },
         { "label": "Fear & Greed", "value": "71" }
       ]
+    },
+    "heroBoard": {
+      "title": "Live-Markt-Radar",
+      "subtitle": "Verfolge, pinne Favoriten und überwache Investitionen",
+      "tabs": {
+        "gainers": "Top-Gewinner",
+        "favorites": "Favoriten",
+        "portfolio": "Portfolio"
+      },
+      "searchPlaceholder": "Schnellsuche nach Coin zum Pinnen...",
+      "emptyFavs": "Noch keine Favoriten gepinnt. Suche oben, um Coins zu pinnen!",
+      "noGainers": "Keine Gewinner-Daten verfügbar.",
+      "portfolioTotal": "Portfoliowert",
+      "totalPnl": "Netto G/V",
+      "best": "Beste",
+      "worst": "Schlechteste",
+      "addAsset": "Asset hinzufügen",
+      "fullTracker": "Vollständiger Tracker ↗",
+      "note": "Alle Präferenzen und Investitionen werden privat in deinem Browser gespeichert.",
+      "addModalTitle": "Asset in Echtzeit verfolgen",
+      "authTitle": "Anmeldung erforderlich",
+      "authMessage": "Du musst ein kostenloses Konto erstellen, um Favoriten-Coins zu pinnen, benutzerdefinierte Watchlists zu erstellen und deine Präferenzen zu speichern.",
+      "authCreateAccount": "Kostenloses Konto erstellen",
+      "authCancel": "Vielleicht später"
     },
     "summary": {
       "badge": "Aktuelle Marktübersicht",
@@ -2908,6 +2935,43 @@
     "copied": "Kopiert",
     "download": "TXT herunterladen",
     "disclaimer": "Dieser Inhalt dient nur zu Bildungszwecken und ist keine Finanzberatung."
+  },
+
+  "TrendingMeta": {
+    "title": "Trendige Krypto- & Finanznachrichten | Kryptonal",
+    "description": "Verfolgen Sie Live-Trends zu Kryptowährungen, Blockchain, Börse und globalen Finanzen."
+  },
+  "Trending": {
+    "Hero": {
+      "headline": "Entdecken Sie, worüber die Welt spricht",
+      "subtitle": "Verfolgen Sie Live-Trends zu Kryptowährungen, Blockchain und globalen Finanzen.",
+      "exploreCta": "Trends erkunden",
+      "joinCta": "An Diskussion teilnehmen"
+    },
+    "Tabs": {
+      "storiesTab": "Trend-Nachrichten",
+      "communityTab": "Community",
+      "filters": {
+        "trending": "Trends",
+        "newest": "Neueste",
+        "marketImpact": "Marktauswirkung"
+      },
+      "card": {
+        "hot": "HEISS",
+        "breaking": "EILMELDUNG",
+        "trending": "Trend"
+      },
+      "communityFeed": {
+        "title": "An der Diskussion teilnehmen",
+        "description": "Verbinden Sie Ihr Konto, um Charts zu teilen, Analysen zu veröffentlichen und über Community-Prognosen abzustimmen.",
+        "signInBtn": "Anmelden zum Mitmachen"
+      }
+    },
+    "Sidebar": {
+      "liveMarket": "Live-Markt",
+      "proTools": "Interaktive Tools",
+      "exploreTools": "Alle Tools erkunden"
+    }
   },
   "footer": {
     "description": "Analyse der Krypto-Marktkapitalisierung, Bitcoin-Zyklusforschung, Blockchain-Bildung, Web3-Möglichkeiten und Gaming-Krypto-Einblicke für langfristige Marktlernende.",

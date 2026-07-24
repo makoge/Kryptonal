@@ -4,11 +4,14 @@
     "loading": "Yükleniyor..."
   },
   "nav": {
+    "tools": "Araçlar",
+    "crypto": "Kripto",
     "marketCap": "Piyasa Değeri",
     "analysis": "Analiz",
     "blog": "Blog/Haberler",
-    "gamingCrypto": "Gaming Kripto",
-    "start": "Analizi Başlat"
+    "gamingCrypto": "Oyun Kriptoları",
+    "start": "Analize Başla",
+    "trending": "Trendler"
   },
   "home": {
     "hero": {
@@ -28,6 +31,30 @@
         { "label": "BTC Dominansı", "value": "54%" },
         { "label": "Fear & Greed", "value": "71" }
       ]
+    },
+    "heroBoard": {
+      "title": "Canlı Piyasa Radarı",
+      "subtitle": "Yatırımlarınızı izleyin, favorilerinizi sabitleyin ve takip edin",
+      "tabs": {
+        "gainers": "En Çok Kazandıranlar",
+        "favorites": "Favoriler",
+        "portfolio": "Portföy"
+      },
+      "searchPlaceholder": "Sabitlemek için coin ara...",
+      "emptyFavs": "Henüz favori coin eklenmedi. Sabitlemek için yukarıdan arama yapın!",
+      "noGainers": "Kazandıranlar verisi bulunamadı.",
+      "portfolioTotal": "Portföy Değeri",
+      "totalPnl": "Net K/Z",
+      "best": "En İyi",
+      "worst": "En Kötü",
+      "addAsset": "Varlık Ekle",
+      "fullTracker": "Detaylı Takip ↗",
+      "note": "Tüm tercihler ve yatırımlar yalnızca tarayıcınızda gizli olarak saklanır.",
+      "addModalTitle": "Varlığı Gerçek Zamanlı Takip Et",
+      "authTitle": "Kayıt Olmanız Gerekiyor",
+      "authMessage": "Favori coinleri sabitlemek, özel izleme listeleri oluşturmak ve tercihlerinizi kaydetmek için ücretsiz bir hesap oluşturmanız gerekir.",
+      "authCreateAccount": "Ücretsiz Hesap Oluştur",
+      "authCancel": "Belki Daha Sonra"
     },
     "summary": {
       "badge": "Güncel Piyasa Özeti",
@@ -2908,6 +2935,43 @@
     "copied": "Kopyalandı",
     "download": "TXT İndir",
     "disclaimer": "Bu içerik yalnızca eğitim amaçlıdır ve finansal tavsiye değildir."
+  },
+
+  "TrendingMeta": {
+    "title": "Trend Kripto ve Finans Haberleri | Kryptonal",
+    "description": "Canlı trend kripto para, blokzincir, borsa ve küresel finans haberlerini takip edin."
+  },
+  "Trending": {
+    "Hero": {
+      "headline": "Dünyanın Ne Konuştuğunu Keşfedin",
+      "subtitle": "Canlı trend kripto para, blokzincir ve küresel finans haberlerini takip edin.",
+      "exploreCta": "Trendleri Keşfet",
+      "joinCta": "Tartışmaya Katıl"
+    },
+    "Tabs": {
+      "storiesTab": "Trend Haberler",
+      "communityTab": "Topluluk",
+      "filters": {
+        "trending": "Trendler",
+        "newest": "En Yeniler",
+        "marketImpact": "Piyasa Etkisi"
+      },
+      "card": {
+        "hot": "POPÜLER",
+        "breaking": "SON DAKİKA",
+        "trending": "Trend"
+      },
+      "communityFeed": {
+        "title": "Tartışmaya Katılın",
+        "description": "Grafikleri paylaşmak, analiz yayınlamak ve topluluk tahminlerinde oy kullanmak için hesabınızı bağlayın.",
+        "signInBtn": "Katılmak İçin Giriş Yapın"
+      }
+    },
+    "Sidebar": {
+      "liveMarket": "Canlı Piyasa",
+      "proTools": "Etkileşimli Araçlar",
+      "exploreTools": "Tüm Araçları Keşfet"
+    }
   },
   "footer": {
     "description": "Uzun vadeli piyasa öğrenicileri için kripto piyasa değeri analizi, Bitcoin döngü araştırmaları, blockchain eğitimi, Web3 fırsatları ve gaming crypto içgörüleri.",

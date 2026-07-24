@@ -10,7 +10,8 @@
     "analysis": "Analysis",
     "blog": "Blog/News",
     "gamingCrypto": "Gaming Crypto",
-    "start": "Start Analysis"
+    "start": "Start Analysis",
+    "trending": "Trending"
   },
   "home": {
     "hero": {
@@ -30,6 +31,30 @@
         { "label": "BTC Dominance", "value": "54%" },
         { "label": "Fear & Greed", "value": "71" }
       ]
+    },
+    "heroBoard": {
+      "title": "Live Market Radar",
+      "subtitle": "Track, pin favorites, and monitor investments",
+      "tabs": {
+        "gainers": "Top Gainers",
+        "favorites": "Favorites",
+        "portfolio": "Portfolio"
+      },
+      "searchPlaceholder": "Quick search coin to pin...",
+      "emptyFavs": "No favorite coins pinned yet. Search above to pin coins!",
+      "noGainers": "No gainers data available.",
+      "portfolioTotal": "Portfolio Value",
+      "totalPnl": "Net P/L",
+      "best": "Best",
+      "worst": "Worst",
+      "addAsset": "Add Asset",
+      "fullTracker": "Full Tracker ↗",
+      "note": "All preferences & investments stay stored privately in your browser.",
+      "addModalTitle": "Track Asset in Real Time",
+      "authTitle": "Sign Up Required",
+      "authMessage": "You need to create a free account to pin favorite coins, build custom watchlists, and save your preferences.",
+      "authCreateAccount": "Create Free Account",
+      "authCancel": "Maybe Later"
     },
     "summary": {
       "badge": "Current Market Summary",
@@ -2846,6 +2871,43 @@
     "copied": "Copied",
     "download": "Download TXT",
     "disclaimer": "This content is for educational purposes only and is not financial advice."
+  },
+
+  "TrendingMeta": {
+    "title": "Trending Crypto & Financial Stories | Kryptonal",
+    "description": "Follow live trending cryptocurrency, blockchain, stock market and global finance stories."
+  },
+  "Trending": {
+    "Hero": {
+      "headline": "Discover What the World is Talking About",
+      "subtitle": "Follow live trending cryptocurrency, blockchain, and global finance stories.",
+      "exploreCta": "Explore Trends",
+      "joinCta": "Join Discussion"
+    },
+    "Tabs": {
+      "storiesTab": "Trending Stories",
+      "communityTab": "Community",
+      "filters": {
+        "trending": "Trending",
+        "newest": "Newest",
+        "marketImpact": "Market Impact"
+      },
+      "card": {
+        "hot": "HOT",
+        "breaking": "BREAKING",
+        "trending": "Trending"
+      },
+      "communityFeed": {
+        "title": "Join the Discussion",
+        "description": "Connect your account to share charts, post analysis, and vote on community predictions.",
+        "signInBtn": "Sign In to Participate"
+      }
+    },
+    "Sidebar": {
+      "liveMarket": "Live Market",
+      "proTools": "Interactive Tools",
+      "exploreTools": "Explore All Tools"
+    }
   },
   "footer": {
     "description": "Crypto market cap analysis, Bitcoin cycle research, blockchain education, Web3 opportunities, and gaming crypto insights for long-term market learners.",

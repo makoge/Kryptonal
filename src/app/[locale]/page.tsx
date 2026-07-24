@@ -8,7 +8,6 @@ import LiveHeroBoard from "@/components/home/LiveHeroBoard";
 import HomeToolsSection from "@/components/home/HomeToolsSection";
 import LiveMarketSummary from "@/components/home/LiveMarketSummary";
 
-
 const siteUrl = "https://kryptonal.com";
 const locales = ["en", "es", "pt", "fr", "de", "tr"];
 
@@ -16,7 +15,9 @@ type PageProps = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = getDictionary(locale);
   const url = `${siteUrl}/${locale}`;
@@ -123,13 +124,15 @@ export default async function Homepage({ params }: PageProps) {
             </div>
 
             <LiveHeroBoard
-  panelTitle={h.hero.panelTitle}
-  panelNote={h.hero.panelNote}
-/>
+              panelTitle={h.hero.panelTitle}
+              panelNote={h.hero.panelNote}
+              t={t}
+              lang={locale}
+            />
           </div>
         </header>
 
-       <HomeToolsSection locale={locale} t={t}/>
+        <HomeToolsSection locale={locale} t={t} />
 
         {/* SUMMARY */}
         <LiveMarketSummary h={h} />
@@ -138,8 +141,12 @@ export default async function Homepage({ params }: PageProps) {
         {/* EDUCATION */}
         <section className="px-4 py-20 sm:px-6">
           <div className="mx-auto max-w-7xl">
-            <h2 className="text-3xl font-black md:text-5xl">{h.education.title}</h2>
-            <p className="mt-5 max-w-3xl leading-8 text-slate-300">{h.education.text}</p>
+            <h2 className="text-3xl font-black md:text-5xl">
+              {h.education.title}
+            </h2>
+            <p className="mt-5 max-w-3xl leading-8 text-slate-300">
+              {h.education.text}
+            </p>
 
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
               {h.education.items.map((item: any) => (
@@ -158,11 +165,16 @@ export default async function Homepage({ params }: PageProps) {
         {/* FEATURES */}
         <section className="bg-slate-900/40 px-4 py-20 sm:px-6">
           <div className="mx-auto max-w-7xl">
-            <h2 className="text-3xl font-black md:text-5xl">{h.features.title}</h2>
+            <h2 className="text-3xl font-black md:text-5xl">
+              {h.features.title}
+            </h2>
 
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {h.features.items.map((item: any) => (
-                <div key={item.title} className="rounded-3xl border border-white/10 bg-slate-950/80 p-6">
+                <div
+                  key={item.title}
+                  className="rounded-3xl border border-white/10 bg-slate-950/80 p-6"
+                >
                   <p className="text-3xl">{item.icon}</p>
                   <h3 className="mt-5 text-xl font-black">{item.title}</h3>
                   <p className="mt-4 leading-7 text-slate-300">{item.text}</p>
@@ -176,8 +188,12 @@ export default async function Homepage({ params }: PageProps) {
         <section className="px-4 py-20 sm:px-6">
           <div className="mx-auto max-w-7xl rounded-[2rem] border border-emerald-400/20 bg-emerald-400/10 p-8">
             <h2 className="text-3xl font-black md:text-5xl">{h.trust.title}</h2>
-            <p className="mt-5 max-w-4xl leading-8 text-emerald-50">{h.trust.text}</p>
-            <p className="mt-6 text-sm leading-7 text-amber-200">{h.trust.disclaimer}</p>
+            <p className="mt-5 max-w-4xl leading-8 text-emerald-50">
+              {h.trust.text}
+            </p>
+            <p className="mt-6 text-sm leading-7 text-amber-200">
+              {h.trust.disclaimer}
+            </p>
           </div>
         </section>
 
@@ -188,12 +204,17 @@ export default async function Homepage({ params }: PageProps) {
 
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
               {h.blog.items.map((post: any) => (
-                <article key={post.title} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6">
+                <article
+                  key={post.title}
+                  className="rounded-3xl border border-white/10 bg-white/[0.04] p-6"
+                >
                   <p className="text-xs font-bold uppercase tracking-widest text-emerald-300">
                     {post.category}
                   </p>
                   <h3 className="mt-4 text-xl font-black">{post.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-slate-300">{post.text}</p>
+                  <p className="mt-4 text-sm leading-7 text-slate-300">
+                    {post.text}
+                  </p>
                 </article>
               ))}
             </div>
@@ -211,7 +232,9 @@ export default async function Homepage({ params }: PageProps) {
                   key={item.q}
                   className="group rounded-2xl border border-white/10 bg-white/[0.04] p-5"
                 >
-                  <summary className="cursor-pointer font-black">{item.q}</summary>
+                  <summary className="cursor-pointer font-black">
+                    {item.q}
+                  </summary>
                   <p className="mt-4 leading-7 text-slate-300">{item.a}</p>
                 </details>
               ))}
@@ -223,13 +246,21 @@ export default async function Homepage({ params }: PageProps) {
         <section className="px-4 pb-24 sm:px-6">
           <div className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-gradient-to-br from-emerald-400/20 to-cyan-400/10 p-8 text-center">
             <h2 className="text-3xl font-black md:text-5xl">{h.cta.title}</h2>
-            <p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-200">{h.cta.text}</p>
+            <p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-200">
+              {h.cta.text}
+            </p>
 
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <Link href={`/${locale}/analysis`} className="rounded-2xl bg-emerald-400 px-7 py-4 font-black text-slate-950">
+              <Link
+                href={`/${locale}/analysis`}
+                className="rounded-2xl bg-emerald-400 px-7 py-4 font-black text-slate-950"
+              >
                 {h.cta.primary}
               </Link>
-              <Link href={`/${locale}/market-cap`} className="rounded-2xl border border-white/10 bg-white/10 px-7 py-4 font-black">
+              <Link
+                href={`/${locale}/market-cap`}
+                className="rounded-2xl border border-white/10 bg-white/10 px-7 py-4 font-black"
+              >
                 {h.cta.secondary}
               </Link>
             </div>

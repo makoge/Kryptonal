@@ -153,14 +153,42 @@ export default function PrivacyWatchlist({ t }: { t?: any }) {
   const [prices, setPrices] = useState<PriceCoin[]>([]);
   const [loading, setLoading] = useState(false);
 
+  // 1. Add an isLoaded flag
+  const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
+    // 2. Load the initial data safely
     const saved = localStorage.getItem("kryptonal-portfolio");
-    if (saved) setHoldings(JSON.parse(saved));
+    if (saved) {
+      try {
+        setHoldings(JSON.parse(saved));
+      } catch (e) {
+        console.error("Failed to parse portfolio");
+      }
+    }
+
+    // Unlock saving
+    setIsLoaded(true);
+
+    // 3. Listen for changes made from the HeroBoard in real-time
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === "kryptonal-portfolio" && e.newValue) {
+        try {
+          setHoldings(JSON.parse(e.newValue));
+        } catch (err) {}
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("kryptonal-portfolio", JSON.stringify(holdings));
-  }, [holdings]);
+    // 4. ONLY save to localStorage AFTER the initial load is complete
+    if (isLoaded) {
+      localStorage.setItem("kryptonal-portfolio", JSON.stringify(holdings));
+    }
+  }, [holdings, isLoaded]);
 
   const ids = useMemo(
     () =>
