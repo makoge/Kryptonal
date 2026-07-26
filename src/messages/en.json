@@ -2900,14 +2900,88 @@
       "communityFeed": {
         "title": "Join the Discussion",
         "description": "Connect your account to share charts, post analysis, and vote on community predictions.",
-        "signInBtn": "Sign In to Participate"
+        "signInBtn": "Sign In with Google",
+        "loggedInAs": "Logged in as",
+        "welcomeHeading": "Welcome to Kryptonal Community Hub",
+        "welcomeSubheading": "You are ready to log your high-conviction holdings, vote on top performer leaderboards, and post market analysis!",
+        "enterBtn": "Enter Full Community Hub →"
       }
-    },
-    "Sidebar": {
-      "liveMarket": "Live Market",
-      "proTools": "Interactive Tools",
-      "exploreTools": "Explore All Tools"
     }
+  },
+  "SinglePost": {
+    "backLink": "← Back to Community Hub",
+    "by": "By",
+    "anonymous": "Kryptonal Trader",
+    "views": "views",
+    "upvotes": "upvotes"
+  },
+  "PostModal": {
+    "triggerBtn": "✍️ Post Alpha / Technical Analysis",
+    "modalTitle": "Create Alpha Post",
+    "titleLabel": "Post Title (SEO Optimized)",
+    "titlePlaceholder": "e.g. Why Solana ($SOL) Is Setting Up for a Breakout This Quarter",
+    "contentLabel": "Content / Analysis",
+    "contentPlaceholder": "Share your technical analysis, price target, catalyst events, or on-chain insights...",
+    "cancelBtn": "Cancel",
+    "publishBtn": "Publish Post",
+    "publishing": "Publishing...",
+    "errorMessage": "Please provide both a title and post content."
+  },
+  "CommunityPage": {
+    "badge": "🔥 Community Sentiment Engine",
+    "heading": "Kryptonal Traders Hub",
+    "description": "Log your high-conviction holdings across 1-Day, 1-Week, 1-Month, or Long-Term timeframes. Vote on the top 10 performers and participate in community alpha calls.",
+    "signInBtn": "Sign In to Join & Vote",
+    "title": "Kryptonal Crypto Community & Sentiment Hub"
+  },
+  "PortfolioTracker": {
+    "title": "💼 Your High-Conviction Bags",
+    "subtitle": "Track and share your top crypto positions for each time horizon.",
+    "oneDay": "1-Day Horizon",
+    "oneWeek": "1-Week Horizon",
+    "oneMonth": "1-Month Horizon",
+    "longTerm": "Long-Term Hold",
+    "selectCoin": "Select Crypto Asset...",
+    "addHoldingBtn": "Add Position",
+    "noHoldings": "No holdings logged for this horizon yet."
+  },
+  "VotingArena": {
+    "title": "🏆 Top 10 Community Performers",
+    "subtitle": "Upvote the assets you believe will outperform the market.",
+    "rank": "Rank",
+    "asset": "Asset",
+    "votes": "Community Votes",
+    "action": "Vote",
+    "voted": "Voted",
+    "loginToVote": "Sign in to vote"
+  },
+  "CommunityFeed": {
+    "title": "Join the Discussion",
+    "description": "Connect your account to share charts, post analysis, and vote on community predictions.",
+    "signInBtn": "Sign In with Google",
+    "loggedInAs": "Logged in as",
+    "welcomeHeading": "Welcome to Kryptonal Community Hub",
+    "welcomeSubheading": "You are ready to log your high-conviction holdings, vote on top performer leaderboards, and post market analysis!",
+    "enterBtn": "Enter Full Community Hub →",
+    "shareTitle": "Share Market Insights",
+    "shareSubtitle": "Got an alpha call or technical analysis? Post it here to rank on Kryptonal & search engines.",
+    "feedTitle": "Recent Alpha & Analysis",
+    "noPosts": "No posts created yet. Be the first trader to publish an alpha call above!"
+  },
+  "storyReader": {
+    "badge": "Intel Brief",
+    "trendingLabel": "Trending",
+    "scoreLabel": "Score",
+    "readSourceBtn": "Read Source Article ↗",
+    "discussBtn": "Discuss in Community"
+  },
+  "sidebar": {
+    "liveMarket": "Live Market",
+    "proTools": "Interactive Tools",
+    "exploreTools": "Explore All Tools",
+    "smartWatchlists": "Smart Watchlists",
+    "advancedCalculators": "Advanced Crypto Calculators",
+    "addressValidator": "Wallet Address Validator"
   },
   "footer": {
     "description": "Crypto market cap analysis, Bitcoin cycle research, blockchain education, Web3 opportunities, and gaming crypto insights for long-term market learners.",

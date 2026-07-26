@@ -1,5 +1,6 @@
 import { getDictionary } from "@/lib/getDictionary";
-import { getLiveNews } from "@/lib/fetchLiveNews"; // 1. Import the fetcher!
+import { getLiveNews } from "@/lib/fetchLiveNews";
+import { auth } from "@/auth"; // 1. Import auth
 import { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -11,9 +12,8 @@ type Props = {
   params: { locale: string };
 };
 
-export async function generateMetadata({
-  params: { locale },
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   const dict = await getDictionary(locale);
 
   const metaTitle =
@@ -50,11 +50,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function TrendingPage({ params: { locale } }: Props) {
+export default async function TrendingPage({ params }: Props) {
+  const { locale } = await params;
   const dict = await getDictionary(locale);
 
-  // 2. Fetch the live stories right here on the server!
-  const liveStories = await getLiveNews();
+  // 2. Fetch both the session and live stories concurrently
+  const [session, liveStories] = await Promise.all([auth(), getLiveNews()]);
 
   const pageTitle =
     dict.TrendingMeta?.title ||
@@ -101,16 +102,17 @@ export default async function TrendingPage({ params: { locale } }: Props) {
 
         <main className="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-8 xl:col-span-9">
-            {/* 3. Pass the fetched stories down to your Tabs */}
+            {/* 3. Pass `session` down to TrendingTabs */}
             <TrendingTabs
               dict={dict.Trending?.Tabs}
               initialStories={liveStories}
               locale={locale}
+              session={session}
             />
           </div>
 
           <aside className="lg:col-span-4 xl:col-span-3 space-y-6">
-            <SidebarWidget dict={dict.Trending?.Sidebar} />
+            <SidebarWidget dict={dict?.sidebar} locale={locale} />
           </aside>
         </main>
       </div>

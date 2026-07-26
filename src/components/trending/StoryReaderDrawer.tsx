@@ -1,13 +1,23 @@
+// src/components/trending/StoryReaderDrawer.tsx
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import type { LiveStory } from "@/lib/fetchLiveNews";
+
+export interface StoryReaderDict {
+  badge?: string;
+  trendingLabel?: string;
+  scoreLabel?: string;
+  readSourceBtn?: string;
+  discussBtn?: string;
+}
 
 interface StoryReaderDrawerProps {
   story: LiveStory | null;
   isOpen: boolean;
   onClose: () => void;
   locale: string;
+  dict?: StoryReaderDict;
 }
 
 export default function StoryReaderDrawer({
@@ -15,6 +25,7 @@ export default function StoryReaderDrawer({
   isOpen,
   onClose,
   locale,
+  dict,
 }: StoryReaderDrawerProps) {
   // Prevent scrolling on the main page when the drawer is open
   if (typeof window !== "undefined") {
@@ -47,13 +58,14 @@ export default function StoryReaderDrawer({
               <div className="flex justify-between items-center mb-8 pb-4 border-b border-white/10">
                 <div className="flex items-center gap-3">
                   <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-full text-xs font-bold uppercase tracking-wider">
-                    Intel Brief
+                    {dict?.badge || "Intel Brief"}
                   </span>
                   <span className="text-slate-400 text-sm">
                     {story.publishedAt}
                   </span>
                 </div>
                 <button
+                  type="button"
                   onClick={onClose}
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors"
                 >
@@ -74,18 +86,18 @@ export default function StoryReaderDrawer({
                   </div>
                   <div className="flex flex-col">
                     <span className="text-xs text-slate-400 uppercase">
-                      Trending
+                      {dict?.trendingLabel || "Trending"}
                     </span>
                     <span className="text-sm font-semibold text-white">
-                      Score
+                      {dict?.scoreLabel || "Score"}
                     </span>
                   </div>
                 </div>
                 <div className="w-px h-8 bg-white/10 hidden sm:block" />
                 <div className="text-slate-400 text-sm flex gap-6">
-                  <span>👁️ {story.views.toLocaleString()}</span>
-                  <span>❤️ {story.likes.toLocaleString()}</span>
-                  <span>💬 {story.comments.toLocaleString()}</span>
+                  <span>👁️ {story.views.toLocaleString(locale)}</span>
+                  <span>❤️ {story.likes.toLocaleString(locale)}</span>
+                  <span>💬 {story.comments.toLocaleString(locale)}</span>
                 </div>
               </div>
 
@@ -104,10 +116,13 @@ export default function StoryReaderDrawer({
                   rel="noopener noreferrer"
                   className="flex-1 text-center px-6 py-4 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30 transition-colors"
                 >
-                  Read Source Article ↗
+                  {dict?.readSourceBtn || "Read Source Article ↗"}
                 </a>
-                <button className="flex-1 px-6 py-4 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold border border-white/10 transition-colors">
-                  Discuss in Community
+                <button
+                  type="button"
+                  className="flex-1 px-6 py-4 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold border border-white/10 transition-colors"
+                >
+                  {dict?.discussBtn || "Discuss in Community"}
                 </button>
               </div>
             </div>

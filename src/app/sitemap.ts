@@ -6,6 +6,8 @@ const siteUrl = "https://kryptonal.com";
 
 const pages = [
   "",
+  "/trending",
+  "/community",
   "/crypto-prices",
   "/market-cap",
   "/analysis",
@@ -46,6 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         page === ""
           ? ("weekly" as const)
           : page === "/crypto-prices" ||
+              page === "/trending" ||
+              page === "/community" ||
               page === "/tools" ||
               page.startsWith("/tools/")
             ? ("daily" as const)
@@ -57,13 +61,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? 1
           : page === "/crypto-prices"
             ? 0.95
-            : page === "/tools" || page === "/learn"
-              ? 0.9
-              : page.startsWith("/tools/")
-                ? 0.88
-                : page.startsWith("/learn/")
-                  ? 0.85
-                  : 0.8,
+            : page === "/trending" || page === "/community"
+              ? 0.92
+              : page === "/tools" || page === "/learn"
+                ? 0.9
+                : page.startsWith("/tools/")
+                  ? 0.88
+                  : page.startsWith("/learn/")
+                    ? 0.85
+                    : 0.8,
     })),
   );
 

@@ -1,14 +1,20 @@
+// src/components/SidebarWidget.tsx
 "use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+export interface SidebarDict {
+  liveMarket?: string;
+  proTools?: string;
+  exploreTools?: string;
+  smartWatchlists?: string;
+  advancedCalculators?: string;
+  addressValidator?: string;
+}
+
 interface SidebarProps {
-  dict?: {
-    liveMarket?: string;
-    proTools?: string;
-    exploreTools?: string;
-  };
+  dict?: SidebarDict;
   locale?: string;
 }
 
@@ -17,6 +23,10 @@ export default function SidebarWidget({ dict, locale = "en" }: SidebarProps) {
   const titleLiveMarket = dict?.liveMarket || "Live Market";
   const titleProTools = dict?.proTools || "Interactive Tools";
   const textExplore = dict?.exploreTools || "Explore All Tools";
+  const textWatchlists = dict?.smartWatchlists || "Smart Watchlists";
+  const textCalculators =
+    dict?.advancedCalculators || "Advanced Crypto Calculators";
+  const textValidator = dict?.addressValidator || "Wallet Address Validator";
 
   // State for real-time market data
   const [marketData, setMarketData] = useState({
@@ -53,7 +63,7 @@ export default function SidebarWidget({ dict, locale = "en" }: SidebarProps) {
 
     fetchPrices();
 
-    // Optional: Refresh prices every 60 seconds
+    // Refresh prices every 60 seconds
     const interval = setInterval(fetchPrices, 60000);
     return () => clearInterval(interval);
   }, []);
@@ -79,7 +89,7 @@ export default function SidebarWidget({ dict, locale = "en" }: SidebarProps) {
               ) : (
                 <div className="text-white font-semibold">
                   $
-                  {marketData.btc.price.toLocaleString(undefined, {
+                  {marketData.btc.price.toLocaleString(locale, {
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2,
                   })}
@@ -90,7 +100,11 @@ export default function SidebarWidget({ dict, locale = "en" }: SidebarProps) {
                 <div className="h-4 w-12 bg-white/10 animate-pulse rounded ml-auto" />
               ) : (
                 <div
-                  className={`text-sm font-medium ${marketData.btc.change >= 0 ? "text-emerald-400" : "text-rose-400"}`}
+                  className={`text-sm font-medium ${
+                    marketData.btc.change >= 0
+                      ? "text-emerald-400"
+                      : "text-rose-400"
+                  }`}
                 >
                   {marketData.btc.change > 0 ? "+" : ""}
                   {marketData.btc.change.toFixed(2)}%
@@ -113,7 +127,7 @@ export default function SidebarWidget({ dict, locale = "en" }: SidebarProps) {
               ) : (
                 <div className="text-white font-semibold">
                   $
-                  {marketData.eth.price.toLocaleString(undefined, {
+                  {marketData.eth.price.toLocaleString(locale, {
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2,
                   })}
@@ -124,7 +138,11 @@ export default function SidebarWidget({ dict, locale = "en" }: SidebarProps) {
                 <div className="h-4 w-12 bg-white/10 animate-pulse rounded ml-auto" />
               ) : (
                 <div
-                  className={`text-sm font-medium ${marketData.eth.change >= 0 ? "text-emerald-400" : "text-rose-400"}`}
+                  className={`text-sm font-medium ${
+                    marketData.eth.change >= 0
+                      ? "text-emerald-400"
+                      : "text-rose-400"
+                  }`}
                 >
                   {marketData.eth.change > 0 ? "+" : ""}
                   {marketData.eth.change.toFixed(2)}%
@@ -147,19 +165,15 @@ export default function SidebarWidget({ dict, locale = "en" }: SidebarProps) {
         <div className="relative z-10 space-y-3 mb-6">
           <div className="flex items-center gap-3 text-slate-300">
             <span className="text-emerald-400">✓</span>
-            <span className="text-sm font-medium">Smart Watchlists</span>
+            <span className="text-sm font-medium">{textWatchlists}</span>
           </div>
           <div className="flex items-center gap-3 text-slate-300">
             <span className="text-emerald-400">✓</span>
-            <span className="text-sm font-medium">
-              Advanced Crypto Calculators
-            </span>
+            <span className="text-sm font-medium">{textCalculators}</span>
           </div>
           <div className="flex items-center gap-3 text-slate-300">
             <span className="text-emerald-400">✓</span>
-            <span className="text-sm font-medium">
-              Wallet Address Validator
-            </span>
+            <span className="text-sm font-medium">{textValidator}</span>
           </div>
         </div>
 

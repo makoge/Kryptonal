@@ -2979,14 +2979,88 @@
       "communityFeed": {
         "title": "Únete a la Discusión",
         "description": "Conecta tu cuenta para compartir gráficos, publicar análisis y votar en las predicciones de la comunidad.",
-        "signInBtn": "Iniciar Sesión para Participar"
+        "signInBtn": "Iniciar Sesión con Google",
+        "loggedInAs": "Conectado como",
+        "welcomeHeading": "Bienvenido al Centro de la Comunidad Kryptonal",
+        "welcomeSubheading": "¡Estás listo para registrar tus posiciones de alta convicción, votar en las tablas de clasificación de mejores activos y publicar análisis de mercado!",
+        "enterBtn": "Entrar al Centro de la Comunidad Completo →"
       }
-    },
-    "Sidebar": {
-      "liveMarket": "Mercado en Vivo",
-      "proTools": "Herramientas Interactivas",
-      "exploreTools": "Explorar Todas las Herramientas"
     }
+  },
+  "sidebar": {
+    "liveMarket": "Mercado en Vivo",
+    "proTools": "Herramientas Interactivas",
+    "exploreTools": "Explorar Todas las Herramientas",
+    "smartWatchlists": "Listas de Seguimiento Inteligentes",
+    "advancedCalculators": "Calculadoras Cripto Avanzadas",
+    "addressValidator": "Validador de Dirección de Billetera"
+  },
+  "SinglePost": {
+    "backLink": "← Volver al Centro de la Comunidad",
+    "by": "Por",
+    "anonymous": "Trader de Kryptonal",
+    "views": "visitas",
+    "upvotes": "votos a favor"
+  },
+  "PostModal": {
+    "triggerBtn": "✍️ Publicar Análisis / Alfa",
+    "modalTitle": "Crear Publicación de Alfa",
+    "titleLabel": "Título de la Publicación (Optimizado para SEO)",
+    "titlePlaceholder": "ej. Por qué Solana ($SOL) se prepara para un impulso este trimestre",
+    "contentLabel": "Contenido / Análisis",
+    "contentPlaceholder": "Comparte tu análisis técnico, objetivo de precio, eventos catalizadores o perspicacia en cadena...",
+    "cancelBtn": "Cancelar",
+    "publishBtn": "Publicar",
+    "publishing": "Publicando...",
+    "errorMessage": "Por favor proporciona un título y el contenido de la publicación."
+  },
+  "CommunityPage": {
+    "badge": "🔥 Motor de Sentimiento de la Comunidad",
+    "heading": "Centro de Traders Kryptonal",
+    "description": "Registra tus posiciones de mayor convicción en plazos de 1 día, 1 semana, 1 mes o a largo plazo. Vota por los 10 activos con mejor rendimiento y participa en análisis alfa de la comunidad.",
+    "signInBtn": "Iniciar Sesión para Unirse y Votar",
+    "title": "Comunidad Cripto y Centro de Sentimiento Kryptonal"
+  },
+  "PortfolioTracker": {
+    "title": "💼 Tus Posiciones de Alta Convicción",
+    "subtitle": "Haz seguimiento y comparte tus principales posiciones cripto para cada horizonte temporal.",
+    "oneDay": "Horizonte de 1 Día",
+    "oneWeek": "Horizonte de 1 Semana",
+    "oneMonth": "Horizonte de 1 Mes",
+    "longTerm": "Largo Plazo",
+    "selectCoin": "Seleccionar Activo Cripto...",
+    "addHoldingBtn": "Añadir Posición",
+    "noHoldings": "Aún no hay posiciones registradas para este horizonte."
+  },
+  "VotingArena": {
+    "title": "🏆 Top 10 Activos de la Comunidad",
+    "subtitle": "Vota por los activos que crees que superarán al mercado.",
+    "rank": "Puesto",
+    "asset": "Activo",
+    "votes": "Votos de la Comunidad",
+    "action": "Votar",
+    "voted": "Votado",
+    "loginToVote": "Inicia sesión para votar"
+  },
+  "CommunityFeed": {
+    "title": "Únete a la Discusión",
+    "description": "Conecta tu cuenta para compartir gráficos, publicar análisis y votar en las predicciones de la comunidad.",
+    "signInBtn": "Iniciar Sesión con Google",
+    "loggedInAs": "Conectado como",
+    "welcomeHeading": "Bienvenido al Centro de la Comunidad Kryptonal",
+    "welcomeSubheading": "¡Estás listo para registrar tus posiciones de alta convicción, votar en las tablas de clasificación de mejores activos y publicar análisis de mercado!",
+    "enterBtn": "Entrar al Centro de la Comunidad Completo →",
+    "shareTitle": "Comparte Perspicacias del Mercado",
+    "shareSubtitle": "Â¿Tienes una llamada de alfa o un anÃ¡lisis tÃ©cnico? PubLÃ­calo aquÃ­ para posicionarte en Kryptonal y en los motores de bÃºsqueda.",
+    "feedTitle": "AnÃ¡lisis y Alfa Recientes",
+    "noPosts": "AÃºn no se han creado publicaciones. Â¡SÃ© el primer trader en publicar una llamada de alfa arriba!"
+  },
+  "storyReader": {
+    "badge": "Resumen de Inteligencia",
+    "trendingLabel": "Tendencia",
+    "scoreLabel": "Puntuación",
+    "readSourceBtn": "Leer Artículo Fuente ↗",
+    "discussBtn": "Discutir en la Comunidad"
   },
   "footer": {
     "description": "Análisis de capitalización del mercado cripto, investigación de ciclos de Bitcoin, educación blockchain, oportunidades Web3 e información sobre gaming cripto para aprendices del mercado a largo plazo.",

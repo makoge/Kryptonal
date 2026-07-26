@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import SessionProvider from "@/components/providers/SessionProvider";
 
 export default async function LocaleLayout({
   children,
@@ -9,5 +10,9 @@ export default async function LocaleLayout({
 }) {
   await params;
 
-  return <>{children}</>;
+  return (
+    <>
+      <SessionProvider>{children}</SessionProvider>
+    </>
+  );
 }

@@ -2962,16 +2962,90 @@
         "trending": "Trend"
       },
       "communityFeed": {
-        "title": "An der Diskussion teilnehmen",
-        "description": "Verbinden Sie Ihr Konto, um Charts zu teilen, Analysen zu veröffentlichen und über Community-Prognosen abzustimmen.",
-        "signInBtn": "Anmelden zum Mitmachen"
+        "title": "Nimm an der Diskussion teil",
+        "description": "Verbinde dein Konto, um Charts zu teilen, Analysen zu veröffentlichen und über Community-Prognosen abzustimmen.",
+        "signInBtn": "Mit Google anmelden",
+        "loggedInAs": "Angemeldet als",
+        "welcomeHeading": "Willkommen im Kryptonal Community Hub",
+        "welcomeSubheading": "Du bist bereit, deine Positionen mit hoher Überzeugung zu erfassen, für die besten Assets abzustimmen und Marktanalysen zu veröffentlichen!",
+        "enterBtn": "Zum vollständigen Community Hub →"
       }
-    },
-    "Sidebar": {
-      "liveMarket": "Live-Markt",
-      "proTools": "Interaktive Tools",
-      "exploreTools": "Alle Tools erkunden"
     }
+  },
+  "sidebar": {
+    "liveMarket": "Live-Markt",
+    "proTools": "Interaktive Tools",
+    "exploreTools": "Alle Tools erkunden",
+    "smartWatchlists": "Intelligente Beobachtungslisten",
+    "advancedCalculators": "Erweiterte Krypto-Rechner",
+    "addressValidator": "Wallet-Adressen-Validierer"
+  },
+  "SinglePost": {
+    "backLink": "← Zurück zum Community-Hub",
+    "by": "Von",
+    "anonymous": "Kryptonal-Trader",
+    "views": "Aufrufe",
+    "upvotes": "Upvotes"
+  },
+  "PostModal": {
+    "triggerBtn": "✍️ Alpha / Technische Analyse Posten",
+    "modalTitle": "Alpha-Beitrag Erstellen",
+    "titleLabel": "Beitragstitel (SEO-Optimiert)",
+    "titlePlaceholder": "z. B. Warum Solana ($SOL) sich auf einen Ausbruch in diesem Quartal vorbereitet",
+    "contentLabel": "Inhalt / Analyse",
+    "contentPlaceholder": "Teile deine technische Analyse, Kursziele, Katalysator-Events oder On-Chain-Einblicke...",
+    "cancelBtn": "Abbrechen",
+    "publishBtn": "Beitrag Veröffentlichen",
+    "publishing": "Wird veröffentlicht...",
+    "errorMessage": "Bitte gib sowohl einen Titel als auch Inhalt für den Beitrag ein."
+  },
+  "CommunityPage": {
+    "badge": "🔥 Community-Stimmungs-Engine",
+    "heading": "Kryptonal Trader Hub",
+    "description": "Erfasse deine Positionen mit hoher Überzeugung für Zeiträume von 1 Tag, 1 Woche, 1 Monat oder langfristig. Stimme für die Top 10 Performer-Assets ab und nimm an Alpha-Analysen der Community teil.",
+    "signInBtn": "Anmelden um Beizutreten & Abzustimmen",
+    "title": "Kryptonal Krypto-Community & Stimmungs-Hub"
+  },
+  "PortfolioTracker": {
+    "title": "💼 Deine Top-Positionen",
+    "subtitle": "Verfolge und teile deine besten Krypto-Positionen für jeden Zeithorizont.",
+    "oneDay": "1-Tages-Horizont",
+    "oneWeek": "1-Wochen-Horizont",
+    "oneMonth": "1-Monats-Horizont",
+    "longTerm": "Langzeit-Hold",
+    "selectCoin": "Krypto-Asset auswählen...",
+    "addHoldingBtn": "Position Hinzufügen",
+    "noHoldings": "Noch keine Positionen für diesen Zeitraum erfasst."
+  },
+  "VotingArena": {
+    "title": "🏆 Top 10 Community-Performer",
+    "subtitle": "Stimme für die Assets ab, von denen du glaubst, dass sie den Markt schlagen werden.",
+    "rank": "Rang",
+    "asset": "Asset",
+    "votes": "Community-Stimmen",
+    "action": "Abstimmen",
+    "voted": "Abgestimmt",
+    "loginToVote": "Anmelden zum Abstimmen"
+  },
+  "CommunityFeed": {
+    "title": "Nimm an der Diskussion teil",
+    "description": "Verbinde dein Konto, um Charts zu teilen, Analysen zu veröffentlichen und über Community-Prognosen abzustimmen.",
+    "signInBtn": "Mit Google anmelden",
+    "loggedInAs": "Angemeldet als",
+    "welcomeHeading": "Willkommen im Kryptonal Community Hub",
+    "welcomeSubheading": "Du bist bereit, deine Positionen mit hoher Überzeugung zu erfassen, für die besten Assets abzustimmen und Marktanalysen zu veröffentlichen!",
+    "enterBtn": "Zum vollständigen Community Hub →",
+    "shareTitle": "Teile deine Markt-Einblicke",
+    "shareSubtitle": "Hast du einen Alpha-Call oder eine technische Analyse? Veröffentliche sie hier, um auf Kryptonal und in Suchmaschinen zu ranken.",
+    "feedTitle": "Neueste Alpha-Beiträge & Analysen",
+    "noPosts": "Noch keine Beiträge erstellt. Sei der erste Trader, der oben einen Alpha-Call veröffentlicht!"
+  },
+  "storyReader": {
+    "badge": "Intel-Briefing",
+    "trendingLabel": "Trend",
+    "scoreLabel": "Score",
+    "readSourceBtn": "Originalartikel lesen ↗",
+    "discussBtn": "In der Community diskutieren"
   },
   "footer": {
     "description": "Analyse der Krypto-Marktkapitalisierung, Bitcoin-Zyklusforschung, Blockchain-Bildung, Web3-Möglichkeiten und Gaming-Krypto-Einblicke für langfristige Marktlernende.",

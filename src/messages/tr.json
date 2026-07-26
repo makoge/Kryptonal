@@ -2963,15 +2963,89 @@
       },
       "communityFeed": {
         "title": "Tartışmaya Katılın",
-        "description": "Grafikleri paylaşmak, analiz yayınlamak ve topluluk tahminlerinde oy kullanmak için hesabınızı bağlayın.",
-        "signInBtn": "Katılmak İçin Giriş Yapın"
+        "description": "Grafikleri paylaşmak, analiz yayınlamak ve topluluk tahminlerine oy vermek için hesabınızı bağlayın.",
+        "signInBtn": "Google ile Giriş Yapın",
+        "loggedInAs": "Giriş yapıldı:",
+        "welcomeHeading": "Kryptonal Topluluk Merkezine Hoş Geldiniz",
+        "welcomeSubheading": "Yüksek potansiyelli yatırımlarınızı kaydetmeye, en iyiler listesine oy vermeye ve piyasa analizi paylaşmaya hazırsınız!",
+        "enterBtn": "Tüm Topluluk Merkezine Git →"
       }
-    },
-    "Sidebar": {
-      "liveMarket": "Canlı Piyasa",
-      "proTools": "Etkileşimli Araçlar",
-      "exploreTools": "Tüm Araçları Keşfet"
     }
+  },
+  "sidebar": {
+    "liveMarket": "Canlı Piyasa",
+    "proTools": "Etkileşimli Araçlar",
+    "exploreTools": "Tüm Araçları Keşfet",
+    "smartWatchlists": "Akıllı Takip Listeleri",
+    "advancedCalculators": "Gelişmiş Kripto Hesaplayıcıları",
+    "addressValidator": "Cüzdan Adresi Doğrulayıcı"
+  },
+  "SinglePost": {
+    "backLink": "← Topluluk Merkezine Dön",
+    "by": "Yazar:",
+    "anonymous": "Kryptonal Tüccarı",
+    "views": "görüntülenme",
+    "upvotes": "olumlu oy"
+  },
+  "PostModal": {
+    "triggerBtn": "✍️ Alfa / Teknik Analiz Paylaş",
+    "modalTitle": "Alfa Gönderisi Oluştur",
+    "titleLabel": "Gönderi Başlığı (SEO Uyumlu)",
+    "titlePlaceholder": "ör. Solana ($SOL) Neden Bu Çeyrekte Yükselişe Hazırlanıyor?",
+    "contentLabel": "İçerik / Analiz",
+    "contentPlaceholder": "Teknik analizinizi, hedef fiyatınızı, katalizör gelişmeleri veya zincir üstü (on-chain) içgörülerinizi paylaşın...",
+    "cancelBtn": "İptal",
+    "publishBtn": "Gönderiyi Yayınla",
+    "publishing": "Yayınlanıyor...",
+    "errorMessage": "Lütfen hem bir başlık hem de gönderi içeriği girin."
+  },
+  "CommunityPage": {
+    "badge": "🔥 Topluluk Duygu Analizi Motoru",
+    "heading": "Kryptonal Tüccar Merkezi",
+    "description": "1 Günlük, 1 Haftalık, 1 Aylık veya Uzun Vadeli zaman dilimlerinde yüksek potansiyelli yatırımlarınızı kaydedin. En iyi performans gösteren 10 varlık için oy kullanın ve alfa paylaşımlarına katılın.",
+    "signInBtn": "Katılmak ve Oy Kullanmak İçin Giriş Yapın",
+    "title": "Kryptonal Kripto Topluluğu ve Duygu Analizi Merkezi"
+  },
+  "PortfolioTracker": {
+    "title": "💼 Yüksek Potansiyelli Yatırımlarınız",
+    "subtitle": "Her zaman dilimi için öne çıkan kripto pozisyonlarınızı takip edin ve paylaşın.",
+    "oneDay": "1 Günlük Vade",
+    "oneWeek": "1 Haftalık Vade",
+    "oneMonth": "1 Aylık Vade",
+    "longTerm": "Uzun Vadeli Tutuş",
+    "selectCoin": "Kripto Varlık Seçin...",
+    "addHoldingBtn": "Pozisyon Ekle",
+    "noHoldings": "Bu vade için henüz kaydedilmiş bir yatırım yok."
+  },
+  "VotingArena": {
+    "title": "🏆 Topluluğun En İyi 10 Performansı",
+    "subtitle": "Piyasayı geride bırakacağına inandığınız varlıklara oy verin.",
+    "rank": "Sıra",
+    "asset": "Varlık",
+    "votes": "Topluluk Oyları",
+    "action": "Oy Ver",
+    "voted": "Oylandı",
+    "loginToVote": "Oy vermek için giriş yapın"
+  },
+  "CommunityFeed": {
+    "title": "Tartışmaya Katılın",
+    "description": "Grafikleri paylaşmak, analiz yayınlamak ve topluluk tahminlerine oy vermek için hesabınızı bağlayın.",
+    "signInBtn": "Google ile Giriş Yapın",
+    "loggedInAs": "Giriş yapıldı:",
+    "welcomeHeading": "Kryptonal Topluluk Merkezine Hoş Geldiniz",
+    "welcomeSubheading": "Yüksek potansiyelli yatırımlarınızı kaydetmeye, en iyiler listesine oy vermeye ve piyasa analizi paylaşmaya hazırsınız!",
+    "enterBtn": "Tüm Topluluk Merkezine Git →",
+    "shareTitle": "Piyasa İçgörülerinizi Paylaşın",
+    "shareSubtitle": "Bir alfa paylaşımınız veya teknik analiziniz mi var? Kryptonal ve arama motorlarında öne çıkmak için hemen yayınlayın.",
+    "feedTitle": "Son Alfa Paylaşımları ve Analizler",
+    "noPosts": "Henüz bir gönderi oluşturulmadı. İlk alfa paylaşımını yapan tüccar siz olun!"
+  },
+  "storyReader": {
+    "badge": "Istihbarat Özeti",
+    "trendingLabel": "Trend",
+    "scoreLabel": "Puanı",
+    "readSourceBtn": "Kaynak Makaleyi Oku ↗",
+    "discussBtn": "Toplulukta Tartış"
   },
   "footer": {
     "description": "Uzun vadeli piyasa öğrenicileri için kripto piyasa değeri analizi, Bitcoin döngü araştırmaları, blockchain eğitimi, Web3 fırsatları ve gaming crypto içgörüleri.",

@@ -2973,14 +2973,88 @@
       "communityFeed": {
         "title": "Rejoignez la Discussion",
         "description": "Connectez votre compte pour partager des graphiques, publier des analyses et voter sur les prédictions de la communauté.",
-        "signInBtn": "Se Connecter pour Participer"
+        "signInBtn": "Se Connecter avec Google",
+        "loggedInAs": "Connecté en tant que",
+        "welcomeHeading": "Bienvenue sur le Hub Communautaire Kryptonal",
+        "welcomeSubheading": "Vous êtes prêt à enregistrer vos positions à forte conviction, voter pour les meilleurs actifs et publier vos analyses de marché !",
+        "enterBtn": "Accéder au Hub Communautaire →"
       }
-    },
-    "Sidebar": {
-      "liveMarket": "Marché en Direct",
-      "proTools": "Outils Interactifs",
-      "exploreTools": "Explorer Tous les Outils"
     }
+  },
+  "SinglePost": {
+    "backLink": "← Retour au Hub Communautaire",
+    "by": "Par",
+    "anonymous": "Trader Kryptonal",
+    "views": "vues",
+    "upvotes": "votes positifs"
+  },
+  "PostModal": {
+    "triggerBtn": "✍️ Publier une Analyse / Alpha",
+    "modalTitle": "Créer une Publication Alpha",
+    "titleLabel": "Titre de la Publication (Optimisé SEO)",
+    "titlePlaceholder": "ex. Pourquoi Solana ($SOL) se prépare à une hausse ce trimestre",
+    "contentLabel": "Contenu / Analyse",
+    "contentPlaceholder": "Partagez votre analyse technique, objectif de prix, événements catalyseurs ou données on-chain...",
+    "cancelBtn": "Annuler",
+    "publishBtn": "Publier",
+    "publishing": "Publication en cours...",
+    "errorMessage": "Veuillez fournir un titre et le contenu de la publication."
+  },
+  "CommunityPage": {
+    "badge": "🔥 Moteur de Sentiment de la Communauté",
+    "heading": "Hub des Traders Kryptonal",
+    "description": "Enregistrez vos positions à forte conviction sur des horizons de 1 jour, 1 semaine, 1 mois ou à long terme. Votez pour les 10 actifs les plus performants et participez aux analyses alpha de la communauté.",
+    "signInBtn": "Se Connecter pour Rejoindre et Voter",
+    "title": "Communauté Cripto & Hub de Sentiment Kryptonal"
+  },
+  "PortfolioTracker": {
+    "title": "💼 Vos Positions à Forte Conviction",
+    "subtitle": "Suivez et partagez vos meilleures positions crypto pour chaque horizon temporel.",
+    "oneDay": "Horizon 1 Jour",
+    "oneWeek": "Horizon 1 Semaine",
+    "oneMonth": "Horizon 1 Mois",
+    "longTerm": "Maintien à Long Terme",
+    "selectCoin": "Sélectionner un Actif Crypto...",
+    "addHoldingBtn": "Ajouter une Position",
+    "noHoldings": "Aucune position enregistrée pour cet horizon pour le moment."
+  },
+  "VotingArena": {
+    "title": "🏆 Top 10 des Actifs de la Communauté",
+    "subtitle": "Votez pour les actifs qui, selon vous, surpasseront le marché.",
+    "rank": "Rang",
+    "asset": "Actif",
+    "votes": "Votes de la Communauté",
+    "action": "Voter",
+    "voted": "Voté",
+    "loginToVote": "Connectez-vous pour voter"
+  },
+  "CommunityFeed": {
+    "title": "Rejoignez la Discussion",
+    "description": "Connectez votre compte pour partager des graphiques, publier des analyses et voter sur les prédictions de la communauté.",
+    "signInBtn": "Se Connecter avec Google",
+    "loggedInAs": "Connecté en tant que",
+    "welcomeHeading": "Bienvenue sur le Hub Communautaire Kryptonal",
+    "welcomeSubheading": "Vous êtes prêt à enregistrer vos positions à forte conviction, voter pour les meilleurs actifs et publier vos analyses de marché !",
+    "enterBtn": "Accéder au Hub Communautaire →",
+    "shareTitle": "Partagez vos Analyses de Marché",
+    "shareSubtitle": "Vous avez un call alpha ou une analyse technique ? Publiez-le ici pour vous positionner sur Kryptonal et les moteurs de recherche.",
+    "feedTitle": "Analyses et Alpha Récents",
+    "noPosts": "Aucune publication créée pour le moment. Soyez le premier trader à publier un call alpha ci-dessus !"
+  },
+  "storyReader": {
+    "badge": "Flash Info",
+    "trendingLabel": "Tendance",
+    "scoreLabel": "Score",
+    "readSourceBtn": "Lire l'Article Source ↗",
+    "discussBtn": "Discuter dans la Communauté"
+  },
+  "sidebar": {
+    "liveMarket": "Marché en Direct",
+    "proTools": "Outils Interactifs",
+    "exploreTools": "Explorer Tous les Outils",
+    "smartWatchlists": "Listes de Suivi Intelligentes",
+    "advancedCalculators": "Calculateurs Crypto Avancés",
+    "addressValidator": "Validateur d'Adresse de Portefeuille"
   },
   "footer": {
     "description": "Analyse de la capitalisation du marché crypto, recherche sur les cycles Bitcoin, éducation blockchain, opportunités Web3 et analyses gaming crypto pour les apprenants du marché à long terme.",
