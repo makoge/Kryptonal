@@ -12,19 +12,30 @@ import {
 type Props = {
   locale: string;
   t: any;
+  initialUsage: Record<string, number>;
 };
 
 function getNested(obj: any, path: string) {
   return path.split(".").reduce((acc, key) => acc?.[key], obj);
 }
 
-export default function ToolsPageClient({ locale, t }: Props) {
+export default function ToolsPageClient({ locale, t, initialUsage }: Props) {
   const [active, setActive] = useState<ToolCategory>("all");
 
   const tools = useMemo(() => {
-    if (active === "all") return KRYPTONAL_TOOLS;
-    return KRYPTONAL_TOOLS.filter((tool) => tool.category === active);
-  }, [active]);
+    // 1. Filter tools by category as usual
+    const filteredTools =
+      active === "all"
+        ? KRYPTONAL_TOOLS
+        : KRYPTONAL_TOOLS.filter((tool) => tool.category === active);
+
+    // 2. Map over them to inject the real database count
+    return filteredTools.map((tool) => ({
+      ...tool,
+      // If it exists in DB, use that real number. Otherwise, fallback to the hardcoded count.
+      usageCount: initialUsage[tool.slug] ?? tool.usageCount,
+    }));
+  }, [active, initialUsage]);
 
   return (
     <main className="min-h-screen overflow-hidden bg-slate-950 text-white">
@@ -92,12 +103,8 @@ export default function ToolsPageClient({ locale, t }: Props) {
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl rounded-[32px] border border-white/10 bg-white/[0.045] p-6 backdrop-blur-xl sm:p-10">
-          <h2 className="text-3xl font-black tracking-tight">
-            {t.whyTitle}
-          </h2>
-          <p className="mt-4 max-w-4xl text-slate-300 leading-8">
-            {t.whyText}
-          </p>
+          <h2 className="text-3xl font-black tracking-tight">{t.whyTitle}</h2>
+          <p className="mt-4 max-w-4xl text-slate-300 leading-8">{t.whyText}</p>
         </div>
       </section>
 
@@ -137,9 +144,7 @@ export default function ToolsPageClient({ locale, t }: Props) {
 
       <section className="px-4 pb-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl rounded-[36px] border border-emerald-300/20 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.16),rgba(15,23,42,0.7))] p-8 text-center shadow-[0_0_60px_rgba(52,211,153,0.12)] sm:p-12">
-          <h2 className="text-3xl font-black sm:text-5xl">
-            {t.finalTitle}
-          </h2>
+          <h2 className="text-3xl font-black sm:text-5xl">{t.finalTitle}</h2>
 
           <a
             href={`/${locale}/market-cap`}

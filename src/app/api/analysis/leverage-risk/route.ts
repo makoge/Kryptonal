@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+// Force Vercel to execute this route in Frankfurt, Germany (bypasses the US Geo-block)
+export const preferredRegion = "fra1";
 export const revalidate = 60;
 
 const SYMBOLS = ["BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT"];
@@ -43,11 +45,11 @@ async function safeJson(urlOrUrls: string | string[]) {
         headers: { "User-Agent": "Kryptonal/1.0" },
       });
 
-      if (!res.ok){
-  const text = await res.text();
-  console.log("FAILED:", url, res.status, text.slice(0, 200));
-  continue;
-}
+      if (!res.ok) {
+        const text = await res.text();
+        console.log("FAILED:", url, res.status, text.slice(0, 200));
+        continue;
+      }
       return await res.json();
     } catch {
       continue;
@@ -84,10 +86,10 @@ function getMarketRiskScore(item: Market) {
     item.openInterestUsd >= 15_000_000_000
       ? 25
       : item.openInterestUsd >= 5_000_000_000
-      ? 15
-      : item.openInterestUsd > 0
-      ? 8
-      : 0;
+        ? 15
+        : item.openInterestUsd > 0
+          ? 8
+          : 0;
 
   return Math.round(clamp(fundingRisk + oiRisk, 0, 100));
 }
@@ -136,10 +138,10 @@ async function getBinanceMarket(symbol: string): Promise<Market | null> {
 async function getBybitMarket(symbol: string): Promise<Market | null> {
   const [ticker, oi] = await Promise.all([
     safeJson(
-      `https://api.bybit.com/v5/market/tickers?category=linear&symbol=${symbol}`
+      `https://api.bybit.com/v5/market/tickers?category=linear&symbol=${symbol}`,
     ),
     safeJson(
-      `https://api.bybit.com/v5/market/open-interest?category=linear&symbol=${symbol}&intervalTime=5min`
+      `https://api.bybit.com/v5/market/open-interest?category=linear&symbol=${symbol}&intervalTime=5min`,
     ),
   ]);
 
@@ -167,8 +169,8 @@ async function getBybitMarket(symbol: string): Promise<Market | null> {
 
 async function getMarket(symbol: string) {
   const binance = await getBinanceMarket(symbol);
-  const market =
-    binance || (await getBybitMarket(symbol)) || {
+  const market = binance ||
+    (await getBybitMarket(symbol)) || {
       symbol,
       fundingRate: 0,
       fundingRatePct: 0,
@@ -202,14 +204,14 @@ export async function GET() {
 
   const totalOpenInterestUsd = validMarkets.reduce(
     (sum, item) => sum + item.openInterestUsd,
-    0
+    0,
   );
 
   const fundingRisk =
     validMarkets.length > 0
       ? validMarkets.reduce(
           (sum, item) => sum + getFundingRisk(item.fundingRate),
-          0
+          0,
         ) / validMarkets.length
       : 0;
 

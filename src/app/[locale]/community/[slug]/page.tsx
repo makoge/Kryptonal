@@ -4,15 +4,19 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getDictionary } from "@/lib/getDictionary";
+import UpvoteButton from "@/components/community/UpvoteButton";
 
 export default async function SinglePostPage({
   params,
 }: {
-  params: { locale: string; slug: string };
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  // 1. Fetch the single post matching the URL slug
+  // 1. Await params first (Required for Next.js 15)
+  const { locale, slug } = await params;
+
+  // 2. Fetch the single post matching the URL slug
   const post = await prisma.post.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     include: {
       author: {
         select: { name: true, image: true, email: true },
@@ -31,10 +35,10 @@ export default async function SinglePostPage({
     data: { views: { increment: 1 } },
   });
 
-  const dict = await getDictionary(params.locale);
+  const dict = await getDictionary(locale);
   const t = dict?.SinglePost;
 
-  // 2. Schema.org JSON-LD for Google SEO Indexing
+  // 3. Schema.org JSON-LD for Google SEO Indexing
   const postJsonLd = {
     "@context": "https://schema.org",
     "@type": "DiscussionForumPosting",
@@ -62,7 +66,10 @@ export default async function SinglePostPage({
 
       <article className="mx-auto max-w-3xl px-4">
         {/* Back Link */}
-        <Link href={`/${params.locale}/community`} className="...">
+        <Link
+          href={`/${locale}/community`}
+          className="text-emerald-400 hover:underline text-sm mb-6 inline-block"
+        >
           {t?.backLink || "← Back to Community Hub"}
         </Link>
 
@@ -82,16 +89,18 @@ export default async function SinglePostPage({
                 "Kryptonal Trader"}
             </span>
             <span>•</span>
-            <span>{new Date(post.createdAt).toLocaleDateString()}</span>
+            <span>{new Date(post.createdAt).toLocaleDateString(locale)}</span>
           </div>
 
           <div className="flex items-center gap-4">
             <span>
               👁️ {post.views + 1} {t?.views || "views"}
             </span>
-            <span className="text-emerald-400 font-bold">
-              ▲ {post.upvotes} {t?.upvotes || "upvotes"}
-            </span>
+            <UpvoteButton
+              postId={post.id}
+              initialUpvotes={post.upvotes}
+              label={t?.upvotes || "upvotes"}
+            />
           </div>
         </div>
 

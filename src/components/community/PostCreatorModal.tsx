@@ -84,7 +84,7 @@ export default function PostCreatorModal({
 
       {/* Modal Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-md">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-md">
           <div className="relative w-full max-w-2xl rounded-2xl border border-white/10 bg-slate-900 p-6 shadow-2xl">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <h3 className="text-lg font-bold text-white">
@@ -98,7 +98,10 @@ export default function PostCreatorModal({
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="mt-4 space-y-4">
+            <form
+              onSubmit={handleSubmit}
+              className="relative z-30 mt-4 space-y-4"
+            >
               {error && (
                 <div className="rounded-lg border border-red-500/20 bg-red-500/10 p-3 text-xs text-red-400">
                   {error}
@@ -107,7 +110,7 @@ export default function PostCreatorModal({
 
               <div>
                 <label className="block text-xs font-semibold text-slate-300 mb-1">
-                  {dict?.titleLabel || "Post Title (SEO Optimized)"}
+                  {dict?.titleLabel || "Post Title "}
                 </label>
                 <input
                   type="text"

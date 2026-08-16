@@ -79,6 +79,11 @@ type PriceCoin = {
   price: number;
 };
 
+interface PrivacyWatchlistProps {
+  t?: any;
+  defaultCoin?: string;
+}
+
 const DEFAULT_COPY = {
   badge: "Private Portfolio Tool",
   title: "Crypto Portfolio Tracker",
@@ -115,6 +120,7 @@ const DEFAULT_COPY = {
   cost: "Cost",
   pnl: "P/L",
   noHoldings: "Add your first holding to start tracking your crypto portfolio.",
+  updatingPrices: "Updating live prices...",
   seoTitle: "Crypto Portfolio Tracker Guide",
   faqBestTrackerQ: "What is the best portfolio tracker for crypto?",
   faqBestTrackerA:
@@ -146,7 +152,10 @@ function pct(value: number) {
   return `${value >= 0 ? "+" : ""}${value.toFixed(2)}%`;
 }
 
-export default function PrivacyWatchlist({ t }: { t?: any }) {
+export default function PrivacyWatchlist({
+  t,
+  defaultCoin = "bitcoin",
+}: PrivacyWatchlistProps) {
   const copy = { ...DEFAULT_COPY, ...(t?.tools?.privacyWatchlist || {}) };
 
   const [holdings, setHoldings] = useState<Holding[]>([]);
@@ -224,10 +233,15 @@ export default function PrivacyWatchlist({ t }: { t?: any }) {
   }, [ids]);
 
   function addHolding() {
+    // Pre-select the defaultCoin passed from pSEO page if valid, else fallback to 'bitcoin'
+    const initialCoin = AVAILABLE_COINS.some((c) => c.id === defaultCoin)
+      ? defaultCoin
+      : "bitcoin";
+
     setHoldings((prev) => [
       ...prev,
       {
-        id: "bitcoin",
+        id: initialCoin,
         amount: "",
         entryPrice: "",
         alertAbove: "",

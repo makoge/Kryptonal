@@ -1,25 +1,30 @@
 import { NextRequest, NextResponse } from "next/server";
+import OpenAI from "openai";
 
-type Mode = "all" | "market" | "stablecoins" | "chains" | "sectors" | "leverage";
+const groq = new OpenAI({
+  apiKey: process.env.GROQ_API_KEY,
+  baseURL: "https://api.groq.com/openai/v1",
+});
 
-function formatUsd(value: number) {
-  if (!value) return "$0";
-  if (value >= 1_000_000_000_000) return `$${(value / 1_000_000_000_000).toFixed(2)}T`;
-  if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(2)}B`;
-  if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(2)}M`;
-  return `$${value.toFixed(0)}`;
-}
+type Mode =
+  | "all"
+  | "market"
+  | "stablecoins"
+  | "chains"
+  | "sectors"
+  | "leverage";
 
-function formatPct(value: number) {
-  return `${value >= 0 ? "+" : ""}${value.toFixed(2)}%`;
-}
+// --- RATE LIMITING SETUP ---
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const MAX_GUEST_CALLS = 10;
+const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+// ---------------------------
 
 async function safeFetch(origin: string, path: string) {
   try {
     const res = await fetch(`${origin}${path}`, {
       next: { revalidate: 60 },
     });
-
     if (!res.ok) return null;
     return res.json();
   } catch {
@@ -27,115 +32,38 @@ async function safeFetch(origin: string, path: string) {
   }
 }
 
-function makeMarketAnalysis(market: any) {
-  if (!market) return null;
-
-  return {
-    title: "Market Overview",
-    summary: `The crypto market is currently in a ${market.marketPhase} phase with ${market.riskLevel} risk.`,
-    what: `Total market cap is ${formatUsd(market.totalMarketCap)}, with a 24h move of ${formatPct(market.marketCapChange24h)}. Bitcoin dominance is ${market.btcDominance?.toFixed(2)}% and Ethereum dominance is ${market.ethDominance?.toFixed(2)}%.`,
-    why: market.summary,
-    outcomes:
-      market.marketCapChange24h > 0
-        ? "If liquidity keeps improving, the market may continue rotating into stronger assets. If momentum fades, traders may return to Bitcoin or stablecoins."
-        : "If weakness continues, capital may become defensive. Bitcoin dominance and stablecoin flows should be watched closely.",
-    takeaway: market.marketHint,
-  };
-}
-
-function makeStableAnalysis(stable: any) {
-  if (!stable) return null;
-
-  const topChain = stable.chains?.[0];
-
-  return {
-    title: "Stablecoin Liquidity",
-    summary:
-      stable.flowSignal === "entering"
-        ? "Stablecoin liquidity is entering the market."
-        : stable.flowSignal === "leaving"
-          ? "Stablecoin liquidity is leaving the market."
-          : "Stablecoin liquidity is mostly neutral.",
-    what: `Total stablecoin liquidity is ${formatUsd(stable.totalStablecoins)}. The 7-day change is ${formatPct(stable.change7dPct)}. The largest stablecoin chain is ${topChain?.chain || "N/A"} with about ${topChain?.dominance?.toFixed(2) || "0"}% dominance.`,
-    why:
-      "Stablecoins matter because they are often the cash waiting to enter crypto trades. Rising stablecoin supply can support stronger market conditions, while falling supply can show capital leaving.",
-    outcomes:
-      stable.change7dPct > 0
-        ? "If stablecoin liquidity keeps rising, the market has more fuel for future buying pressure."
-        : "If stablecoin liquidity keeps falling, rallies may become weaker because less fresh capital is available.",
-    takeaway:
-      "This signal helps users understand whether crypto has fresh liquidity behind the move or if price is moving without strong capital support.",
-  };
-}
-
-function makeChainAnalysis(chains: any) {
-  if (!chains?.chains?.length) return null;
-
-  const strongest = chains.chains[0];
-  const weakest = chains.chains[chains.chains.length - 1];
-
-  return {
-    title: "Chain Strength",
-    summary: `${strongest.name} is currently the strongest tracked ecosystem by Kryptonal’s chain score.`,
-    what: `${strongest.name} has ${formatUsd(strongest.tvl)} TVL, ${strongest.protocols} protocols, ${formatPct(strongest.change7d)} 7D growth, and ${formatPct(strongest.change1m)} 1M growth.`,
-    why:
-      "Chain strength measures where liquidity, app activity, and ecosystem momentum are strongest. A chain with rising TVL and many protocols usually has healthier activity.",
-    outcomes:
-      strongest.change7d > 0
-        ? `${strongest.name} may continue attracting attention if TVL and protocol activity keep growing.`
-        : `Even the strongest chain needs caution if TVL momentum is slowing.`,
-    takeaway: `${weakest.name} is currently weaker compared with the top chains, so users should avoid assuming every ecosystem is moving equally.`,
-  };
-}
-
-function makeSectorAnalysis(sectors: any) {
-  if (!sectors?.sectors?.length) return null;
-
-  const top = sectors.sectors[0];
-  const hot = sectors.sectors.find((s: any) => s.signal === "Hot" || s.signal === "hot");
-
-  return {
-    title: "Sector Rotation",
-    summary: `${top.name} is currently leading the tracked crypto sectors.`,
-    what: `${top.name} has ${formatUsd(top.tvl)} TVL, ${top.protocols} protocols, and ${formatPct(top.change7d)} 7D momentum.`,
-    why:
-      "Sector rotation shows where capital is moving inside crypto. When one sector gains TVL faster than others, it can show a growing narrative.",
-    outcomes: hot
-      ? `${hot.name} looks hot right now, but users should be careful because hot sectors can cool fast after crowded moves.`
-      : "No sector looks extremely hot right now, so the market may be more selective than broad-based.",
-    takeaway:
-      "This helps users avoid chasing random coins and instead understand which crypto narratives are gaining or losing strength.",
-  };
-}
-
-function makeLeverageAnalysis(leverage: any) {
-  if (!leverage) return null;
-
-  return {
-    title: "Leverage Risk",
-    summary: `Leverage risk is currently ${leverage.riskLevel}.`,
-    what: `The leverage risk score is ${leverage.riskScore}/100. Average funding is ${formatPct(leverage.avgFundingRatePct)}, and total open interest is ${formatUsd(leverage.totalOpenInterestUsd)}.`,
-    why:
-      "Leverage matters because too many crowded futures positions can cause fast liquidations. High funding often means traders are leaning too heavily in one direction.",
-    outcomes:
-      leverage.riskLevel === "dangerous" || leverage.riskLevel === "heated"
-        ? "If price moves against crowded traders, the market could see a sharp liquidation move."
-        : "If leverage stays controlled, price moves may be healthier and less liquidation-driven.",
-    takeaway:
-      leverage.positionBias === "longCrowded"
-        ? "Long traders are crowded, so upside can continue but downside liquidation risk is higher."
-        : leverage.positionBias === "shortCrowded"
-          ? "Short traders are crowded, so a short squeeze is possible if price rises."
-          : "Positioning looks balanced, which is healthier for the market.",
-  };
-}
-
 export async function POST(req: NextRequest) {
   try {
+    // --- RATE LIMIT CHECK ---
+    // Note: If you have an authentication system (like NextAuth or Clerk),
+    // you would check for a session here and skip this limit for signed-in users.
+    const ip =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const now = Date.now();
+
+    let userLimit = rateLimitMap.get(ip);
+
+    // If the user's record is missing or expired, reset it
+    if (!userLimit || now > userLimit.resetAt) {
+      userLimit = { count: 0, resetAt: now + ONE_DAY_MS };
+    }
+
+    if (userLimit.count >= MAX_GUEST_CALLS) {
+      return NextResponse.json(
+        { error: "Daily limit reached." },
+        { status: 429 }, // HTTP 429: Too Many Requests
+      );
+    }
+
+    // Increment the count and save it
+    userLimit.count += 1;
+    rateLimitMap.set(ip, userLimit);
+    // ------------------------
     const body = await req.json();
     const mode: Mode = body.mode || "all";
     const origin = req.nextUrl.origin;
 
+    // 1. Fetch live market telemetry
     const [market, stable, chains, sectors, leverage] = await Promise.all([
       safeFetch(origin, "/api/crypto/market-cap"),
       safeFetch(origin, "/api/analysis/stablecoins"),
@@ -144,31 +72,97 @@ export async function POST(req: NextRequest) {
       safeFetch(origin, "/api/analysis/leverage-risk"),
     ]);
 
-    const allSections = {
-      market: makeMarketAnalysis(market),
-      stablecoins: makeStableAnalysis(stable),
-      chains: makeChainAnalysis(chains),
-      sectors: makeSectorAnalysis(sectors),
-      leverage: makeLeverageAnalysis(leverage),
-    };
+    // 2. Select only the data relevant to the chosen mode
+    let targetData: any = {};
+    let modeInstructions = "";
 
-    const sections =
-      mode === "all"
-        ? Object.values(allSections).filter(Boolean)
-        : [allSections[mode]].filter(Boolean);
+    switch (mode) {
+      case "stablecoins":
+        targetData = { stablecoins: stable };
+        modeInstructions = `Analyze ONLY Stablecoin Liquidity & Supply Flows. Evaluate whether fresh capital is entering (dry powder) or exiting crypto, and determine the direct liquidity impact on market depth.`;
+        break;
+      case "sectors":
+        targetData = { sectors: sectors };
+        modeInstructions = `Analyze ONLY Crypto Sector Rotation & Narrative Momentum. Identify which sectors are absorbing liquidity, which are bleeding, and whether narrative strength is broad or isolated.`;
+        break;
+      case "leverage":
+        targetData = { leverage: leverage };
+        modeInstructions = `Analyze ONLY Derivatives Leverage, Funding Rates, and Open Interest. Evaluate if funding is overheated, if long/short squeeze risk is imminent, and whether leverage is healthy or dangerous.`;
+        break;
+      case "chains":
+        targetData = { chains: chains };
+        modeInstructions = `Analyze ONLY Layer-1 & Layer-2 Blockchain Ecosystems and TVL growth. Identify capital concentration between major chains.`;
+        break;
+      case "market":
+        targetData = { market: market };
+        modeInstructions = `Analyze ONLY Macro Market Cap, Cycle Phase, and Bitcoin/Ethereum Dominance.`;
+        break;
+      case "all":
+      default:
+        targetData = { market, stablecoins: stable, chains, sectors, leverage };
+        modeInstructions = `Provide a comprehensive multi-pillar briefing covering Macro Market, Stablecoins, Chains, Sectors, and Leverage.`;
+        break;
+    }
 
-    const conclusion =
-      mode === "all"
-        ? "Overall, the best market read comes from combining price, liquidity, chain strength, sector rotation, and leverage. A healthy market usually needs improving liquidity, strong chain activity, rising sectors, and controlled leverage."
-        : "This signal should not be used alone. Strong analysis comes from comparing it with liquidity, market trend, chain strength, and leverage risk.";
+    // 3. Prompt forcing signal classification & impact
+    const systemPrompt = `
+You are a senior quantitative crypto strategist at Kryptonal.
+Deliver a sharp, realistic, and institutional intelligence briefing.
+
+TASK:
+${modeInstructions}
+
+STRICT GUIDELINES:
+1. ONLY discuss the requested focus area (${mode.toUpperCase()}). Do not mention unrelated topics unless mode is "all".
+2. Classify the overall market signal and each section's signal as strictly one of: "Bullish", "Bearish", or "Neutral".
+3. Plain English with high realism: Cite specific numbers from the data (e.g., funding rates, TVL change %, dominance %) and explain the direct market impact clearly.
+4. Avoid generic filler statements like "the market is doing things". Provide clear, actionable takeaways.
+
+RESPONSE FORMAT:
+Return strictly valid JSON matching this exact structure:
+{
+  "marketSignal": "Bullish" | "Bearish" | "Neutral",
+  "conclusion": "A direct 2-sentence executive briefing summarizing the impact and bias.",
+  "sections": [
+    {
+      "title": "Clear Section Title",
+      "signal": "Bullish" | "Bearish" | "Neutral",
+      "summary": "1-sentence concise bottom line.",
+      "what": "Exact metrics, numbers, and data points observed.",
+      "why": "Why this matters to traders and capital flows.",
+      "outcomes": "Projected market impact and potential scenario.",
+      "takeaway": "Actionable risk or opportunity takeaway."
+    }
+  ]
+}
+
+LIVE TELEMETRY DATA:
+${JSON.stringify(targetData)}
+`;
+
+    const completion = await groq.chat.completions.create({
+      model: "llama-3.1-8b-instant",
+      messages: [{ role: "system", content: systemPrompt }],
+      response_format: { type: "json_object" },
+      temperature: 0.5, // Reduced slightly for tighter data grounding & sharper analysis
+    });
+
+    const generatedBrief = JSON.parse(
+      completion.choices[0].message.content || "{}",
+    );
 
     return NextResponse.json({
       mode,
-      sections,
-      conclusion,
+      marketSignal: generatedBrief.marketSignal || "Neutral",
+      conclusion: generatedBrief.conclusion || "Analysis generated.",
+      sections: generatedBrief.sections || [],
       updatedAt: new Date().toISOString(),
     });
-  } catch {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+  } catch (error) {
+    console.error("AI Analysis Engine Error:", error);
+    return NextResponse.json(
+      { error: "Failed to generate market intelligence" },
+      { status: 500 },
+    );
   }
 }

@@ -626,13 +626,13 @@ export default async function CryptoMistakesPage({ params }: PageProps) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
-                href="/tools"
+                href={`/${locale}/tools`}
                 className="w-full sm:w-auto px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 font-semibold rounded-xl transition-all duration-200 text-center transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-teal-500/20 no-underline"
               >
                 {t.ctaStart}
               </Link>
               <Link
-                href="/blog"
+                href={`/${locale}/blog`}
                 className="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-semibold rounded-xl transition-all duration-200 text-center transform hover:-translate-y-0.5 active:translate-y-0 no-underline"
               >
                 {t.ctaBlog}
@@ -735,7 +735,7 @@ export default async function CryptoMistakesPage({ params }: PageProps) {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
-                href="/tools"
+                href={`/${locale}/tools`}
                 className="px-6 py-3 bg-teal-500 hover:bg-teal-400 text-slate-950 font-semibold rounded-lg text-sm transition-colors no-underline"
               >
                 {t.ctaStart}

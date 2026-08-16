@@ -4,8 +4,11 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { getDictionary } from "@/lib/getDictionary";
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://kryptonal.com";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kryptonal.com";
 
 const locales = ["en", "es", "pt", "fr", "de", "tr"];
 
@@ -24,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `${SITE_URL}/${locale}/tools`,
       languages: Object.fromEntries(
-        locales.map((l) => [l, `${SITE_URL}/${l}/tools`])
+        locales.map((l) => [l, `${SITE_URL}/${l}/tools`]),
       ),
     },
     openGraph: {
@@ -55,10 +58,26 @@ export default async function ToolsPage({ params }: Props) {
   const { locale } = await params;
   const t = await getDictionary(locale);
 
+  // Fetch all real usage data from the database
+  const usageRecords = await prisma.tool_usage.findMany();
+
+  // Convert it into a dictionary map for easy lookup by slug
+  const initialUsage = usageRecords.reduce(
+    (acc, record) => {
+      acc[record.slug] = record.views;
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
+
   return (
     <>
       <Header locale={locale} t={t} />
-      <ToolsPageClient locale={locale} t={t.tools.directory} />
+      <ToolsPageClient
+        locale={locale}
+        t={t.tools.directory}
+        initialUsage={initialUsage}
+      />
       <Footer locale={locale} t={t} />
     </>
   );

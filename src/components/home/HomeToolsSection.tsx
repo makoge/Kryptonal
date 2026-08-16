@@ -1,12 +1,16 @@
-import Link from "next/link";
+import { PrismaClient } from "@prisma/client";
+import { KRYPTONAL_TOOLS } from "@/lib/tools/tools";
+import HomeToolsCarousel from "./HomeToolsCarousel";
+import Link from "next/link"; // <-- 1. Import Link
 
-const accentStyles: Record<string, string> = {
-  emerald: "from-emerald-400/20 border-emerald-400/25 text-emerald-300",
-  cyan: "from-cyan-400/20 border-cyan-400/25 text-cyan-300",
-  amber: "from-amber-400/20 border-amber-400/25 text-amber-300",
-};
+const prisma = new PrismaClient();
 
-export default function HomeToolsSection({
+// Helper to safely get translation strings for dynamic tools
+function getNested(obj: any, path: string) {
+  return path?.split(".").reduce((acc: any, key: string) => acc?.[key], obj);
+}
+
+export default async function HomeToolsSection({
   locale,
   t,
 }: {
@@ -15,77 +19,78 @@ export default function HomeToolsSection({
 }) {
   const section = t.home.toolsSection;
 
+  // 1. Fetch live usage counts from Prisma
+  const usageRecords = await prisma.tool_usage.findMany();
+  const dbUsage = usageRecords.reduce(
+    (acc, record) => {
+      acc[record.slug] = record.views;
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
+
+  // 2. Merge counts, sort by highest visits, and grab top 6
+  const topTools = KRYPTONAL_TOOLS.map((tool) => ({
+    ...tool,
+    totalUsage: tool.usageCount + (dbUsage[tool.slug] || 0),
+    // Point directly to where the strings live in your JSON file!
+    name: getNested(t.tools?.directory?.tools, tool.nameKey),
+    description: getNested(t.tools?.directory?.tools, tool.descriptionKey),
+  }))
+    .sort((a, b) => b.totalUsage - a.totalUsage)
+    .slice(0, 6);
+
   return (
-    <section className="relative border-y border-white/10 bg-slate-950 px-4 py-16 sm:px-6">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.12),transparent_35%)]" />
+    <section className="relative border-y border-white/10 bg-slate-950 px-4 py-24 sm:px-6">
+      {/* Premium subtle background glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.06),transparent_40%)]" />
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-emerald-300">
-            {section.badge}
-          </p>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[0.28em] text-emerald-400">
+              {section.badge}
+            </p>
 
-          <h2 className="mt-4 text-3xl font-black tracking-tight text-white md:text-5xl">
-            {section.title}
-          </h2>
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-white md:text-5xl lg:text-6xl">
+              {section.title}
+            </h2>
 
-          <p className="mt-5 leading-8 text-slate-300">
-            {section.description}
-          </p>
-        </div>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-400">
+              {section.description}
+            </p>
+          </div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
-          {section.tools.map((tool: any) => (
+          {/* 2. Added the View All Tools Button */}
+          <div className="shrink-0">
             <Link
-              key={tool.title}
-              href={`/${locale}${tool.href}`}
-              className={`group rounded-[2rem] border bg-gradient-to-br ${
-                accentStyles[tool.accent]
-              } to-white/[0.03] p-5 shadow-2xl backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.07]`}
+              href={`/${locale}/tools`}
+              className="group inline-flex items-center gap-3 rounded-2xl bg-emerald-400/5 px-6 py-4 text-sm font-black text-emerald-400 ring-1 ring-inset ring-emerald-400/20 transition duration-300 hover:bg-emerald-400 hover:text-slate-950"
             >
-              <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/80 p-5">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="rounded-full border border-current/25 bg-current/10 px-3 py-1 text-xs font-black uppercase tracking-widest">
-                    {tool.badge}
-                  </span>
-
-                  <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-current" />
-                </div>
-
-                <h3 className="mt-6 text-2xl font-black text-white">
-                  {tool.title}
-                </h3>
-
-                <p className="mt-4 min-h-[108px] leading-7 text-slate-300">
-                  {tool.text}
-                </p>
-
-                <div className="mt-6 grid gap-2">
-                  {tool.stats.map((stat: string) => (
-                    <div
-                      key={stat}
-                      className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-300"
-                    >
-                      <span className="h-1.5 w-1.5 rounded-full bg-current" />
-                      {stat}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-6 flex items-center justify-between">
-                  <span className="font-black text-white">{tool.cta}</span>
-                  <span className="rounded-full bg-white/10 px-3 py-2 text-sm text-white transition group-hover:translate-x-1">
-                    →
-                  </span>
-                </div>
-              </div>
+              {section.viewAll || "View All Tools"}
+              <svg
+                className="transition-transform duration-300 group-hover:translate-x-1"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
             </Link>
-          ))}
+          </div>
         </div>
 
-        <div className="mt-6 rounded-2xl border border-amber-400/20 bg-amber-400/10 p-4 text-sm leading-7 text-amber-100">
-          {section.disclaimer}
-        </div>
+        {/* Client-side carousel wrapper */}
+        <HomeToolsCarousel
+          locale={locale}
+          tools={topTools}
+          disclaimer={section.disclaimer}
+          visitText={t.tools?.directory?.cta?.live || "Visit Tool"}
+        />
       </div>
     </section>
   );

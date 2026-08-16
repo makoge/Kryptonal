@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState,  } from "react";
+import { useMemo, useState } from "react";
 
 const COINS = [
   ["bitcoin", "Bitcoin"],
@@ -50,11 +50,23 @@ function cryptoAmount(value: number, symbol: string) {
   }).format(value)} ${symbol}`;
 }
 
-export default function CryptoProfitSimulator({ t }: { t: any }) {
+interface CryptoProfitSimulatorProps {
+  t: any;
+  defaultCoin?: string;
+}
+
+export default function CryptoProfitSimulator({
+  t,
+  defaultCoin = "bitcoin",
+}: CryptoProfitSimulatorProps) {
   const copy = t.tools.cryptoRoiVision;
 
-  
-  const [coin, setCoin] = useState("bitcoin");
+  // Pre-select defaultCoin if it matches a coin in the supported list, else fallback to "bitcoin"
+  const initialCoin = COINS.some(([id]) => id === defaultCoin)
+    ? defaultCoin
+    : "bitcoin";
+
+  const [coin, setCoin] = useState(initialCoin);
   const [date, setDate] = useState("2020-01-01");
   const [investment, setInvestment] = useState("1000");
   const [futurePrice, setFuturePrice] = useState("");
@@ -95,23 +107,25 @@ export default function CryptoProfitSimulator({ t }: { t: any }) {
   const investedAmount = data?.investedAmount || data?.investment || 0;
   const coinsAcquired = data?.coinsBought || 0;
   const averageBuyPrice =
-    mode === "dca" ? data?.dca?.averageBuyPrice || 0 : data?.historicalPrice || 0;
+    mode === "dca"
+      ? data?.dca?.averageBuyPrice || 0
+      : data?.historicalPrice || 0;
 
   const shareText = data
     ? `${copy.shareIf} ${usd(investedAmount)} ${copy.shareIn} ${
         data.coin.name
       } ${copy.shareOn} ${data.date}, ${copy.shareWorth} ${usd(
-        data.currentValue
+        data.currentValue,
       )} ${copy.shareToday}. ${copy.shareProfit}: ${percent(data.profitPct)}.`
     : "";
 
   const targetText = data
     ? `${data.coin.name} ${copy.targetExplainStart} ${usd(
-        data.targetReality.targetPrice
+        data.targetReality.targetPrice,
       )}, ${copy.targetExplainNeeds} ${usd(
-        data.targetReality.targetMarketCap
+        data.targetReality.targetMarketCap,
       )} ${copy.targetExplainMarketCap}. ${copy.targetExplainThatIs} ${data.targetReality.marketCapMultiple.toFixed(
-        1
+        1,
       )}x ${copy.targetExplainCurrent}.`
     : "";
 
@@ -143,7 +157,11 @@ export default function CryptoProfitSimulator({ t }: { t: any }) {
           <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-5 backdrop-blur-xl">
             <div className="grid gap-4">
               <Field label={copy.coin}>
-                <select value={coin} onChange={(e) => setCoin(e.target.value)} className={inputClass}>
+                <select
+                  value={coin}
+                  onChange={(e) => setCoin(e.target.value)}
+                  className={inputClass}
+                >
                   {COINS.map(([id, name]) => (
                     <option key={id} value={id}>
                       {name}
@@ -153,7 +171,11 @@ export default function CryptoProfitSimulator({ t }: { t: any }) {
               </Field>
 
               <Field label={copy.mode}>
-                <select value={mode} onChange={(e) => setMode(e.target.value)} className={inputClass}>
+                <select
+                  value={mode}
+                  onChange={(e) => setMode(e.target.value)}
+                  className={inputClass}
+                >
                   <option value="lumpSum">{copy.modes.lumpSum}</option>
                   <option value="dca">{copy.modes.dca}</option>
                 </select>
@@ -172,7 +194,9 @@ export default function CryptoProfitSimulator({ t }: { t: any }) {
                 </Field>
               )}
 
-              <Field label={mode === "dca" ? copy.contribution : copy.investment}>
+              <Field
+                label={mode === "dca" ? copy.contribution : copy.investment}
+              >
                 <input
                   value={investment}
                   onChange={(e) => setInvestment(e.target.value)}
@@ -230,54 +254,100 @@ export default function CryptoProfitSimulator({ t }: { t: any }) {
             ) : (
               <div className="space-y-5">
                 <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                  <Metric label={copy.portfolioValueToday} value={usd(data.currentValue)} />
+                  <Metric
+                    label={copy.portfolioValueToday}
+                    value={usd(data.currentValue)}
+                  />
                   <Metric
                     label={copy.portfolioProfit}
                     value={usd(data.profit)}
                     sub={percent(data.profitPct)}
                     positive={data.profit >= 0}
                   />
-                  <Metric label={copy.multiplier} value={`${data.multiple.toFixed(2)}x`} />
-                  <Metric label={copy.maxDrawdown} value={percent(data.maxDrawdown)} positive={false} />
+                  <Metric
+                    label={copy.multiplier}
+                    value={`${data.multiple.toFixed(2)}x`}
+                  />
+                  <Metric
+                    label={copy.maxDrawdown}
+                    value={percent(data.maxDrawdown)}
+                    positive={false}
+                  />
                 </div>
 
                 <Panel title={copy.cryptoBoughtTitle}>
                   <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                    <Mini label={copy.totalInvested} value={usd(investedAmount)} />
-                    <Mini label={copy.averageBuyPrice} value={usd(averageBuyPrice)} />
+                    <Mini
+                      label={copy.totalInvested}
+                      value={usd(investedAmount)}
+                    />
+                    <Mini
+                      label={copy.averageBuyPrice}
+                      value={usd(averageBuyPrice)}
+                    />
                     <Mini
                       label={copy.cryptoAcquired}
                       value={cryptoAmount(coinsAcquired, data.coin.symbol)}
                     />
-                    <Mini label={copy.currentCoinPrice} value={usd(data.currentPrice)} />
+                    <Mini
+                      label={copy.currentCoinPrice}
+                      value={usd(data.currentPrice)}
+                    />
                   </div>
                 </Panel>
 
                 {mode === "dca" && (
                   <Panel title={copy.dcaTitle}>
                     <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                      <Mini label={copy.dcaBuyCount} value={String(data.dca.buyCount || 0)} />
-                      <Mini label={copy.totalInvested} value={usd(data.dca.totalInvested)} />
-                      <Mini label={copy.averageBuyPrice} value={usd(data.dca.averageBuyPrice)} />
-                      <Mini label={copy.dcaValue} value={usd(data.dca.currentValue)} />
+                      <Mini
+                        label={copy.dcaBuyCount}
+                        value={String(data.dca.buyCount || 0)}
+                      />
+                      <Mini
+                        label={copy.totalInvested}
+                        value={usd(data.dca.totalInvested)}
+                      />
+                      <Mini
+                        label={copy.averageBuyPrice}
+                        value={usd(data.dca.averageBuyPrice)}
+                      />
+                      <Mini
+                        label={copy.dcaValue}
+                        value={usd(data.dca.currentValue)}
+                      />
                     </div>
                   </Panel>
                 )}
 
                 <Panel title={copy.cashVsCrypto}>
                   <div className="grid gap-3 sm:grid-cols-3">
-                    <Mini label={copy.cash} value={usd(data.comparison.cashValue)} />
+                    <Mini
+                      label={copy.cash}
+                      value={usd(data.comparison.cashValue)}
+                    />
                     <Mini label="BTC" value={usd(data.comparison.btcValue)} />
-                    <Mini label={data.coin.symbol} value={usd(data.comparison.selectedCoinValue)} />
+                    <Mini
+                      label={data.coin.symbol}
+                      value={usd(data.comparison.selectedCoinValue)}
+                    />
                   </div>
                 </Panel>
 
                 {data.futurePrice > 0 && (
                   <Panel title={copy.futureScenario}>
                     <div className="grid gap-3 sm:grid-cols-3">
-                      <Mini label={copy.targetCoinPrice} value={usd(data.futurePrice)} />
-                      <Mini label={copy.projectedPortfolioValue} value={usd(data.futureValue)} />
-                      <Mini label={copy.projectedReturn} value={percent(data.futureProfitPct)} />
+                      <Mini
+                        label={copy.targetCoinPrice}
+                        value={usd(data.futurePrice)}
+                      />
+                      <Mini
+                        label={copy.projectedPortfolioValue}
+                        value={usd(data.futureValue)}
+                      />
+                      <Mini
+                        label={copy.projectedReturn}
+                        value={percent(data.futureProfitPct)}
+                      />
                     </div>
                   </Panel>
                 )}
@@ -288,7 +358,9 @@ export default function CryptoProfitSimulator({ t }: { t: any }) {
                   <div className="mt-4 grid gap-3 sm:grid-cols-3">
                     <Mini
                       label={copy.supply}
-                      value={numberCompact(data.targetReality.circulatingSupply)}
+                      value={numberCompact(
+                        data.targetReality.circulatingSupply,
+                      )}
                     />
                     <Mini
                       label={copy.requiredMarketCap}
@@ -296,7 +368,9 @@ export default function CryptoProfitSimulator({ t }: { t: any }) {
                     />
                     <Mini
                       label={copy.realityLevel}
-                      value={copy.realityLevels[data.targetReality.realityLevel]}
+                      value={
+                        copy.realityLevels[data.targetReality.realityLevel]
+                      }
                     />
                   </div>
                 </Panel>
@@ -325,8 +399,6 @@ export default function CryptoProfitSimulator({ t }: { t: any }) {
           </div>
         </div>
       </section>
-
-      
     </main>
   );
 }
@@ -334,7 +406,9 @@ export default function CryptoProfitSimulator({ t }: { t: any }) {
 function Field({ label, children }: any) {
   return (
     <label>
-      <span className="mb-2 block text-sm font-bold text-slate-400">{label}</span>
+      <span className="mb-2 block text-sm font-bold text-slate-400">
+        {label}
+      </span>
       {children}
     </label>
   );
@@ -349,8 +423,8 @@ function Metric({ label, value, sub, positive }: any) {
           positive === undefined
             ? "text-white"
             : positive
-            ? "text-emerald-300"
-            : "text-red-300"
+              ? "text-emerald-300"
+              : "text-red-300"
         }`}
       >
         {value}

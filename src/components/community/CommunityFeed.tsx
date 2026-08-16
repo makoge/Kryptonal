@@ -32,7 +32,7 @@ export default async function CommunityFeed({
   return (
     <div className="space-y-6">
       {/* 1. Modal Trigger to create new posts */}
-      <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-5 backdrop-blur-xl">
+      <div className="relative z-20 rounded-2xl border border-white/10 bg-slate-900/60 p-5 backdrop-blur-xl">
         <h3 className="text-base font-bold text-white mb-2">
           {tFeed?.shareTitle || "Share Market Insights"}
         </h3>
@@ -44,7 +44,7 @@ export default async function CommunityFeed({
       </div>
 
       {/* 2. Posts Discussion Feed */}
-      <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-6 backdrop-blur-xl">
+      <div className="relative z-10 rounded-2xl border border-white/10 bg-slate-900/60 p-6 backdrop-blur-xl">
         <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
           <span>💬</span> {tFeed?.feedTitle || "Recent Alpha & Analysis"}
         </h2>

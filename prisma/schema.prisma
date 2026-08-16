@@ -168,3 +168,7 @@ model CryptoVote {
   @@unique([userId, duration]) // A user gets 1 vote per duration category cycle
   @@map("crypto_votes")
 }
+model tool_usage {
+  slug  String @id
+  views Int    @default(0)
+}

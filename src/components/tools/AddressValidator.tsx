@@ -2,6 +2,11 @@
 
 import { useState } from "react";
 
+interface AddressValidatorProps {
+  t: any;
+  defaultNetwork?: string;
+}
+
 type ValidationResult = {
   valid: boolean;
   network: string;
@@ -40,7 +45,10 @@ const fallback = {
   openExplorer: "Open Explorer",
 };
 
-export default function AddressValidator({ t }: { t?: any }) {
+export default function AddressValidator({
+  t,
+  defaultNetwork,
+}: AddressValidatorProps) {
   const copy = {
     ...fallback,
     ...(t?.tools?.addressValidator || {}),
@@ -70,7 +78,10 @@ export default function AddressValidator({ t }: { t?: any }) {
 
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950 text-white shadow-[0_0_80px_rgba(34,211,238,0.08)]">
+      <div
+        data-network={defaultNetwork || "auto"}
+        className="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950 text-white shadow-[0_0_80px_rgba(34,211,238,0.08)]"
+      >
         <div className="border-b border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(45,212,191,0.22),transparent_35%),radial-gradient(circle_at_top_right,rgba(56,189,248,0.16),transparent_35%)] p-6 sm:p-10">
           <div className="mb-5 inline-flex rounded-full border border-emerald-300/20 bg-emerald-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.25em] text-emerald-200">
             {copy.badge}

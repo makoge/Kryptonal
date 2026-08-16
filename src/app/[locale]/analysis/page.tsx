@@ -28,7 +28,9 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = getDictionary(locale);
   const url = `${siteUrl}/${locale}/analysis`;
@@ -82,8 +84,8 @@ export default async function AnalysisPage({ params }: PageProps) {
   const t = getDictionary(locale);
   const analysisFaqs = Array.isArray(t.analysis.faqs) ? t.analysis.faqs : [];
   const analysisInternalLinks = Array.isArray(t.analysis.internalLinks)
-  ? t.analysis.internalLinks
-  : [];
+    ? t.analysis.internalLinks
+    : [];
   const pageUrl = `${siteUrl}/${locale}/analysis`;
 
   const jsonLd = {
@@ -127,43 +129,43 @@ export default async function AnalysisPage({ params }: PageProps) {
 
       <main className="bg-slate-950 text-white">
         <header className="relative overflow-hidden px-4 py-16 sm:px-5 md:py-28">
-  <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-emerald-500/20 blur-3xl" />
-  <div className="absolute right-0 top-32 h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl" />
+          <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-emerald-500/20 blur-3xl" />
+          <div className="absolute right-0 top-32 h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl" />
 
-  <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
-    <div>
-      <p className="mb-5 text-sm font-bold uppercase tracking-widest text-emerald-400">
-        {t.analysis.badge}
-      </p>
+          <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="mb-5 text-sm font-bold uppercase tracking-widest text-emerald-400">
+                {t.analysis.badge}
+              </p>
 
-      <h1 className="max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
-        {t.analysis.title}
-      </h1>
+              <h1 className="max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+                {t.analysis.title}
+              </h1>
 
-      <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-        {t.analysis.description}
-      </p>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+                {t.analysis.description}
+              </p>
 
-      <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-        <Link
-          href="#analysis-engine"
-          className="rounded-xl bg-emerald-400 px-7 py-4 text-center font-bold text-slate-950 shadow-[0_0_35px_rgba(52,211,153,0.22)] transition hover:bg-emerald-300"
-        >
-          {t.analysis.primaryCta}
-        </Link>
+              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+                <Link
+                  href="#analysis-engine"
+                  className="rounded-xl bg-emerald-400 px-7 py-4 text-center font-bold text-slate-950 shadow-[0_0_35px_rgba(52,211,153,0.22)] transition hover:bg-emerald-300"
+                >
+                  {t.analysis.primaryCta}
+                </Link>
 
-        <Link
-          href="#methodology"
-          className="rounded-xl border border-white/10 bg-white/5 px-7 py-4 text-center font-bold transition hover:bg-white/10"
-        >
-          {t.analysis.secondaryCta}
-        </Link>
-      </div>
-    </div>
+                <Link
+                  href="#methodology"
+                  className="rounded-xl border border-white/10 bg-white/5 px-7 py-4 text-center font-bold transition hover:bg-white/10"
+                >
+                  {t.analysis.secondaryCta}
+                </Link>
+              </div>
+            </div>
 
-    <LiveMarketPhaseCard t={t} />
-  </div>
-</header>
+            <LiveMarketPhaseCard t={t} />
+          </div>
+        </header>
 
         <LiveSignals t={t} />
 
@@ -171,11 +173,12 @@ export default async function AnalysisPage({ params }: PageProps) {
         <StablecoinFlows t={t} />
         <ChainStrengthTracker t={t} />
         <SectorRotationHeatmap t={t} />
-        {/*<LeverageRiskTracker t={t.analysis} />*/}
+        <LeverageRiskTracker t={t.analysis} />
 
-        
-
-        <section id="methodology" className="mx-auto max-w-4xl px-4 py-20 sm:px-5">
+        <section
+          id="methodology"
+          className="mx-auto max-w-4xl px-4 py-20 sm:px-5"
+        >
           <article className="prose prose-invert prose-emerald max-w-none prose-headings:font-black prose-p:text-slate-300">
             <h2>{t.analysis.content.howTitle}</h2>
             <p>{t.analysis.content.howText}</p>
@@ -196,12 +199,20 @@ export default async function AnalysisPage({ params }: PageProps) {
 
         <section className="border-y border-white/10 bg-slate-900/40 px-4 py-16 sm:px-5">
           <div className="mx-auto max-w-7xl">
-            <h2 className="text-3xl font-black md:text-4xl">{t.analysis.internalLinksTitle}</h2>
+            <h2 className="text-3xl font-black md:text-4xl">
+              {t.analysis.internalLinksTitle}
+            </h2>
             <div className="mt-8 grid gap-5 md:grid-cols-4">
               {analysisInternalLinks.map((item) => (
-                <Link key={item.href} href={`/${locale}${item.href}`} className="rounded-2xl border border-white/10 bg-slate-950 p-6 transition hover:border-emerald-400/40">
+                <Link
+                  key={item.href}
+                  href={`/${locale}${item.href}`}
+                  className="rounded-2xl border border-white/10 bg-slate-950 p-6 transition hover:border-emerald-400/40"
+                >
                   <h3 className="text-xl font-bold">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-400">{item.text}</p>
+                  <p className="mt-3 text-sm leading-7 text-slate-400">
+                    {item.text}
+                  </p>
                 </Link>
               ))}
             </div>
@@ -209,10 +220,15 @@ export default async function AnalysisPage({ params }: PageProps) {
         </section>
 
         <section className="mx-auto max-w-4xl px-4 py-20 sm:px-5">
-          <h2 className="text-3xl font-black md:text-4xl">{t.analysis.faqTitle}</h2>
+          <h2 className="text-3xl font-black md:text-4xl">
+            {t.analysis.faqTitle}
+          </h2>
           <div className="mt-8 grid gap-5">
             {analysisFaqs.map((faq) => (
-              <div key={faq.question} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div
+                key={faq.question}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6"
+              >
                 <h3 className="text-xl font-bold">{faq.question}</h3>
                 <p className="mt-4 leading-7 text-slate-300">{faq.answer}</p>
               </div>
