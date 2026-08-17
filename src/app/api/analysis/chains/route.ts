@@ -14,6 +14,13 @@ const preferredChains = [
   "Optimism",
 ];
 
+// --- IN-MEMORY CACHE ---
+// Stores the computed result in RAM so we don't re-download 11MB every time
+let cachedData: any = null;
+let cacheTimestamp = 0;
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+// -----------------------
+
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
 }
@@ -34,7 +41,7 @@ function getStrengthScore(args: {
   const protocolScore = clamp(Math.log10(args.protocols || 1) * 10, 0, 15);
 
   return Math.round(
-    clamp(tvlScore + momentum7dScore + momentum1mScore + protocolScore, 0, 100)
+    clamp(tvlScore + momentum7dScore + momentum1mScore + protocolScore, 0, 100),
   );
 }
 
@@ -49,11 +56,10 @@ async function getChainHistory(chain: string) {
   try {
     const res = await fetch(
       `https://api.llama.fi/v2/historicalChainTvl/${encodeURIComponent(chain)}`,
-      { next: { revalidate: 300 } }
+      { cache: "no-store" }, // Bypass Next.js cache
     );
 
     if (!res.ok) return [];
-
     return await res.json();
   } catch {
     return [];
@@ -62,15 +68,23 @@ async function getChainHistory(chain: string) {
 
 export async function GET() {
   try {
+    // 1. Instantly return from RAM if data is fresh (bypasses heavy downloads!)
+    if (cachedData && Date.now() - cacheTimestamp < CACHE_TTL) {
+      return NextResponse.json(cachedData);
+    }
+
+    // 2. Fetch WITHOUT Next.js cache to avoid the 2MB limit error
     const [chainsRes, protocolsRes] = await Promise.all([
-      fetch(CHAINS_URL, { next: { revalidate: 300 } }),
-      fetch(PROTOCOLS_URL, { next: { revalidate: 300 } }),
+      fetch(CHAINS_URL, { cache: "no-store" }),
+      fetch(PROTOCOLS_URL, { cache: "no-store" }),
     ]);
 
     if (!chainsRes.ok) {
+      // Fallback to old cache if DefiLlama is down
+      if (cachedData) return NextResponse.json(cachedData);
       return NextResponse.json(
         { error: "Failed to fetch chain data" },
-        { status: 502 }
+        { status: 502 },
       );
     }
 
@@ -120,14 +134,20 @@ export async function GET() {
             score,
             signal: getSignal(score),
           };
-        })
+        }),
     );
 
-    return NextResponse.json({
+    // 3. Save the processed result to RAM and update the timestamp
+    cachedData = {
       updatedAt: new Date().toISOString(),
       chains: chains.sort((a, b) => b.score - a.score),
-    });
-  } catch {
+    };
+    cacheTimestamp = Date.now();
+
+    return NextResponse.json(cachedData);
+  } catch (error) {
+    // Fallback to old cache if the server fails
+    if (cachedData) return NextResponse.json(cachedData);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

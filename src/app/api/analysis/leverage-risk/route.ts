@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 
 // Force Vercel to execute this route in Frankfurt, Germany (bypasses the US Geo-block)
 export const preferredRegion = "fra1";
-export const revalidate = 60;
 
 const SYMBOLS = ["BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT"];
 
@@ -26,6 +25,13 @@ type Market = {
   source: Source;
 };
 
+// --- IN-MEMORY CACHE ---
+// Protects Vercel from timing out by reusing the result of the 20 network calls for 60 seconds
+let cachedData: any = null;
+let cacheTimestamp = 0;
+const CACHE_TTL = 60 * 1000; // 60 seconds
+// -----------------------
+
 function num(value: any) {
   const n = Number(value);
   return Number.isFinite(n) ? n : 0;
@@ -41,7 +47,7 @@ async function safeJson(urlOrUrls: string | string[]) {
   for (const url of urls) {
     try {
       const res = await fetch(url, {
-        next: { revalidate: 60 },
+        cache: "no-store", // Bypass Next.js fetch cache to prevent deadlocks
         headers: { "User-Agent": "Kryptonal/1.0" },
       });
 
@@ -192,46 +198,64 @@ async function getMarket(symbol: string) {
 }
 
 export async function GET() {
-  const markets = await Promise.all(SYMBOLS.map((symbol) => getMarket(symbol)));
+  try {
+    // 1. Instantly return from RAM if data was fetched within the last 60 seconds
+    if (cachedData && Date.now() - cacheTimestamp < CACHE_TTL) {
+      return NextResponse.json(cachedData);
+    }
 
-  const validMarkets = markets.filter((item) => item.sourceOk);
+    // 2. Fetch fresh data (this triggers the network calls)
+    const markets = await Promise.all(
+      SYMBOLS.map((symbol) => getMarket(symbol)),
+    );
 
-  const avgFundingRate =
-    validMarkets.length > 0
-      ? validMarkets.reduce((sum, item) => sum + item.fundingRate, 0) /
-        validMarkets.length
-      : 0;
+    const validMarkets = markets.filter((item) => item.sourceOk);
 
-  const totalOpenInterestUsd = validMarkets.reduce(
-    (sum, item) => sum + item.openInterestUsd,
-    0,
-  );
+    const avgFundingRate =
+      validMarkets.length > 0
+        ? validMarkets.reduce((sum, item) => sum + item.fundingRate, 0) /
+          validMarkets.length
+        : 0;
 
-  const fundingRisk =
-    validMarkets.length > 0
-      ? validMarkets.reduce(
-          (sum, item) => sum + getFundingRisk(item.fundingRate),
-          0,
-        ) / validMarkets.length
-      : 0;
+    const totalOpenInterestUsd = validMarkets.reduce(
+      (sum, item) => sum + item.openInterestUsd,
+      0,
+    );
 
-  const oiRisk = getOiRisk(totalOpenInterestUsd);
-  const riskScore = Math.round(clamp(fundingRisk + oiRisk, 0, 100));
+    const fundingRisk =
+      validMarkets.length > 0
+        ? validMarkets.reduce(
+            (sum, item) => sum + getFundingRisk(item.fundingRate),
+            0,
+          ) / validMarkets.length
+        : 0;
 
-  return NextResponse.json({
-    updatedAt: new Date().toISOString(),
-    riskScore,
-    riskLevel: getRiskLevel(riskScore),
-    positionBias: getPositionBias(avgFundingRate),
-    avgFundingRate,
-    avgFundingRatePct: avgFundingRate * 100,
-    totalOpenInterestUsd,
-    markets,
-    sources: {
-      binanceFutures: markets.some((item) => item.source === "binance"),
-      bybitFutures: markets.some((item) => item.source === "bybit"),
-      marketsLoaded: validMarkets.length,
-      marketsRequested: SYMBOLS.length,
-    },
-  });
+    const oiRisk = getOiRisk(totalOpenInterestUsd);
+    const riskScore = Math.round(clamp(fundingRisk + oiRisk, 0, 100));
+
+    // 3. Store the result in RAM
+    cachedData = {
+      updatedAt: new Date().toISOString(),
+      riskScore,
+      riskLevel: getRiskLevel(riskScore),
+      positionBias: getPositionBias(avgFundingRate),
+      avgFundingRate,
+      avgFundingRatePct: avgFundingRate * 100,
+      totalOpenInterestUsd,
+      markets,
+      sources: {
+        binanceFutures: markets.some((item) => item.source === "binance"),
+        bybitFutures: markets.some((item) => item.source === "bybit"),
+        marketsLoaded: validMarkets.length,
+        marketsRequested: SYMBOLS.length,
+      },
+    };
+    cacheTimestamp = Date.now();
+
+    return NextResponse.json(cachedData);
+  } catch (error) {
+    // Fallback: If Binance/Bybit completely fail, return the last known good data from RAM
+    if (cachedData) return NextResponse.json(cachedData);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
+  }
 }

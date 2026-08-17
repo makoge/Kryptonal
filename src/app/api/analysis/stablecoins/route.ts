@@ -5,6 +5,13 @@ const STABLES_URL =
 
 const CHART_URL = "https://stablecoins.llama.fi/stablecoincharts/all";
 
+// --- IN-MEMORY CACHE ---
+// Stores the computed result in RAM so we don't re-download huge JSON payloads
+let cachedData: any = null;
+let cacheTimestamp = 0;
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+// -----------------------
+
 function pct(now: number, prev: number) {
   return prev > 0 ? ((now - prev) / prev) * 100 : 0;
 }
@@ -15,7 +22,7 @@ function getTotalFromChartPoint(point: any) {
       point?.totalCirculating?.peggedUSD ||
       point?.totalCirculatingUSD ||
       point?.totalCirculating ||
-      0
+      0,
   );
 }
 
@@ -24,17 +31,26 @@ function getFlowSignal(change7dPct: number) {
   if (change7dPct <= -1) return "leaving";
   return "neutral";
 }
+
 export async function GET() {
   try {
+    // 1. Instantly return from RAM if data is fresh (bypasses heavy downloads!)
+    if (cachedData && Date.now() - cacheTimestamp < CACHE_TTL) {
+      return NextResponse.json(cachedData);
+    }
+
+    // 2. Fetch WITHOUT Next.js cache to avoid the 2MB limit error
     const [stableRes, chartRes] = await Promise.all([
-      fetch(STABLES_URL, { next: { revalidate: 300 } }),
-      fetch(CHART_URL, { next: { revalidate: 300 } }),
+      fetch(STABLES_URL, { cache: "no-store" }),
+      fetch(CHART_URL, { cache: "no-store" }),
     ]);
 
     if (!stableRes.ok || !chartRes.ok) {
+      // Fallback to old cache if DefiLlama is down
+      if (cachedData) return NextResponse.json(cachedData);
       return NextResponse.json(
         { error: "Failed to fetch stablecoin data" },
-        { status: 502 }
+        { status: 502 },
       );
     }
 
@@ -81,7 +97,8 @@ export async function GET() {
       .sort((a, b) => b.value - a.value)
       .slice(0, 6);
 
-    return NextResponse.json({
+    // 3. Save the processed result to RAM and update the timestamp
+    cachedData = {
       updatedAt: new Date().toISOString(),
       totalStablecoins: latest,
       change1d,
@@ -92,8 +109,13 @@ export async function GET() {
       isGrowing: change7d >= 0,
       chart,
       chains,
-    });
-  } catch {
+    };
+    cacheTimestamp = Date.now();
+
+    return NextResponse.json(cachedData);
+  } catch (error) {
+    // Fallback to old cache if the server fails
+    if (cachedData) return NextResponse.json(cachedData);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

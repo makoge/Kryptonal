@@ -137,19 +137,26 @@ export default function DeepAnalysisEngine({ t }: Props) {
         body: JSON.stringify({ mode }),
       });
 
-      // Catch the rate limit!
+      // Catch the rate limit
       if (res.status === 429) {
         setLimitReached(true);
         setLoading(false);
         return;
       }
 
-      if (!res.ok) throw new Error("Failed to generate");
+      // 🚨 NEW DIAGNOSTIC ERROR CATCHER 🚨
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(
+          `Server returned ${res.status}: ${errorText.slice(0, 150)}`,
+        );
+      }
 
       const json: AnalysisData = await res.json();
       setData(json);
-    } catch {
-      alert("Analysis failed. Please check your API connection and try again.");
+    } catch (error: any) {
+      // This will now show us exactly what the server is complaining about!
+      alert(`DIAGNOSTIC ERROR: ${error.message}`);
     } finally {
       setLoading(false);
     }

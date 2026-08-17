@@ -13,6 +13,13 @@ const wantedCategories = [
   "Bridge",
 ];
 
+// --- IN-MEMORY CACHE ---
+// This stores the tiny processed payload in RAM, not the 11MB file!
+let cachedData: any = null;
+let cacheTimestamp = 0;
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+// -----------------------
+
 function getSignal(change7d: number) {
   if (change7d > 10) return "Hot";
   if (change7d > 3) return "Rising";
@@ -28,14 +35,22 @@ function getScore(tvl: number, change7d: number) {
 
 export async function GET() {
   try {
+    // 1. Instantly return from RAM if data is fresh (bypasses the 8-second download!)
+    if (cachedData && Date.now() - cacheTimestamp < CACHE_TTL) {
+      return NextResponse.json(cachedData);
+    }
+
+    // 2. Fetch WITHOUT Next.js cache to avoid the 2MB limit error
     const res = await fetch(API_URL, {
-      next: { revalidate: 300 },
+      cache: "no-store",
     });
 
     if (!res.ok) {
+      // Fallback to old cache if DefiLlama is down
+      if (cachedData) return NextResponse.json(cachedData);
       return NextResponse.json(
         { error: "Failed to fetch sector data" },
-        { status: 502 }
+        { status: 502 },
       );
     }
 
@@ -60,9 +75,7 @@ export async function GET() {
 
     const sectors = Object.entries(grouped)
       .map(([name, value]) => {
-        const change7d = value.count
-          ? value.change7dTotal / value.count
-          : 0;
+        const change7d = value.count ? value.change7dTotal / value.count : 0;
 
         const score = getScore(value.tvl, change7d);
 
@@ -77,11 +90,17 @@ export async function GET() {
       })
       .sort((a, b) => b.score - a.score);
 
-    return NextResponse.json({
+    // 3. Save the processed result to RAM and update the timestamp
+    cachedData = {
       updatedAt: new Date().toISOString(),
       sectors,
-    });
-  } catch {
+    };
+    cacheTimestamp = Date.now();
+
+    return NextResponse.json(cachedData);
+  } catch (error) {
+    // Fallback to old cache if the server fails
+    if (cachedData) return NextResponse.json(cachedData);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
