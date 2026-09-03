@@ -3249,5 +3249,50 @@
         "señales del mercado cripto"
       ]
     }
+  },
+  "coinDetails": {
+    "meta": {
+      "title": "Precio de {name} ({symbol}) {price} y Análisis de Riesgo IA | Kryptonal",
+      "description": "Precio en tiempo real, gráfico de 7 días y evaluación algorítmica de riesgo para {name} ({symbol})."
+    },
+    "back": "Volver a Mercados",
+    "rank": "Puesto",
+    "ath": "Máximo Histórico",
+    "tabs": {
+      "chart": "Gráfico de Precios",
+      "analysis": "Análisis IA",
+      "about": "Acerca del Proyecto"
+    },
+    "metrics": {
+      "history7d": "Historial de Precios (7 Días)",
+      "currentPrice": "Precio Actual",
+      "marketCap": "Cap. de Mercado",
+      "maxSupply": "Suministro Máximo",
+      "infinite": "Infinito",
+      "high24h": "Máximo 24h",
+      "low24h": "Mínimo 24h",
+      "volumeMcap": "Volumen / Cap. de Mercado",
+      "resistance": "Nivel de Resistencia (Fib 0.618)",
+      "support": "Suelo de Soporte (Fib 0.618)"
+    },
+    "article": {
+      "priceTodayTitle": "Precio de {name} ({symbol}) Hoy",
+      "priceTodayBody": "El precio en vivo de {name} hoy es de {price} USD. En las últimas 24 horas, {name} ha registrado una variación del {change}, con una capitalización de mercado de {marketCap}. Kryptonal analiza tendencias de mercado y ciclos, mostrando actualmente una tendencia {trend}.",
+      "historicalTitle": "Rendimiento Histórico y Máximo de {name}",
+      "historicalBody": "Comprender el contexto histórico es esencial. {name} alcanzó un máximo histórico de {ath}. Actualmente se encuentra un {athChange}% por debajo de su pico. Estudiar ciclos anteriores ayuda a evaluar fases de acumulación y riesgo a largo plazo.",
+      "predictionTitle": "Perspectiva de Precio y Análisis IA de {name}",
+      "predictionBody": "Aunque el rendimiento pasado no garantiza resultados futuros, el análisis algorítmico sitúa la resistencia inmediata cerca de {resistance}, con un soporte técnico en torno a {support}. Ocupando el puesto #{rank}, su perfil corresponde a {profile}.",
+      "disclaimer": "Aviso: Todo el contenido es estrictamente educativo y no constituye asesoramiento financiero."
+    },
+    "analysis": {
+      "strongBullish": "Alcista Fuerte 🐂",
+      "strongBearish": "Bajista Fuerte 🐻",
+      "slightlyBullish": "Ligeramente Alcista 📈",
+      "slightlyBearish": "Ligeramente Bajista 📉",
+      "neutral": "Neutral ⚖️",
+      "speculative": "Especulativo / Enfoque a Corto Plazo",
+      "midCap": "Crecimiento Mid-Cap / Horizonte Equilibrado",
+      "coreAsset": "Activo Principal / Potencial a Largo Plazo"
+    }
   }
 }

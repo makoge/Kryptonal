@@ -3252,5 +3252,50 @@
       "title": "Watchlist privada de criptomoedas | Kryptonal",
       "description": "Crie uma watchlist privada de criptomoedas sem login. Acompanhe preços ao vivo localmente no navegador com Kryptonal."
     }
+  },
+  "coinDetails": {
+    "meta": {
+      "title": "Preço de {name} ({symbol}) {price} e Análise de Risco IA | Kryptonal",
+      "description": "Preço em tempo real, gráfico de 7 dias e avaliação de risco por IA para {name} ({symbol})."
+    },
+    "back": "Voltar aos Mercados",
+    "rank": "Classificação",
+    "ath": "Máxima Histórica",
+    "tabs": {
+      "chart": "Gráfico de Preço",
+      "analysis": "Análise IA",
+      "about": "Sobre o Projeto"
+    },
+    "metrics": {
+      "history7d": "Histórico de Preços (7 Dias)",
+      "currentPrice": "Preço Atual",
+      "marketCap": "Cap. de Mercado",
+      "maxSupply": "Fornecimento Máximo",
+      "infinite": "Infinito",
+      "high24h": "Máxima 24h",
+      "low24h": "Mínima 24h",
+      "volumeMcap": "Volume / Cap. de Mercado",
+      "resistance": "Nível de Resistência (Fib 0.618)",
+      "support": "Nível de Suporte (Fib 0.618)"
+    },
+    "article": {
+      "priceTodayTitle": "Preço de {name} ({symbol}) Hoje",
+      "priceTodayBody": "O preço atual de {name} hoje é de {price} USD. Nas últimas 24 horas, {name} registrou variação de {change}, com capitalização global de {marketCap}. A Kryptonal analisa ciclos de mercado e métricas técnicas, indicando tendência {trend}.",
+      "historicalTitle": "Desempenho Histórico e Máxima de {name}",
+      "historicalBody": "O contexto histórico é essencial para entender os ciclos. {name} atingiu sua máxima histórica em {ath}. Atualmente está {athChange}% abaixo do pico. Avaliar ciclos passados auxilia na compreensão de fases de acumulação.",
+      "predictionTitle": "Previsão de Preço e Análise de IA para {name}",
+      "predictionBody": "Embora o passado não garanta retornos futuros, a análise identifica resistência imediata próxima de {resistance}, com suporte técnico em {support}. Na posição #{rank}, seu perfil enquadra-se como {profile}.",
+      "disclaimer": "Aviso: Todo o conteúdo destina-se exclusivamente a fins educacionais e não constitui aconselhamento financeiro."
+    },
+    "analysis": {
+      "strongBullish": "Fortemente Altista 🐂",
+      "strongBearish": "Fortemente Baixista 🐻",
+      "slightlyBullish": "Levemente Altista 📈",
+      "slightlyBearish": "Levemente Baixista 📉",
+      "neutral": "Neutro ⚖️",
+      "speculative": "Especulativo / Curto Prazo",
+      "midCap": "Crescimento Médio / Horizonte Equilibrado",
+      "coreAsset": "Ativo Principal / Potencial de Longo Prazo"
+    }
   }
 }

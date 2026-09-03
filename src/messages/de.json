@@ -3233,5 +3233,50 @@
       "title": "Private Krypto-Watchlist | Kryptonal",
       "description": "Erstelle eine private Krypto-Watchlist ohne Login. Verfolge Live-Preise lokal im Browser mit Kryptonal."
     }
+  },
+  "coinDetails": {
+    "meta": {
+      "title": "{name} ({symbol}) Kurs {price} & KI-Risikoanalyse | Kryptonal",
+      "description": "Live-Kurs, 7-Tage-Chart und algorithmische Markt-Risikobewertung für {name} ({symbol})."
+    },
+    "back": "Zurück zu Märkten",
+    "rank": "Rang",
+    "ath": "Allzeithoch (ATH)",
+    "tabs": {
+      "chart": "Preischart",
+      "analysis": "KI-Analyse",
+      "about": "Über das Projekt"
+    },
+    "metrics": {
+      "history7d": "7-Tage-Preishistorie",
+      "currentPrice": "Aktueller Kurs",
+      "marketCap": "Marktkapitalisierung",
+      "maxSupply": "Max. Gesamtangebot",
+      "infinite": "Unbegrenzt",
+      "high24h": "24h Hoch",
+      "low24h": "24h Tief",
+      "volumeMcap": "Volumen / Marktkapitalisierung",
+      "resistance": "Widerstandsniveau (Fib 0.618)",
+      "support": "Unterstützungslinie (Fib 0.618)"
+    },
+    "article": {
+      "priceTodayTitle": "{name} ({symbol}) Kurs Heute",
+      "priceTodayBody": "Der aktuelle Live-Kurs von {name} beträgt heute {price} USD. In den letzten 24 Stunden verzeichnete {name} eine Veränderung von {change} bei einer globalen Marktkapitalisierung von {marketCap}. Kryptonal analysiert Marktphasen und Zyklen und erkennt derzeit einen {trend} Trend.",
+      "historicalTitle": "Historische Performance & Allzeithoch von {name}",
+      "historicalBody": "Historische Daten sind entscheidend für das Zyklusverständnis. {name} markierte sein Allzeithoch bei {ath}. Derzeit notiert der Kurs {athChange}% unter dem Höchststand. Die Zyklusanalyse erleichtert die Einordnung von Akkumulationsphasen.",
+      "predictionTitle": "{name} Zukunftsausblick & KI-Analyse",
+      "predictionBody": "Historische Werte bieten keine Garantie für die Zukunft. Technische Auswertungen verorten den unmittelbaren Widerstand bei {resistance}, während die Unterstützung nahe {support} liegt. Mit Rang #{rank} entspricht das Profil {profile}.",
+      "disclaimer": "Haftungsausschluss: Alle Inhalte dienen ausschließlich Informations- und Bildungszwecken und stellen keine Finanzberatung dar."
+    },
+    "analysis": {
+      "strongBullish": "Stark Bullisch 🐂",
+      "strongBearish": "Stark Bärisch 🐻",
+      "slightlyBullish": "Leicht Bullisch 📈",
+      "slightlyBearish": "Leicht Bärisch 📉",
+      "neutral": "Neutral ⚖️",
+      "speculative": "Spekulativ / Kurzfristiger Fokus",
+      "midCap": "Mid-Cap-Wachstum / Ausgewogener Horizont",
+      "coreAsset": "Kernanlage / Langfristiges Potenzial"
+    }
   }
 }

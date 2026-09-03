@@ -3239,5 +3239,50 @@
       "title": "Özel Kripto Watchlist | Kryptonal",
       "description": "Giriş yapmadan özel bir kripto watchlist oluştur. Kryptonal ile canlı fiyatları tarayıcında yerel olarak takip et."
     }
+  },
+  "coinDetails": {
+    "meta": {
+      "title": "{name} ({symbol}) Fiyatı {price} ve Yapay Zeka Risk Analizi | Kryptonal",
+      "description": "{name} ({symbol}) için canlı fiyat, 7 günlük grafik ve otomatik yapay zeka piyasa riski değerlendirmesi."
+    },
+    "back": "Piyasalara Dön",
+    "rank": "Sıralama",
+    "ath": "Tüm Zamanların Zirvesi (ATH)",
+    "tabs": {
+      "chart": "Fiyat Grafiği",
+      "analysis": "Yapay Zeka Analizi",
+      "about": "Proje Hakkında"
+    },
+    "metrics": {
+      "history7d": "7 Günlük Fiyat Geçmişi",
+      "currentPrice": "Güncel Fiyat",
+      "marketCap": "Piyasa Değeri",
+      "maxSupply": "Maksimum Arz",
+      "infinite": "Sınırsız",
+      "high24h": "24s En Yüksek",
+      "low24h": "24s En Düşük",
+      "volumeMcap": "Hacim / Piyasa Değeri",
+      "resistance": "Direnç Seviyesi (Fib 0.618)",
+      "support": "Destek Tabanı (Fib 0.618)"
+    },
+    "article": {
+      "priceTodayTitle": "{name} ({symbol}) Bugün Fiyatı",
+      "priceTodayBody": "{name} güncel canlı fiyatı bugün {price} USD seviyesindedir. Son 24 saatte {name}, toplam {marketCap} piyasa değeri ile {change} oranında değişim göstermiştir. Piyasa döngülerini analiz eden Kryptonal, mevcut eğilimin {trend} yönünde olduğunu göstermektedir.",
+      "historicalTitle": "{name} Geçmiş Performansı ve Tüm Zamanların Zirvesi",
+      "historicalBody": "Geçmiş döngü verileri piyasa yönünü anlamada temel unsurdur. {name}, {ath} seviyesinde rekor zirveye ulaşmıştır. Mevcut fiyat zirvenin %{athChange} altındadır. Tarihsel döngülerin incelenmesi akümülasyon dönemlerini saptamaya yardımcı olur.",
+      "predictionTitle": "{name} Gelecek Fiyat Beklentisi ve Yapay Zeka Analizi",
+      "predictionBody": "Geçmiş veriler geleceği garanti etmese de, algoritmik modeller anlık direnç bölgesini {resistance}, teknik destek tabanını ise {support} seviyelerinde konumlandırmaktadır. #{rank} sıradaki varlığın yatırım profili {profile} ile uyumludur.",
+      "disclaimer": "Yasal Uyarı: Sunulan tüm içerikler yalnızca eğitim amaçlıdır ve yatırım tavsiyesi niteliği taşımaz."
+    },
+    "analysis": {
+      "strongBullish": "Güçlü Boğa 🐂",
+      "strongBearish": "Güçlü Ayı 🐻",
+      "slightlyBullish": "Hafif Boğa 📈",
+      "slightlyBearish": "Hafif Ayı 📉",
+      "neutral": "Nötr ⚖️",
+      "speculative": "Spekülatif / Kısa Vadeli",
+      "midCap": "Orta Ölçekli Büyüme / Dengeli Vade",
+      "coreAsset": "Temel Varlık / Uzun Vadeli Potansiyel"
+    }
   }
 }

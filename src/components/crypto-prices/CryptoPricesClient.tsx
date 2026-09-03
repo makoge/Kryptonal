@@ -1,6 +1,6 @@
 // src/components/crypto-prices/CryptoPricesClient.tsx
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useMemo, useState, useEffect } from "react";
 import {
   AreaChart,
@@ -203,10 +203,19 @@ function generateMarketAnalysis(details: any, t: any) {
 }
 
 // --- Main Client Component ---
-export default function CryptoPricesClient({ data, t }: { data: any; t: any }) {
+export default function CryptoPricesClient({
+  data,
+  t,
+  locale,
+}: {
+  data: any;
+  t: any;
+  locale: string;
+}) {
   const [tab, setTab] = useState<Tab>("coins");
   const [query, setQuery] = useState("");
-  const [selectedCoinId, setSelectedCoinId] = useState<string | null>(null);
+
+  const router = useRouter();
 
   const coins: Coin[] = data?.coins ?? [];
 
@@ -303,42 +312,34 @@ export default function CryptoPricesClient({ data, t }: { data: any; t: any }) {
           <CoinsTable
             coins={filteredCoins}
             t={t}
-            onSelectCoin={setSelectedCoinId}
+            onSelectCoin={(id) => router.push(`/${locale}/crypto-prices/${id}`)}
           />
         )}
         {tab === "gainers" && (
           <CoinsTable
             coins={data.gainers ?? []}
             t={t}
-            onSelectCoin={setSelectedCoinId}
+            onSelectCoin={(id) => router.push(`/${locale}/crypto-prices/${id}`)}
           />
         )}
         {tab === "losers" && (
           <CoinsTable
             coins={data.losers ?? []}
             t={t}
-            onSelectCoin={setSelectedCoinId}
+            onSelectCoin={(id) => router.push(`/${locale}/crypto-prices/${id}`)}
           />
         )}
         {tab === "new" && (
           <Trending
             coins={data.newCoins ?? []}
             t={t}
-            onSelectCoin={setSelectedCoinId}
+            onSelectCoin={(id) => router.push(`/${locale}/crypto-prices/${id}`)}
           />
         )}
         {tab === "exchanges" && (
           <Exchanges exchanges={data.exchanges ?? []} t={t} />
         )}
       </section>
-
-      {selectedCoinId && (
-        <CoinAnalyticsModal
-          id={selectedCoinId}
-          onClose={() => setSelectedCoinId(null)}
-          t={t}
-        />
-      )}
     </main>
   );
 }

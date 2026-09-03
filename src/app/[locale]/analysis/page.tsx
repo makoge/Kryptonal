@@ -52,7 +52,7 @@ export async function generateMetadata({
       locale,
       images: [
         {
-          url: `${siteUrl}/og/analysis.jpg`,
+          url: `${siteUrl}/og/home.jpg`,
           width: 1200,
           height: 630,
           alt: t.seo.analysis.title,
@@ -63,7 +63,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t.seo.analysis.title,
       description: t.seo.analysis.description,
-      images: [`${siteUrl}/og/analysis.jpg`],
+      images: [`${siteUrl}/og/home.jpg`],
     },
     robots: {
       index: true,

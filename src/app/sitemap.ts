@@ -1,3 +1,4 @@
+// src/app/sitemap.ts
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/getDictionary";
 import {
@@ -48,7 +49,8 @@ const pages = [
   "/tools/rugpull-analyzer",
 ] as const;
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// 1. Change to async to allow data fetching
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. Static Pages Across Locales
   const staticPages: MetadataRoute.Sitemap = locales.flatMap((locale) =>
     pages.map((page) => ({
@@ -87,7 +89,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pseoPages: MetadataRoute.Sitemap = locales.flatMap((locale) => {
     const routes: MetadataRoute.Sitemap = [];
 
-    // Token Unlock Impact pSEO Pages
     for (const token of SEO_TOKENS) {
       routes.push({
         url: `${siteUrl}/${locale}/tools/token-unlock-impact/${token.slug}`,
@@ -97,7 +98,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    // Airdrop Calculator pSEO Pages
     for (const protocol of SEO_PROTOCOLS) {
       routes.push({
         url: `${siteUrl}/${locale}/tools/airdrop-calculator/${protocol.slug}`,
@@ -107,7 +107,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    // Address Validator pSEO Pages
     for (const net of SEO_NETWORKS) {
       routes.push({
         url: `${siteUrl}/${locale}/tools/address-validator/${net.slug}`,
@@ -117,7 +116,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    // Wallet Security Checker pSEO Pages
     for (const net of SEO_NETWORKS) {
       routes.push({
         url: `${siteUrl}/${locale}/tools/wallet-security-checker/${net.slug}`,
@@ -127,7 +125,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    // Portfolio Tracker pSEO Pages
     for (const token of SEO_ROI_TOKENS) {
       routes.push({
         url: `${siteUrl}/${locale}/tools/crypto-portfolio-tracker/${token.slug}`,
@@ -137,7 +134,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    // ROI Calculator pSEO Pages
     for (const token of SEO_ROI_TOKENS) {
       routes.push({
         url: `${siteUrl}/${locale}/tools/roi-calculator/${token.slug}`,
@@ -160,5 +156,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...staticPages, ...pseoPages, ...blogPages];
+  // 4. NEW: Crypto Prices Programmatic Pages (Fetch Top 200 Coins)
+  let cryptoPages: MetadataRoute.Sitemap = [];
+  try {
+    const res = await fetch(
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1",
+      { next: { revalidate: 86400 } }, // Cache for 24 hours
+    );
+
+    if (res.ok) {
+      const coins = await res.json();
+
+      // Map over every locale, and for each locale, map over every coin
+      cryptoPages = locales.flatMap((locale) =>
+        coins.map((coin: any) => ({
+          url: `${siteUrl}/${locale}/crypto-prices/${coin.id}`,
+          lastModified: new Date(),
+          changeFrequency: "hourly" as const, // Hourly because prices change often
+          priority: 0.85,
+        })),
+      );
+    }
+  } catch (error) {
+    console.error("Failed to fetch coins for sitemap:", error);
+  }
+
+  // 5. Combine and return all routes
+  return [...staticPages, ...pseoPages, ...blogPages, ...cryptoPages];
 }

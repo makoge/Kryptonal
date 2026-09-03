@@ -65,7 +65,7 @@ export async function generateMetadata({
       locale,
       images: [
         {
-          url: `${siteUrl}/og/market-cap.jpg`,
+          url: `${siteUrl}/og/home.jpg`,
           width: 1200,
           height: 630,
           alt: t.seo.marketCap.title,
@@ -76,7 +76,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t.seo.marketCap.title,
       description: t.seo.marketCap.description,
-      images: [`${siteUrl}/og/market-cap.jpg`],
+      images: [`${siteUrl}/og/home.jpg`],
     },
     robots: {
       index: true,

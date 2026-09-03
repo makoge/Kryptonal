@@ -3244,5 +3244,50 @@
         "signaux du marché crypto"
       ]
     }
+  },
+  "coinDetails": {
+    "meta": {
+      "title": "Cours de {name} ({symbol}) {price} et Analyse des Risques IA | Kryptonal",
+      "description": "Cours en direct, graphique 7 jours et analyse automatisée du risque de marché pour {name} ({symbol})."
+    },
+    "back": "Retour aux Marchés",
+    "rank": "Rang",
+    "ath": "Sommet Historique (ATH)",
+    "tabs": {
+      "chart": "Graphique du Cours",
+      "analysis": "Analyse IA",
+      "about": "À Propos du Projet"
+    },
+    "metrics": {
+      "history7d": "Historique sur 7 Jours",
+      "currentPrice": "Prix Actuel",
+      "marketCap": "Capitalisation",
+      "maxSupply": "Offre Maximale",
+      "infinite": "Infinie",
+      "high24h": "Plus Haut 24h",
+      "low24h": "Plus Bas 24h",
+      "volumeMcap": "Volume / Capitalisation",
+      "resistance": "Niveau de Résistance (Fib 0.618)",
+      "support": "Seuil de Support (Fib 0.618)"
+    },
+    "article": {
+      "priceTodayTitle": "Cours de {name} ({symbol}) Aujourd'hui",
+      "priceTodayBody": "Le cours en direct de {name} s'établit aujourd'hui à {price} USD. Au cours des dernières 24 heures, {name} affiche une variation de {change}, pour une capitalisation globale de {marketCap}. Kryptonal suit les signaux de cycle, indiquant une dynamique {trend}.",
+      "historicalTitle": "Performances Historiques et ATH de {name}",
+      "historicalBody": "L'historique offre un éclairage précieux sur les cycles. {name} a atteint son record historique à {ath}. L'actif se situe actuellement à {athChange}% de son pic. L'analyse des cycles passés aide à repérer les zones d'accumulation.",
+      "predictionTitle": "Perspectives de Prix et Analyse IA pour {name}",
+      "predictionBody": "Bien que les performances passées ne préjugent pas des rendements futurs, nos modèles situent la résistance technique proche de {resistance}, avec un support autour de {support}. Classé #{rank}, son profil correspond à {profile}.",
+      "disclaimer": "Avertissement : Ce contenu est strictement éducatif et ne constitue en aucun cas un conseil financier."
+    },
+    "analysis": {
+      "strongBullish": "Fortement Haussier 🐂",
+      "strongBearish": "Fortement Baissier 🐻",
+      "slightlyBullish": "Modérément Haussier 📈",
+      "slightlyBearish": "Modérément Baissier 📉",
+      "neutral": "Neutre ⚖️",
+      "speculative": "Spéculatif / Court Terme",
+      "midCap": "Croissance Moyenne Capitalisation / Équilibré",
+      "coreAsset": "Actif Clé / Horizon Long Terme"
+    }
   }
 }

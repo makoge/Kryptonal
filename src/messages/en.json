@@ -3172,5 +3172,50 @@
       "title": "Privacy-First Crypto Watchlist | Kryptonal",
       "description": "Create a private crypto watchlist without login. Track live prices locally in your browser with Kryptonal."
     }
+  },
+  "coinDetails": {
+    "meta": {
+      "title": "{name} ({symbol}) Price {price} & AI Risk Analysis | Kryptonal",
+      "description": "Real-time price, 7-day chart, and automated AI market risk assessment for {name} ({symbol})."
+    },
+    "back": "Back to Markets",
+    "rank": "Rank",
+    "ath": "ATH",
+    "tabs": {
+      "chart": "Price Chart",
+      "analysis": "AI Analysis",
+      "about": "About Project"
+    },
+    "metrics": {
+      "history7d": "7-Day Price History",
+      "currentPrice": "Current Price",
+      "marketCap": "Market Cap",
+      "maxSupply": "Max Supply",
+      "infinite": "Infinite",
+      "high24h": "24h High",
+      "low24h": "24h Low",
+      "volumeMcap": "Volume / Market Cap",
+      "resistance": "Resistance Level (Fib 0.618)",
+      "support": "Support Floor (Fib 0.618)"
+    },
+    "article": {
+      "priceTodayTitle": "{name} ({symbol}) Price Today",
+      "priceTodayBody": "The live price of {name} today is {price} USD. Over the last 24 hours, {name} has experienced a price shift of {change}, with a global market capitalization of {marketCap}. Kryptonal analyzes market trends and cycle signals, indicating a {trend} trend.",
+      "historicalTitle": "{name} Historical Performance & All-Time High",
+      "historicalBody": "Historical context is key to assessing cycle position. {name} reached its all-time high of {ath}. It currently sits {athChange}% from its peak. Examining cycle history aids in evaluating accumulation zones and long-term risk.",
+      "predictionTitle": "{name} Future Price Outlook & AI Analysis",
+      "predictionBody": "While past data does not guarantee future results, algorithmic analysis identifies near-term resistance around {resistance}, with technical support near {support}. Ranking #{rank}, its structural profile aligns with {profile}.",
+      "disclaimer": "Disclaimer: All content is strictly educational and does not constitute financial advice."
+    },
+    "analysis": {
+      "strongBullish": "Strong Bullish 🐂",
+      "strongBearish": "Strong Bearish 🐻",
+      "slightlyBullish": "Slightly Bullish 📈",
+      "slightlyBearish": "Slightly Bearish 📉",
+      "neutral": "Neutral ⚖️",
+      "speculative": "Speculative / Short-Term Focus",
+      "midCap": "Mid-Cap Growth / Balanced Horizon",
+      "coreAsset": "Core Asset / Long-Term Potential"
+    }
   }
 }
