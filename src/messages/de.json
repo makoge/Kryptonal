@@ -2797,9 +2797,9 @@
     "bearishPressure": "Bärischer Druck"
   },
   "analysis": {
-    "badge": "Krypto-Intelligenz-Engine",
-    "title": "Krypto-Marktanalyse",
-    "description": "Verstehen Sie die gesamte Krypto-Marktkapitalisierung, das Verhalten von Bitcoin-Zyklen, Marktrisiken und Trendstärke mit klaren und leicht verständlichen Einblicken.",
+    "badge": "Kapitalfluss-Engine",
+    "title": "Echtzeit-Sektorrotation & Hebel-Radar",
+    "description": "Verfolgen Sie, wohin das Smart Money über verschiedene Chains fließt, identifizieren Sie Sektorrotationen mit hohem Momentum und prüfen Sie die Hebel-Intensität von Derivaten, um neue Chancen aufzudecken und Liquiditätsfallen zu vermeiden.",
     "primaryCta": "Analyse starten",
     "secondaryCta": "Methodik lesen",
     "heroCard": {

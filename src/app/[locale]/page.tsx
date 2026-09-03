@@ -93,6 +93,13 @@ export default async function Homepage({ params }: PageProps) {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:48px_48px] opacity-30" />
 
           <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <LiveHeroBoard
+              panelTitle={h.hero.panelTitle}
+              panelNote={h.hero.panelNote}
+              t={t}
+              lang={locale}
+            />
+
             <div>
               <p className="mb-5 text-xs font-black uppercase tracking-[0.28em] text-emerald-300">
                 {h.hero.badge}
@@ -122,13 +129,6 @@ export default async function Homepage({ params }: PageProps) {
                 </Link>
               </div>
             </div>
-
-            <LiveHeroBoard
-              panelTitle={h.hero.panelTitle}
-              panelNote={h.hero.panelNote}
-              t={t}
-              lang={locale}
-            />
           </div>
         </header>
 

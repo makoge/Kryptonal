@@ -2827,9 +2827,9 @@
       ]
     },
     "deepEngine": {
-      "badge": "Motor de Inteligencia",
-      "title": "Motor de Análisis Cripto Profundo",
-      "description": "Genera una lectura más profunda del mercado cubriendo ciclos, dominancia de Bitcoin, gestión de riesgo, rotación de altcoins y una conclusión simple de “¿Qué significa esto?”.",
+      "badge": "Motor de Flujo de Capital",
+      "title": "Rotación de Sectores en Tiempo Real y Radar de Apalancamiento",
+      "description": "Rastrea hacia dónde se mueve el dinero inteligente a través de las redes, identifica rotaciones de sectores de alto impulso y audita la intensidad del apalancamiento de derivados para descubrir nuevas oportunidades y evitar trampas de liquidez.",
       "focusLabel": "Enfoque del Análisis",
       "generate": "Generar Análisis Profundo",
       "generating": "Generando...",

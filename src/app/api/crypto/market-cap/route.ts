@@ -4,6 +4,12 @@ const COINGECKO_URL = "https://api.coingecko.com/api/v3";
 
 export const revalidate = 60;
 
+// --- IN-MEMORY CACHE ---
+let cachedData: any = null;
+let cacheTimestamp = 0;
+const CACHE_TTL = 60 * 1000; // 60 seconds
+// -----------------------
+
 function pct(now: number, prev: number) {
   return prev > 0 ? ((now - prev) / prev) * 100 : 0;
 }
@@ -12,7 +18,7 @@ function getRiskLevel(
   market: number,
   btc: number,
   tvl1d: number,
-  stable1d: number
+  stable1d: number,
 ) {
   let score = 0;
 
@@ -45,7 +51,7 @@ function getMarketPhase(
   btc: number,
   eth: number,
   tvl7d: number,
-  stable1d: number
+  stable1d: number,
 ) {
   const score =
     market * 0.45 +
@@ -99,31 +105,36 @@ function getSummary(args: {
   stable1d: number;
 }) {
   return `${args.phase} conditions are currently in place. Total crypto market cap is ${args.market.toFixed(
-    2
+    2,
   )}% over 24h, Bitcoin dominance is ${args.btc.toFixed(
-    2
+    2,
   )}%, DeFi TVL is ${args.tvl7d.toFixed(
-    2
+    2,
   )}% over 7d, and stablecoin supply is ${args.stable1d.toFixed(
-    2
+    2,
   )}% over 24h. Risk is ${args.risk.toLowerCase()} and trend strength is ${args.trend.toLowerCase()}.`;
 }
 
 export async function GET() {
   try {
+    // 1. Return from RAM if cache is fresh
+    if (cachedData && Date.now() - cacheTimestamp < CACHE_TTL) {
+      return NextResponse.json(cachedData);
+    }
+
     const apiKey = process.env.COINGECKO_API_KEY;
     const headers: HeadersInit = apiKey ? { "x-cg-demo-api-key": apiKey } : {};
 
+    // 2. Fetch using cache: "no-store" to bypass Next.js internal fetch lockups
     const [globalRes, chainsRes, stableRes, tvlChartRes] = await Promise.all([
-      fetch(`${COINGECKO_URL}/global`, { headers, next: { revalidate: 60 } }),
-      fetch("https://api.llama.fi/v2/chains", { next: { revalidate: 300 } }),
-      fetch("https://stablecoins.llama.fi/stablecoins", {
-        next: { revalidate: 300 },
-      }),
-      fetch("https://api.llama.fi/charts", { next: { revalidate: 300 } }),
+      fetch(`${COINGECKO_URL}/global`, { headers, cache: "no-store" }),
+      fetch("https://api.llama.fi/v2/chains", { cache: "no-store" }),
+      fetch("https://stablecoins.llama.fi/stablecoins", { cache: "no-store" }),
+      fetch("https://api.llama.fi/charts", { cache: "no-store" }),
     ]);
 
     if (!globalRes.ok) {
+      if (cachedData) return NextResponse.json(cachedData);
       return NextResponse.json({ error: "Global API failed" }, { status: 502 });
     }
 
@@ -136,7 +147,7 @@ export async function GET() {
 
     const totalMarketCap = Number(global?.total_market_cap?.usd || 0);
     const marketCapChange24h = Number(
-      global?.market_cap_change_percentage_24h_usd || 0
+      global?.market_cap_change_percentage_24h_usd || 0,
     );
     const btcDominance = Number(global?.market_cap_percentage?.btc || 0);
     const ethDominance = Number(global?.market_cap_percentage?.eth || 0);
@@ -144,7 +155,7 @@ export async function GET() {
     const validChains = Array.isArray(chains) ? chains : [];
     const totalTvl = validChains.reduce(
       (sum: number, chain: any) => sum + Number(chain.tvl || 0),
-      0
+      0,
     );
 
     const history = Array.isArray(tvlChart) ? tvlChart : [];
@@ -160,18 +171,20 @@ export async function GET() {
       : [];
 
     const stableUsdAssets = assets.filter(
-      (asset: any) => Number(asset?.circulating?.peggedUSD) > 0
+      (asset: any) => Number(asset?.circulating?.peggedUSD) > 0,
     );
 
     const stableNow = stableUsdAssets.reduce(
       (sum: number, asset: any) =>
         sum + Number(asset?.circulating?.peggedUSD || 0),
-      0
+      0,
     );
 
     const stablePrev1d = stableUsdAssets.reduce((sum: number, asset: any) => {
       const now = Number(asset?.circulating?.peggedUSD || 0);
-      const change = Number(asset?.change_1d?.peggedUSD || asset?.change_1d || 0);
+      const change = Number(
+        asset?.change_1d?.peggedUSD || asset?.change_1d || 0,
+      );
       const prev = Number(asset?.circulatingPrevDay?.peggedUSD) || now - change;
 
       return sum + Math.max(prev, 0);
@@ -184,43 +197,43 @@ export async function GET() {
       btcDominance,
       ethDominance,
       tvlChange7d,
-      stableChange1d
+      stableChange1d,
     );
 
     const riskLevel = getRiskLevel(
       marketCapChange24h,
       btcDominance,
       tvlChange1d,
-      stableChange1d
+      stableChange1d,
     );
 
     const trendStrength = getTrendStrength(
       marketCapChange24h,
       tvlChange7d,
-      stableChange1d
+      stableChange1d,
     );
 
     const riskScore =
       riskLevel === "High"
         ? 82
         : riskLevel === "Elevated"
-        ? 64
-        : riskLevel === "Medium"
-        ? 45
-        : 24;
+          ? 64
+          : riskLevel === "Medium"
+            ? 45
+            : 24;
 
     const phaseScore =
       marketPhase === "Expansion"
         ? 86
         : marketPhase === "Recovery"
-        ? 68
-        : marketPhase === "Consolidation"
-        ? 48
-        : marketPhase === "Distribution"
-        ? 32
-        : marketPhase === "Risk-Off"
-        ? 18
-        : 50;
+          ? 68
+          : marketPhase === "Consolidation"
+            ? 48
+            : marketPhase === "Distribution"
+              ? 32
+              : marketPhase === "Risk-Off"
+                ? 18
+                : 50;
 
     const marketHint = getMarketHint(marketPhase, riskLevel);
 
@@ -235,14 +248,15 @@ export async function GET() {
     });
 
     const btcDominanceChange24h = Number(
-      global?.market_cap_percentage_24h_change?.btc || 0
+      global?.market_cap_percentage_24h_change?.btc || 0,
     );
 
     const ethDominanceChange24h = Number(
-      global?.market_cap_percentage_24h_change?.eth || 0
+      global?.market_cap_percentage_24h_change?.eth || 0,
     );
 
-    return NextResponse.json({
+    // 3. Save to RAM cache
+    cachedData = {
       totalMarketCap,
       marketCapChange24h,
       btcDominance,
@@ -261,8 +275,12 @@ export async function GET() {
       marketHint,
       summary,
       updatedAt: new Date().toISOString(),
-    });
-  } catch {
+    };
+    cacheTimestamp = Date.now();
+
+    return NextResponse.json(cachedData);
+  } catch (error) {
+    if (cachedData) return NextResponse.json(cachedData);
     return NextResponse.json(
       {
         totalMarketCap: 0,
@@ -284,7 +302,7 @@ export async function GET() {
         summary: "Market data is temporarily unavailable.",
         updatedAt: new Date().toISOString(),
       },
-      { status: 200 }
+      { status: 200 },
     );
   }
 }

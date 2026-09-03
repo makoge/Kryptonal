@@ -7,10 +7,9 @@ import MarketCapChart from "@/components/market/MarketCapChart";
 import MarketAnalysis from "@/components/market/MarketAnalysis";
 import MarketOverview from "@/components/market/MarketOverview";
 import AltseasonIndex from "@/components/market/AltseasonIndex";
-import MarketComparison from "@/components/market/MarketComparison";
 import MarketStickyTools from "@/components/market/MarketStickyTools";
 
-const siteUrl = "https://cryptonal.com";
+const siteUrl = "https://kryptonal.com";
 
 const languages = {
   en: `${siteUrl}/en/market-cap`,
@@ -42,7 +41,9 @@ function arr<T>(value: unknown): T[] {
   return Array.isArray(value) ? (value as T[]) : [];
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = getDictionary(locale);
   const url = `${siteUrl}/${locale}/market-cap`;
@@ -105,15 +106,21 @@ type MarketOverviewData = {
   trendStrength: string;
 };
 
+// 🚀 UPGRADED: Added AbortController to prevent Vercel 504 Page Timeouts
 async function getGlobalMarketData(): Promise<GlobalMarketData | null> {
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4000); // 4-second max wait
+
     const res = await fetch("https://api.coingecko.com/api/v3/global", {
       next: { revalidate: 60 },
       headers: process.env.COINGECKO_API_KEY
         ? { "x-cg-demo-api-key": process.env.COINGECKO_API_KEY }
         : {},
+      signal: controller.signal,
     });
 
+    clearTimeout(timeoutId);
     if (!res.ok) return null;
 
     const json = await res.json();
@@ -135,17 +142,29 @@ async function getGlobalMarketData(): Promise<GlobalMarketData | null> {
 }
 
 function formatMarketCap(value: number) {
-  if (value >= 1_000_000_000_000) return `$${(value / 1_000_000_000_000).toFixed(2)}T`;
+  if (value >= 1_000_000_000_000)
+    return `$${(value / 1_000_000_000_000).toFixed(2)}T`;
   if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(2)}B`;
   return `$${value.toLocaleString()}`;
 }
 
+// 🚀 UPGRADED: Dynamic Base URL resolution to prevent dev/prod crossover bugs
 async function getMarketOverviewData(): Promise<MarketOverviewData | null> {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || "https://kryptonal.com"}/api/crypto/market-cap`, {
+    const baseUrl =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3000"
+        : process.env.NEXT_PUBLIC_SITE_URL || "https://kryptonal.com";
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
+
+    const res = await fetch(`${baseUrl}/api/crypto/market-cap`, {
       next: { revalidate: 60 },
+      signal: controller.signal,
     });
 
+    clearTimeout(timeoutId);
     if (!res.ok) return null;
 
     return res.json();
@@ -164,31 +183,23 @@ function get24hSignal(change24h: number) {
 
 function getDominanceSignal(btcDominance: number) {
   if (btcDominance >= 58) {
-    return {
-      label: "Bitcoin Season",
-      color: "text-orange-300",
-    };
+    return { label: "Bitcoin Season", color: "text-orange-300" };
   }
-
   if (btcDominance >= 52) {
-    return {
-      label: "BTC Leading",
-      color: "text-emerald-300",
-    };
+    return { label: "BTC Leading", color: "text-emerald-300" };
   }
-
-  return {
-    label: "Altcoin Rotation",
-    color: "text-cyan-300",
-  };
+  return { label: "Altcoin Rotation", color: "text-cyan-300" };
 }
 
 export default async function MarketCapPage({ params }: PageProps) {
   const { locale } = await params;
   const t = getDictionary(locale);
 
-const globalData = await getGlobalMarketData();
-const overviewData = await getMarketOverviewData();
+  // Parallel fetching to cut page load time in half
+  const [globalData, overviewData] = await Promise.all([
+    getGlobalMarketData(),
+    getMarketOverviewData(),
+  ]);
 
   const marketCapFaqs = arr<FaqItem>(t.marketCap.faqs);
   const marketCapAnalysisTags = arr<string>(t.marketCap.analysisTags);
@@ -197,48 +208,44 @@ const overviewData = await getMarketOverviewData();
   const framework = arr<TranslationItem>(t.marketCap.framework);
   const trustPills = arr<string>(t.marketCap.trustPills);
 
-
-  
-
   const dominanceSignal = globalData
-  ? getDominanceSignal(globalData.btcDominance)
-  : null;
+    ? getDominanceSignal(globalData.btcDominance)
+    : null;
 
   const liveMetrics = globalData
-  ? [
-      {
-        label: t.marketCap.totalMarketCap,
-        value: formatMarketCap(globalData.totalMarketCap),
-        change: `${globalData.change24h >= 0 ? "+" : ""}${globalData.change24h.toFixed(2)}% ${t.marketCap.change24h}`,
-        positive: globalData.change24h >= 0,
-      },
-      {
-  label: t.marketCap.change24h,
-  value: `${globalData.change24h >= 0 ? "+" : ""}${globalData.change24h.toFixed(2)}%`,
-  change: get24hSignal(globalData.change24h),
-  positive: globalData.change24h >= 0,
-},
-      {
-        label: t.marketCap.btcDominance,
-        value: `${globalData.btcDominance.toFixed(2)}%`,
-        change: dominanceSignal?.label || t.marketCap.btcDominance,
+    ? [
+        {
+          label: t.marketCap.totalMarketCap,
+          value: formatMarketCap(globalData.totalMarketCap),
+          change: `${globalData.change24h >= 0 ? "+" : ""}${globalData.change24h.toFixed(2)}% ${t.marketCap.change24h}`,
+          positive: globalData.change24h >= 0,
+        },
+        {
+          label: t.marketCap.change24h,
+          value: `${globalData.change24h >= 0 ? "+" : ""}${globalData.change24h.toFixed(2)}%`,
+          change: get24hSignal(globalData.change24h),
+          positive: globalData.change24h >= 0,
+        },
+        {
+          label: t.marketCap.btcDominance,
+          value: `${globalData.btcDominance.toFixed(2)}%`,
+          change: dominanceSignal?.label || t.marketCap.btcDominance,
+          positive: true,
+        },
+        {
+          label: t.marketCap.marketPhase,
+          value: overviewData?.marketPhase || "...",
+          change: `${t.marketCap.updated}: ${globalData.updatedAt}`,
+          positive: true,
+        },
+      ]
+    : metrics.slice(0, 4).map((metric) => ({
+        label: metric.label,
+        value: metric.value,
+        change: metric.text || metric.change,
         positive: true,
-      },
-      {
-  label: t.marketCap.marketPhase,
-  value: overviewData?.marketPhase || "...",
-  change: `${t.marketCap.updated}: ${globalData.updatedAt}`,
-  positive: true,
-}
-    ]
-  : metrics.slice(0, 4).map((metric) => ({
-      label: metric.label,
-      value: metric.value,
-      change: metric.text || metric.change,
-      positive: true,
-    }));
+      }));
 
-  
   const pageUrl = `${siteUrl}/${locale}/market-cap`;
 
   const jsonLd = {
@@ -334,30 +341,30 @@ const overviewData = await getMarketOverviewData();
                   </Link>
                 </div>
 
-                <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
-  {liveMetrics.map((metric) => (
-    <div
-      key={metric.label}
-      className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 backdrop-blur"
-    >
-      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
-        {metric.label}
-      </p>
+                {/*<div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {liveMetrics.map((metric) => (
+                    <div
+                      key={metric.label}
+                      className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 backdrop-blur"
+                    >
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                        {metric.label}
+                      </p>
 
-      <p className="mt-2 font-mono text-base font-black text-white sm:text-lg">
-        {metric.value}
-      </p>
+                      <p className="mt-2 font-mono text-base font-black text-white sm:text-lg">
+                        {metric.value}
+                      </p>
 
-      <p
-        className={`mt-1 text-xs ${
-          metric.positive ? "text-emerald-300" : "text-red-300"
-        }`}
-      >
-        {metric.change}
-      </p>
-    </div>
-  ))}
-</div>
+                      <p
+                        className={`mt-1 text-xs ${
+                          metric.positive ? "text-emerald-300" : "text-red-300"
+                        }`}
+                      >
+                        {metric.change}
+                      </p>
+                    </div>
+                  ))}
+                </div>*/}
               </div>
 
               <div className="relative">
@@ -371,51 +378,6 @@ const overviewData = await getMarketOverviewData();
         </section>
 
         <MarketStickyTools t={t} />
-
-        <section id="overview" className="px-4 py-12 sm:px-5 sm:py-16">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-7 max-w-3xl">
-              <p className="text-xs font-black uppercase tracking-[0.25em] text-emerald-300">
-                {t.marketCap.overviewLabel}
-              </p>
-              <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
-                {t.marketCap.overviewTitle}
-              </h2>
-              <p className="mt-4 leading-8 text-slate-300">
-                {t.marketCap.overviewText}
-              </p>
-            </div>
-
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-2 backdrop-blur-xl sm:p-5">
-              <MarketOverview t={t} />
-            </div>
-          </div>
-        </section>
-
-        {pulseCards.length > 0 ? (
-          <section className="px-4 py-8 sm:px-5">
-            <div className="mx-auto max-w-7xl">
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {pulseCards.map((card) => (
-                  <div
-                    key={card.label}
-                    className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:border-emerald-300/30 hover:bg-white/[0.06]"
-                  >
-                    <p className="text-[11px] font-black uppercase tracking-[0.22em] text-slate-500">
-                      {card.label}
-                    </p>
-                    <p className="mt-4 font-mono text-xl font-black text-emerald-300">
-                      {card.value}
-                    </p>
-                    <p className="mt-3 text-sm leading-6 text-slate-400">
-                      {card.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        ) : null}
 
         <section
           id="analysis-engine"
@@ -503,9 +465,7 @@ const overviewData = await getMarketOverviewData();
                     <span className="font-mono text-sm font-black text-cyan-300">
                       0{index + 1}
                     </span>
-                    <h3 className="mt-4 font-black text-white">
-                      {item.title}
-                    </h3>
+                    <h3 className="mt-4 font-black text-white">{item.title}</h3>
                     <p className="mt-2 text-sm leading-7 text-slate-300">
                       {item.text}
                     </p>
@@ -539,8 +499,6 @@ const overviewData = await getMarketOverviewData();
           </div>
         </section>
 
-        
-
         <section className="mx-auto max-w-7xl px-4 py-14 sm:px-5 sm:py-20">
           <article className="grid gap-4 lg:grid-cols-3">
             {[
@@ -570,6 +528,51 @@ const overviewData = await getMarketOverviewData();
           </article>
         </section>
 
+        <section id="overview" className="px-4 py-12 sm:px-5 sm:py-16">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-7 max-w-3xl">
+              <p className="text-xs font-black uppercase tracking-[0.25em] text-emerald-300">
+                {t.marketCap.overviewLabel}
+              </p>
+              <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
+                {t.marketCap.overviewTitle}
+              </h2>
+              <p className="mt-4 leading-8 text-slate-300">
+                {t.marketCap.overviewText}
+              </p>
+            </div>
+
+            <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-2 backdrop-blur-xl sm:p-5">
+              <MarketOverview t={t} />
+            </div>
+          </div>
+        </section>
+
+        {pulseCards.length > 0 ? (
+          <section className="px-4 py-8 sm:px-5">
+            <div className="mx-auto max-w-7xl">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {pulseCards.map((card) => (
+                  <div
+                    key={card.label}
+                    className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:border-emerald-300/30 hover:bg-white/[0.06]"
+                  >
+                    <p className="text-[11px] font-black uppercase tracking-[0.22em] text-slate-500">
+                      {card.label}
+                    </p>
+                    <p className="mt-4 font-mono text-xl font-black text-emerald-300">
+                      {card.value}
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-slate-400">
+                      {card.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         <section className="relative px-4 py-16 sm:px-5 sm:py-20">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-950/10 to-transparent" />
 
@@ -590,9 +593,7 @@ const overviewData = await getMarketOverviewData();
                   <h3 className="text-lg font-black text-white sm:text-xl">
                     {faq.question}
                   </h3>
-                  <p className="mt-4 leading-7 text-slate-300">
-                    {faq.answer}
-                  </p>
+                  <p className="mt-4 leading-7 text-slate-300">{faq.answer}</p>
                 </div>
               ))}
             </div>

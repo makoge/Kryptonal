@@ -2810,9 +2810,9 @@
     "bearishPressure": "Düşüş baskısı"
   },
   "analysis": {
-    "badge": "Kripto Zekâ Motoru",
-    "title": "Kripto Piyasa Analizi",
-    "description": "Toplam kripto piyasa değerini, Bitcoin döngü davranışlarını, piyasa riskini ve trend gücünü net ve okunabilir içgörülerle anlayın.",
+    "badge": "Sermaye Akış Motoru",
+    "title": "Gerçek Zamanlı Sektör Rotasyonu ve Kaldıraç Radarı",
+    "description": "Akıllı paranın zincirler arasında nereye aktığını takip edin, yüksek momentumlu sektör rotasyonlarını tespit edin ve yeni fırsatları ortaya çıkarıp likidite tuzaklarından kaçınmak için türev kaldıraç yoğunluğunu denetleyin.",
     "primaryCta": "Analizi Başlat",
     "secondaryCta": "Metodolojiyi Oku",
     "heroCard": {

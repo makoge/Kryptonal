@@ -2749,9 +2749,9 @@
     "bearishPressure": "Bearish pressure"
   },
   "analysis": {
-    "badge": "Crypto Intelligence Engine",
-    "title": "Crypto Market Analysis",
-    "description": "Understand total crypto market cap, Bitcoin cycle behavior, market risk, and trend strength with clear, readable insights.",
+    "badge": "Capital Flow Engine",
+    "title": "Real-Time Sector Rotation & Leverage Radar",
+    "description": "Track where smart money is moving across chains, identify high-momentum sector rotations, and audit derivatives leverage heat to uncover fresh opportunities and avoid liquidity traps.",
     "primaryCta": "Start Analysis",
     "secondaryCta": "Read Methodology",
     "heroCard": {

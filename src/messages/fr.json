@@ -2809,9 +2809,9 @@
     "bearishPressure": "Pression baissière"
   },
   "analysis": {
-    "badge": "Moteur d’Intelligence Crypto",
-    "title": "Analyse du Marché Crypto",
-    "description": "Comprenez la capitalisation totale du marché crypto, le comportement des cycles Bitcoin, le risque du marché et la force des tendances grâce à des analyses claires et faciles à lire.",
+    "badge": "Moteur de Flux de Capitaux",
+    "title": "Rotation Sectorielle en Temps Réel et Radar de Levier",
+    "description": "Suivez les mouvements de la smart money à travers les réseaux, identifiez les rotations sectorielles à fort momentum et analysez l'intensité de l'effet de levier sur les dérivés pour dénicher de nouvelles opportunités et éviter les pièges de liquidité.",
     "primaryCta": "Commencer l’Analyse",
     "secondaryCta": "Lire la Méthodologie",
     "heroCard": {

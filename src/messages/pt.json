@@ -2816,9 +2816,9 @@
     "bearishPressure": "Pressão de baixa"
   },
   "analysis": {
-    "badge": "Motor de Inteligência Cripto",
-    "title": "Análise do Mercado Cripto",
-    "description": "Entenda a capitalização total do mercado cripto, o comportamento dos ciclos do Bitcoin, o risco de mercado e a força das tendências com insights claros e fáceis de entender.",
+    "badge": "Motor de Fluxo de Capital",
+    "title": "Rotação de Setores em Tempo Real e Radar de Alavancagem",
+    "description": "Acompanhe para onde o dinheiro inteligente está se movendo entre as redes, identifique rotações de setores de alto momento e audite a intensidade de alavancagem de derivativos para descobrir novas oportunidades e evitar armadilhas de liquidez.",
     "primaryCta": "Iniciar Análise",
     "secondaryCta": "Ler Metodologia",
     "heroCard": {

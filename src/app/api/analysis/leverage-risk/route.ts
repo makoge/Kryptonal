@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-// Force Vercel to execute this route in Frankfurt, Germany (bypasses the US Geo-block)
+// Force Vercel to execute this route in Frankfurt, Germany (bypasses the US Geo-block if on Pro plan)
 export const preferredRegion = "fra1";
 
 const SYMBOLS = ["BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT"];
@@ -26,7 +26,7 @@ type Market = {
 };
 
 // --- IN-MEMORY CACHE ---
-// Protects Vercel from timing out by reusing the result of the 20 network calls for 60 seconds
+// Protects Vercel from timing out by reusing the result of the network calls for 60 seconds
 let cachedData: any = null;
 let cacheTimestamp = 0;
 const CACHE_TTL = 60 * 1000; // 60 seconds
@@ -141,23 +141,21 @@ async function getBinanceMarket(symbol: string): Promise<Market | null> {
   };
 }
 
+// 🚀 UPGRADED: Uses a single, reliable Bybit endpoint to bypass Geo-blocks and fetch errors
 async function getBybitMarket(symbol: string): Promise<Market | null> {
-  const [ticker, oi] = await Promise.all([
-    safeJson(
-      `https://api.bybit.com/v5/market/tickers?category=linear&symbol=${symbol}`,
-    ),
-    safeJson(
-      `https://api.bybit.com/v5/market/open-interest?category=linear&symbol=${symbol}&intervalTime=5min`,
-    ),
-  ]);
+  const ticker = await safeJson(
+    `https://api.bybit.com/v5/market/tickers?category=linear&symbol=${symbol}`,
+  );
 
   const item = ticker?.result?.list?.[0];
-  const oiItem = oi?.result?.list?.[0];
+  if (!item) return null;
 
-  const fundingRate = num(item?.fundingRate);
-  const markPrice = num(item?.markPrice) || num(item?.lastPrice);
-  const openInterest = num(oiItem?.openInterest);
-  const openInterestUsd = openInterest * markPrice;
+  const fundingRate = num(item.fundingRate);
+  const markPrice = num(item.markPrice) || num(item.lastPrice);
+  const openInterest = num(item.openInterest);
+  // Bybit tickers already include the nominal USD value, no math required!
+  const openInterestUsd =
+    num(item.openInterestValue) || openInterest * markPrice;
 
   if (!markPrice || !openInterestUsd) return null;
 
@@ -168,15 +166,17 @@ async function getBybitMarket(symbol: string): Promise<Market | null> {
     markPrice,
     openInterest,
     openInterestUsd,
-    nextFundingTime: num(item?.nextFundingTime),
+    nextFundingTime: num(item.nextFundingTime),
     source: "bybit",
   };
 }
 
 async function getMarket(symbol: string) {
-  const binance = await getBinanceMarket(symbol);
-  const market = binance ||
-    (await getBybitMarket(symbol)) || {
+  // 🔄 FLIPPED: Bybit is now the Primary source because it allows Vercel US IPs. Binance is the fallback.
+  const bybit = await getBybitMarket(symbol);
+
+  const market = bybit ||
+    (await getBinanceMarket(symbol)) || {
       symbol,
       fundingRate: 0,
       fundingRatePct: 0,
@@ -204,7 +204,7 @@ export async function GET() {
       return NextResponse.json(cachedData);
     }
 
-    // 2. Fetch fresh data (this triggers the network calls)
+    // 2. Fetch fresh data
     const markets = await Promise.all(
       SYMBOLS.map((symbol) => getMarket(symbol)),
     );

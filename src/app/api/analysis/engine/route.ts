@@ -16,17 +16,14 @@ type Mode =
   | "sectors"
   | "leverage";
 
-// --- RATE LIMITING SETUP ---
+// In-Memory Rate Limiting
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const MAX_GUEST_CALLS = 10;
 const ONE_DAY_MS = 24 * 60 * 60 * 1000;
-// ---------------------------
 
 async function safeFetch(origin: string, path: string) {
   try {
-    const res = await fetch(`${origin}${path}`, {
-      next: { revalidate: 60 },
-    });
+    const res = await fetch(`${origin}${path}`, { cache: "no-store" });
     if (!res.ok) return null;
     return await res.json();
   } catch (e) {
@@ -37,7 +34,6 @@ async function safeFetch(origin: string, path: string) {
 
 export async function POST(req: NextRequest) {
   try {
-    // --- RATE LIMIT CHECK ---
     const ip =
       req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
     const now = Date.now();
@@ -56,7 +52,6 @@ export async function POST(req: NextRequest) {
 
     userLimit.count += 1;
     rateLimitMap.set(ip, userLimit);
-    // ------------------------
 
     const body = await req.json();
     const mode: Mode = body.mode || "all";
@@ -65,7 +60,6 @@ export async function POST(req: NextRequest) {
     let targetData: any = {};
     let modeInstructions = "";
 
-    // 🚀 SMART FETCHING: Only fetch the exact data requested to prevent server timeouts!
     switch (mode) {
       case "stablecoins":
         targetData = {
@@ -77,19 +71,19 @@ export async function POST(req: NextRequest) {
         targetData = {
           sectors: await safeFetch(origin, "/api/analysis/sectors"),
         };
-        modeInstructions = `Analyze ONLY Crypto Sector Rotation & Narrative Momentum. Identify which sectors are absorbing liquidity, which are bleeding, and whether narrative strength is broad or isolated.`;
+        modeInstructions = `Analyze ONLY Crypto Sector Rotation & Narrative Momentum. Identify which sectors are absorbing liquidity and which are bleeding.`;
         break;
       case "leverage":
         targetData = {
           leverage: await safeFetch(origin, "/api/analysis/leverage-risk"),
         };
-        modeInstructions = `Analyze ONLY Derivatives Leverage, Funding Rates, and Open Interest. Evaluate if funding is overheated, if long/short squeeze risk is imminent, and whether leverage is healthy or dangerous.`;
+        modeInstructions = `Analyze ONLY Derivatives Leverage, Funding Rates, and Open Interest. Evaluate if funding is overheated and if squeeze risks exist.`;
         break;
       case "chains":
         targetData = {
           chains: await safeFetch(origin, "/api/analysis/chains"),
         };
-        modeInstructions = `Analyze ONLY Layer-1 & Layer-2 Blockchain Ecosystems and TVL growth. Identify capital concentration between major chains.`;
+        modeInstructions = `Analyze ONLY Layer-1 & Layer-2 Blockchain Ecosystems and TVL growth.`;
         break;
       case "market":
         targetData = {
@@ -99,46 +93,59 @@ export async function POST(req: NextRequest) {
         break;
       case "all":
       default:
-        // Only fetch everything if they specifically ask for "Full Market"
-        const [market, stable, chains, sectors, leverage] = await Promise.all([
-          safeFetch(origin, "/api/crypto/market-cap"),
-          safeFetch(origin, "/api/analysis/stablecoins"),
-          safeFetch(origin, "/api/analysis/chains"),
-          safeFetch(origin, "/api/analysis/sectors"),
-          safeFetch(origin, "/api/analysis/leverage-risk"),
-        ]);
+        // Sequential fetch prevents local Next.js deadlock
+        const market = await safeFetch(origin, "/api/crypto/market-cap");
+        const stable = await safeFetch(origin, "/api/analysis/stablecoins");
+        const chains = await safeFetch(origin, "/api/analysis/chains");
+        const sectors = await safeFetch(origin, "/api/analysis/sectors");
+        const leverage = await safeFetch(origin, "/api/analysis/leverage-risk");
+
         targetData = { market, stablecoins: stable, chains, sectors, leverage };
-        modeInstructions = `Provide a comprehensive multi-pillar briefing covering Macro Market, Stablecoins, Chains, Sectors, and Leverage.`;
+        modeInstructions = `
+SYNTHESIZE A COMPLETE MACRO TACTICAL PLAYBOOK.
+Do not simply repeat individual metrics. Synthesize the intersection of stablecoin liquidity, leverage heat, and sector rotation into an executive game plan.
+1. Provide a definitive Market Signal (Bullish, Bearish, or Neutral) and a numerical Confluence Score (0 to 100).
+2. Formulate a 2-part playbook:
+   - "shortTerm": Tactical stance for the next 1–7 days (volatility risk, funding extremes, squeeze traps).
+   - "longTerm": Strategic posture for the next 1–3 months (DCA safety, macro trend strength, capital preservation).
+3. "radar.focusOn": Identify 2-3 specific crypto sectors, chains, or setups showing genuine strength/inflows.
+4. "radar.avoidOrDeRisk": Identify 2-3 specific sectors, overheated perps, or decaying narratives that traders should avoid or de-risk from.`;
         break;
     }
 
     const systemPrompt = `
-You are a senior quantitative crypto strategist.
-Deliver a sharp, realistic, and institutional intelligence briefing based ONLY on the data below.
-If the data array is empty or null, state clearly that data is currently unavailable for this metric.
+You are a senior quantitative crypto market strategist. Deliver sharp, actionable, institutional-grade market intelligence.
 
 TASK:
 ${modeInstructions}
 
-STRICT GUIDELINES:
-1. ONLY discuss the requested focus area (${mode.toUpperCase()}).
-2. Classify the overall market signal and each section's signal as strictly one of: "Bullish", "Bearish", or "Neutral".
-3. Use specific numbers from the data. 
-
-RESPONSE FORMAT:
-Return strictly valid JSON matching this exact structure:
+STRICT JSON OUTPUT FORMAT:
+Return strictly valid JSON matching this schema:
 {
   "marketSignal": "Bullish" | "Bearish" | "Neutral",
+  "confluenceScore": 75,
   "conclusion": "A direct 2-sentence executive briefing summarizing the impact and bias.",
+  "playbook": {
+    "shortTerm": "Tactical 1-7 day stance...",
+    "longTerm": "Strategic 1-3 month posture..."
+  },
+  "radar": {
+    "focusOn": [
+      { "name": "Asset/Sector/Chain", "reason": "Specific data-backed reason for strength", "badge": "Inflows" }
+    ],
+    "avoidOrDeRisk": [
+      { "name": "Asset/Sector/Chain", "reason": "Specific risk/leverage trap reason", "badge": "High Risk" }
+    ]
+  },
   "sections": [
     {
-      "title": "Clear Section Title",
+      "title": "Section Title",
       "signal": "Bullish" | "Bearish" | "Neutral",
-      "summary": "1-sentence concise bottom line.",
-      "what": "Exact metrics, numbers, and data points observed.",
-      "why": "Why this matters to traders and capital flows.",
-      "outcomes": "Projected market impact and potential scenario.",
-      "takeaway": "Actionable risk or opportunity takeaway."
+      "summary": "1-sentence summary",
+      "what": "Exact metrics observed",
+      "why": "Why this matters",
+      "outcomes": "Market projection",
+      "takeaway": "Actionable takeaway"
     }
   ]
 }
@@ -151,33 +158,30 @@ ${JSON.stringify(targetData)}
       model: "openai/gpt-oss-20b",
       messages: [{ role: "system", content: systemPrompt }],
       response_format: { type: "json_object" },
-      temperature: 0.4, // Lowered slightly to prevent hallucination
+      temperature: 0.35,
+      max_tokens: 3500,
     });
 
-    // 🛡️ JSON SANITIZER: Clean up Markdown formatting if AI includes it
     let rawContent = completion.choices[0].message.content || "{}";
     rawContent = rawContent
       .replace(/```json/gi, "")
       .replace(/```/gi, "")
       .trim();
 
-    let generatedBrief;
-    try {
-      generatedBrief = JSON.parse(rawContent);
-    } catch (parseError) {
-      console.error("AI JSON Parse Error. Raw Output:", rawContent);
-      throw new Error("Failed to parse AI response into JSON");
-    }
+    const generatedBrief = JSON.parse(rawContent);
 
     return NextResponse.json({
       mode,
       marketSignal: generatedBrief.marketSignal || "Neutral",
+      confluenceScore: generatedBrief.confluenceScore || 50,
       conclusion:
         generatedBrief.conclusion || "Analysis generated successfully.",
+      playbook: generatedBrief.playbook || null,
+      radar: generatedBrief.radar || null,
       sections: generatedBrief.sections || [],
       updatedAt: new Date().toISOString(),
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error("AI Analysis Engine Error:", error);
     return NextResponse.json(
       { error: "Failed to generate market intelligence" },
