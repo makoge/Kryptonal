@@ -1,6 +1,9 @@
 import { ImageResponse } from "next/og";
 import { getCoinData } from "@/lib/getCoinData";
 
+// Cache this dynamically generated image for 1 hour (3600 seconds)
+export const revalidate = 3600;
+
 // Dimensions recommended for Open Graph cards
 export const size = {
   width: 1200,

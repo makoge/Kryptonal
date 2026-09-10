@@ -6,12 +6,20 @@ import Footer from "@/components/layout/Footer";
 import { getDictionary } from "@/lib/getDictionary";
 import { getCoinData } from "@/lib/getCoinData";
 import CoinDetailsClient from "@/components/crypto-prices/CoinDetailsClient";
+import { checkGatePair } from "@/lib/getGatePair";
+
+// 1. Force ISR Caching: Cache all pages and metadata on this route for 1 hour.
+// This is the most critical fix to stop bots from draining your Active CPU.
+export const revalidate = 3600;
+
+// Allow Next.js to dynamically generate (and then cache) coins outside the top 200
+export const dynamicParams = true;
 
 type Props = {
   params: Promise<{ locale: string; id: string }>;
 };
 
-// 1. Dynamic SEO Metadata with Live Coin Info
+// 2. Dynamic SEO Metadata with Live Coin Info
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, id } = await params;
   const data = await getCoinData(id);
@@ -49,17 +57,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// 2. Server Page Rendering
+// 3. Server Page Rendering
 export default async function CoinDetailsPage({ params }: Props) {
   const { locale, id } = await params;
   const t = getDictionary(locale);
+
+  // Note: Ensure getCoinData uses native fetch() or is wrapped in React cache()
+  // so this call and the one in generateMetadata are deduplicated into a single request.
   const data = await getCoinData(id);
 
-  // If CoinGecko doesn't recognize the token ID, trigger a 404
   if (!data || !data.details) {
     notFound();
   }
   const { details } = data;
+
+  // Check if Gate.io supports trading for this token symbol
+  const symbol = data.details.symbol || "";
+  const gatePair = await checkGatePair(symbol);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FinancialProduct",
@@ -90,6 +105,7 @@ export default async function CoinDetailsPage({ params }: Props) {
             chartData={data.chartData}
             t={t}
             locale={locale}
+            gatePair={gatePair}
           />
         </div>
       </main>
@@ -98,9 +114,9 @@ export default async function CoinDetailsPage({ params }: Props) {
   );
 }
 
+// 4. Generate only the parameters for THIS segment
 export async function generateStaticParams() {
   try {
-    // Fetch the top 200 coins to pre-render
     const res = await fetch(
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1",
       { next: { revalidate: 86400 } }, // Cache this list for 24 hours
@@ -110,7 +126,7 @@ export async function generateStaticParams() {
 
     const coins = await res.json();
 
-    // We only need to return the 'id' for the URL route
+    // Next.js will automatically matrix these IDs with the locales from your parent layout
     return coins.map((coin: any) => ({
       id: coin.id,
     }));

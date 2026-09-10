@@ -5,12 +5,12 @@
   },
   "nav": {
     "tools": "Tools",
-    "crypto": "Crypto",
-    "marketCap": "Market Cap",
-    "analysis": "Analysis",
-    "blog": "Blog/News",
-    "gamingCrypto": "Gaming Crypto",
-    "start": "Start Analysis",
+    "crypto": "Cryptocurrency",
+    "marketCap": "Market Data",
+    "analysis": "Capital Flow",
+    "blog": "Learn",
+    "gamingCrypto": "Gaming",
+    "start": "Analysis",
     "trending": "Trending"
   },
   "home": {
@@ -2538,7 +2538,7 @@
   "marketCap": {
     "back": "← Back to Home",
     "badge": "Global Crypto Market Intelligence",
-    "title": "Crypto Market Cap Analysis",
+    "title": "Crypto Market  Analysis",
     "description": "Analyze total cryptocurrency market capitalization, compare current market value with previous crypto cycles, and understand Bitcoin dominance, market phases, and long-term crypto trends.",
     "primaryCta": "Analyze Market",
     "secondaryCta": "Altcoin Season Index",
@@ -2570,6 +2570,22 @@
         "change": "Moderate risk"
       }
     ],
+    "movers": {
+      "badge": "Market Drivers & Catalyst Radar",
+      "title": "Key Figures & Entities Shaping Market Momentum",
+      "description": "Track high-sensitivity news, public statements, and policy shifts influencing global liquidity.",
+      "exploreBtn": "Explore Trending News",
+      "impact": "Impact",
+      "affects": "Affects",
+      "statusLive": "Live Stream",
+      "statusSyncing": "Syncing...",
+      "statusFallback": "Offline Mode",
+      "sentimentBullish": "Bullish Catalyst",
+      "sentimentBearish": "Bearish Headwind",
+      "sentimentNeutral": "Macro Neutral",
+      "footerText": "News alerts and statements are continuously indexed to gauge real-time sentiment impact across major asset pairs.",
+      "footerLink": "View Full Feed on Trending Topics →"
+    },
     "historicalLabel": "Altcoin Season Index",
     "chartTitle": "Track When Altcoins Start Taking Market Strength",
     "chartDescription": "The Altcoin Season Index helps you understand whether capital is flowing into Bitcoin or rotating into altcoins. Monitor market leadership, momentum shifts, and risk appetite across the crypto market.",

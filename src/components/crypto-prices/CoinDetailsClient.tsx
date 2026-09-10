@@ -10,6 +10,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import GateTradeButton from "./GateTradeButton";
 
 type ModalView = "chart" | "analysis" | "about";
 
@@ -219,6 +220,7 @@ type Props = {
   chartData: any[];
   t: any;
   locale: string;
+  gatePair?: string | null;
 };
 
 export default function CoinDetailsClient({
@@ -226,6 +228,7 @@ export default function CoinDetailsClient({
   chartData,
   t,
   locale,
+  gatePair = null,
 }: Props) {
   const [view, setView] = useState<ModalView>("chart");
 
@@ -277,6 +280,15 @@ export default function CoinDetailsClient({
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3">
+          {/* Gate.io Referral Action Button */}
+          <GateTradeButton
+            symbol={details?.symbol || ""}
+            gatePair={gatePair}
+            coinName={details?.name || "Token"}
+          />
         </div>
         <ShareBar
           coinId={details.id}

@@ -4,6 +4,8 @@ import CryptoPricesClient from "@/components/crypto-prices/CryptoPricesClient";
 import { getDictionary } from "@/lib/getDictionary";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { getGateNewGems } from "@/lib/getGateGems";
+import { filterCoinsByCategory } from "@/lib/categoryCoins";
 
 export const revalidate = 60;
 
@@ -114,14 +116,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CryptoPricesPage({ params }: Props) {
   const { locale } = await params;
-  const dict = await getDictionary(locale);
-  const data = await getData();
+  const dict = getDictionary(locale);
+
+  // Fetch market data and Gate.io gems simultaneously
+  const [marketData, gateGems] = await Promise.all([
+    getData(),
+    getGateNewGems(),
+  ]);
+
+  const allCoins = marketData?.coins ?? [];
+
+  // Assemble full dataset for tabs and hero metric cards
+  const combinedData = {
+    ...(marketData || {}),
+    gateGems: gateGems ?? [],
+    ai: filterCoinsByCategory(allCoins, "ai"),
+    meme: filterCoinsByCategory(allCoins, "meme"),
+    layer1: filterCoinsByCategory(allCoins, "layer1"),
+    layer2: filterCoinsByCategory(allCoins, "layer2"),
+    gaming: filterCoinsByCategory(allCoins, "gaming"),
+  };
 
   return (
     <>
       <Header locale={locale} t={dict} />
 
-      <CryptoPricesClient data={data} t={dict.cryptoPrices} locale={locale} />
+      <CryptoPricesClient
+        data={combinedData}
+        t={dict.cryptoPrices}
+        locale={locale}
+      />
 
       <Footer locale={locale} t={dict} />
     </>

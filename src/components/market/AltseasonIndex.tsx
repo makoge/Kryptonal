@@ -96,14 +96,14 @@ export default function AltseasonIndex({ t }: { t: any }) {
       id="altcoin-index"
       className="mx-auto max-w-7xl px-4 py-14 sm:px-5 sm:py-20"
     >
-      <div className="rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-white/[0.05] via-slate-950/80 to-slate-950 p-6 shadow-2xl backdrop-blur-2xl sm:p-8 lg:p-10">
+      <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] via-slate-950/80 to-slate-950 p-4 shadow-2xl backdrop-blur-2xl sm:rounded-[2.5rem] sm:p-8 lg:p-10">
         {/* Header Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
           <div>
             <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-black uppercase tracking-[0.25em] text-cyan-300">
               {label(t, "badge", "Altseason Radar")}
             </span>
-            <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-3 text-2xl font-black tracking-tight text-white sm:text-3xl lg:text-4xl">
               {label(t, "title", "Altcoin vs. Bitcoin Cycle Index")}
             </h2>
           </div>
@@ -120,36 +120,36 @@ export default function AltseasonIndex({ t }: { t: any }) {
         </div>
 
         {/* Core Layout Grid */}
-        <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+        <div className="mt-6 grid gap-6 lg:mt-8 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-8">
           {/* Left Column: Score Meter & Macro Matrix */}
           <div className="space-y-6">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-inner">
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/70 p-4 shadow-inner sm:p-6">
               <div
                 className="absolute -right-10 -top-10 h-44 w-44 rounded-full blur-3xl pointer-events-none"
                 style={{ background: phaseConfig.bgGlow }}
               />
 
-              <div className="flex items-end justify-between gap-4">
+              <div className="flex flex-wrap items-end justify-between gap-4">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 sm:text-xs">
                     {label(t, "score", "Cycle Intensity Score")}
                   </p>
                   <div className="mt-2 flex items-baseline gap-2">
-                    <span className="font-mono text-6xl font-black tracking-tight text-white sm:text-7xl">
+                    <span className="font-mono text-5xl font-black tracking-tight text-white sm:text-7xl">
                       {index}
                     </span>
-                    <span className="text-xl font-bold text-slate-500">
+                    <span className="text-lg font-bold text-slate-500 sm:text-xl">
                       /100
                     </span>
                   </div>
                 </div>
 
-                <div className="text-right">
-                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                <div className="text-left sm:text-right">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 sm:text-xs">
                     {label(t, "status", "Current Regime")}
                   </p>
                   <p
-                    className={`mt-2 text-2xl font-black ${phaseConfig.textColor}`}
+                    className={`mt-1 text-xl font-black sm:mt-2 sm:text-2xl ${phaseConfig.textColor}`}
                   >
                     {phaseConfig.label}
                   </p>
@@ -158,7 +158,7 @@ export default function AltseasonIndex({ t }: { t: any }) {
 
               {/* Advanced Multi-Threshold Meter */}
               <div className="mt-7">
-                <div className="relative h-4 w-full overflow-hidden rounded-full bg-slate-900 border border-white/10">
+                <div className="relative h-4 w-full overflow-hidden rounded-full border border-white/10 bg-slate-900">
                   <div
                     className={`h-full rounded-full bg-gradient-to-r ${phaseConfig.barColor} transition-all duration-1000 ease-out`}
                     style={{ width: `${Math.max(index, 4)}%` }}
@@ -166,22 +166,22 @@ export default function AltseasonIndex({ t }: { t: any }) {
                 </div>
 
                 {/* Threshold Markers */}
-                <div className="relative mt-2 flex justify-between text-[11px] font-bold text-slate-500">
+                <div className="relative mt-2 flex justify-between text-[10px] font-bold text-slate-500 sm:text-[11px]">
                   <div className="flex flex-col items-start">
                     <span className="text-orange-400/90">0 – 25</span>
-                    <span className="text-[10px] uppercase tracking-wider text-slate-500">
+                    <span className="uppercase tracking-wider text-slate-500">
                       BTC Season
                     </span>
                   </div>
                   <div className="flex flex-col items-center">
                     <span className="text-cyan-300/90">26 – 74</span>
-                    <span className="text-[10px] uppercase tracking-wider text-slate-500">
+                    <span className="uppercase tracking-wider text-slate-500">
                       Rotation
                     </span>
                   </div>
                   <div className="flex flex-col items-end">
                     <span className="text-emerald-400/90">75 – 100</span>
-                    <span className="text-[10px] uppercase tracking-wider text-slate-500">
+                    <span className="uppercase tracking-wider text-slate-500">
                       Altseason
                     </span>
                   </div>
@@ -201,53 +201,57 @@ export default function AltseasonIndex({ t }: { t: any }) {
             {/* 4-Metric Diagnostic Matrix */}
             {data && (
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3 sm:p-4">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 sm:text-[11px]">
                     {label(t, "outperforming", "Beating BTC")}
                   </p>
-                  <p className="mt-2 font-mono text-xl font-black text-white">
+                  <p className="mt-2 font-mono text-lg font-black text-white sm:text-xl">
                     {data.outperformCount}{" "}
                     <span className="text-xs text-slate-500">
                       / {data.totalAltcoinsChecked}
                     </span>
                   </p>
-                  <p className="mt-1 text-xs font-bold text-cyan-300">
+                  <p className="mt-1 text-[10px] font-bold text-cyan-300 sm:text-xs">
                     {outperformanceRatio}% of Market
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3 sm:p-4">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 sm:text-[11px]">
                     {label(t, "btc30d", "BTC 30D Base")}
                   </p>
                   <p
-                    className={`mt-2 font-mono text-xl font-black ${
+                    className={`mt-2 font-mono text-lg font-black sm:text-xl ${
                       btc30d >= 0 ? "text-emerald-400" : "text-rose-400"
                     }`}
                   >
                     {pct(btc30d)}
                   </p>
-                  <p className="mt-1 text-[11px] text-slate-500">Benchmark</p>
+                  <p className="mt-1 text-[10px] text-slate-500 sm:text-[11px]">
+                    Benchmark
+                  </p>
                 </div>
 
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3 sm:p-4">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 sm:text-[11px]">
                     {t.marketCap.btcDominance || "BTC Dominance"}
                   </p>
-                  <p className="mt-2 font-mono text-xl font-black text-white">
+                  <p className="mt-2 font-mono text-lg font-black text-white sm:text-xl">
                     {data.btcDominance.toFixed(2)}%
                   </p>
-                  <p className="mt-1 text-[11px] text-slate-500">Total Share</p>
+                  <p className="mt-1 text-[10px] text-slate-500 sm:text-[11px]">
+                    Total Share
+                  </p>
                 </div>
 
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3 sm:p-4">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 sm:text-[11px]">
                     {t.marketCap.ethDominance || "ETH Dominance"}
                   </p>
-                  <p className="mt-2 font-mono text-xl font-black text-white">
+                  <p className="mt-2 font-mono text-lg font-black text-white sm:text-xl">
                     {data.ethDominance.toFixed(2)}%
                   </p>
-                  <p className="mt-1 text-[11px] text-slate-500">
+                  <p className="mt-1 text-[10px] text-slate-500 sm:text-[11px]">
                     Smart Contracts
                   </p>
                 </div>
@@ -256,19 +260,19 @@ export default function AltseasonIndex({ t }: { t: any }) {
           </div>
 
           {/* Right Column: Interactive Relative Alpha Radar */}
-          <div className="space-y-4 rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-inner">
-            <div className="flex items-center justify-between">
+          <div className="space-y-4 rounded-[1.5rem] border border-white/10 bg-slate-950/70 p-4 shadow-inner sm:rounded-3xl sm:p-6">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h3 className="text-lg font-black text-white">
                   {label(t, "relativeStrength", "Relative Alpha Radar")}
                 </h3>
                 <p className="text-xs text-slate-400">
-                  Performance spread measured against Bitcoin ({pct(btc30d)})
+                  Spread vs Bitcoin ({pct(btc30d)})
                 </p>
               </div>
 
               {/* Segmented View Switcher */}
-              <div className="flex rounded-xl border border-white/10 bg-white/[0.03] p-1">
+              <div className="flex self-start rounded-xl border border-white/10 bg-white/[0.03] p-1 sm:self-auto">
                 <button
                   onClick={() => setActiveTab("leaders")}
                   className={`rounded-lg px-3 py-1 text-xs font-bold transition ${
@@ -293,7 +297,7 @@ export default function AltseasonIndex({ t }: { t: any }) {
             </div>
 
             {/* Coin Performance List with Relative Alpha Bars */}
-            <div className="mt-4 space-y-2.5 max-h-[460px] overflow-y-auto pr-1">
+            <div className="mt-4 space-y-2.5 overflow-y-auto pr-1 max-h-[400px] sm:max-h-[460px]">
               {activeTab === "leaders" ? (
                 <AlphaList
                   coins={data?.leaders || []}
@@ -312,7 +316,7 @@ export default function AltseasonIndex({ t }: { t: any }) {
             </div>
 
             {data?.updatedAt && (
-              <p className="pt-3 text-right text-[11px] text-slate-500 border-t border-white/5">
+              <p className="border-t border-white/5 pt-3 text-right text-[10px] text-slate-500 sm:text-[11px]">
                 {t.marketCap.updated || "Last Calculated"}:{" "}
                 {new Date(data.updatedAt).toLocaleTimeString()}
               </p>
@@ -350,28 +354,29 @@ function AlphaList({
         return (
           <div
             key={coin.symbol}
-            className="group rounded-2xl border border-white/5 bg-white/[0.02] p-3.5 transition-all hover:border-white/15 hover:bg-white/[0.04]"
+            className="group rounded-2xl border border-white/5 bg-white/[0.02] p-3 transition-all hover:border-white/15 hover:bg-white/[0.04] sm:p-3.5"
           >
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
+            <div className="flex items-center justify-between gap-2 sm:gap-3">
+              <div className="flex items-center gap-2 sm:gap-3">
                 <img
                   src={coin.image}
                   alt={coin.name}
-                  className="h-7 w-7 rounded-full border border-white/10"
+                  className="h-6 w-6 rounded-full border border-white/10 sm:h-7 sm:w-7"
                   onError={(e) => {
-                    // Fallback to placeholder on broken image
                     (e.target as HTMLImageElement).src =
                       "https://assets.coingecko.com/coins/images/1/small/bitcoin.png";
                   }}
                 />
                 <div>
-                  <div className="flex items-center gap-2">
-                    <p className="text-sm font-bold text-white">{coin.name}</p>
-                    <span className="rounded bg-white/5 px-1.5 py-0.5 text-[10px] font-bold text-slate-400">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <p className="truncate max-w-[80px] text-xs font-bold text-white sm:max-w-none sm:text-sm">
+                      {coin.name}
+                    </p>
+                    <span className="rounded bg-white/5 px-1 py-0.5 text-[9px] font-bold text-slate-400 sm:px-1.5 sm:text-[10px]">
                       {coin.symbol}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-[10px] text-slate-400 sm:text-xs">
                     30D Gain:{" "}
                     <span className="font-mono text-slate-200">
                       {pct(coin.change30d)}
@@ -383,14 +388,14 @@ function AlphaList({
               {/* Alpha vs BTC callout */}
               <div className="text-right">
                 <p
-                  className={`font-mono text-sm font-black ${
+                  className={`font-mono text-xs font-black sm:text-sm ${
                     alpha >= 0 ? "text-emerald-400" : "text-rose-400"
                   }`}
                 >
                   {pct(alpha)} α
                 </p>
-                <p className="text-[10px] uppercase font-bold tracking-wider text-slate-500">
-                  {alpha >= 0 ? "Spread over BTC" : "Behind BTC"}
+                <p className="text-[9px] font-bold uppercase tracking-wider text-slate-500 sm:text-[10px]">
+                  {alpha >= 0 ? "Spread vs BTC" : "Behind BTC"}
                 </p>
               </div>
             </div>

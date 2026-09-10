@@ -5,12 +5,12 @@
   },
   "nav": {
     "tools": "Herramientas",
-    "crypto": "Cripto",
-    "marketCap": "Capitalización de Mercado",
-    "analysis": "Análisis",
-    "blog": "Blog/Noticias",
-    "gamingCrypto": "Cripto Gaming",
-    "start": "Iniciar Análisis",
+    "crypto": "Criptomoneda",
+    "marketCap": "Datos de Mercado",
+    "analysis": "Flujo de Capital",
+    "blog": "Aprender",
+    "gamingCrypto": "Juegos",
+    "start": "Análisis",
     "trending": "Tendencias"
   },
   "home": {
@@ -2621,6 +2621,22 @@
         "change": "Riesgo moderado"
       }
     ],
+    "movers": {
+      "badge": "Radar de Catalizadores del Mercado",
+      "title": "Figuras y Entidades Clave que Mueven el Mercado",
+      "description": "Monitorea noticias de alta sensibilidad, declaraciones y cambios regulatorios que afectan la liquidez global.",
+      "exploreBtn": "Explorar Noticias Destacadas",
+      "impact": "Impacto",
+      "affects": "Afecta a",
+      "statusLive": "Transmisión en Vivo",
+      "statusSyncing": "Sincronizando...",
+      "statusFallback": "Modo Local",
+      "sentimentBullish": "Catalizador Alcista",
+      "sentimentBearish": "Freno Bajista",
+      "sentimentNeutral": "Macro Neutral",
+      "footerText": "Las noticias y declaraciones se indexan continuamente para medir el impacto en los principales pares de activos.",
+      "footerLink": "Ver Noticias en Tendencias →"
+    },
     "historicalLabel": "Índice de Temporada de Altcoins",
     "chartTitle": "Sigue Cuándo las Altcoins Empiezan a Ganar Fuerza en el Mercado",
     "chartDescription": "El Índice de Temporada de Altcoins te ayuda a entender si el capital permanece en Bitcoin o rota hacia las altcoins. Supervisa cambios de liderazgo, impulso y apetito por el riesgo en el mercado cripto.",

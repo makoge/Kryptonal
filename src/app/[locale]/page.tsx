@@ -3,7 +3,7 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { getDictionary } from "@/lib/getDictionary";
-import CycleComparison from "@/components/home/CycleComparison";
+import MarketMoversRadar from "@/components/home/MarketMoversRadar";
 import LiveHeroBoard from "@/components/home/LiveHeroBoard";
 import HomeToolsSection from "@/components/home/HomeToolsSection";
 import LiveMarketSummary from "@/components/home/LiveMarketSummary";
@@ -136,7 +136,7 @@ export default async function Homepage({ params }: PageProps) {
 
         {/* SUMMARY */}
         <LiveMarketSummary h={h} />
-        <CycleComparison locale={locale} data={h.cycles} />
+        <MarketMoversRadar locale={locale} t={t} />
 
         {/* EDUCATION */}
         <section className="px-4 py-20 sm:px-6">

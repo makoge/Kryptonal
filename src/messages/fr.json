@@ -5,12 +5,12 @@
   },
   "nav": {
     "tools": "Outils",
-    "crypto": "Crypto",
-    "marketCap": "Capitalisation Boursière",
-    "analysis": "Analyse",
-    "blog": "Blog/Actualités",
-    "gamingCrypto": "Crypto Gaming",
-    "start": "Lancer l'analyse",
+    "crypto": "Cryptomonnaie",
+    "marketCap": "Données de Marché",
+    "analysis": "Flux de Capitaux",
+    "blog": "Apprendre",
+    "gamingCrypto": "Gaming",
+    "start": "Analyse",
     "trending": "Tendances"
   },
   "home": {
@@ -2589,7 +2589,7 @@
   "marketCap": {
     "back": "← Retour à l’Accueil",
     "badge": "Intelligence Globale du Marché Crypto",
-    "title": "Analyse de la Capitalisation du Marché Crypto",
+    "title": "Analyse  du Marché Crypto",
     "description": "Analysez la capitalisation totale du marché des cryptomonnaies, comparez la valeur actuelle du marché avec les précédents cycles crypto et comprenez la domination du Bitcoin, les phases du marché et les tendances crypto à long terme.",
     "primaryCta": "Analyser le Marché",
     "secondaryCta": "Indice de Saison des Altcoins",
@@ -2625,6 +2625,22 @@
         "change": "Risque modéré"
       }
     ],
+    "movers": {
+      "badge": "Radar des Catalyseurs du Marché",
+      "title": "Figures Clés et Entités Façonnant le Marché",
+      "description": "Suivez les annonces critiques, déclarations et décisions réglementaires influençant la liquidité globale.",
+      "exploreBtn": "Explorer les Actualités",
+      "impact": "Impact",
+      "affects": "Impacte",
+      "statusLive": "En Direct",
+      "statusSyncing": "Synchronisation...",
+      "statusFallback": "Mode Hors Ligne",
+      "sentimentBullish": "Catalyseur Haussier",
+      "sentimentBearish": "Pression Baissière",
+      "sentimentNeutral": "Neutre Macro",
+      "footerText": "Les actualités et déclarations sont indexées en direct pour évaluer l'impact sur les principaux actifs.",
+      "footerLink": "Voir Tout le Flux des Tendances →"
+    },
     "historicalLabel": "Indice de Saison des Altcoins",
     "chartTitle": "Suivez Quand les Altcoins Commencent à Gagner en Force sur le Marché",
     "chartDescription": "L’Indice de Saison des Altcoins vous aide à comprendre si le capital reste sur Bitcoin ou se déplace vers les altcoins. Suivez les changements de leadership, le momentum et l’appétit pour le risque sur le marché crypto.",

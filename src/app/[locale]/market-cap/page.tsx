@@ -293,16 +293,16 @@ export default async function MarketCapPage({ params }: PageProps) {
           <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-emerald-400/10 blur-3xl sm:h-[520px] sm:w-[520px]" />
 
           <div className="relative mx-auto max-w-7xl">
-            <Link
+            {/*<Link
               href={`/${locale}`}
               className="mb-7 inline-flex rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-slate-300 backdrop-blur transition hover:border-emerald-300/40 hover:text-emerald-300"
             >
               {t.marketCap.back}
-            </Link>
+            </Link>*/}
 
             <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
               <div>
-                <div className="mb-5 flex flex-wrap gap-2">
+                {/*<div className="mb-5 flex flex-wrap gap-2">
                   {trustPills.map((item) => (
                     <span
                       key={item}
@@ -311,7 +311,7 @@ export default async function MarketCapPage({ params }: PageProps) {
                       {item}
                     </span>
                   ))}
-                </div>
+                </div>*/}
 
                 <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-cyan-300 sm:text-sm">
                   {t.marketCap.badge}

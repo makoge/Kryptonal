@@ -5,12 +5,12 @@
   },
   "nav": {
     "tools": "Araçlar",
-    "crypto": "Kripto",
-    "marketCap": "Piyasa Değeri",
-    "analysis": "Analiz",
-    "blog": "Blog/Haberler",
-    "gamingCrypto": "Oyun Kriptoları",
-    "start": "Analize Başla",
+    "crypto": "Kripto Para",
+    "marketCap": "Piyasa Verileri",
+    "analysis": "Sermaye Akışı",
+    "blog": "Öğren",
+    "gamingCrypto": "Oyun",
+    "start": "Analiz",
     "trending": "Trendler"
   },
   "home": {
@@ -2596,7 +2596,7 @@
   "marketCap": {
     "back": "← Ana Sayfaya Dön",
     "badge": "Küresel Kripto Piyasa Zekası",
-    "title": "Kripto Piyasa Değeri Analizi",
+    "title": "Kripto Piyasa  Analizi",
     "description": "Toplam kripto para piyasa değerini analiz edin, mevcut piyasa değerini önceki kripto döngüleriyle karşılaştırın ve Bitcoin dominansı, piyasa aşamaları ve uzun vadeli kripto trendlerini anlayın.",
     "primaryCta": "Piyasayı Analiz Et",
     "secondaryCta": "Altcoin Sezonu Endeksi",
@@ -2624,6 +2624,22 @@
       },
       { "label": "Piyasa Aşaması", "value": "Genişleme", "change": "Orta risk" }
     ],
+    "movers": {
+      "badge": "Piyasa Yönlendiricileri & Katalizör Radarı",
+      "title": "Piyasa Dinamiklerini Belirleyen Kilit Aktörler",
+      "description": "Küresel likiditeyi etkileyen yüksek hassasiyetli haberleri, kamuoyu açıklamalarını ve politika değişimlerini takip edin.",
+      "exploreBtn": "Gündemdeki Haberleri İncele",
+      "impact": "Etki",
+      "affects": "Etkilenen Varlık",
+      "statusLive": "Canlı Akış",
+      "statusSyncing": "Senkronize Ediliyor...",
+      "statusFallback": "Çevrimdışı Mod",
+      "sentimentBullish": "Yükseliş Katalizörü",
+      "sentimentBearish": "Düşüş Baskısı",
+      "sentimentNeutral": "Makro Nötr",
+      "footerText": "Haber ve açıklamalar, piyasa duyarlılığını ölçmek adına düzenli olarak taranmaktadır.",
+      "footerLink": "Tüm Trend Haberleri Gör →"
+    },
     "historicalLabel": "Altcoin Sezonu Endeksi",
     "chartTitle": "Altcoinlerin Piyasa Gücü Kazanmaya Başladığı Zamanı Takip Edin",
     "chartDescription": "Altcoin Sezonu Endeksi, sermayenin Bitcoin’de mi kaldığını yoksa altcoinlere mi döndüğünü anlamanıza yardımcı olur. Kripto piyasasındaki liderlik değişimlerini, momentum hareketlerini ve risk iştahını takip edin.",
