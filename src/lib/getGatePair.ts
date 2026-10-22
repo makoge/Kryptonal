@@ -1,31 +1,42 @@
 // src/lib/getGatePair.ts
+import { cache } from "react";
 
-export async function checkGatePair(symbol: string): Promise<string | null> {
-  if (!symbol) return null;
+// Only allow clean alphanumeric ticker symbols (e.g., BTC, ETH, 1INCH)
+const VALID_SYMBOL_REGEX = /^[A-Z0-9]{1,15}$/;
 
-  const pair = `${symbol.toUpperCase()}_USDT`;
+export const checkGatePair = cache(
+  async (symbol: string): Promise<string | null> => {
+    if (!symbol) return null;
 
-  try {
-    // Gate.io v4 public endpoint (No API key needed)
-    const res = await fetch(
-      `https://api.gateio.ws/api/v4/spot/currency_pairs/${pair}`,
-      {
-        next: { revalidate: 86400 }, // Cache on CDN for 24 hours
-      },
-    );
+    const cleanSymbol = symbol.trim().toUpperCase();
+    if (!VALID_SYMBOL_REGEX.test(cleanSymbol)) return null;
 
-    if (!res.ok) return null;
+    const pair = `${cleanSymbol}_USDT`;
 
-    const data = await res.json();
+    try {
+      // Gate.io v4 public endpoint (No API key needed)
+      // Abort after 2500ms so a slow Gate.io response never hangs page rendering
+      const res = await fetch(
+        `https://api.gateio.ws/api/v4/spot/currency_pairs/${pair}`,
+        {
+          next: { revalidate: 86400 }, // Cache response for 24 hours
+          signal: AbortSignal.timeout(2500),
+        },
+      );
 
-    // Verify the pair is actively open for trading
-    if (data && data.trade_status === "tradable") {
-      return data.id; // e.g. "BTC_USDT"
+      if (!res.ok) return null;
+
+      const data = await res.json();
+
+      // Verify the pair is actively open for trading
+      if (data && data.trade_status === "tradable") {
+        return data.id; // e.g. "BTC_USDT"
+      }
+
+      return null;
+    } catch {
+      // Silently return null on timeout or network error so page render still succeeds
+      return null;
     }
-
-    return null;
-  } catch (error) {
-    console.error(`Failed to verify Gate.io pair for ${symbol}:`, error);
-    return null;
-  }
-}
+  },
+);

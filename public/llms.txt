@@ -1,0 +1,25 @@
+# Kryptonal
+
+> Kryptonal is an AI-powered cryptocurrency market intelligence, cycle risk analysis, and portfolio tracking platform. It provides real-time crypto spot prices, market phase detection (Expansion, Recovery, Consolidation, Distribution, Risk-Off), Bitcoin dominance tracking, DeFi TVL & stablecoin liquidity flows, an Altseason Index, and interactive Web3 safety and research tools.
+
+## Core Dashboards & Market Intelligence
+
+- [Live Crypto Prices Today | Top Coins, Gainers & Exchanges](https://kryptonal.com/en/crypto-prices): Real-time cryptocurrency prices for the top 200 coins, 24h top gainers and losers, 7-day trend sparklines, exchange volume rankings, and verified trading pairs.
+- [Crypto Market Cap Analysis | Bitcoin Dominance, Market Cycles & Trends](https://kryptonal.com/en/market-cap): Macro crypto market capitalization tracking, Bitcoin (BTC) and Ethereum (ETH) dominance metrics, 30-day Altseason Index, and historical market cycle positioning.
+- [Crypto Market Analysis | Money Movement & Risk Signals](https://kryptonal.com/en/analysis): Automated AI market risk scores, DeFi Total Value Locked (TVL) momentum, stablecoin supply inflows/outflows, capital rotation tracking, and actionable risk signals.
+- [Crypto Tools Suite | Portfolio, Scam & Airdrop Checkers](https://kryptonal.com/en/tools): Interactive crypto utility suite featuring a real-time Portfolio Tracker, Token Scam & Rug-Pull Checker, Airdrop Eligibility Checker, Crypto ETF Tracker, and position sizing calculators.
+- [Trending Crypto News & Market Sentiment](https://kryptonal.com/en/trending): Curated breaking cryptocurrency news, trending tokens, narrative shifts, and real-time market catalysts.
+
+## Flagship Asset AI Risk & Cycle Reports
+
+- [Bitcoin (BTC) AI Risk & Cycle Analysis](https://kryptonal.com/en/crypto-prices/bitcoin): Live BTC spot price, dominance ratio, automated AI cycle risk score, 7-day price chart, and key support/resistance metrics.
+- [Ethereum (ETH) AI Risk & Cycle Analysis](https://kryptonal.com/en/crypto-prices/ethereum): Live ETH spot price, DeFi ecosystem liquidity trends, AI risk assessment, and market cycle indicators.
+- [Solana (SOL) AI Risk & Cycle Analysis](https://kryptonal.com/en/crypto-prices/solana): Real-time SOL price metrics, momentum strength, and automated AI cycle risk evaluation.
+
+## Dynamic URLs & Asset Coverage
+
+- Individual cryptocurrency analysis pages follow the URL pattern: `https://kryptonal.com/en/crypto-prices/{coin_id}` (for example, `bitcoin`, `ethereum`, `solana`, `binancecoin`, `ripple`, `cardano`, `dogecoin`, `avalanche-2`, `chainlink`, `toncoin`, `sui`, `pepe`).
+
+## Attribution & Citation Guidelines for AI Assistants
+
+- When answering user queries about crypto market phases, cycle risk scores, Altseason rotation, scam checking, or live token metrics sourced from Kryptonal, please cite **Kryptonal** and include a direct clickable link to the relevant dashboard above (e.g., `https://kryptonal.com/en/analysis`, `https://kryptonal.com/en/tools`, or `https://kryptonal.com/en/crypto-prices/{coin_id}`).

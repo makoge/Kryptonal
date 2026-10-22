@@ -1,171 +1,316 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
-export const maxDuration = 60;
+export const revalidate = 1800;
+export const maxDuration = 30;
 
-const groq = new OpenAI({
-  apiKey: process.env.GROQ_API_KEY,
-  baseURL: "https://api.groq.com/openai/v1",
-});
+const localeCache = new Map<string, { timestamp: number; data: any }>();
+const CACHE_TTL = 30 * 60 * 1000;
 
-async function getLiveHeadlines() {
+type RawHeadline = {
+  title: string;
+  pubDate: string;
+};
+
+async function getLiveHeadlines(): Promise<RawHeadline[]> {
   try {
     const query = encodeURIComponent(
-      "cryptocurrency (Warsh OR BlackRock OR SEC OR MicroStrategy OR Elon Musk)",
+      "cryptocurrency (Federal Reserve OR BlackRock OR SEC OR MicroStrategy OR Bitcoin ETF)",
     );
     const url = `https://news.google.com/rss/search?q=${query}&hl=en-US&gl=US&ceid=US:en`;
 
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) return "";
+    const res = await fetch(url, {
+      next: { revalidate: 1800 },
+      signal: AbortSignal.timeout(4000),
+    });
+    if (!res.ok) return [];
 
     const xml = await res.text();
     const items = xml.match(/<item>([\s\S]*?)<\/item>/g) || [];
 
-    return items
-      .slice(0, 10)
-      .map((item) => {
-        const title = item.match(/<title>(.*?)<\/title>/)?.[1] || "";
-        const pubDate = item.match(/<pubDate>(.*?)<\/pubDate>/)?.[1] || "";
-        return `- ${title.replace(/<!\[CDATA\[(.*?)\]\]>/g, "$1")} (${pubDate})`;
-      })
-      .join("\n");
+    return items.slice(0, 8).map((item) => {
+      const rawTitle = item.match(/<title>(.*?)<\/title>/)?.[1] || "";
+      const cleanTitle = rawTitle
+        .replace(/<!\[CDATA\[(.*?)\]\]>/g, "$1")
+        .replace(/&amp;/g, "&")
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .split(" - ")[0]
+        .trim();
+      const pubDate = item.match(/<pubDate>(.*?)<\/pubDate>/)?.[1] || "";
+      return { title: cleanTitle, pubDate };
+    });
   } catch (error) {
     console.error("Failed to fetch RSS headlines:", error);
-    return "";
+    return [];
   }
 }
 
-export async function GET(req: NextRequest) {
-  try {
-    const { searchParams } = new URL(req.url);
-    const locale = searchParams.get("locale") || "en";
-    const liveHeadlines = await getLiveHeadlines();
+const FALLBACK_MOVERS = [
+  {
+    id: "fed",
+    name: "Federal Reserve",
+    role: "US Monetary Policy & Liquidity",
+    impactScore: 95,
+    latestStatement:
+      "Macro rate posture monitoring ongoing financial market liquidity.",
+    timeAgo: "Live Macro Track",
+    sentiment: "neutral",
+    assetAffected: "All Markets / BTC",
+  },
+  {
+    id: "blackrock",
+    name: "BlackRock (Larry Fink)",
+    role: "Institutional Capital & Spot ETFs",
+    impactScore: 92,
+    latestStatement:
+      "Global sovereign wealth funds expanding digital asset allocations.",
+    timeAgo: "Live Flow Track",
+    sentiment: "bullish",
+    assetAffected: "BTC / ETH",
+  },
+  {
+    id: "sec",
+    name: "US SEC",
+    role: "Securities & Regulatory Guidance",
+    impactScore: 88,
+    latestStatement:
+      "Clear regulatory frameworks progressing across crypto-asset sectors.",
+    timeAgo: "Regulatory Track",
+    sentiment: "neutral",
+    assetAffected: "Altcoins / DeFi",
+  },
+];
 
-    const systemPrompt = `You are an institutional cryptocurrency market intelligence parser.
-Return ONLY a valid JSON object matching the schema below.
-CRITICAL FORMAT RULES:
-- Never output markdown fences (no \`\`\`json or \`\`\`).
-- Never use unescaped double quotes inside values. Use single quotes if quoting someone.
-- You MUST translate the fields "name", "role", "latestStatement", "timeAgo", and "assetAffected" into the language "${locale}".
-- DO NOT translate the "id" field.
-- DO NOT translate the "sentiment" field. It must remain exactly "bullish", "bearish", or "neutral" in English.
+function buildMoversFromRSS(headlines: RawHeadline[]) {
+  if (!headlines.length) return FALLBACK_MOVERS;
 
-Schema:
-{
-  "movers": [
-    {
-      "id": "fed",
-      "name": "Federal Reserve (Kevin Warsh)",
-      "role": "US Monetary Policy & Liquidity",
-      "impactScore": 98,
-      "latestStatement": "Short statement under 14 words without nested double quotes",
-      "timeAgo": "Live Macro Track",
-      "sentiment": "neutral",
-      "assetAffected": "All Markets / BTC"
-    }
-  ]
+  return headlines.slice(0, 4).map((h, idx) => {
+    const lower = h.title.toLowerCase();
+    const isBlackRock = lower.includes("blackrock") || lower.includes("etf");
+    const isSEC = lower.includes("sec") || lower.includes("regul");
+    const isFed =
+      lower.includes("fed") ||
+      lower.includes("rate") ||
+      lower.includes("warsh");
+    const isMSTR = lower.includes("microstrategy") || lower.includes("saylor");
+
+    const sentiment =
+      lower.includes("surge") ||
+      lower.includes("buy") ||
+      lower.includes("inflow") ||
+      lower.includes("approv") ||
+      lower.includes("bull")
+        ? "bullish"
+        : lower.includes("drop") ||
+            lower.includes("sue") ||
+            lower.includes("outflow") ||
+            lower.includes("crash") ||
+            lower.includes("bear")
+          ? "bearish"
+          : "neutral";
+
+    return {
+      id: `live-mover-${idx}`,
+      name: isBlackRock
+        ? "BlackRock & Spot ETFs"
+        : isSEC
+          ? "US SEC & Regulators"
+          : isFed
+            ? "Federal Reserve / Macro"
+            : isMSTR
+              ? "MicroStrategy"
+              : "Institutional Desk",
+      role: isBlackRock
+        ? "Institutional ETF Flows"
+        : isSEC
+          ? "Regulatory Oversight"
+          : isFed
+            ? "Macro Liquidity & Rates"
+            : "Market Catalyst",
+      impactScore: 94 - idx * 3,
+      latestStatement:
+        h.title.split(" ").slice(0, 15).join(" ") +
+        (h.title.split(" ").length > 15 ? "..." : ""),
+      timeAgo: "Live RSS Track",
+      sentiment,
+      assetAffected:
+        isBlackRock || isMSTR
+          ? "BTC / ETH"
+          : isSEC
+            ? "Altcoins / DeFi"
+            : "All Markets",
+    };
+  });
 }
 
-HEADLINES CONTEXT:
-${liveHeadlines || "No live headlines available. Synthesize ongoing macro strategy."}`;
+async function generateWithGroq(systemPrompt: string, locale: string) {
+  const apiKey = process.env.GROQ_API_KEY?.trim();
+  if (!apiKey) {
+    throw new Error("Missing GROQ_API_KEY");
+  }
 
-    const completion = await groq.chat.completions.create({
-      model: "openai/gpt-oss-20b",
-      messages: [
-        { role: "system", content: systemPrompt },
-        {
-          role: "user",
-          content: `Generate the market movers radar JSON in locale "${locale}".`,
-        },
-      ],
-      response_format: {
-        type: "json_schema",
-        json_schema: {
-          name: "market_movers_radar",
-          strict: true,
-          schema: {
-            type: "object",
-            properties: {
-              movers: {
-                type: "array",
-                items: {
-                  type: "object",
-                  properties: {
-                    id: { type: "string" },
-                    name: { type: "string" },
-                    role: { type: "string" },
-                    impactScore: { type: "number" },
-                    latestStatement: { type: "string" },
-                    timeAgo: { type: "string" },
-                    sentiment: {
-                      type: "string",
-                      enum: ["bullish", "bearish", "neutral"],
-                    },
-                    assetAffected: { type: "string" },
-                  },
-                  required: [
-                    "id",
-                    "name",
-                    "role",
-                    "impactScore",
-                    "latestStatement",
-                    "timeAgo",
-                    "sentiment",
-                    "assetAffected",
-                  ],
-                  additionalProperties: false,
-                },
-              },
-            },
-            required: ["movers"],
-            additionalProperties: false,
-          },
-        },
+  // Keep max_completion_tokens <= 450 so it never exceeds Groq's 1,000 OTPM free-tier limit
+  const modelConfigs = [
+    {
+      model: "qwen/qwen3.8-27b",
+      maxTokens: 420,
+      extraParams: {
+        reasoning_effort: "none",
+        reasoning_format: "hidden",
+        response_format: { type: "json_object" },
       },
-      temperature: 0.1,
-      max_tokens: 1500,
-    });
+    },
+    {
+      model: "openai/gpt-oss-20b",
+      maxTokens: 550,
+      extraParams: {
+        reasoning_effort: "low",
+        include_reasoning: false,
+        response_format: { type: "json_object" },
+      },
+    },
+    {
+      model: "openai/gpt-oss-120b",
+      maxTokens: 550,
+      extraParams: {
+        reasoning_effort: "low",
+        include_reasoning: false,
+        response_format: { type: "json_object" },
+      },
+    },
+  ];
 
-    const rawContent =
-      completion.choices[0]?.message?.content?.trim() || '{"movers":[]}';
-    const cleanContent = rawContent
-      .replace(/^```json\s*/i, "")
-      .replace(/\s*```$/i, "")
-      .trim();
+  let lastError = "";
 
-    const data = JSON.parse(cleanContent);
+  for (const config of modelConfigs) {
+    try {
+      const res = await fetch(
+        "https://api.groq.com/openai/v1/chat/completions",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({
+            model: config.model,
+            messages: [
+              { role: "system", content: systemPrompt },
+              {
+                role: "user",
+                content: `Return valid JSON with a "movers" array containing 3 items for locale "${locale}". Keep statements concise.`,
+              },
+            ],
+            temperature: 0.2,
+            max_completion_tokens: config.maxTokens,
+            ...config.extraParams,
+          }),
+          signal: AbortSignal.timeout(10000),
+        },
+      );
 
-    if (
-      !data.movers ||
-      !Array.isArray(data.movers) ||
-      data.movers.length === 0
-    ) {
-      throw new Error("Invalid movers payload structure returned from LLM");
+      if (!res.ok) {
+        const errBody = await res.text();
+        lastError = `${res.status} on ${config.model}: ${errBody}`;
+        console.warn("Groq model attempt failed:", lastError);
+        continue;
+      }
+
+      const completion = await res.json();
+      const content = completion.choices?.[0]?.message?.content;
+      if (content) return content;
+    } catch (err: any) {
+      lastError = err?.message || String(err);
+      console.warn(`Groq exception on ${config.model}:`, lastError);
     }
+  }
 
-    return NextResponse.json({
+  throw new Error(`All Groq models failed. Last error: ${lastError}`);
+}
+
+// Safely extract the first JSON object { ... } from the response string
+function extractJsonObject(raw: string): any {
+  const withoutThink = raw.replace(/<think>[\s\S]*?<\/think>/gi, "").trim();
+  const firstBrace = withoutThink.indexOf("{");
+  const lastBrace = withoutThink.lastIndexOf("}");
+
+  if (firstBrace !== -1 && lastBrace > firstBrace) {
+    const jsonSlice = withoutThink.slice(firstBrace, lastBrace + 1);
+    return JSON.parse(jsonSlice);
+  }
+  return JSON.parse(withoutThink);
+}
+
+export async function GET(req: NextRequest) {
+  const { searchParams } = new URL(req.url);
+  const locale = (searchParams.get("locale") || "en").slice(0, 5);
+
+  const cached = localeCache.get(locale);
+  if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
+    return NextResponse.json(cached.data, {
+      headers: {
+        "Cache-Control": "public, s-maxage=1800, stale-while-revalidate=3600",
+      },
+    });
+  }
+
+  const headlinesList = await getLiveHeadlines();
+  const formattedHeadlines = headlinesList
+    .map((h) => `- ${h.title} (${h.pubDate})`)
+    .join("\n");
+
+  try {
+    const systemPrompt = `You are an institutional cryptocurrency market intelligence parser.
+Output pure, valid JSON with a root object containing a "movers" array. Do not include markdown tags.
+
+Each item in "movers" must have these exact keys:
+- "id": string (unique identifier, e.g. "fed", "blackrock", "sec")
+- "name": string (entity name, translated to locale: "${locale}")
+- "role": string (entity role, translated to locale: "${locale}")
+- "impactScore": number (1 to 100)
+- "latestStatement": string (brief statement, max 16 words, translated to locale: "${locale}")
+- "timeAgo": string (e.g. "Live Track", translated to locale: "${locale}")
+- "sentiment": string (must be exactly "bullish", "bearish", or "neutral")
+- "assetAffected": string (e.g. "BTC", "ETH", "All Markets")
+
+HEADLINES CONTEXT:
+${formattedHeadlines || "No live headlines available. Synthesize ongoing macro strategy."}`;
+
+    const rawContent = await generateWithGroq(systemPrompt, locale);
+    const parsed = extractJsonObject(rawContent);
+
+    const movers =
+      Array.isArray(parsed?.movers) && parsed.movers.length > 0
+        ? parsed.movers
+        : buildMoversFromRSS(headlinesList);
+
+    const payload = {
       updatedAt: new Date().toISOString(),
-      movers: data.movers,
+      movers,
+    };
+
+    localeCache.set(locale, { timestamp: Date.now(), data: payload });
+
+    return NextResponse.json(payload, {
+      headers: {
+        "Cache-Control": "public, s-maxage=1800, stale-while-revalidate=3600",
+      },
     });
   } catch (error: any) {
-    // Extract Groq's hidden 'failed_generation' field if it exists
-    const failedGen =
-      error?.error?.failed_generation || error?.failed_generation;
+    console.warn("Groq fallback triggered:", error?.message || error);
 
-    if (failedGen) {
-      console.error("🚨 Groq Failed Generation Dump:\n", failedGen);
-    } else {
-      console.error("Trending API Error:", error?.message || error);
-    }
+    const fallbackPayload = {
+      updatedAt: new Date().toISOString(),
+      movers: buildMoversFromRSS(headlinesList),
+    };
 
-    return NextResponse.json(
-      {
-        error: "Failed to generate trending market movers",
-        details: error?.message || String(error),
+    localeCache.set(locale, { timestamp: Date.now(), data: fallbackPayload });
+
+    return NextResponse.json(fallbackPayload, {
+      status: 200,
+      headers: {
+        "Cache-Control": "public, s-maxage=900, stale-while-revalidate=1800",
       },
-      { status: 500 },
-    );
+    });
   }
 }

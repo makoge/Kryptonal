@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "assets.coingecko.com",
       },
+      { protocol: "https", hostname: "coin-images.coingecko.com" },
+      { protocol: "https", hostname: "static.coinpaprika.com" },
       {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",

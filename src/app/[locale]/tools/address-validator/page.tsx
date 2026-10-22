@@ -14,12 +14,57 @@ export async function generateMetadata({
   const { locale } = await params;
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kryptonal.com";
 
+  // Build dynamic OG image query parameters pointing to /api/og
+  const ogUrl = new URL(`${baseUrl}/api/og`);
+  ogUrl.searchParams.set("badge", "Security Tool");
+  ogUrl.searchParams.set(
+    "title",
+    "Crypto Address Validator & Checksum Checker",
+  );
+  ogUrl.searchParams.set("statLabel", "Supported Networks");
+  ogUrl.searchParams.set("statValue", "Multi-Chain");
+  ogUrl.searchParams.set("status", "Active");
+
+  const ogImageUrl = ogUrl.toString();
+  const pageUrl = `${baseUrl}/${locale}/tools/address-validator`;
+  const title = "Crypto Address Validator | Wallet Address Checker | Kryptonal";
+  const description =
+    "Validate cryptocurrency wallet addresses, detect supported networks, review checksum status, and reduce transfer mistakes before sending crypto.";
+
   return {
-    title: "Crypto Address Validator | Wallet Address Checker",
-    description:
-      "Validate cryptocurrency wallet addresses, detect supported networks, review checksum status, and reduce transfer mistakes before sending crypto.",
+    title,
+    description,
+    keywords: [
+      "Crypto address validator",
+      "Wallet address checker",
+      "Verify bitcoin address",
+      "Verify ethereum address",
+      "EVM checksum validator",
+      "Multi-chain address checker",
+    ],
     alternates: {
-      canonical: `${baseUrl}/${locale}/tools/address-validator`,
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title,
+      description,
+      url: pageUrl,
+      siteName: "Kryptonal",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: "Crypto Address Validator - Kryptonal",
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImageUrl],
     },
   };
 }

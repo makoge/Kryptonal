@@ -12,6 +12,8 @@ import {
 } from "recharts";
 import GateTradeButton from "./GateTradeButton";
 
+import ValuationCard from "./ValuationCard";
+
 type ModalView = "chart" | "analysis" | "about";
 
 // --- Helpers ---
@@ -398,6 +400,15 @@ export default function CoinDetailsClient({
                 </div>
               )}
             </div>
+            {/* 2. INSERT VALUATION CARD HERE */}
+            <ValuationCard
+              currentPrice={details?.market_data?.current_price?.usd || 0}
+              circulatingSupply={details?.market_data?.circulating_supply || 0}
+              totalSupply={details?.market_data?.total_supply || null}
+              maxSupply={details?.market_data?.max_supply || null}
+              volume24h={details?.market_data?.total_volume?.usd || 0}
+              symbol={details?.symbol?.toUpperCase() || ""}
+            />
           </div>
           <div className="space-y-4">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
